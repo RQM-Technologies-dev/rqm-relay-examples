@@ -1,3 +1,4 @@
+import { approvedListing, externalPurchasingReady } from "./listings.js";
 import { Ajv } from "ajv";
 import { pathToFileURL } from "node:url";
 import { decodePaymentRequiredHeader } from "@x402/core/http";
@@ -9,6 +10,7 @@ import { RELAY_API, BASE_USDC, RQM_RECEIVER } from "./bazaar-discovery.js";
 export async function capabilityPreflight(
   id: string,
   fetchImpl: typeof fetch = fetch,
+  listingId?: string,
 ) {
   if (!/^[a-z0-9][a-z0-9.-]{0,159}$/.test(id))
     throw new Error("Invalid capability ID");
@@ -18,6 +20,8 @@ export async function capabilityPreflight(
       redirect: "error",
       signal: AbortSignal.timeout(30000),
     });
+  const listing = listingId ? await approvedListing(listingId, fetchImpl) : null;
+  if (listing && listing.capabilityId !== id) throw new Error("Listing/capability mismatch");
   const readyResponse = await request("/ready");
   const readiness: unknown = await readyResponse.json();
   const contractResponse = await request(`/v1/capabilities/${id}`);
@@ -26,7 +30,7 @@ export async function capabilityPreflight(
   const fixture = capability.validation?.fixtures?.[0];
   if (
     capability.id !== id ||
-    capability.source?.registry !== "rqm-jobs-mcp" ||
+    (!listing && capability.source?.registry !== "rqm-jobs-mcp") ||
     !fixture?.id ||
     fixture.input === undefined
   )
@@ -42,13 +46,15 @@ export async function capabilityPreflight(
       requiredAsset: "USDC",
     }),
   });
-  const quote = buyerQuote(await quoteResponse.json(), id);
+  const rawQuote = await quoteResponse.json() as { providerId?: string };
+  if (listing && rawQuote.providerId !== listing.providerId) throw new Error("Quote/provider mismatch");
+  const quote = buyerQuote(rawQuote, id);
   if (!quoteResponse.ok || !quote || Date.parse(quote.expiresAt) <= Date.now())
     throw new Error("Invalid or expired quote");
   const amount = BigInt(quote.maximumTotalPrice.replace(".", ""));
   if (amount <= 0n || amount > 1000000n)
     throw new Error("Quote outside demo budget");
-  const path = `/v1/capabilities/${id}/run`;
+  const path = listing && !listing.firstParty ? "/v1/run" : `/v1/capabilities/${id}/run`;
   const challenge = await request(path, {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -80,7 +86,7 @@ export async function capabilityPreflight(
     providerPrice: quote.providerPrice,
     relayFee: quote.rqmFee,
     total: quote.maximumTotalPrice,
-    purchaseState: purchaseState(readiness, readyResponse.status),
+    purchaseState: listing && !listing.firstParty ? (externalPurchasingReady(readiness, readyResponse.status) ? "public" : "paused") : purchaseState(readiness, readyResponse.status),
     unpaidFixtureChallengeVerified: true,
     paymentSubmissions: 0,
     paidExecutionVerified: false,
@@ -94,7 +100,11 @@ if (
   const id =
     process.argv.slice(2).filter((arg) => arg !== "--")[0] ??
     "diagnose-multichannel-capture-v1";
-  capabilityPreflight(id)
+  (async () => {
+    const listingId = process.env.RQM_RELAY_LISTING_ID;
+    const route = listingId ? await approvedListing(listingId) : null;
+    return capabilityPreflight(route?.capabilityId ?? id, fetch, listingId);
+  })()
     .then((report) => {
       console.log(JSON.stringify(report, null, 2));
       if (report.purchaseState !== "public") process.exitCode = 2;

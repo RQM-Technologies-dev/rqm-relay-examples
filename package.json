@@ -13,7 +13,8 @@
     "recover": "tsx src/purchase.ts recover",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "check": "npm run typecheck && npm test && npm audit --omit=dev --audit-level=high"
+    "check": "npm run typecheck && npm test && npm audit --omit=dev --audit-level=high",
+    "discover": "tsx src/discover.ts"
   },
   "dependencies": {
     "@x402/core": "2.7.0",

@@ -72,3 +72,17 @@ Public issues must never include keys, signatures, tokens, recovery files, custo
 ## Development
 
 Run `npm run check`. CI never pays. The verifier and recovery format are extracted from Relay `4ec58460bff700defacd77ecc84a89166da3eccd`, with no private workspace dependencies. Backend source remains private. These examples are publicly inspectable; no license to proprietary backend code is granted.
+
+## Find services across providers
+
+```sh
+npm run discover -- "document extraction"
+```
+
+This free command loads no wallet. Results distinguish `listed`, `connect_directly`, and `run_through_relay`. Descriptions from public registries are provider claims. Connecting directly uses the provider's authentication and terms; Relay does not charge for a directory link.
+
+To check an approved listing, set `RQM_RELAY_LISTING_ID` to its exact returned ID and run `npm run preflight`. Imported outside-provider listings are not approved for Relay purchasing merely because they appear in search.
+
+For an approved purchase, select **either** `RQM_RELAY_LISTING_ID` **or** `RQM_RELAY_CAPABILITY_ID` / problem discovery. Supply the documented input, environment-only buyer key, private recovery path, and explicit six-decimal spending maximum as above. Run `npm run purchase`. The quote must match the selected provider. One payment to RQM covers the provider price plus the greater of 0.002 USDC or 5% of that price. Outside-provider purchasing also requires public admission and all external-payment readiness flags.
+
+If interrupted, run `npm run recover` with the original recovery file. Do not select a different provider, delete the file, or authorize another payment. Existing version-1 recovery files remain supported; newly selected listings also pin provider identity for receipt verification.

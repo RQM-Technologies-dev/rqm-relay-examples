@@ -40,6 +40,7 @@ export type SavedPurchase = {
   idempotencyKey: string;
   paymentSignature: string;
   purchasePath?: string;
+  providerId?: string;
 };
 
 /** The parent directory and file contain confidential purchase recovery data. */
@@ -64,6 +65,7 @@ export function readPurchase(path: string): SavedPurchase | null {
   const value = JSON.parse(readFileSync(path, "utf8")) as SavedPurchase;
   if (
     value.version !== 1 ||
+    (value.providerId !== undefined && (typeof value.providerId !== "string" || !value.providerId)) ||
     [
       value.api,
       value.capabilityId,
