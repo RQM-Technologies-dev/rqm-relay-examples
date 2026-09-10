@@ -2,7 +2,8 @@ import { Ajv } from "ajv";
 import { writeFileSync, renameSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { purchaseCommand } from "./command.js";
-import { purchaseState } from "./protocol.js";
+import { approvedListing, externalPurchasingReady } from "./listings.js";
+import { purchaseState, buyerQuote } from "./protocol.js";
 import { ExactEvmScheme } from "@x402/evm/exact/client";
 import { toClientEvmSigner } from "@x402/evm";
 import { wrapFetchWithPayment, x402Client } from "@x402/fetch";
@@ -44,6 +45,10 @@ async function main() {
   if (!saved) {
     let capabilityId = process.env.RQM_RELAY_CAPABILITY_ID ?? (process.env.RQM_RELAY_PROBLEM ? undefined : "diagnose-multichannel-capture-v1");
     let purchasePath = "/v1/run";
+    const listingId = process.env.RQM_RELAY_LISTING_ID;
+    if (listingId && (process.env.RQM_RELAY_CAPABILITY_ID || process.env.RQM_RELAY_PROBLEM)) throw new Error("Choose a listing OR capability/problem, not both.");
+    const listing = listingId ? await approvedListing(listingId, fetch) : null;
+    if (listing) capabilityId = listing.capabilityId;
     const problem = process.env.RQM_RELAY_PROBLEM;
     if (problem) {
       if (capabilityId || relayApi !== RELAY_API)
@@ -78,7 +83,8 @@ async function main() {
     const maximumPrice = process.env.RQM_RELAY_MAXIMUM_PRICE_USD ?? "";
     const paymentPolicy = boundedRqmPaymentPolicy(maximumPrice);
     const readiness = await fetch(`${relayApi}/ready`, { redirect: "error" });
-    if (purchaseState(await readiness.json(), readiness.status) !== "public")
+    const readyBody: unknown = await readiness.json();
+    if (listing && !listing.firstParty ? !externalPurchasingReady(readyBody, readiness.status) : purchaseState(readyBody, readiness.status) !== "public")
       throw new Error("Public purchasing is not open. No payment authorized.");
     const contractResponse = await fetch(`${relayApi}/v1/capabilities/${encodeURIComponent(capabilityId)}`);
     if (!contractResponse.ok) throw new Error("Capability contract unavailable.");
@@ -98,7 +104,9 @@ async function main() {
     });
     if (!quoteResponse.ok)
       throw new Error(`quote returned ${quoteResponse.status}`);
-    const quote = (await quoteResponse.json()) as { quoteId: string };
+    const rawQuote = await quoteResponse.json() as { providerId?: string };
+    const quote = buyerQuote(rawQuote, capabilityId);
+    if (!quote || Date.parse(quote.expiresAt) <= Date.now() || (listing && rawQuote.providerId !== listing.providerId) || BigInt(quote.maximumTotalPrice.replace(".", "")) > BigInt(maximumPrice.replace(".", ""))) throw new Error("Quote differs from the selected route or spending limit. No payment authorized.");
     const runBody = JSON.stringify({
       quoteId: quote.quoteId,
       input: JSON.parse(inputJson) as unknown,
@@ -136,6 +144,7 @@ async function main() {
           idempotencyKey,
           paymentSignature,
           purchasePath,
+          ...(listing ? { providerId: listing.providerId } : {}),
         });
       }
       return fetch(resource, {
@@ -231,6 +240,7 @@ async function main() {
     receipt.relayJobId !== accepted.jobId ||
     receipt.quoteId !== intended.quoteId ||
     receipt.capabilityId !== saved.capabilityId ||
+    (saved.providerId !== undefined && receipt.providerId !== saved.providerId) ||
     receipt.inputHash !== sha256(intended.input) ||
     receipt.outcome !== terminal.status ||
     (terminal.status === "succeeded" &&
