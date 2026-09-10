@@ -1,6 +1,7 @@
+import { Ajv } from "ajv";
 import { pathToFileURL } from "node:url";
 import { decodePaymentRequiredHeader } from "@x402/core/http";
-type CapabilityContract = { id: string; source: { registry: string }; validation: { fixtures: Array<{ id: string; input: unknown }> } };
+type CapabilityContract = { inputSchema: object; id: string; source: { registry: string }; validation: { fixtures: Array<{ id: string; input: unknown }> } };
 import { buyerQuote, purchaseState } from "./protocol.js";
 import { RELAY_API, BASE_USDC, RQM_RECEIVER } from "./bazaar-discovery.js";
 
@@ -30,6 +31,7 @@ export async function capabilityPreflight(
     fixture.input === undefined
   )
     throw new Error("First-party public fixture missing");
+  if (!new Ajv({ strict: false }).validate(capability.inputSchema, fixture.input)) throw new Error("Public fixture does not match the input contract");
   const quoteResponse = await request("/v1/quote", {
     method: "POST",
     headers: { "content-type": "application/json" },
