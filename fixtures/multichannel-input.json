@@ -1,0 +1,47 @@
+{
+  "channels": [
+    {
+      "samples": [
+        {
+          "real": 1,
+          "imaginary": 0
+        },
+        {
+          "real": 0,
+          "imaginary": 1
+        },
+        {
+          "real": -1,
+          "imaginary": 0
+        },
+        {
+          "real": 0,
+          "imaginary": -1
+        }
+      ],
+      "channel_id": "channel-1"
+    },
+    {
+      "samples": [
+        {
+          "real": 0.5,
+          "imaginary": 0
+        },
+        {
+          "real": 0,
+          "imaginary": 0.5
+        },
+        {
+          "real": -0.5,
+          "imaginary": 0
+        },
+        {
+          "real": 0,
+          "imaginary": -0.5
+        }
+      ],
+      "channel_id": "channel-2"
+    }
+  ],
+  "sample_rate_hz": 1024
+}

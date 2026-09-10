@@ -1,0 +1,15 @@
+{
+  "input": {
+    "subject_kind": "multichannel_capture",
+    "channel_ids": [
+      "channel-1",
+      "channel-2"
+    ],
+    "channel_count": 2,
+    "sample_count": 4,
+    "sample_rate_hz": 1024
+  },
+  "diagnostic_state": "nominal",
+  "findings": [],
+  "claim_boundary": "Bounded lane-state findings only; no causal physical explanation, hardware-fault, medical, safety, or operational diagnosis."
+}

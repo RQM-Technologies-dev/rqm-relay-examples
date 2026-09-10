@@ -1,0 +1,1 @@
+Keep this buyer kit standalone and free of private workspace dependencies. Keys are environment-only. Never commit real customer inputs, results, signatures, or recovery records. Free checks never load a signer. Recovery must never authorize another payment. Run npm run check before publication.
