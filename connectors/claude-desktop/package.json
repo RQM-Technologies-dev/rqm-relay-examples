@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test tests/*.mjs",
-    "check": "npm test && npm run build && mcpb validate dist/manifest.json && npm audit --omit=dev --audit-level=high",
+    "check": "npm test && npm run build && mcpb validate dist/manifest.json && npm audit --audit-level=high",
     "pack": "npm run check && mcpb pack dist rqm-jobs-discovery.mcpb",
     "probe:live": "node probe-live.mjs"
   },
@@ -20,5 +20,8 @@
   "devDependencies": {
     "@anthropic-ai/mcpb": "2.1.2",
     "esbuild": "0.28.2"
+  },
+  "overrides": {
+    "tmp": "0.2.7"
   }
 }
