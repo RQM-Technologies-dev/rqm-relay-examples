@@ -5,8 +5,9 @@ import { join } from "node:path";
 import {
   boundedRqmPaymentPolicy,
   readPurchase,
-  savePurchase,
   recoverPurchase,
+  reportPurchaseFailure,
+  savePurchase,
   type SavedPurchase,
 } from "../src/purchase-recovery.js";
 
@@ -201,5 +202,71 @@ describe("client purchase recovery", () => {
     ).rejects.toThrow("do not authorize again");
     expect(fetcher).toHaveBeenCalledTimes(1);
     expect(readPurchase(path)).toEqual(purchase);
+  });
+
+  it("prints the real error and withholds recovery advice when no file exists", () => {
+    const errors: unknown[] = [];
+    const spy = vi.spyOn(console, "error").mockImplementation((line) => {
+      errors.push(line);
+    });
+    const previous = process.exitCode;
+    try {
+      reportPurchaseFailure(
+        new Error("RQM_RELAY_BUYER_PRIVATE_KEY must be a 32-byte hex key"),
+        file() + "-missing",
+      );
+      expect(errors).toEqual([
+        "RQM_RELAY_BUYER_PRIVATE_KEY must be a 32-byte hex key",
+      ]);
+      expect(process.exitCode).toBe(1);
+    } finally {
+      spy.mockRestore();
+      process.exitCode = previous;
+    }
+  });
+
+  it("advises keeping the recovery file only after that file exists", () => {
+    const path = file();
+    savePurchase(path, purchase);
+    const errors: unknown[] = [];
+    const spy = vi.spyOn(console, "error").mockImplementation((line) => {
+      errors.push(line);
+    });
+    const previous = process.exitCode;
+    try {
+      reportPurchaseFailure(
+        new Error("job did not reach a terminal state"),
+        path,
+      );
+      expect(errors).toEqual([
+        "job did not reach a terminal state",
+        "Purchase did not complete. Keep the private recovery file and rerun with the same path; do not authorize another payment.",
+      ]);
+      expect(process.exitCode).toBe(1);
+    } finally {
+      spy.mockRestore();
+      process.exitCode = previous;
+    }
+  });
+
+  it("stringifies non-Error failures without claiming a recovery file exists", () => {
+    const errors: unknown[] = [];
+    const spy = vi.spyOn(console, "error").mockImplementation((line) => {
+      errors.push(line);
+    });
+    const previous = process.exitCode;
+    try {
+      reportPurchaseFailure(
+        "Input does not match the selected service contract. No payment authorized.",
+        file() + "-missing",
+      );
+      expect(errors).toEqual([
+        "Input does not match the selected service contract. No payment authorized.",
+      ]);
+      expect(process.exitCode).toBe(1);
+    } finally {
+      spy.mockRestore();
+      process.exitCode = previous;
+    }
   });
 });

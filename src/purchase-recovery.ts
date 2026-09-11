@@ -1,5 +1,6 @@
 import {
   closeSync,
+  existsSync,
   fsyncSync,
   lstatSync,
   openSync,
@@ -8,6 +9,20 @@ import {
 } from "node:fs";
 import { dirname, isAbsolute } from "node:path";
 import type { PaymentPolicy } from "@x402/fetch";
+
+/** Surface the real failure. Recovery advice is only truthful after a file exists. */
+export function reportPurchaseFailure(
+  err: unknown,
+  recoveryPath = process.env.RQM_RELAY_RECOVERY_FILE,
+): void {
+  console.error(err instanceof Error ? err.message : String(err));
+  if (recoveryPath && existsSync(recoveryPath)) {
+    console.error(
+      "Purchase did not complete. Keep the private recovery file and rerun with the same path; do not authorize another payment.",
+    );
+  }
+  process.exitCode = 1;
+}
 
 export function boundedRqmPaymentPolicy(maximumPrice: string): PaymentPolicy {
   if (!/^\d+\.\d{6}$/.test(maximumPrice))

@@ -22,8 +22,9 @@ import {
 import {
   boundedRqmPaymentPolicy,
   readPurchase,
-  savePurchase,
   recoverPurchase,
+  reportPurchaseFailure,
+  savePurchase,
 } from "./purchase-recovery.js";
 
 const fetch: typeof globalThis.fetch = (resource, init) => globalThis.fetch(resource, { ...init, redirect: "error", signal: init?.signal ?? AbortSignal.timeout(30_000) });
@@ -279,11 +280,8 @@ async function main() {
   );
 }
 void main()
-  .catch(() => {
-    console.error(
-      "Purchase did not complete. Keep the private recovery file and rerun with the same path; do not authorize another payment.",
-    );
-    process.exitCode = 1;
+  .catch((err) => {
+    reportPurchaseFailure(err);
   })
   .finally(() => {
     delete process.env.RQM_RELAY_BUYER_PRIVATE_KEY;
