@@ -14,7 +14,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "check": "npm run typecheck && npm test && npm audit --omit=dev --audit-level=high",
-    "discover": "tsx src/discover.ts"
+    "discover": "tsx src/discover.ts",
+    "connectors:links": "node scripts/connector-links.mjs"
   },
   "dependencies": {
     "@x402/core": "2.7.0",

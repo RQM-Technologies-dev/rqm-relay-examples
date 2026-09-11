@@ -5,3 +5,5 @@ coverage/
 *recovery*.json
 verified-result.json
 relay-purchase*/
+connectors/claude-desktop/dist/
+*.mcpb

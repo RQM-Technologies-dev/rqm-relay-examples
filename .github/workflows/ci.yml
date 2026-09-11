@@ -13,3 +13,9 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm ci --prefix connectors/claude-desktop
+      - run: npm run pack --prefix connectors/claude-desktop
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqm-jobs-discovery-mcpb
+          path: connectors/claude-desktop/rqm-jobs-discovery.mcpb

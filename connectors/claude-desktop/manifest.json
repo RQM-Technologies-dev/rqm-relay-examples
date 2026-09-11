@@ -1,0 +1,33 @@
+{
+  "manifest_version": "0.3",
+  "name": "rqm-jobs-discovery",
+  "display_name": "RQM Jobs Discovery",
+  "version": "0.1.0",
+  "description": "Find bounded signal-capture checks and inspect synthetic examples without a wallet.",
+  "long_description": "Free discovery for RQM signal workflows, including multichannel capture diagnosis. Returns service descriptions, input contracts, limits and synthetic examples. This extension cannot purchase or execute paid jobs. Results do not establish physical causes or hardware failure.",
+  "author": { "name": "RQM Technologies LLC" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples"
+  },
+  "homepage": "https://rqm-relay.com",
+  "documentation": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors",
+  "support": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
+  "privacy_policies": [
+    "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/claude-desktop/PRIVACY.md"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.mjs"]
+    }
+  },
+  "tools_generated": true,
+  "compatibility": {
+    "platforms": ["darwin", "win32"],
+    "runtimes": { "node": ">=22" }
+  },
+  "keywords": ["signal-processing", "multichannel", "discovery", "mcp"]
+}
