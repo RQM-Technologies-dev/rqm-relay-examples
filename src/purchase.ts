@@ -1,4 +1,4 @@
-import { Ajv } from "ajv";
+import { schemaValidator } from "./schema-validation.js";
 import { writeFileSync, renameSync, unlinkSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { purchaseCommand } from "./command.js";
@@ -89,7 +89,7 @@ async function main() {
     const contractResponse = await fetch(`${relayApi}/v1/capabilities/${encodeURIComponent(capabilityId)}`);
     if (!contractResponse.ok) throw new Error("Capability contract unavailable.");
     const contract = await contractResponse.json() as { id: string; inputSchema: object };
-    if (contract.id !== capabilityId || !new Ajv({ strict: false }).validate(contract.inputSchema, JSON.parse(inputJson)))
+    if (contract.id !== capabilityId || !schemaValidator().validate(contract.inputSchema, JSON.parse(inputJson)))
       throw new Error("Input does not match the selected service contract. No payment authorized.");
     const quoteResponse = await fetch(`${relayApi}/v1/quote`, {
       method: "POST",
@@ -252,7 +252,7 @@ async function main() {
     const contractResponse = await fetch(`${relayApi}/v1/capabilities/${encodeURIComponent(saved.capabilityId)}`);
     if (!contractResponse.ok) throw new Error("Result contract unavailable; retain recovery file.");
     const contract = await contractResponse.json() as { id: string; version: string; outputSchema: object };
-    if (contract.id !== saved.capabilityId || contract.version !== receipt.capabilityVersion || !new Ajv({ strict: false }).validate(contract.outputSchema, result.result))
+    if (contract.id !== saved.capabilityId || contract.version !== receipt.capabilityVersion || !schemaValidator().validate(contract.outputSchema, result.result))
       throw new Error("Result contract validation failed; retain recovery file.");
   }
   const temporary = join(dirname(recoveryPath), `.result-${crypto.randomUUID()}.tmp`);

@@ -93,6 +93,19 @@ function mock(
 }
 
 describe("general capability protocol demo", () => {
+  it("rejects an invalid timestamp fixture before quoting or requesting execution", async () => {
+    const m = mock();
+    const fetchImpl: typeof fetch = async (url, init) => {
+      if (String(url).endsWith(`/v1/capabilities/${id}`)) return Response.json({
+        id, source: { registry: "rqm-jobs-mcp" },
+        inputSchema: { type: "object", required: ["captured_at"], properties: { captured_at: { type: "string", format: "date-time" } } },
+        validation: { fixtures: [{ id: "invalid-date", input: { captured_at: "not-a-date" } }] },
+      });
+      return m.fetchImpl(url, init);
+    };
+    await expect(capabilityPreflight(id, fetchImpl)).rejects.toThrow("does not match");
+    expect(m.calls.filter(call => call.method === "POST")).toHaveLength(0);
+  });
   it("uses a public fixture and returns restricted availability without payment or wallet headers", async () => {
     const m = mock();
     expect(await capabilityPreflight(id, m.fetchImpl)).toMatchObject({
