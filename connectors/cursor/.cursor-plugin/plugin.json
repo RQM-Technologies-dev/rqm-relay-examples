@@ -1,0 +1,10 @@
+{
+  "name": "rqm-jobs",
+  "version": "0.1.0",
+  "description": "Discover bounded signal, quantum and robotics jobs through RQM Jobs MCP. Paid execution requires a separately authorized payment client.",
+  "author": { "name": "RQM Technologies LLC" },
+  "homepage": "https://rqm-relay.com/developers/",
+  "repository": "https://github.com/RQM-Technologies-dev/rqm-relay-examples",
+  "keywords": ["mcp", "signal-processing", "quantum", "robotics"],
+  "mcpServers": "./mcp.json"
+}

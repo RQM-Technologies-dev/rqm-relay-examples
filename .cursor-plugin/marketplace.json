@@ -1,0 +1,11 @@
+{
+  "name": "rqm-connectors",
+  "owner": { "name": "RQM Technologies LLC" },
+  "plugins": [
+    {
+      "name": "rqm-jobs",
+      "source": "connectors/cursor",
+      "description": "Bounded specialist service discovery with RQM Jobs MCP."
+    }
+  ]
+}

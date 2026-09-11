@@ -2,6 +2,13 @@
 
 Check coordinated I/Q samples before processing or archiving. The default service, `diagnose-multichannel-capture-v1`, returns bounded findings and a `nominal`, `degraded`, or `invalid` state. It does not identify physical causes or diagnose hardware failure.
 
+## Connect from your agent
+
+Use the [host install packs](connectors/README.md) for Claude Desktop and Cursor,
+with documented Claude.ai, Grok and ChatGPT setup paths. The desktop pack offers
+free discovery; paid execution and directory approval have separate acceptance
+checks.
+
 ## Install and check the protocol for free
 
 Use Node.js 22 and npm. No private repository, RQM account, or wallet is needed.
