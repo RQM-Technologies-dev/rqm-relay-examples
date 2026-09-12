@@ -7,3 +7,4 @@ verified-result.json
 relay-purchase*/
 connectors/claude-desktop/dist/
 *.mcpb
+dist/

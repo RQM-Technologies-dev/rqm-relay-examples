@@ -8,22 +8,28 @@
     "node": ">=22 <23"
   },
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "mcp:buyer": "node dist/host-mcp.js",
+    "mcp:check:live": "node scripts/probe-host-buyer.mjs",
+    "mcp:install": "node scripts/local-buyer-install.mjs",
     "preflight": "tsx src/preflight.ts",
     "purchase": "tsx src/purchase.ts purchase",
     "recover": "tsx src/purchase.ts recover",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "check": "npm run typecheck && npm test && npm audit --omit=dev --audit-level=high",
+    "check": "npm run typecheck && npm test && npm run build && npm audit --omit=dev --audit-level=high",
     "discover": "tsx src/discover.ts",
     "connectors:links": "node scripts/connector-links.mjs"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
     "@x402/core": "2.7.0",
     "@x402/evm": "2.7.0",
     "@x402/fetch": "2.7.0",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
-    "viem": "2.47.4"
+    "viem": "2.47.4",
+    "zod": "4.4.3"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

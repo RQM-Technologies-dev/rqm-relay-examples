@@ -8,6 +8,11 @@ the supplied capture, not evidence of physical causes or hardware failure.
 
 ## Install paths
 
+For purchases, use the separately configured [local MCP buyer](local-buyer/README.md).
+It adds explicit host confirmation, an environment-only signer and durable
+recovery. The free discovery pack and native remote link below retain their
+existing scope. Native paid-host acceptance is still required.
+
 | Host           | Package or setup                                                                                                                            | Current limit                                                                                                                                                           |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Claude Desktop | Build the [RQM Jobs Discovery MCPB](claude-desktop/) below; open the `.mcpb` file and review the install prompt.                            | Three free discovery tools; no wallet or paid execution.                                                                                                                |
