@@ -9,6 +9,11 @@ with documented Claude.ai, Grok and ChatGPT setup paths. The desktop pack offers
 free discovery; paid execution and directory approval have separate acceptance
 checks.
 
+For payment and recovery inside a local MCP host, install the
+[local buyer](connectors/local-buyer/README.md). It exposes quote preparation,
+human-confirmed purchase and signer-free recovery tools. Native host and live
+paid acceptance are tracked separately from the protocol tests.
+
 ## Install and check the protocol for free
 
 Use Node.js 22 and npm. No private repository, RQM account, or wallet is needed.

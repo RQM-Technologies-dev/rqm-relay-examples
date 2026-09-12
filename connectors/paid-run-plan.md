@@ -1,5 +1,24 @@
 # Close the paid-run gap inside the host
 
+## Local buyer implementation
+
+The [local buyer](local-buyer/README.md) now implements free quote preparation,
+MCP form confirmation for one exact purchase, an environment-only signer,
+durable original-authorization persistence, delivery retrieval and receipt
+verification. Retry/restart recovery has no signer or fresh quote. The fixed
+first-party route is multichannel diagnosis through Relay's existing HTTP API.
+The public kit's original version-1 recovery-file contract is retained.
+
+Protocol acceptance uses a simulated approving MCP client and payment service.
+Native host confirmation, an authorized live payment and reconciled accounting
+are separate outstanding acceptance evidence. Cursor is the initial native
+target because its documentation advertises elicitation. No desktop pack,
+directory listing or paid-host result is inferred from these tests.
+
+The companion Jobs fix connects detail/example reads to the same pinned
+production catalog already used by list/search. Deployment and anonymous live
+readback remain required; the dated inventory below records the original fault.
+
 ## Inventory, September 11, 2026
 
 - Jobs `/version` reports `1.7.0`, commit `04683dfa10a4f63fa6d6a25a43b29cc7a22f62cf`.
