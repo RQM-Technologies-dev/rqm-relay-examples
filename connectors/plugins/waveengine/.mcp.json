@@ -1,8 +1,8 @@
 {
   "mcpServers": {
-    "rqm-jobs-discovery": {
+    "waveengine": {
       "type": "http",
-      "url": "https://jobs.rqmtechnologies.com/mcp/discovery"
+      "url": "https://jobs.rqmtechnologies.com/mcp/plugins/wave"
     }
   }
 }

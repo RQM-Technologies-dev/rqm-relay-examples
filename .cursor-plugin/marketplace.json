@@ -12,17 +12,12 @@
     {
       "name": "resonant-quantum-mechanics",
       "source": "connectors/plugins/resonant-quantum-mechanics",
-      "description": "Quantum service discovery"
+      "description": "Quantum circuit computation with included usage"
     },
     {
       "name": "waveengine",
       "source": "connectors/plugins/waveengine",
-      "description": "Signal service discovery"
-    },
-    {
-      "name": "robotics-lab",
-      "source": "connectors/plugins/robotics-lab",
-      "description": "Robotics service discovery"
+      "description": "Signal-processing computation with included usage"
     }
   ]
 }

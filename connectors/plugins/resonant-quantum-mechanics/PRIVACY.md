@@ -1,13 +1,13 @@
 # Resonant Quantum Mechanics privacy notice
 
-Publisher: RQM Technologies LLC.
+Publisher: RQM Technologies LLC. Privacy contact: jvg@rqmtechnologies.com.
 
-This plugin sends MCP discovery arguments (a short search query, product filter and list/search options) to `https://jobs.rqmtechnologies.com/mcp/discovery`, operated by RQM Technologies LLC. The service receives normal request metadata, including time and IP address. The host controls what it includes in tool arguments; use nonsensitive terms and review them before sending.
+This plugin sends the selected tool's necessary arguments to `https://jobs.rqmtechnologies.com/mcp/plugins/quantum` on RQM's Jobs service. Discovery uses a short query and product filter. Computation uses the chosen capability, bounded technical input (such as circuit source or signal samples), and an idempotency key. Status/result retrieval uses an operation ID. Do not include secrets, unnecessary personal data, unrelated files, or full conversation history.
 
-The package contains skills and remote MCP configuration only. It contains no local executable, filesystem reader, analytics SDK, credential store or payment client. It does not itself store queries or results. Results return to the host, whose privacy and retention policies apply.
+Sign-in uses RQM Account Core at `account.rqmtechnologies.com` and the existing Firebase identity service. The host carries OAuth credentials; this package has no credential store. Account Core maintains identity, consent, included usage and job records. RQM's execution workflow and product backend process the submitted inputs and return results and evidence; the hosting provider processes workflow data to deliver the service.
 
-The discovery handlers do not persist raw queries or invoke account, billing or job-execution operations. Hosting and operational logs may retain request metadata under the service operator's policies. This notice does not promise zero retention by the host or infrastructure provider, or specify an unverified retention period.
+Raw inputs are not written to application diagnostic logs. Necessary operational/security metadata, account records, usage reservations, idempotency records, execution records and results are retained to provide and secure the service. This is not a zero-retention service. Jobs enforces a 30-day result-access cutoff; that cutoff does not assert deletion of all provider copies or account records. Specific record deletion and infrastructure retention remain governed by RQM account policies and the provider's policies; contact the publisher for applicable retention or deletion requests.
 
-Do not send secrets, personal information, customer files or payment details. This public catalog is not intended to process sensitive customer content.
+The package itself contains only skills, manifests and remote MCP configuration. It has no local executable, analytics SDK, filesystem reader, wallet or payment client. Claude/Cursor retain conversation and tool data under their own policies. No financial transfer or automatic additional charge is initiated by these tools.
 
-For privacy requests, use a nonsensitive issue at https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues. Do not post private inputs, tokens or receipts in a public issue.
+Use private email for privacy requests. Never post private inputs, tokens or results to a public GitHub issue.

@@ -1,15 +1,16 @@
 {
   "display_name": "Resonant Quantum Mechanics",
-  "short_description": "Quantum service discovery",
+  "short_description": "Quantum circuit computation with included usage",
   "product": "quantum",
   "publisher": "RQM Technologies LLC",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source_path": "connectors/plugins/resonant-quantum-mechanics",
-  "endpoint": "https://jobs.rqmtechnologies.com/mcp/discovery",
-  "authentication": "none",
+  "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+  "authentication": "oauth2_with_public_discovery",
   "privacy_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/plugins/resonant-quantum-mechanics/PRIVACY.md",
   "documentation_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors/plugins/resonant-quantum-mechanics",
   "support_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
-  "starter_prompt": "Find the Resonant Quantum Mechanics service for repair OpenQASM. Show required inputs, examples and limitations. Do not execute or purchase a job.",
-  "expected_service_id": "openqasm3-repair-v1"
+  "starter_prompt": "Find the Resonant Quantum Mechanics service for repair OpenQASM. Show the required inputs and limitations, then check my included RQM allowance. Do not run a job until I approve the inputs.",
+  "expected_service_id": "openqasm3-repair-v1",
+  "submission_state": "prepared_not_submitted"
 }

@@ -1,8 +1,16 @@
 {
   "mcpServers": {
-    "rqm-jobs-discovery": {
+    "waveengine": {
       "type": "http",
-      "url": "https://jobs.rqmtechnologies.com/mcp/discovery"
+      "url": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+      "auth": {
+        "CLIENT_ID": "rqm-cursor-wave",
+        "scopes": [
+          "subscription.read",
+          "subscription.jobs.run",
+          "subscription.jobs.read"
+        ]
+      }
     }
   }
 }
