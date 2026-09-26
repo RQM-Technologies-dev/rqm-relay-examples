@@ -81,27 +81,33 @@ ID or individual entry review outcomes. Approval and publication remain
 unverified; scheduled updates and automatic publication settings were requested
 in the application but no controls were exposed.
 
-The Claude account is now **Pro**. The portal showed zero existing submissions;
-three bundle forms and the shared connector form are prepared as tab-local
-drafts. All three bundles passed portal validation. Explicit privacy, support,
-and documentation URLs prevent the portal from misclassifying the support URL;
-explicit display names preserve brand spelling. Scheduled checks are selected
-and automatic publication is off in each bundle draft.
+The Claude account is **Pro**, and its GitHub integration is connected.
+**RQM Jobs Discovery is submitted and In review** at
+https://claude.ai/directory/manage/rqm-jobs-discovery. Its detail page says
+Submitted (done), In review (current), and Live (not yet). The saved listing
+incorrectly required OAuth; this was corrected to **None** and read back after
+saving. Exactly two read-only tools are listed. No connector auto-publication
+or scheduled-update control is exposed.
 
-Native Claude Code 2.1.283 searches passed for all three packages, with the
-correct skills, product filters, two-tool catalog, and actual results recorded
-in `acceptance.json`. The shared connector is connected without authentication
-and the directory captured its two read-only tools. If the temporary inline
-connection reports an OAuth registration error, add the endpoint under custom
-connectors with **No sign-in**, connect it, then select that installed connector
-in the directory form. Both tools also passed MCP Inspector CLI checks. A native Claude web
-conversation successfully searched all three families through the shared
-connector; individual branded web bundle installations remain unverified.
+The three bundles are saved server-side as **Draft** and must be continued by
+the permanent IDs in `acceptance.json`; do not create duplicates. They still
+need owner retention/audience answers and bundle Directory Terms acceptance.
+All passed portal validation at `f80fde963b48d3c7eaa7d2bc87d065599cf23b78`.
+Explicit privacy/support/documentation URLs and display names are rendered
+correctly, despite three nonblocking URL-field warnings.
 
-No Claude submission receipt exists yet. Owner inputs are required for retention
-and intended under-18 audience; new GitHub authorization and separate Software
-Directory Terms acceptance remain pending. Do not infer those facts or treat a
-prepared tab-local draft as a submitted or server-saved application.
+Automatic publication remains disabled after reopening the saved drafts.
+The scheduled-only update selection reset to webhook on draft reload; it was
+reselected in the open editors. **Recheck Scheduled check only immediately
+before final submission**, and verify the resulting saved settings afterward.
+
+Native Claude Code 2.1.283 searches passed for all three packages, with correct
+skills, product filters, tool lists and results in `acceptance.json`. Claude
+web also searched all three families using the shared connector. Individual
+branded web bundle installations remain unverified. Both tools passed MCP
+Inspector CLI checks. If inline setup reports an OAuth error, install the
+endpoint as a custom connector with **No sign-in**, connect it, then select
+that connection in the directory form.
 
 ## Receipt record
 
