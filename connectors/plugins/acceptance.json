@@ -500,5 +500,19 @@
     "account": "RQM-Technologies-dev",
     "verified_at": "2026-09-26T22:40:07Z",
     "draft_write_access": "Confirmed by successful creation and reopening of three saved plugin drafts"
+  },
+  "active_revision": {
+    "version": "0.2.0",
+    "products": [
+      "quantum",
+      "wave"
+    ],
+    "robotics": "deferred_not_for_submission_or_publication",
+    "execution": "existing_subscription_allowance",
+    "raw_input_diagnostic_logging": false,
+    "local_package_checks": "passed",
+    "host_execution_acceptance": "pending",
+    "submission_receipts": "pending_for_branded_computation_connectors",
+    "note": "All earlier native and live results in this document concern discovery-only version 0.1.0."
   }
 }

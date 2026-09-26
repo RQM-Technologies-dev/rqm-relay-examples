@@ -1,31 +1,28 @@
 # Resonant Quantum Mechanics
 
-Find public quantum service contracts, required inputs, examples and limitations. Discovery only; no computation or payment.
+Discover and run bounded quantum computations through RQM Jobs using your existing RQM subscription allowance. Public catalog discovery needs no account. Computation, allowance, job status and results require signing in to an eligible RQM account through the host's OAuth flow. A Claude Pro or Cursor plan does not itself include RQM service allowance.
 
-This plugin helps you find relevant RQM services before deciding how to prepare your work. It searches the shared public catalog with the `quantum` filter and explains contracts returned by the service. It does not perform the advertised scientific or engineering jobs.
+## Installation
 
-## Use
+This folder is a self-contained Cursor and Claude plugin. Cursor reads `.cursor-plugin/plugin.json` and `mcp.json`; Claude reads `.claude-plugin/plugin.json` and `.mcp.json`. Both connect to `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. Cursor uses a public client ID (not a secret); Claude uses its client metadata registration. No local executable or wallet is included.
 
-After installing in Cursor or Claude, enable the included RQM Jobs Discovery connection. No RQM account, API key, local runtime or wallet is required. Ask:
+## Tools and use
 
-> Find the Resonant Quantum Mechanics service for repair OpenQASM. Show its required inputs, examples and limitations. Do not execute or purchase a job.
+- `list_rqm_services` and `search_rqm_services`: service IDs, descriptions, input schemas, outputs and limitations for `product: quantum`.
+- `get_rqm_subscription`: current included usage.
+- `run_rqm_job`: one authorized, idempotent computation against existing allowance.
+- `get_rqm_job` and `get_rqm_result`: status and verified results for the connected account's operation.
 
-The connection is `https://jobs.rqmtechnologies.com/mcp/discovery`. It exposes exactly `list_buyer_jobs` and `search_buyer_jobs`. The three brands share that connection; only their discovery focus differs. Network availability and host administrator policy can affect access.
+Start with “Find a service for repair OpenQASM; show the inputs and limitations.” Then “Check my included RQM allowance.” After reviewing a real schema and supplying nonsensitive inputs, explicitly ask to run that specific computation and inspect its result. No example text is evidence that a live job completed.
 
-If no matching service is returned, the plugin says so. If the catalog is unavailable or rate limited, retry later. Catalog readiness and prices describe the returned records; they do not prove execution availability or establish a binding quote.
-
-## Installation and removal
-
-Cursor: install this package from the RQM marketplace once listed, or copy this complete folder into `~/.cursor/plugins/local/resonant-quantum-mechanics` for local testing and reload Cursor. The Cursor manifest reads `mcp.json`.
-
-Claude Code: use `claude --plugin-dir /absolute/path/to/resonant-quantum-mechanics` for local testing. The Claude manifest reads `.mcp.json`. Once reviewed and published, install through the Claude directory in supported Claude surfaces. A repository package is not proof of directory approval.
-
-Disable or remove the plugin in the host's plugin settings to disconnect it. For a local Cursor test, remove only the copied plugin folder and reload; do not remove unrelated host settings.
+Inactive or exhausted allowance stops execution without an extra charge. There are no purchase, transfer, funding or cancellation tools. Search matches and accepted jobs are not completed computations. Results are bounded software evidence; no hardware, safety, certification or advantage claim is implied. Empty searches, invalid input, rate limits and outages are reported honestly.
 
 ## Privacy and support
 
-Read [PRIVACY.md](PRIVACY.md). Use only nonsensitive queries. Support: https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues. Never include credentials, personal data or private customer content in public issues.
+See [PRIVACY.md](PRIVACY.md). Do not put private inputs, results, credentials or personal information in [public support issues](https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues). Private support: jvg@rqmtechnologies.com.
 
-## License
+## Release status
 
-Apache-2.0 covers this plugin folder. See [LICENSE](LICENSE) and [NOTICE](NOTICE). Hosted services and proprietary backend code are outside this grant.
+Version 0.2.0 prepares the subscription computation integration. Submission, host authentication acceptance, successful live computation, review approval and publication are separate gates; consult [submission tracking](../SUBMISSION.md). The previous discovery-only acceptance does not validate this version.
+
+Apache-2.0 covers only this plugin folder. RQM services and backend software retain their existing licensing and account terms.

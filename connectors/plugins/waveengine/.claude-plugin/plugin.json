@@ -1,7 +1,7 @@
 {
   "name": "waveengine",
-  "version": "0.1.0",
-  "description": "Find public wave service contracts, required inputs, examples and limitations. Discovery only; no computation or payment.",
+  "version": "0.2.0",
+  "description": "Discover and run bounded signal-processing computations using existing RQM subscription allowance. Returns results, evidence and limitations.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -10,8 +10,9 @@
   "license": "Apache-2.0",
   "keywords": [
     "mcp",
-    "discovery",
-    "wave"
+    "wave",
+    "computation",
+    "subscription"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

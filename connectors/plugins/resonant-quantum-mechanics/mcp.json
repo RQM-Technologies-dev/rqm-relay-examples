@@ -1,8 +1,16 @@
 {
   "mcpServers": {
-    "rqm-jobs-discovery": {
+    "resonant-quantum-mechanics": {
       "type": "http",
-      "url": "https://jobs.rqmtechnologies.com/mcp/discovery"
+      "url": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "auth": {
+        "CLIENT_ID": "rqm-cursor-quantum",
+        "scopes": [
+          "subscription.read",
+          "subscription.jobs.run",
+          "subscription.jobs.read"
+        ]
+      }
     }
   }
 }

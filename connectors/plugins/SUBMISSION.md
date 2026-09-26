@@ -1,3 +1,17 @@
+# Active submission scope — 2026-09-26 revision
+
+Only **Resonant Quantum Mechanics** and **WaveEngine** are being advanced. Version 0.2.0 uses existing RQM subscription allowance for computation, with no payment or funding tools and no raw-input diagnostic logging. Necessary identity, security, usage, job and result records remain retained; do not attest zero retention.
+
+**Robotics Lab is deferred:** its package is preserved, removed from the active Cursor marketplace manifest, and its Claude draft must remain unsubmitted and unpublished. Do not turn on automatic publication for any package.
+
+The two computation packages and corresponding Claude MCP connectors require coordinated Account Core / Jobs deployment, host OAuth acceptance, reviewer account access, and actual computation evidence before final submission. Prior 0.1.0 acceptance proves discovery only. The old shared RQM Jobs Discovery connector is still In review; no withdrawal or deletion has been performed. Do not mistake it for either requested branded connector receipt.
+
+Use scheduled checks and keep auto-publish off. Claude data handling: account-linked tools process identity; raw-input logs are prohibited; retained service records make “Not retained” inaccurate. Owner confirmed intended under-18 audience and directory terms, but specific retention timing needs verified operational policy before final attestation.
+
+## Historical discovery-only receipt and acceptance record
+
+The following record describes version 0.1.0 and is retained for provenance. It is not the current computation acceptance record.
+
 # Cursor and Claude submissions
 
 ## Release boundary
