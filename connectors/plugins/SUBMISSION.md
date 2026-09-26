@@ -81,12 +81,25 @@ ID or individual entry review outcomes. Approval and publication remain
 unverified; scheduled updates and automatic publication settings were requested
 in the application but no controls were exposed.
 
-The Claude account is created and signed in. Directory Management displays
-**Directory submissions need a paid plan** and names Pro, Max, Team, and
-Enterprise as eligible. The current Free account cannot open the three plugin
-bundle forms or the shared MCP connector form. Continue after the owner
-upgrades or selects an eligible account; then inspect existing drafts before
-creating submissions. Claude native host acceptance also remains pending.
+The Claude account is now **Pro**. The portal showed zero existing submissions;
+three bundle forms and the shared connector form are prepared as tab-local
+drafts. All three bundles passed portal validation. Explicit privacy, support,
+and documentation URLs prevent the portal from misclassifying the support URL;
+explicit display names preserve brand spelling. Scheduled checks are selected
+and automatic publication is off in each bundle draft.
+
+Native Claude Code 2.1.283 searches passed for all three packages, with the
+correct skills, product filters, two-tool catalog, and actual results recorded
+in `acceptance.json`. The shared connector is connected without authentication
+and the directory captured its two read-only tools. If the temporary inline
+connection reports an OAuth registration error, add the endpoint under custom
+connectors with **No sign-in**, connect it, then select that installed connector
+in the directory form. Both tools also passed MCP Inspector CLI checks.
+
+No Claude submission receipt exists yet. Owner inputs are required for retention
+and intended under-18 audience; new GitHub authorization and separate Software
+Directory Terms acceptance remain pending. Do not infer those facts or treat a
+prepared tab-local draft as a submitted or server-saved application.
 
 ## Receipt record
 

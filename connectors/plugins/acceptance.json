@@ -121,13 +121,112 @@
     },
     "claude_code": {
       "version": "2.1.283",
-      "state": "blocked_authentication",
-      "evidence": "auth status reports loggedIn false; all three package validators passed"
+      "state": "passed_native_cli_brand_searches",
+      "installation": "Each package loaded through --plugin-dir; exact package MCP config explicitly loaded with --strict-mcp-config, which excludes unrelated servers.",
+      "evidence": "All three package skills were invoked. Each host session exposed exactly two discovery MCP tools and returned the expected live product-filtered matches without permission denials, execution, or payments.",
+      "tests": [
+        {
+          "package": "resonant-quantum-mechanics",
+          "package_commit": "f6eef3a61918a568b58d6aa29ced4d0a6d2eedde",
+          "host_version": "2.1.283",
+          "host": "Claude Code",
+          "visible_tools": [
+            "mcp__rqm-jobs-discovery__list_buyer_jobs",
+            "mcp__rqm-jobs-discovery__search_buyer_jobs"
+          ],
+          "loaded_skills": [
+            "resonant-quantum-mechanics:resonant-quantum-mechanics"
+          ],
+          "calls": [
+            {
+              "tool": "mcp__rqm-jobs-discovery__search_buyer_jobs",
+              "arguments": {
+                "query": "repair OpenQASM",
+                "product": "quantum",
+                "limit": 3
+              },
+              "schema_version": "rqm.jobs.agent-search.v1",
+              "matches": [
+                "openqasm3-repair-v1",
+                "openqasm3-preflight-v1",
+                "circuit-assurance-report-v1"
+              ]
+            }
+          ],
+          "state": "success",
+          "is_error": false,
+          "permission_denials": []
+        },
+        {
+          "package": "waveengine",
+          "package_commit": "f6eef3a61918a568b58d6aa29ced4d0a6d2eedde",
+          "host_version": "2.1.283",
+          "host": "Claude Code",
+          "visible_tools": [
+            "mcp__rqm-jobs-discovery__list_buyer_jobs",
+            "mcp__rqm-jobs-discovery__search_buyer_jobs"
+          ],
+          "loaded_skills": [
+            "waveengine:waveengine"
+          ],
+          "calls": [
+            {
+              "tool": "mcp__rqm-jobs-discovery__search_buyer_jobs",
+              "arguments": {
+                "query": "signal capture",
+                "product": "wave",
+                "limit": 3
+              },
+              "schema_version": "rqm.jobs.agent-search.v1",
+              "matches": [
+                "gate-signal-capture-v1",
+                "wave.convert-capture-to-spectrum.v1",
+                "diagnose-multichannel-capture-v1"
+              ]
+            }
+          ],
+          "state": "success",
+          "is_error": false,
+          "permission_denials": []
+        },
+        {
+          "package": "robotics-lab",
+          "package_commit": "f6eef3a61918a568b58d6aa29ced4d0a6d2eedde",
+          "host_version": "2.1.283",
+          "host": "Claude Code",
+          "visible_tools": [
+            "mcp__rqm-jobs-discovery__list_buyer_jobs",
+            "mcp__rqm-jobs-discovery__search_buyer_jobs"
+          ],
+          "loaded_skills": [
+            "robotics-lab:robotics-lab"
+          ],
+          "calls": [
+            {
+              "tool": "mcp__rqm-jobs-discovery__search_buyer_jobs",
+              "arguments": {
+                "query": "frame convention",
+                "product": "robotics",
+                "limit": 3
+              },
+              "schema_version": "rqm.jobs.agent-search.v1",
+              "matches": [
+                "frame-convention-validation-v1",
+                "robotics.normalize-sensor-frames.v1"
+              ]
+            }
+          ],
+          "state": "success",
+          "is_error": false,
+          "permission_denials": []
+        }
+      ]
     },
     "claude_web": {
-      "state": "blocked_paid_plan",
-      "evidence": "Account created and signed in. Directory Management shows: Directory submissions need a paid plan. Pro, Max, Team, and Enterprise can submit plugins and MCP servers. Current account is Free.",
-      "checked_at": "2026-09-26T22:15:26.739Z"
+      "state": "connector_connected_tools_captured",
+      "plan": "Pro",
+      "evidence": "RQM Jobs Discovery installed with No sign-in. Directory connector draft captured exactly list_buyer_jobs and search_buyer_jobs, both read-only. Individual branded web installations are not yet verified.",
+      "initial_connection_issue": "Temporary in-form connection reported OAuth client registration failure; resolved by installing an explicit No sign-in custom connector in Settings and selecting it in the submission form."
     }
   },
   "submissions": [
@@ -193,60 +292,64 @@
       "name": "Resonant Quantum Mechanics",
       "id": null,
       "url": "https://claude.ai/directory/manage",
-      "state": "blocked_paid_plan",
+      "state": "prepared_awaiting_owner_inputs_and_authorization",
       "approved": null,
       "published": null,
-      "existing_draft_check": "Directory Management is accessible but the paid-plan gate prevents viewing drafts or opening submission forms.",
+      "existing_draft_check": "Pro Directory Management showed 0 submissions before preparing these four tab-local drafts.",
       "review_state": null,
-      "update_checks": "not_configured",
-      "automatic_publication": "not_configured",
-      "blocker": "Signed-in account is Free. Directory requires Pro, Max, Team, or Enterprise before submitting plugins or MCP servers.",
-      "checked_at": "2026-09-26T22:15:26.739Z"
+      "update_checks": "scheduled_check_only_selected_in_draft",
+      "automatic_publication": "disabled_in_draft",
+      "blocker": "Directory publisher terms and compliance acknowledgements await owner authorization. Plugin bundles additionally await owner retention and under-18 answers and a GitHub identity connection.",
+      "checked_at": "2026-09-26T22:35:00Z",
+      "portal_validation": "Passed all 7 checks at f6eef3a; nonblocking unrecognized-field warnings for explicit directory URLs, which the listing preview uses correctly."
     },
     {
       "platform": "claude",
       "name": "WaveEngine",
       "id": null,
       "url": "https://claude.ai/directory/manage",
-      "state": "blocked_paid_plan",
+      "state": "prepared_awaiting_owner_inputs_and_authorization",
       "approved": null,
       "published": null,
-      "existing_draft_check": "Directory Management is accessible but the paid-plan gate prevents viewing drafts or opening submission forms.",
+      "existing_draft_check": "Pro Directory Management showed 0 submissions before preparing these four tab-local drafts.",
       "review_state": null,
-      "update_checks": "not_configured",
-      "automatic_publication": "not_configured",
-      "blocker": "Signed-in account is Free. Directory requires Pro, Max, Team, or Enterprise before submitting plugins or MCP servers.",
-      "checked_at": "2026-09-26T22:15:26.739Z"
+      "update_checks": "scheduled_check_only_selected_in_draft",
+      "automatic_publication": "disabled_in_draft",
+      "blocker": "Directory publisher terms and compliance acknowledgements await owner authorization. Plugin bundles additionally await owner retention and under-18 answers and a GitHub identity connection.",
+      "checked_at": "2026-09-26T22:35:00Z",
+      "portal_validation": "Passed all 7 checks at f6eef3a; nonblocking unrecognized-field warnings for explicit directory URLs, which the listing preview uses correctly."
     },
     {
       "platform": "claude",
       "name": "Robotics Lab",
       "id": null,
       "url": "https://claude.ai/directory/manage",
-      "state": "blocked_paid_plan",
+      "state": "prepared_awaiting_owner_inputs_and_authorization",
       "approved": null,
       "published": null,
-      "existing_draft_check": "Directory Management is accessible but the paid-plan gate prevents viewing drafts or opening submission forms.",
+      "existing_draft_check": "Pro Directory Management showed 0 submissions before preparing these four tab-local drafts.",
       "review_state": null,
-      "update_checks": "not_configured",
-      "automatic_publication": "not_configured",
-      "blocker": "Signed-in account is Free. Directory requires Pro, Max, Team, or Enterprise before submitting plugins or MCP servers.",
-      "checked_at": "2026-09-26T22:15:26.739Z"
+      "update_checks": "scheduled_check_only_selected_in_draft",
+      "automatic_publication": "disabled_in_draft",
+      "blocker": "Directory publisher terms and compliance acknowledgements await owner authorization. Plugin bundles additionally await owner retention and under-18 answers and a GitHub identity connection.",
+      "checked_at": "2026-09-26T22:35:00Z",
+      "portal_validation": "Passed all 7 checks at f6eef3a; nonblocking unrecognized-field warnings for explicit directory URLs, which the listing preview uses correctly."
     },
     {
       "platform": "claude",
       "name": "RQM Jobs Discovery",
       "id": null,
       "url": "https://claude.ai/directory/manage",
-      "state": "blocked_paid_plan",
+      "state": "prepared_awaiting_owner_inputs_and_authorization",
       "approved": null,
       "published": null,
-      "existing_draft_check": "Directory Management is accessible but the paid-plan gate prevents viewing drafts or opening submission forms.",
+      "existing_draft_check": "Pro Directory Management showed 0 submissions before preparing these four tab-local drafts.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Signed-in account is Free. Directory requires Pro, Max, Team, or Enterprise before submitting plugins or MCP servers.",
-      "checked_at": "2026-09-26T22:15:26.739Z"
+      "blocker": "Directory publisher terms and compliance acknowledgements await owner authorization. Plugin bundles additionally await owner retention and under-18 answers and a GitHub identity connection.",
+      "checked_at": "2026-09-26T22:35:00Z",
+      "portal_connection": "Connected; captured exactly 2 tools, 0 resources; authentication None"
     }
   ],
   "backend_release_workflow": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36273203890",
@@ -338,5 +441,23 @@
     "repository_commit_at_verification": "845fb5504ceda09a8d74389430b9be74bc1f996f",
     "approval": "unverified",
     "publication": "unverified"
+  },
+  "mcp_inspector_acceptance": {
+    "version": "1.0.2",
+    "state": "passed",
+    "transport": "http",
+    "methods": [
+      "tools/list",
+      "tools/call:list_buyer_jobs",
+      "tools/call:search_buyer_jobs"
+    ],
+    "product": "quantum",
+    "search_matches": [
+      "openqasm3-repair-v1",
+      "openqasm3-preflight-v1",
+      "circuit-assurance-report-v1"
+    ],
+    "paid_requests": 0,
+    "execution_requests": 0
   }
 }
