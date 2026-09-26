@@ -223,10 +223,42 @@
       ]
     },
     "claude_web": {
-      "state": "connector_connected_tools_captured",
+      "state": "passed_shared_connector_brand_searches",
       "plan": "Pro",
-      "evidence": "RQM Jobs Discovery installed with No sign-in. Directory connector draft captured exactly list_buyer_jobs and search_buyer_jobs, both read-only. Individual branded web installations are not yet verified.",
-      "initial_connection_issue": "Temporary in-form connection reported OAuth client registration failure; resolved by installing an explicit No sign-in custom connector in Settings and selecting it in the submission form."
+      "evidence": "Claude web captured exactly the two read-only tools. A native web conversation called search_buyer_jobs for all three product families with per-call approval; request/response panels and actual catalog matches were inspected. Individual branded web bundle installations remain unverified.",
+      "initial_connection_issue": "Temporary in-form connection reported OAuth client registration failure; resolved by installing an explicit No sign-in custom connector in Settings and selecting it in the submission form.",
+      "host": "Claude web, displayed model Opus 5.5 Medium; build version not exposed",
+      "chat_url": "https://claude.ai/chat/114aeb79-36c3-45ec-88f3-80d1868f7091",
+      "searches": [
+        {
+          "product": "quantum",
+          "query": "repair OpenQASM",
+          "matches": [
+            "openqasm3-repair-v1",
+            "openqasm3-preflight-v1",
+            "circuit-assurance-report-v1"
+          ]
+        },
+        {
+          "product": "wave",
+          "query": "signal capture",
+          "matches": [
+            "gate-signal-capture-v1",
+            "wave.convert-capture-to-spectrum.v1",
+            "diagnose-multichannel-capture-v1"
+          ]
+        },
+        {
+          "product": "robotics",
+          "query": "frame convention",
+          "matches": [
+            "frame-convention-validation-v1",
+            "robotics.normalize-sensor-frames.v1"
+          ]
+        }
+      ],
+      "paid_requests": 0,
+      "execution_requests": 0
     }
   },
   "submissions": [

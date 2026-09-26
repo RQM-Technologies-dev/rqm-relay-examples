@@ -94,7 +94,9 @@ in `acceptance.json`. The shared connector is connected without authentication
 and the directory captured its two read-only tools. If the temporary inline
 connection reports an OAuth registration error, add the endpoint under custom
 connectors with **No sign-in**, connect it, then select that installed connector
-in the directory form. Both tools also passed MCP Inspector CLI checks.
+in the directory form. Both tools also passed MCP Inspector CLI checks. A native Claude web
+conversation successfully searched all three families through the shared
+connector; individual branded web bundle installations remain unverified.
 
 No Claude submission receipt exists yet. Owner inputs are required for retention
 and intended under-18 audience; new GitHub authorization and separate Software
