@@ -14,5 +14,8 @@
     "wave"
   ],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json"
+  "mcpServers": "./.mcp.json",
+  "privacyPolicyUrl": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/plugins/waveengine/PRIVACY.md",
+  "supportUrl": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
+  "documentationUrl": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors/plugins/waveengine"
 }
