@@ -1,14 +1,37 @@
 {
   "release": "discovery-0.1.0",
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/discovery",
-  "backend_commit": null,
-  "backend_deploy": null,
-  "package_commit": null,
-  "local_validation": "in_progress",
+  "backend_commit": "4d112c0879d6d0cbe00a79eb20ec445d4057d2ec",
+  "backend_deploy": "dep-das3jerbc2fs7396ahv0",
+  "package_commit": "e506de9bae83130f7bf82a00422503e12f3f31dc",
+  "local_validation": {
+    "packages": "npm run check passed: 7 files, 46 tests",
+    "claude_validator": "Claude Code 2.1.283 plugin validate passed for all three folders",
+    "cursor_manifests": "Package paths and exact credential-free MCP configurations validated by repository tests",
+    "support_privacy_links": "HTTP 200 verified 2026-09-26",
+    "package_ci": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/actions/runs/36272737959",
+    "backend": "npm run check passed: 110 files, 1244 tests; all coverage thresholds passed",
+    "backend_ci": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36272816273",
+    "backend_container": "Hosted Docker build and smoke test passed"
+  },
   "host_acceptance": {
-    "cursor": "pending",
-    "claude_code": "pending",
-    "claude_web": "pending"
+    "cursor": {
+      "ide_version": "3.20.21",
+      "ide_commit": "f09fca384ceca23f7bf21f9c23655b162641d740",
+      "agent_version": "2026.05.20-2b5dd59",
+      "installation": "All three folders copied to ~/.cursor/plugins/local/",
+      "state": "blocked_authentication",
+      "evidence": "Native print-mode request returned Authentication required; no successful host search"
+    },
+    "claude_code": {
+      "version": "2.1.283",
+      "state": "blocked_authentication",
+      "evidence": "auth status reports loggedIn false; all three package validators passed"
+    },
+    "claude_web": {
+      "state": "blocked_authentication",
+      "evidence": "Directory Management redirects to sign-in"
+    }
   },
   "submissions": [
     {
@@ -16,63 +39,177 @@
       "name": "Resonant Quantum Mechanics",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     },
     {
       "platform": "cursor",
       "name": "WaveEngine",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     },
     {
       "platform": "cursor",
       "name": "Robotics Lab",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     },
     {
       "platform": "claude",
       "name": "Resonant Quantum Mechanics",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     },
     {
       "platform": "claude",
       "name": "WaveEngine",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     },
     {
       "platform": "claude",
       "name": "Robotics Lab",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     },
     {
       "platform": "claude",
       "name": "RQM Jobs Discovery",
       "id": null,
       "url": null,
-      "state": "not_submitted",
-      "approved": false,
-      "published": false
+      "state": "blocked_publisher_sign_in",
+      "approved": null,
+      "published": null,
+      "existing_draft_check": "not_verified",
+      "review_state": null,
+      "update_checks": "not_configured",
+      "automatic_publication": "not_configured",
+      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
     }
-  ]
+  ],
+  "backend_release_workflow": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36273203890",
+  "live_acceptance": {
+    "checked_at": "2026-09-26T21:33:25.308Z",
+    "endpoint": "https://jobs.rqmtechnologies.com/mcp/discovery",
+    "version": "1.7.0",
+    "commitSha": "4d112c0879d6d0cbe00a79eb20ec445d4057d2ec",
+    "tools": [
+      "list_buyer_jobs",
+      "search_buyer_jobs"
+    ],
+    "descriptor_count": 60,
+    "searches": [
+      {
+        "product": "quantum",
+        "query": "repair OpenQASM",
+        "matches": [
+          "openqasm3-repair-v1",
+          "openqasm3-preflight-v1",
+          "circuit-assurance-report-v1"
+        ]
+      },
+      {
+        "product": "wave",
+        "query": "signal capture",
+        "matches": [
+          "gate-signal-capture-v1",
+          "wave.convert-capture-to-spectrum.v1",
+          "diagnose-multichannel-capture-v1"
+        ]
+      },
+      {
+        "product": "robotics",
+        "query": "frame convention",
+        "matches": [
+          "frame-convention-validation-v1",
+          "robotics.normalize-sensor-frames.v1"
+        ]
+      }
+    ],
+    "paid_requests": 0,
+    "execution_requests": 0
+  },
+  "live_negative_checks": {
+    "checked_at": "2026-09-26T21:34:07.669Z",
+    "checks": [
+      {
+        "name": "__rqm_discovery_acceptance_unregistered__",
+        "code": -32602,
+        "message": "Tool __rqm_discovery_acceptance_unregistered__ not found"
+      },
+      {
+        "name": "search_buyer_jobs",
+        "isError": true,
+        "content": [
+          {
+            "type": "text",
+            "text": "Input validation error: Invalid arguments for tool search_buyer_jobs: product: Invalid option: expected one of \"wave\"|\"quantum\"|\"robotics\""
+          }
+        ]
+      }
+    ]
+  },
+  "deployment_notes": {
+    "initial_probe": "Failed commit pin during traffic switch immediately after Render reported live; subsequent exact-revision probe passed",
+    "rollback_commit": "4f05b20fd19d2dbe5b85057dcfd4a85230d9fae1",
+    "rollback_deploy": "dep-daraf8d9fdbs73fmicbg",
+    "commercial_configuration_changed": false,
+    "dependency_services_deployed": false
+  },
+  "existing_public_monitor": {
+    "url": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36273361341",
+    "state": "success",
+    "expected_commit": "4d112c0879d6d0cbe00a79eb20ec445d4057d2ec"
+  },
+  "backend_release_verification": {
+    "state": "success",
+    "attempt": 2,
+    "url": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36273203890"
+  }
 }
