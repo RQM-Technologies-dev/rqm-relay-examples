@@ -73,6 +73,21 @@ retention, audience, and legal attestations before final submission.
 Use native Cursor/Claude demonstrations for review. The existing ChatGPT demo
 is not evidence of a successful Cursor or Claude installation.
 
+## Current publisher status (2026-09-26)
+
+Cursor displays **Thanks for applying** and confirms receipt of the repository
+application requesting all three new branded entries. It exposes no submission
+ID or individual entry review outcomes. Approval and publication remain
+unverified; scheduled updates and automatic publication settings were requested
+in the application but no controls were exposed.
+
+The Claude account is created and signed in. Directory Management displays
+**Directory submissions need a paid plan** and names Pro, Max, Team, and
+Enterprise as eligible. The current Free account cannot open the three plugin
+bundle forms or the shared MCP connector form. Continue after the owner
+upgrades or selects an eligible account; then inspect existing drafts before
+creating submissions. Claude native host acceptance also remains pending.
+
 ## Receipt record
 
 Record in `acceptance.json`: backend commit/deploy, package commit, tests,
