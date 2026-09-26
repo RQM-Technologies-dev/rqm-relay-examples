@@ -1,0 +1,78 @@
+{
+  "release": "discovery-0.1.0",
+  "endpoint": "https://jobs.rqmtechnologies.com/mcp/discovery",
+  "backend_commit": null,
+  "backend_deploy": null,
+  "package_commit": null,
+  "local_validation": "in_progress",
+  "host_acceptance": {
+    "cursor": "pending",
+    "claude_code": "pending",
+    "claude_web": "pending"
+  },
+  "submissions": [
+    {
+      "platform": "cursor",
+      "name": "Resonant Quantum Mechanics",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    },
+    {
+      "platform": "cursor",
+      "name": "WaveEngine",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    },
+    {
+      "platform": "cursor",
+      "name": "Robotics Lab",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    },
+    {
+      "platform": "claude",
+      "name": "Resonant Quantum Mechanics",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    },
+    {
+      "platform": "claude",
+      "name": "WaveEngine",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    },
+    {
+      "platform": "claude",
+      "name": "Robotics Lab",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    },
+    {
+      "platform": "claude",
+      "name": "RQM Jobs Discovery",
+      "id": null,
+      "url": null,
+      "state": "not_submitted",
+      "approved": false,
+      "published": false
+    }
+  ]
+}

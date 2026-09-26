@@ -1,11 +1,28 @@
 {
   "name": "rqm-connectors",
-  "owner": { "name": "RQM Technologies LLC" },
+  "owner": {
+    "name": "RQM Technologies LLC"
+  },
   "plugins": [
     {
       "name": "rqm-jobs",
       "source": "connectors/cursor",
       "description": "Bounded specialist service discovery with RQM Jobs MCP."
+    },
+    {
+      "name": "resonant-quantum-mechanics",
+      "source": "connectors/plugins/resonant-quantum-mechanics",
+      "description": "Quantum service discovery"
+    },
+    {
+      "name": "waveengine",
+      "source": "connectors/plugins/waveengine",
+      "description": "Signal service discovery"
+    },
+    {
+      "name": "robotics-lab",
+      "source": "connectors/plugins/robotics-lab",
+      "description": "Robotics service discovery"
     }
   ]
 }
