@@ -18,10 +18,106 @@
     "cursor": {
       "ide_version": "3.20.21",
       "ide_commit": "f09fca384ceca23f7bf21f9c23655b162641d740",
-      "agent_version": "2026.05.20-2b5dd59",
+      "agent_version": "2026.09.26-dd393fe",
       "installation": "All three folders copied to ~/.cursor/plugins/local/",
-      "state": "blocked_authentication",
-      "evidence": "Native print-mode request returned Authentication required; no successful host search"
+      "state": "passed_native_cli_brand_searches",
+      "evidence": "Each installed brand skill was read; exact two-tool discovery schema and live product-filtered search responses were captured from native Cursor CLI tool events. No execution or paid tools were called.",
+      "namespace_note": "With all three packages installed, Cursor reused the shared endpoint under the resonant-quantum-mechanics namespace; each brand skill applied its correct product filter.",
+      "tests": [
+        {
+          "package": "resonant-quantum-mechanics",
+          "package_commit": "e506de9bae83130f7bf82a00422503e12f3f31dc",
+          "host": "Cursor CLI",
+          "host_version": "2026.09.26-dd393fe",
+          "visible_tools": [
+            "list_buyer_jobs",
+            "search_buyer_jobs"
+          ],
+          "skill_loaded": true,
+          "calls": [
+            {
+              "server": "plugin-resonant-quantum-mechanics-rqm-jobs-discovery",
+              "tool": "search_buyer_jobs",
+              "arguments": {
+                "product": "quantum",
+                "query": "repair OpenQASM",
+                "limit": 3
+              },
+              "schema_version": "rqm.jobs.agent-search.v1",
+              "matches": [
+                "openqasm3-repair-v1",
+                "openqasm3-preflight-v1",
+                "circuit-assurance-report-v1"
+              ]
+            }
+          ],
+          "namespace": "plugin-resonant-quantum-mechanics-rqm-jobs-discovery",
+          "host_result": "success",
+          "state": "passed"
+        },
+        {
+          "package": "waveengine",
+          "package_commit": "e506de9bae83130f7bf82a00422503e12f3f31dc",
+          "host": "Cursor CLI",
+          "host_version": "2026.09.26-dd393fe",
+          "visible_tools": [
+            "list_buyer_jobs",
+            "search_buyer_jobs"
+          ],
+          "skill_loaded": true,
+          "calls": [
+            {
+              "server": "plugin-resonant-quantum-mechanics-rqm-jobs-discovery",
+              "tool": "search_buyer_jobs",
+              "arguments": {
+                "schema_version": "rqm.jobs.agent-search-request.v1",
+                "query": "signal capture",
+                "product": "wave",
+                "limit": 3
+              },
+              "schema_version": "rqm.jobs.agent-search.v1",
+              "matches": [
+                "gate-signal-capture-v1",
+                "wave.convert-capture-to-spectrum.v1",
+                "diagnose-multichannel-capture-v1"
+              ]
+            }
+          ],
+          "namespace": "plugin-resonant-quantum-mechanics-rqm-jobs-discovery",
+          "host_result": "success",
+          "state": "passed"
+        },
+        {
+          "package": "robotics-lab",
+          "package_commit": "e506de9bae83130f7bf82a00422503e12f3f31dc",
+          "host": "Cursor CLI",
+          "host_version": "2026.09.26-dd393fe",
+          "visible_tools": [
+            "list_buyer_jobs",
+            "search_buyer_jobs"
+          ],
+          "skill_loaded": true,
+          "calls": [
+            {
+              "server": "plugin-resonant-quantum-mechanics-rqm-jobs-discovery",
+              "tool": "search_buyer_jobs",
+              "arguments": {
+                "query": "frame convention",
+                "product": "robotics",
+                "limit": 3
+              },
+              "schema_version": "rqm.jobs.agent-search.v1",
+              "matches": [
+                "frame-convention-validation-v1",
+                "robotics.normalize-sensor-frames.v1"
+              ]
+            }
+          ],
+          "namespace": "plugin-resonant-quantum-mechanics-rqm-jobs-discovery",
+          "host_result": "success",
+          "state": "passed"
+        }
+      ]
     },
     "claude_code": {
       "version": "2.1.283",
@@ -29,8 +125,8 @@
       "evidence": "auth status reports loggedIn false; all three package validators passed"
     },
     "claude_web": {
-      "state": "blocked_authentication",
-      "evidence": "Directory Management redirects to sign-in"
+      "state": "blocked_new_account_terms",
+      "evidence": "Chosen publisher email verified; Claude requires Consumer Terms, Acceptable Use Policy and 18+ confirmation before account creation. Directory Management is not yet accessible."
     }
   },
   "submissions": [
@@ -39,98 +135,98 @@
       "name": "Resonant Quantum Mechanics",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "prepared_awaiting_publisher_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Publisher application and Plugins dashboard inspected; no matching branded draft or review record was visible.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Complete publisher application prepared; Submit Application accepts Publisher Terms and awaits owner confirmation."
     },
     {
       "platform": "cursor",
       "name": "WaveEngine",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "prepared_awaiting_publisher_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Publisher application and Plugins dashboard inspected; no matching branded draft or review record was visible.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Complete publisher application prepared; Submit Application accepts Publisher Terms and awaits owner confirmation."
     },
     {
       "platform": "cursor",
       "name": "Robotics Lab",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "prepared_awaiting_publisher_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Publisher application and Plugins dashboard inspected; no matching branded draft or review record was visible.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Complete publisher application prepared; Submit Application accepts Publisher Terms and awaits owner confirmation."
     },
     {
       "platform": "claude",
       "name": "Resonant Quantum Mechanics",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "blocked_new_account_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Not accessible before account creation.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Claude account creation requires binding terms and owner age confirmation before the directory forms can be accessed."
     },
     {
       "platform": "claude",
       "name": "WaveEngine",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "blocked_new_account_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Not accessible before account creation.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Claude account creation requires binding terms and owner age confirmation before the directory forms can be accessed."
     },
     {
       "platform": "claude",
       "name": "Robotics Lab",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "blocked_new_account_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Not accessible before account creation.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Claude account creation requires binding terms and owner age confirmation before the directory forms can be accessed."
     },
     {
       "platform": "claude",
       "name": "RQM Jobs Discovery",
       "id": null,
       "url": null,
-      "state": "blocked_publisher_sign_in",
+      "state": "blocked_new_account_terms",
       "approved": null,
       "published": null,
-      "existing_draft_check": "not_verified",
+      "existing_draft_check": "Not accessible before account creation.",
       "review_state": null,
       "update_checks": "not_configured",
       "automatic_publication": "not_configured",
-      "blocker": "Publisher account selection and sign-in required; existing drafts and review state not inspected"
+      "blocker": "Claude account creation requires binding terms and owner age confirmation before the directory forms can be accessed."
     }
   ],
   "backend_release_workflow": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36273203890",
