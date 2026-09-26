@@ -1,0 +1,18 @@
+{
+  "name": "resonant-quantum-mechanics",
+  "version": "0.1.0",
+  "description": "Find public quantum service contracts, required inputs, examples and limitations. Discovery only; no computation or payment.",
+  "author": {
+    "name": "RQM Technologies LLC"
+  },
+  "homepage": "https://www.rqmtechnologies.com/",
+  "repository": "https://github.com/RQM-Technologies-dev/rqm-relay-examples",
+  "license": "Apache-2.0",
+  "keywords": [
+    "mcp",
+    "discovery",
+    "quantum"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}

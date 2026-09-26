@@ -1,0 +1,15 @@
+{
+  "display_name": "Robotics Lab",
+  "short_description": "Robotics service discovery",
+  "product": "robotics",
+  "publisher": "RQM Technologies LLC",
+  "version": "0.1.0",
+  "source_path": "connectors/plugins/robotics-lab",
+  "endpoint": "https://jobs.rqmtechnologies.com/mcp/discovery",
+  "authentication": "none",
+  "privacy_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/plugins/robotics-lab/PRIVACY.md",
+  "documentation_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors/plugins/robotics-lab",
+  "support_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
+  "starter_prompt": "Find the Robotics Lab service for frame convention. Show required inputs, examples and limitations. Do not execute or purchase a job.",
+  "expected_service_id": "frame-convention-validation-v1"
+}

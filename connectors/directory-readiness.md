@@ -1,4 +1,19 @@
-# Directory submission preparation
+# Current discovery plugin submissions
+
+The Cursor and Claude discovery release is documented in
+[plugins/SUBMISSION.md](plugins/SUBMISSION.md). It uses three branded packages
+and a shared two-tool `/mcp/discovery` endpoint. The earlier Desktop MCPB is
+retained for existing users; Claude now requires local MCP servers to be
+packaged as plugins for new directory submissions.
+
+No submission, approval or publication is established by repository files.
+See [plugins/acceptance.json](plugins/acceptance.json) for exact evidence.
+
+## Historical preparation (September 11, 2026)
+
+The following checklist describes the earlier connector work and is not the
+current Cursor/Claude release checklist.
+
 
 | Directory | Prepared here                                                                 | Remaining before submission                                                                                  |
 | --------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
