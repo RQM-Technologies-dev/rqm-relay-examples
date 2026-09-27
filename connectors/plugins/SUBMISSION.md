@@ -10,6 +10,18 @@ Set scheduled checks only and automatic publication off, then reopen settings to
 
 Current candidate: prepared, not submitted. Record immutable release commits, deployed SHAs, host evidence, receipt IDs/URLs and exact review states separately in `acceptance.json`. If credentials or platform access block acceptance, save corrected drafts, verify persistence, record the blocker and close this task's submission tabs without deleting drafts.
 
+## Verified prepaid candidate status — 2026-09-27 UTC
+
+The code is merged and deployed: Core `4d05b4a`, Jobs `717875f`, packages `d54ee4c` (version 0.3.0). Core CI passed 1,123 tests with PostgreSQL 17.11 coverage; Jobs passed 1,297 tests. The [coordinated Jobs release](https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36283928929) verified the exact deployed revision and both branded surfaces. Package checks and both Claude validators passed. Strategy and read-only RQM-MCP mappings are corrected and checked.
+
+Cursor 3.20.21 / CLI 2026.09.26-dd393fe and Claude Code 2.1.283 exposed exactly six tools for each brand and returned actual OpenQASM and signal-capture search results. Claude Code also returned both 20-service catalogs; its output limit moved those results into files, whose product isolation was verified. These are discovery results, not execution receipts. No live computation or funding was performed.
+
+Both existing Claude bundles remain **Draft: Nothing sent to Anthropic yet**. They were revalidated at `d54ee4c`, saved and reopened. Automatic publication is off; scheduled checks are selected and no push webhook is configured. Only Claude Code is claimed; Cowork and Claude web/desktop/mobile claims were removed. Both separate MCP forms established OAuth and captured six tools, but **Save and exit preserves these new forms only in their current tab**. Their entered contents have private local backups; they have no server-side draft IDs or submission receipts.
+
+The external cron monitor detected a synthetic `ledger_mismatch` event without financial writes. Delivery to the established owner email remains unverified. Public credit purchases remain disabled. The isolated hosted Stripe-test workflow is blocked on approved test credentials and its restricted release token; funded native-host execution, original-job recovery, reconnect and revocation acceptance remain pending. Do not mark the forms self-tested or submit while these gates remain open.
+
+The existing Cursor repository now contains both corrected entries and retains `rqm-jobs`. The inspected publish page offers a new application, without an update control for the existing receipt. No duplicate application or unverified update receipt was created. Existing RQM Jobs Discovery remains a separate unchanged review. Exact commits, checks, draft IDs and blockers are in `acceptance.json`.
+
 ## Historical discovery-only receipt and acceptance record
 
 The following record describes version 0.1.0 and is retained for provenance. It is not the current computation acceptance record.
