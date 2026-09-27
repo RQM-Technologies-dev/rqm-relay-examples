@@ -1,7 +1,7 @@
 {
   "name": "waveengine",
-  "version": "0.2.0",
-  "description": "Discover and run bounded signal-processing computations using existing RQM subscription allowance. Returns results, evidence and limitations.",
+  "version": "0.3.0",
+  "description": "Discover and run bounded signal-processing jobs with prepaid RQM credits and an owner-saved spending policy. No RQM subscription is required.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -12,7 +12,7 @@
     "mcp",
     "wave",
     "computation",
-    "subscription"
+    "prepaid-credits"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

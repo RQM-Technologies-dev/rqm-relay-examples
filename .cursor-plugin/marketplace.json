@@ -12,12 +12,12 @@
     {
       "name": "resonant-quantum-mechanics",
       "source": "connectors/plugins/resonant-quantum-mechanics",
-      "description": "Quantum circuit computation with included usage"
+      "description": "Quantum circuit jobs with prepaid RQM credits"
     },
     {
       "name": "waveengine",
       "source": "connectors/plugins/waveengine",
-      "description": "Signal-processing computation with included usage"
+      "description": "Signal-processing jobs with prepaid RQM credits"
     }
   ]
 }

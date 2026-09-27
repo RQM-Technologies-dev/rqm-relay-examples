@@ -1,16 +1,16 @@
 {
   "display_name": "WaveEngine",
-  "short_description": "Signal-processing computation with included usage",
+  "short_description": "Signal-processing jobs with prepaid RQM credits",
   "product": "wave",
   "publisher": "RQM Technologies LLC",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "source_path": "connectors/plugins/waveengine",
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
   "authentication": "oauth2_with_public_discovery",
   "privacy_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/plugins/waveengine/PRIVACY.md",
   "documentation_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors/plugins/waveengine",
   "support_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
-  "starter_prompt": "Find the WaveEngine service for signal capture. Show the required inputs and limitations, then check my included RQM allowance. Do not run a job until I approve the inputs.",
+  "starter_prompt": "Find the WaveEngine service for signal capture. Show required inputs and limitations, then check my prepaid RQM balance. Do not spend credits until I approve the inputs and maximum price.",
   "expected_service_id": "gate-signal-capture-v1",
-  "submission_state": "prepared_not_submitted"
+  "submission_state": "prepared_pending_host_acceptance"
 }

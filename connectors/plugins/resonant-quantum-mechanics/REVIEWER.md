@@ -1,30 +1,27 @@
 # Resonant Quantum Mechanics reviewer instructions
 
-Submission prerequisite: the publisher must supply a dedicated RQM reviewer login and a bounded, expiring reviewer allowance through the directory's private reviewer fields. No credentials belong in this repository. A Claude subscription is separate from RQM allowance. Do not use paid checkout or a wallet for review.
+Supply a dedicated funded RQM reviewer account and an owner-saved, bounded, expiring policy through private directory fields. Fresh OAuth consent is required with `jobs.read`, `jobs.run`, `balance.read`. A Claude/Cursor plan does not supply RQM credits. Do not put credentials in this repository or ask the connector to fund an account.
 
-Connect the plugin's declared endpoint. Public search works before sign-in. The first protected call should produce the host's Connect prompt; sign in to the dedicated RQM account, inspect the displayed scopes, and authorize the connection. If sign-in fails, stop and report the actual error rather than substituting a shared API key or disabling authentication.
+## Review sequence
 
-## Three reviewer prompts
+1. Connect `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. Before sign-in, call both `list_buyer_jobs` and `search_buyer_jobs`; verify only `quantum` results and inspect the fixture's actual input schema. Search `zzznomatchxyz` and report an empty result accurately.
+2. Call `get_account_balance`; the host must prompt for OAuth. Sign in, inspect scopes and consent. If the account lacks a saved policy, execution must stop. The owner saves the review policy through the existing account controls.
+3. After verifying the current service price is within the fixture ceiling and remaining review budget, explicitly approve one `run_account_job` call with the synthetic input below. This is a real prepaid-credit purchase when enabled. Stop if price, balance, policy or service availability fails. Never fund or change payment methods.
+4. Call `get_account_job` using its returned `job_id`, then `list_account_jobs` using the original idempotency key. Require the same job, terminal result and receipt before claiming completion. Reconnect and retrieve it again. Verify revocation rejects access.
 
-1. “Find the Resonant Quantum Mechanics service `circuit-assurance-report-v1`. Show its input schema and limitations. Do not run it yet.”
-2. “Check my included RQM allowance. If active and sufficient, run the following synthetic fixture once. This is my confirmation of these exact inputs; use a fresh review idempotency key. Stop without purchase if allowance is unavailable.”
-3. “Read the status and result for the operation just returned. Explain its actual findings and limitations; do not rerun it.”
-
-Synthetic fixture, copied from the Jobs native-result test corpus; this text is not evidence of production execution:
+Synthetic fixture from the existing test corpus; not evidence of live completion:
 
 ```json
 {
-  "product": "quantum",
-  "capability_id": "circuit-assurance-report-v1",
+  "capability_id": "openqasm3-preflight-v1",
   "request": {
     "source": "OPENQASM 3.0; qubit[1] q;"
   },
-  "idempotency_key": "directory-review-quantum-replace-with-unique-id"
+  "idempotency_key": "directory-review-quantum-replace-with-unique-id",
+  "max_total_price": "0.010000"
 }
 ```
 
-For retry after interruption, retain the actual original idempotency key and identical input. Never create a new purchase or new job to recover an uncertain result. Expected behavior is a product-scoped operation followed by bounded software findings. A terminal result is required before claiming computation completed; neither a reservation nor this example proves it.
+Retain the actual original key, inputs and ceiling for uncertain-response recovery. Never change the key to recover a lost response. Cross-brand/account retrieval and cross-product execution must fail. Missing/expired policy, exhausted budgets, insufficient balance, disabled purchases and outages must not cause another payment path. There must be exactly six tools and no funding, wallet or cancellation tool.
 
-Negative checks: unrelated product input must be rejected; inactive/exhausted allowance must stop without extra charge; expired credentials must trigger reconnect. Payment, funding, wallet and cancellation tools must be absent. Do not include real customer inputs in screenshots, logs or public support issues.
-
-Host sign-in and live computation acceptance for version 0.2.0 are pending. The directory form's self-test confirmation must remain unset until those checks actually pass.
+Record host/version, package commit, endpoint, all six visible tools, actual search/result/receipt and reconnect/revocation outcomes without raw input diagnostic logs. Version 0.3.0 host acceptance is pending. Leave self-test claims unset until these checks pass on each claimed surface. The publisher's separate live acceptance budget is $0.10 total; reviewer funding and policy must be supplied privately by the owner.

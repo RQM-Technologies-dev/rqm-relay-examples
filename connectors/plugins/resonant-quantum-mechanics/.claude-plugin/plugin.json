@@ -1,7 +1,7 @@
 {
   "name": "resonant-quantum-mechanics",
-  "version": "0.2.0",
-  "description": "Discover and run bounded quantum circuit computations using existing RQM subscription allowance. Returns results, evidence and limitations.",
+  "version": "0.3.0",
+  "description": "Discover and run bounded quantum circuit jobs with prepaid RQM credits and an owner-saved spending policy. No RQM subscription is required.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -12,7 +12,7 @@
     "mcp",
     "quantum",
     "computation",
-    "subscription"
+    "prepaid-credits"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
