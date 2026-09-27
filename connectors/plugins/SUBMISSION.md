@@ -1,12 +1,14 @@
-# Active submission scope — 2026-09-26 revision
+# Active submission scope — 2026-09-26 prepaid-credit revision
 
-Only **Resonant Quantum Mechanics** and **WaveEngine** are being advanced. Version 0.2.0 uses existing RQM subscription allowance for computation, with no payment or funding tools and no raw-input diagnostic logging. Necessary identity, security, usage, job and result records remain retained; do not attest zero retention.
+Advance only **Resonant Quantum Mechanics** and **WaveEngine**, version **0.3.0**. Both are thin clients of existing Jobs → Account Core → company Workflow. Prepaid credits and a saved owner policy replace subscription allowance. Raw inputs are excluded from diagnostic logs; execution inputs, results and financial records remain durably stored. No zero-retention or unverified deletion-period claim is permitted.
 
-**Robotics Lab is deferred:** its package is preserved, removed from the active Cursor marketplace manifest, and its Claude draft must remain unsubmitted and unpublished. Do not turn on automatic publication for any package.
+Each brand requires a separate Claude MCP server submission and its matching existing bundle draft, using the identical endpoint. Quantum: `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`; Wave: `https://jobs.rqmtechnologies.com/mcp/plugins/wave`. Reuse bundle IDs `789229f6-fc4c-4786-a4da-e6d066c8c1c1` and `bd2ccadd-fae9-4bd8-94c3-a467404c57cb`. Update the existing Cursor repository application, retaining `rqm-jobs`. Do not submit Robotics or alter OpenAI or the existing RQM Jobs Discovery review.
 
-The two computation packages and corresponding Claude MCP connectors require coordinated Account Core / Jobs deployment, host OAuth acceptance, reviewer account access, and actual computation evidence before final submission. Prior 0.1.0 acceptance proves discovery only. The old shared RQM Jobs Discovery connector is still In review; no withdrawal or deletion has been performed. Do not mistake it for either requested branded connector receipt.
+Required before submission: coordinated Core/Jobs release; isolated hosted Stripe-test funding, concurrency and recovery evidence; delivered external alert; owner policy and bounded live acceptance; all six tools tested in each claimed host surface. The live computation ceiling is $0.10 total and requires current price checks. Funding is a separate owner action. Public credit purchases remain disabled until existing gates pass.
 
-Use scheduled checks and keep auto-publish off. Claude data handling: account-linked tools process identity; raw-input logs are prohibited; retained service records make “Not retained” inaccurate. Owner confirmed intended under-18 audience and directory terms, but specific retention timing needs verified operational policy before final attestation.
+Set scheduled checks only and automatic publication off, then reopen settings to verify persistence. Supply reviewer access through the existing funded account and policy controls, never repository credentials. Self-test claims must reflect actual host evidence; remove unsupported surface claims. Source/CLI validation is not host acceptance.
+
+Current candidate: prepared, not submitted. Record immutable release commits, deployed SHAs, host evidence, receipt IDs/URLs and exact review states separately in `acceptance.json`. If credentials or platform access block acceptance, save corrected drafts, verify persistence, record the blocker and close this task's submission tabs without deleting drafts.
 
 ## Historical discovery-only receipt and acceptance record
 

@@ -514,5 +514,24 @@
     "host_execution_acceptance": "pending",
     "submission_receipts": "pending_for_branded_computation_connectors",
     "note": "All earlier native and live results in this document concern discovery-only version 0.1.0."
+  },
+  "prepaid_candidate": {
+    "version": "0.3.0",
+    "checked_at": "2026-09-27",
+    "state": "implementation_in_progress",
+    "tools": [
+      "list_buyer_jobs",
+      "search_buyer_jobs",
+      "get_account_balance",
+      "run_account_job",
+      "get_account_job",
+      "list_account_jobs"
+    ],
+    "host_acceptance": "pending",
+    "live_computation_ceiling_usd": "0.10",
+    "paid_calls": 0,
+    "public_credit_purchases_enabled": false,
+    "submission_receipts": [],
+    "note": "Historical discovery and subscription evidence below does not validate the prepaid candidate."
   }
 }
