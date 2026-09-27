@@ -501,7 +501,202 @@
     "verified_at": "2026-09-26T22:40:07Z",
     "draft_write_access": "Confirmed by successful creation and reopening of three saved plugin drafts"
   },
-  "active_revision": {
+  "prepaid_candidate": {
+    "version": "0.3.0",
+    "checked_at": "2026-09-27T01:03:00Z",
+    "state": "deployed_acceptance_incomplete_not_submitted",
+    "package_commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7",
+    "tools": [
+      "list_buyer_jobs",
+      "search_buyer_jobs",
+      "get_account_balance",
+      "run_account_job",
+      "get_account_job",
+      "list_account_jobs"
+    ],
+    "releases": {
+      "core": {
+        "commit": "4d05b4afa1867e0a928fd3f9f5ec52191e40608d",
+        "deploy": "dep-das6hdt9fdbs73c2o9rg",
+        "state": "live",
+        "ci": "https://github.com/RQM-Technologies-dev/rqm-account-core/actions/runs/36283278844",
+        "validation": "1123 tests passed; PostgreSQL 17.11 migration cycle and coverage, Ruff, mypy, OpenAPI and container checks passed"
+      },
+      "jobs": {
+        "commit": "717875f5fa8f0220c0d8491abfbabfb2a180f647",
+        "deploy": "dep-das6ivnavr4c73981g40",
+        "state": "live",
+        "ci": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36283632647",
+        "release": "https://github.com/RQM-Technologies-dev/RQM-Jobs-MCP/actions/runs/36283928929",
+        "validation": "1297 tests passed; release passed exact revision, generic discovery and both branded six-tool/search/anonymous-auth probes"
+      },
+      "packages": {
+        "commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7",
+        "validation": "46 tests and both Claude plugin validators passed",
+        "portal_validation": "Both existing bundles validated at this commit; seven checks passed and three nonblocking unknown URL-field warnings"
+      },
+      "strategy": {
+        "commit": "7bb4c4891a496f099f2a53fcc5aa865be3eceb69",
+        "validation": "8 tests and policy checks passed; no hosted workflow"
+      },
+      "rqm_mcp": {
+        "commit": "bb65608cfc63a33a824cacfb1f0b7135c232c757",
+        "validation": "99 tests, hosted CI and live catalog passed; 74 scoped plus 14 excluded repositories, 14 apps, 20 services; read-only tools preserved"
+      }
+    },
+    "host_acceptance": {
+      "cursor": {
+        "ide_version": "3.20.21",
+        "ide_commit": "f09fca384ceca23f7bf21f9c23655b162641d740",
+        "cli_version": "2026.09.26-dd393fe",
+        "package_commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7",
+        "installation": "Both existing local plugins updated to 0.3.0 and verified against repository files",
+        "state": "native_discovery_passed_execution_pending",
+        "visible_tools_per_brand": [
+          "list_buyer_jobs",
+          "search_buyer_jobs",
+          "get_account_balance",
+          "run_account_job",
+          "get_account_job",
+          "list_account_jobs"
+        ],
+        "permission_denials": []
+      },
+      "claude_code": {
+        "version": "2.1.283",
+        "package_commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7",
+        "state": "native_list_and_search_passed_execution_pending",
+        "visible_tools_per_brand": [
+          "list_buyer_jobs",
+          "search_buyer_jobs",
+          "get_account_balance",
+          "run_account_job",
+          "get_account_job",
+          "list_account_jobs"
+        ],
+        "catalog_counts": {
+          "quantum": 20,
+          "wave": 20
+        },
+        "list_output_limit": "Host stored large list responses in files; files were inspected and all 20 descriptors per brand match the expected product",
+        "permission_denials": []
+      },
+      "claude_web_connector_setup": {
+        "state": "both_oauth_connections_and_six_tool_inventories_verified",
+        "execution_acceptance": "pending",
+        "note": "Connection setup is not conversational execution acceptance; web, desktop, mobile and Cowork bundle support claims removed"
+      },
+      "actual_searches": {
+        "quantum": {
+          "query": "repair OpenQASM",
+          "matches": [
+            "openqasm3-repair-v1",
+            "openqasm3-preflight-v1",
+            "circuit-assurance-report-v1"
+          ]
+        },
+        "wave": {
+          "query": "signal capture",
+          "matches": [
+            "gate-signal-capture-v1",
+            "wave.convert-capture-to-spectrum.v1",
+            "diagnose-multichannel-capture-v1"
+          ]
+        }
+      },
+      "protected_tools_and_reconnect_revocation": "Not yet verified in native hosts; backend tests passed but do not substitute for host acceptance"
+    },
+    "live_computation_ceiling_usd": "0.10",
+    "paid_calls": 0,
+    "funding_actions": 0,
+    "public_credit_purchases_enabled": false,
+    "canary_quotes_observed": {
+      "openqasm3-preflight-v1": "0.01",
+      "gate-signal-capture-v1": "0.005",
+      "note": "Discovery observations only; recheck current price and saved policy immediately before execution. OpenQASM repair costs 0.20 and exceeds the total ceiling."
+    },
+    "credits_monitor": {
+      "state": "external_synthetic_detection_passed_delivery_unverified",
+      "cron_id": "crn-das67afavr4c7396jo9g",
+      "source_commit": "6e89276c31db7d10f04b642e0b2805006a74d818",
+      "schedule": "every five minutes",
+      "synthetic_observed_at": "2026-09-27T01:01:04.895Z",
+      "incident": "ledger_mismatch",
+      "financial_mutations": 0,
+      "delivery": "Owner inbox receipt requested; notification configuration alone is not delivery proof"
+    },
+    "submissions": [
+      {
+        "platform": "claude",
+        "type": "plugin_bundle",
+        "brand": "Resonant Quantum Mechanics",
+        "id": "789229f6-fc4c-4786-a4da-e6d066c8c1c1",
+        "url": "https://claude.ai/directory/manage/plugins/789229f6-fc4c-4786-a4da-e6d066c8c1c1",
+        "state": "Draft",
+        "server_side_saved": true,
+        "automatic_publication": false,
+        "update_checks": "scheduled_only; push webhook not configured",
+        "surfaces": [
+          "Claude Code"
+        ],
+        "validated_package_commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7"
+      },
+      {
+        "platform": "claude",
+        "type": "plugin_bundle",
+        "brand": "WaveEngine",
+        "id": "bd2ccadd-fae9-4bd8-94c3-a467404c57cb",
+        "url": "https://claude.ai/directory/manage/plugins/bd2ccadd-fae9-4bd8-94c3-a467404c57cb",
+        "state": "Draft",
+        "server_side_saved": true,
+        "automatic_publication": false,
+        "update_checks": "scheduled_only; push webhook not configured",
+        "surfaces": [
+          "Claude Code"
+        ],
+        "validated_package_commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7"
+      },
+      {
+        "platform": "claude",
+        "type": "mcp_connector",
+        "brand": "Resonant Quantum Mechanics",
+        "id": null,
+        "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+        "state": "prepared_not_submitted",
+        "server_side_saved": false,
+        "form_backup": "Private local evidence export; Save and exit keeps the draft only in the current tab"
+      },
+      {
+        "platform": "claude",
+        "type": "mcp_connector",
+        "brand": "WaveEngine",
+        "id": null,
+        "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+        "state": "prepared_not_submitted",
+        "server_side_saved": false,
+        "form_backup": "Private local evidence export; Save and exit keeps the draft only in the current tab"
+      },
+      {
+        "platform": "cursor",
+        "type": "existing_repository_application",
+        "state": "repository_updated_application_update_unverified",
+        "prior_receipt": "Historical Thanks for applying receipt above",
+        "new_receipt": null,
+        "blocker": "Publish page offers a new application; no existing-application update control found. Do not create a duplicate."
+      }
+    ],
+    "submission_receipts": [],
+    "blockers": [
+      "Approved business Stripe test credentials have not been located; only a live key is configured in production",
+      "Restricted RQM_CREDITS_RELEASE_TOKEN is absent from the acceptance workflow",
+      "Hosted Stripe-test funding, duplicate webhook, concurrency and recovery acceptance remain unrun",
+      "External alert email delivery remains unverified",
+      "Funded acceptance account, saved owner policy and bounded live host execution/recovery/reconnect/revocation acceptance remain pending",
+      "Cursor existing application update route is not exposed in the inspected publisher UI"
+    ],
+    "note": "Earlier discovery-only and subscription records are historical. No prepaid directory receipt, approval or publication is claimed. Existing RQM Jobs Discovery review, Robotics and OpenAI remain unchanged."
+  },
+  "historical_subscription_revision": {
     "version": "0.2.0",
     "products": [
       "quantum",
@@ -515,23 +710,17 @@
     "submission_receipts": "pending_for_branded_computation_connectors",
     "note": "All earlier native and live results in this document concern discovery-only version 0.1.0."
   },
-  "prepaid_candidate": {
+  "active_revision": {
     "version": "0.3.0",
-    "checked_at": "2026-09-27",
-    "state": "implementation_in_progress",
-    "tools": [
-      "list_buyer_jobs",
-      "search_buyer_jobs",
-      "get_account_balance",
-      "run_account_job",
-      "get_account_job",
-      "list_account_jobs"
+    "products": [
+      "quantum",
+      "wave"
     ],
-    "host_acceptance": "pending",
-    "live_computation_ceiling_usd": "0.10",
-    "paid_calls": 0,
-    "public_credit_purchases_enabled": false,
-    "submission_receipts": [],
-    "note": "Historical discovery and subscription evidence below does not validate the prepaid candidate."
+    "execution": "existing_account_funded_jobs",
+    "package_commit": "d54ee4c73f0f21abbf1e9132ca14ac45d9b683c7",
+    "robotics": "deferred_not_for_submission_or_publication",
+    "host_execution_acceptance": "blocked_pending_credits_rollout",
+    "submission_receipts": "none_for_this_prepaid_revision",
+    "raw_input_diagnostic_logging": false
   }
 }
