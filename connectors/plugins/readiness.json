@@ -1,0 +1,486 @@
+{
+  "schema_version": "rqm.plugin-host-readiness.v1",
+  "checked_date": "2026-10-02",
+  "source_package_commit": "b4150e3f251133168b4a98c3e427157decea4939",
+  "source_jobs_commit": "586e93045edd83f65da06d366397bd4f234ba5f5",
+  "host_acceptance_note": "Protocol evidence never establishes a product-host cell. Claude surfaces require separate subrecords.",
+  "cells": [
+    {
+      "product_name": "Resonant Quantum Mechanics",
+      "product": "quantum",
+      "host": "ChatGPT",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "wiring": "shared_federation_skill_filter_only",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "none_for_target_package"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "Resonant Quantum Mechanics",
+      "product": "quantum",
+      "host": "Cursor",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "wiring": "scoped_prepaid_route_present",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "discovery_0.3.0_native_cli_only"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "verified_prior_acceptance",
+          "source": "owner-task delegated confirmation,2026-10-02",
+          "private_evidence_reference": "requested; do not commit customer result or recovery records"
+        },
+        "useful_result_use": {
+          "status": "verified_prior_acceptance",
+          "source": "owner-task delegated confirmation,2026-10-02",
+          "private_evidence_reference": "requested; do not commit customer result or recovery records"
+        },
+        "original_job_replay": {
+          "status": "unresolved_live_same_key_replay",
+          "original_key": "private reference requested; not authorized for a new purchase"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "Resonant Quantum Mechanics",
+      "product": "quantum",
+      "host": "Claude",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "wiring": "scoped_prepaid_route_present",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "0.3.0_Code_searches_and_web_OAuth_setup_six_tool_inventory; current conversation/UI unverified"
+        },
+        "sign_in": {
+          "status": "unverified",
+          "historical": "0.3.0_web_OAuth_connections_verified; not current grant/account/policy evidence"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "WaveEngine",
+      "product": "wave",
+      "host": "ChatGPT",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+      "wiring": "shared_federation_skill_filter_only",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "none_for_target_package"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "WaveEngine",
+      "product": "wave",
+      "host": "Cursor",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+      "wiring": "scoped_prepaid_route_present",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "discovery_0.3.0_native_cli_only"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "WaveEngine",
+      "product": "wave",
+      "host": "Claude",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+      "wiring": "scoped_prepaid_route_present",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "0.3.0_Code_searches_and_web_OAuth_setup_six_tool_inventory; current conversation/UI unverified"
+        },
+        "sign_in": {
+          "status": "unverified",
+          "historical": "0.3.0_web_OAuth_connections_verified; not current grant/account/policy evidence"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "Robotics Lab",
+      "product": "robotics",
+      "host": "ChatGPT",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+      "wiring": "shared_federation_skill_filter_only",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "none_for_target_package"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "Robotics Lab",
+      "product": "robotics",
+      "host": "Cursor",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+      "wiring": "shared_discovery_only_missing_prepaid_route",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "discovery_0.1.0_shared_route_only"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    },
+    {
+      "product_name": "Robotics Lab",
+      "product": "robotics",
+      "host": "Claude",
+      "target_contract": "prepaid_owner_policy",
+      "target_resource": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+      "wiring": "shared_discovery_only_missing_prepaid_route",
+      "stages": {
+        "discovery": {
+          "status": "current_host_unverified",
+          "historical": "discovery_0.1.0_shared_route_only"
+        },
+        "sign_in": {
+          "status": "unverified"
+        },
+        "account_identity": {
+          "status": "unverified"
+        },
+        "authorization_policy": {
+          "status": "unverified"
+        },
+        "paid_terminal_result": {
+          "status": "unverified"
+        },
+        "useful_result_use": {
+          "status": "unverified"
+        },
+        "original_job_replay": {
+          "status": "unverified"
+        }
+      },
+      "accepted": false
+    }
+  ],
+  "public_protocol_evidence": [
+    {
+      "checkedAt": "2026-10-02T16:50:58.059Z",
+      "brand": "Resonant Quantum Mechanics",
+      "product": "quantum",
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "contract": "prepaid",
+      "hostAcceptance": "not tested",
+      "oauthGrants": 0,
+      "payments": 0,
+      "server": {
+        "name": "com.rqmtechnologies/plugins/quantum",
+        "title": "Resonant Quantum Mechanics",
+        "version": "1.7.0",
+        "description": "Discover bounded services and run jobs using existing prepaid RQM credits within your saved spending policy."
+      },
+      "tools": [
+        "list_buyer_jobs",
+        "search_buyer_jobs",
+        "get_account_balance",
+        "run_account_job",
+        "get_account_job",
+        "list_account_jobs"
+      ],
+      "state": "public scoped discovery passed",
+      "catalogEntries": 20,
+      "searchMatches": 4,
+      "emptySearch": true,
+      "crossProductRejected": true
+    },
+    {
+      "checkedAt": "2026-10-02T16:51:01.865Z",
+      "brand": "Resonant Quantum Mechanics",
+      "product": "quantum",
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/chatgpt/quantum",
+      "contract": "legacy-subscription",
+      "hostAcceptance": "not tested",
+      "oauthGrants": 0,
+      "payments": 0,
+      "server": {
+        "name": "com.rqmtechnologies/chatgpt/quantum",
+        "title": "Resonant Quantum Mechanics",
+        "version": "0.2.0",
+        "description": "Signal analysis, quantum circuit assurance, and robotics using your existing RQM subscription."
+      },
+      "tools": [
+        "list_rqm_services",
+        "search_rqm_services",
+        "get_rqm_subscription",
+        "run_rqm_job",
+        "get_rqm_job",
+        "get_rqm_result"
+      ],
+      "state": "public scoped discovery passed",
+      "catalogEntries": 20,
+      "searchMatches": 4,
+      "emptySearch": true,
+      "crossProductRejected": true
+    },
+    {
+      "checkedAt": "2026-10-02T16:51:04.658Z",
+      "brand": "WaveEngine",
+      "product": "wave",
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+      "contract": "prepaid",
+      "hostAcceptance": "not tested",
+      "oauthGrants": 0,
+      "payments": 0,
+      "server": {
+        "name": "com.rqmtechnologies/plugins/wave",
+        "title": "WaveEngine",
+        "version": "1.7.0",
+        "description": "Discover bounded services and run jobs using existing prepaid RQM credits within your saved spending policy."
+      },
+      "tools": [
+        "list_buyer_jobs",
+        "search_buyer_jobs",
+        "get_account_balance",
+        "run_account_job",
+        "get_account_job",
+        "list_account_jobs"
+      ],
+      "state": "public scoped discovery passed",
+      "catalogEntries": 20,
+      "searchMatches": 5,
+      "emptySearch": true,
+      "crossProductRejected": true
+    },
+    {
+      "checkedAt": "2026-10-02T16:51:07.101Z",
+      "brand": "WaveEngine",
+      "product": "wave",
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/chatgpt/wave",
+      "contract": "legacy-subscription",
+      "hostAcceptance": "not tested",
+      "oauthGrants": 0,
+      "payments": 0,
+      "server": {
+        "name": "com.rqmtechnologies/chatgpt/wave",
+        "title": "WaveEngine",
+        "version": "0.2.0",
+        "description": "Signal analysis, quantum circuit assurance, and robotics using your existing RQM subscription."
+      },
+      "tools": [
+        "list_rqm_services",
+        "search_rqm_services",
+        "get_rqm_subscription",
+        "run_rqm_job",
+        "get_rqm_job",
+        "get_rqm_result"
+      ],
+      "state": "public scoped discovery passed",
+      "catalogEntries": 20,
+      "searchMatches": 5,
+      "emptySearch": true,
+      "crossProductRejected": true
+    },
+    {
+      "checkedAt": "2026-10-02T16:51:09.618Z",
+      "brand": "Robotics Lab",
+      "product": "robotics",
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+      "contract": "prepaid",
+      "hostAcceptance": "not tested",
+      "oauthGrants": 0,
+      "payments": 0,
+      "state": "unavailable or failed",
+      "error": "Streamable HTTP error: Error POSTing to endpoint: {\"ok\":false,\"error\":\"not_found\"}"
+    },
+    {
+      "checkedAt": "2026-10-02T16:51:09.726Z",
+      "brand": "Robotics Lab",
+      "product": "robotics",
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/chatgpt/robotics",
+      "contract": "legacy-subscription",
+      "hostAcceptance": "not tested",
+      "oauthGrants": 0,
+      "payments": 0,
+      "server": {
+        "name": "com.rqmtechnologies/chatgpt/robotics",
+        "title": "Robotics Lab",
+        "version": "0.2.0",
+        "description": "Signal analysis, quantum circuit assurance, and robotics using your existing RQM subscription."
+      },
+      "tools": [
+        "list_rqm_services",
+        "search_rqm_services",
+        "get_rqm_subscription",
+        "run_rqm_job",
+        "get_rqm_job",
+        "get_rqm_result"
+      ],
+      "state": "public scoped discovery passed",
+      "catalogEntries": 20,
+      "searchMatches": 2,
+      "emptySearch": true,
+      "crossProductRejected": true
+    }
+  ],
+  "grants_created": 0,
+  "payments": 0,
+  "publication_receipts": [],
+  "source_core_commit": "c3714c273294c1df8cbace7a6ff42b30e4c467f4",
+  "core_wiring_audit": {
+    "plugin_resources": [
+      "quantum",
+      "wave"
+    ],
+    "branded_robotics_audience": "absent",
+    "generic_robotics_credit_quote_path": "present",
+    "bounded_client_resolver": "Cursor static brand IDs and Claude exact metadata namespace",
+    "deployed_chatgpt_prepaid_registration": "not inspected; configured static clients separate; no ID invented"
+  }
+}
