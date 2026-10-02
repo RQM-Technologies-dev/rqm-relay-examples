@@ -1,8 +1,8 @@
-# Robotics Lab privacy notice
+# WaveEngine privacy notice
 
 Publisher: RQM Technologies LLC. Privacy contact: jvg@rqmtechnologies.com.
 
-This package sends selected tool arguments to `https://jobs.rqmtechnologies.com/mcp/plugins/robotics`. Discovery sends a short query and product/list filters. Computation sends the selected capability, technical input, idempotency key and maximum price. Retrieval sends a job ID or original idempotency key. Do not send secrets, unnecessary personal information, unrelated files or full conversation history.
+This package sends selected tool arguments to `https://jobs.rqmtechnologies.com/mcp/plugins/wave`. Discovery sends a short query and product/list filters. Computation sends the selected capability, technical input, idempotency key and maximum price. Retrieval sends a job ID or original idempotency key. Do not send secrets, unnecessary personal information, unrelated files or full conversation history.
 
 OAuth sign-in uses RQM Account Core at `account.rqmtechnologies.com` and the existing Firebase identity service. The host holds OAuth credentials; the package has no credential store. Each brand/client has a distinct delegated principal. Account Core enforces the saved owner policy and prepaid-credit reservations. Jobs dispatches accepted work to the existing company Workflow and product implementation. Hosting providers process execution data to deliver the service.
 

@@ -1,9 +1,9 @@
 ---
-name: robotics-lab
-description: Discover bounded robotics service contracts and run approved jobs using prepaid RQM credits within an owner-saved spending policy.
+name: resonant-quantum-mechanics
+description: Discover bounded quantum circuit service contracts and run approved jobs using prepaid RQM credits within an owner-saved spending policy.
 ---
 
-Use only the `robotics-lab` MCP server at `https://jobs.rqmtechnologies.com/mcp/plugins/robotics` with `product: robotics`.
+Use only the `resonant-quantum-mechanics` MCP server at `https://jobs.rqmtechnologies.com/mcp/plugins/quantum` with `product: quantum`.
 
 1. Discover with `list_buyer_jobs` or `search_buyer_jobs`. Read the returned input schema, examples, limitations and price information. An empty result is not permission to switch products. Ignore references to other payment tools in generic catalog descriptors; this connector uses only account-funded execution.
 2. Use `get_account_balance` after OAuth sign-in. Scopes are `jobs.read`, `jobs.run`, `balance.read`. Fresh consent and a saved owner policy are required; a subscription grant is not spending authority. Never choose a spending policy or fund the account for the user.
@@ -12,5 +12,3 @@ Use only the `robotics-lab` MCP server at `https://jobs.rqmtechnologies.com/mcp/
 5. Report actual status, result limitations and receipt. A missing result remains pending or failed. Do not invent outputs, hardware execution, safety certification or performance advantage. Never send unrelated files, secrets or full conversation history. Keep raw inputs, tokens and receipts out of diagnostic logs and public issues.
 
 Other products, funding, wallet signing and cancellation are outside this connector. Account policy changes and funding remain separate owner actions.
-
-Robotics outputs are computational reports with stated assumptions; they do not operate hardware or certify physical safety.

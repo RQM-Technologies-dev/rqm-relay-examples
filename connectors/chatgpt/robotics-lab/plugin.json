@@ -1,7 +1,8 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "robotics-lab",
   "version": "0.4.0",
-  "description": "Discover robotics service contracts and run approved account-funded jobs within an owner-saved spending policy.",
+  "description": "Robotics Lab service discovery and approved account-funded computation.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -12,8 +13,5 @@
     "mcp",
     "robotics",
     "prepaid-credits"
-  ],
-  "skills": "./skills/",
-  "logo": "assets/icon.svg",
-  "mcpServers": "./mcp.json"
+  ]
 }
