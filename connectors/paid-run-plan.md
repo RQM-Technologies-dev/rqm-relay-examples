@@ -94,8 +94,11 @@ Do not restart observation because a package is published. Keep the targets of
 three independent paying customers, twenty successful external operations,
 one seven-day return and positive measured contribution margin.
 
-Current limits remain: 1 USDC/call, 5 USDC and 100 operations/payer/day,
-20 USDC and 500 operations globally/day, two concurrent operations, existing
-infrastructure ceilings and bounded validation allowance. Dependency, budget or
+The deployed public-mode revision removes the testing-only 1-USDC per-call ceiling,
+verified at Core `63dc18f` and Relay `7e422b8`. Configured tariffs and payer-authorized
+maximums remain; so do 5 USDC/100 operations per payer/day, 20 USDC/500 operations
+globally/day, two concurrent operations, existing infrastructure ceilings and
+bounded validation allowance. The local wallet buyer retains its separate
+1-USDC implementation maximum until a reviewed buyer-policy change lands. Dependency, budget or
 accounting failures pause admission while accepted purchases recover. No
 outreach, ads, subscriptions, listing fees, or automatic provider expansion.
