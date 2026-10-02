@@ -1,3 +1,7 @@
+# Current three-product target — October 2, 2026
+
+The owner now requires Resonant Quantum Mechanics, WaveEngine and Robotics Lab, separately scoped across ChatGPT, Cursor and Claude. The [readiness inventory](READINESS.md) supersedes the older two-brand restriction below for future engineering. Existing receipts and drafts remain preserved; no new submission, grant, paid acceptance or publication is implied. The previous prepaid release record follows unchanged for provenance.
+
 # Active submission scope — 2026-09-26 prepaid-credit revision
 
 Advance only **Resonant Quantum Mechanics** and **WaveEngine**, version **0.3.0**. Both are thin clients of existing Jobs → Account Core → company Workflow. Prepaid credits and a saved owner policy replace subscription allowance. Raw inputs are excluded from diagnostic logs; execution inputs, results and financial records remain durably stored. No zero-retention or unverified deletion-period claim is permitted.
