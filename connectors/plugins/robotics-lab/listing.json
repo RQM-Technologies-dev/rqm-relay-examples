@@ -3,7 +3,7 @@
   "short_description": "Robotics prepaid computation candidate",
   "product": "robotics",
   "publisher": "RQM Technologies LLC",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "source_path": "connectors/plugins/robotics-lab",
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
   "authentication": "OAuth with jobs.read, jobs.run, balance.read",
@@ -12,5 +12,7 @@
   "support_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
   "starter_prompt": "Find the Robotics Lab service for frame convention. Show required inputs, examples and limitations. Do not execute or purchase a job.",
   "expected_service_id": "frame-convention-validation-v1",
-  "description": "Separately scoped robotics discovery and approved prepaid computation candidate."
+  "description": "Separately scoped robotics discovery and approved prepaid computation candidate.",
+  "icon_url": "https://jobs.rqmtechnologies.com/assets/branding/robotics-54c5a66443a9c9ed.png",
+  "icon_path": "assets/robotics-54c5a66443a9c9ed.png"
 }

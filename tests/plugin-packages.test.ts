@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, relative } from "node:path";
 import { describe, it, expect } from "vitest";
@@ -24,7 +25,7 @@ describe("portable product package release", () => {
     expect(cursor.name).toBe(name); expect(claude.name).toBe(name);
     expect(cursor.license).toBe("Apache-2.0"); expect(claude.license).toBe("Apache-2.0");
     for (const manifest of [cursor, claude]) {
-      for (const component of [manifest.mcpServers, manifest.skills, ...(manifest.logo ? [manifest.logo] : [])]) {
+      for (const component of [manifest.mcpServers, manifest.skills, ...(manifest.logo ? [manifest.logo] : []), ...(manifest.icon ? [manifest.icon] : [])]) {
         const target = resolve(root, base, component);
         expect(relative(resolve(root, base), target).startsWith("..")).toBe(false);
         expect(existsSync(target)).toBe(true);
@@ -57,5 +58,27 @@ describe("ChatGPT portable candidates", () => {
     expect(read(`${base}/skills/${name}/SKILL.md`)).toBe(read(`connectors/plugins/${name}/skills/${name}/SKILL.md`));
     expect(read(`${base}/README.md`)).toContain("not a registered ChatGPT app");
     expect(existsSync(resolve(root, base, ".app.json"))).toBe(false);
+  });
+});
+
+
+describe("approved Robotics branding", () => {
+  it("keeps the three host references on identical approved PNG bytes", () => {
+    const filename = "robotics-54c5a66443a9c9ed.png";
+    const local = `assets/${filename}`;
+    const remote = `https://jobs.rqmtechnologies.com/assets/branding/${filename}`;
+    const plugin = "connectors/plugins/robotics-lab";
+    const chatgpt = "connectors/chatgpt/robotics-lab";
+    expect(json(`${plugin}/.cursor-plugin/plugin.json`).logo).toBe(`./${local}`);
+    expect(json(`${plugin}/.claude-plugin/plugin.json`).icon).toBe(`./${local}`);
+    expect(json(`${chatgpt}/plugin.json`).extensions["com.rqmtechnologies.branding"]).toEqual({icon:local,iconUrl:remote});
+    expect(json(`${plugin}/listing.json`).icon_url).toBe(remote);
+    for (const base of [plugin,chatgpt]) {
+      const bytes = readFileSync(resolve(root,base,local));
+      expect(createHash("sha256").update(bytes).digest("hex")).toBe("54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd");
+      expect(bytes.subarray(0,8).toString("hex")).toBe("89504e470d0a1a0a");
+      expect(bytes.readUInt32BE(16)).toBe(1254);
+      expect(bytes.readUInt32BE(20)).toBe(1254);
+    }
   });
 });

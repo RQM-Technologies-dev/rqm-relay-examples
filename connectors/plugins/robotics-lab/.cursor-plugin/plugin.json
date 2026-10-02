@@ -1,6 +1,6 @@
 {
   "name": "robotics-lab",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Discover robotics service contracts and run approved account-funded jobs within an owner-saved spending policy.",
   "author": {
     "name": "RQM Technologies LLC"
@@ -14,6 +14,6 @@
     "prepaid-credits"
   ],
   "skills": "./skills/",
-  "logo": "assets/icon.svg",
+  "logo": "./assets/robotics-54c5a66443a9c9ed.png",
   "mcpServers": "./mcp.json"
 }
