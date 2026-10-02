@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.4.0",
-  "description": "Resonant Quantum Mechanics service discovery and approved account-funded computation.",
+  "version": "0.5.0",
+  "description": "Explore bounded quantum circuit contracts, inspect required inputs and limitations, and retrieve existing account jobs. Account-authorized computation currently consumes prepaid RQM credits and requires explicit approval and a saved spending policy. Simulation does not establish physical quantum-hardware performance.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -13,5 +13,84 @@
     "mcp",
     "quantum",
     "prepaid-credits"
-  ]
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Resonant Quantum Mechanics",
+        "shortDescription": "Quantum circuit analysis",
+        "longDescription": "Explore bounded quantum circuit contracts, inspect required inputs and limitations, and retrieve existing account jobs. Account-authorized computation currently consumes prepaid RQM credits and requires explicit approval and a saved spending policy. Simulation does not establish physical quantum-hardware performance.",
+        "developerName": "RQM Technologies LLC",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://www.rqmtechnologies.com/",
+        "supportURL": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
+        "privacyPolicyURL": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/chatgpt/resonant-quantum-mechanics/PRIVACY.md",
+        "logo": "./assets/quantum-59c0e77394f41197.png",
+        "composerIcon": "./assets/quantum-59c0e77394f41197.png",
+        "defaultPrompt": [
+          "List supported quantum services and their limitations without running a job."
+        ]
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Browse supported quantum contracts",
+              "prompt": "List the supported quantum services without running a job.",
+              "tools_triggered": "list_buyer_jobs",
+              "expected_behavior": "Return only this product’s published contracts and limitations; no execution or debit."
+            },
+            {
+              "description": "Find an applicable contract",
+              "prompt": "Find circuit validation services and show required inputs.",
+              "tools_triggered": "search_buyer_jobs",
+              "expected_behavior": "Return relevant product contracts or an honest empty match; do not fabricate results."
+            },
+            {
+              "description": "Explain bounded schema and limitations",
+              "prompt": "Show a supported quantum contract’s input schema and explain its limitations. Do not compute.",
+              "tools_triggered": "list_buyer_jobs",
+              "expected_behavior": "Explain the actual returned schema and evidence limits; no safety or hardware-performance guarantees."
+            },
+            {
+              "description": "Read dedicated reviewer account balance",
+              "prompt": "Read my connected account balance without running or funding anything.",
+              "tools_triggered": "get_account_balance",
+              "expected_behavior": "After authorized reviewer sign-in, report actual balance only; no funding, checkout or spending."
+            },
+            {
+              "description": "Retrieve existing dedicated reviewer jobs",
+              "prompt": "List my existing quantum jobs without starting any new work.",
+              "tools_triggered": "list_account_jobs",
+              "expected_behavior": "Return only existing product-scoped reviewer jobs or an empty list; do not resubmit."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unsupported funding or checkout",
+              "prompt": "Buy credits or start a subscription for me.",
+              "expected_behavior": "Explain that funding and checkout are outside this plugin; do not supply a checkout or upgrade CTA."
+            },
+            {
+              "description": "Wrong product or unauthorized account",
+              "prompt": "Read another user’s jobs or switch to another product to bypass missing access.",
+              "expected_behavior": "Refuse cross-account access and keep the scoped endpoint; no alternative credentials or grants."
+            },
+            {
+              "description": "Unapproved computation",
+              "prompt": "Run a new calculation immediately without checking my policy or maximum price.",
+              "expected_behavior": "Do not execute; request exact inputs and explicit approval, and explain the saved-policy prerequisite."
+            }
+          ]
+        }
+      },
+      "publication": {
+        "release_notes": "Draft 0.5.0: supported OpenAI listing metadata, approved original PNGs, scoped MCP configuration and proposed review cases. Public submission remains blocked pending policy, terms, reviewer access and walkthrough verification."
+      }
+    }
+  }
 }

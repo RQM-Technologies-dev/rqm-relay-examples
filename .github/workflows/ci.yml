@@ -13,6 +13,12 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run publication:check
+      - run: npm run publication:pack -- dist/chatgpt-publication
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rqm-chatgpt-publication-drafts
+          path: dist/chatgpt-publication/
       - run: npm ci --prefix connectors/claude-desktop
       - run: npm run pack --prefix connectors/claude-desktop
       - uses: actions/upload-artifact@v4
