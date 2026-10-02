@@ -60,13 +60,18 @@
           "status": "unverified"
         },
         "paid_terminal_result": {
-          "status": "unverified"
+          "status": "verified_prior_acceptance",
+          "source": "owner-task delegated confirmation,2026-10-02",
+          "private_evidence_reference": "requested; do not commit customer result or recovery records"
         },
         "useful_result_use": {
-          "status": "unverified"
+          "status": "verified_prior_acceptance",
+          "source": "owner-task delegated confirmation,2026-10-02",
+          "private_evidence_reference": "requested; do not commit customer result or recovery records"
         },
         "original_job_replay": {
-          "status": "unverified"
+          "status": "unresolved_live_same_key_replay",
+          "original_key": "private reference requested; not authorized for a new purchase"
         }
       },
       "accepted": false
