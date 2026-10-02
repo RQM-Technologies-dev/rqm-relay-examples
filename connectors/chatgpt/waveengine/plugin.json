@@ -1,7 +1,8 @@
 {
-  "name": "robotics-lab",
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "waveengine",
   "version": "0.4.0",
-  "description": "Discover robotics service contracts and run approved account-funded jobs within an owner-saved spending policy.",
+  "description": "WaveEngine service discovery and approved account-funded computation.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -10,10 +11,7 @@
   "license": "Apache-2.0",
   "keywords": [
     "mcp",
-    "robotics",
+    "wave",
     "prepaid-credits"
-  ],
-  "skills": "./skills/",
-  "logo": "assets/icon.svg",
-  "mcpServers": "./mcp.json"
+  ]
 }

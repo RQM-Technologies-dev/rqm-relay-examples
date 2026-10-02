@@ -1,8 +1,16 @@
 {
   "mcpServers": {
-    "rqm-jobs-discovery": {
+    "robotics-lab": {
       "type": "http",
-      "url": "https://jobs.rqmtechnologies.com/mcp/discovery"
+      "url": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+      "auth": {
+        "CLIENT_ID": "rqm-cursor-robotics",
+        "scopes": [
+          "jobs.read",
+          "jobs.run",
+          "balance.read"
+        ]
+      }
     }
   }
 }

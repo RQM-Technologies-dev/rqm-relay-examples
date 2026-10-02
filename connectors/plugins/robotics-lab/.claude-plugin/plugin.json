@@ -1,7 +1,7 @@
 {
   "name": "robotics-lab",
-  "version": "0.1.0",
-  "description": "Find public robotics service contracts, required inputs, examples and limitations. Discovery only; no computation or payment.",
+  "version": "0.4.0",
+  "description": "Discover robotics service contracts and run approved account-funded jobs within an owner-saved spending policy.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -10,8 +10,8 @@
   "license": "Apache-2.0",
   "keywords": [
     "mcp",
-    "discovery",
-    "robotics"
+    "robotics",
+    "prepaid-credits"
   ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",

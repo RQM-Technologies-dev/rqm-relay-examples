@@ -18,6 +18,11 @@
       "name": "waveengine",
       "source": "connectors/plugins/waveengine",
       "description": "Signal-processing jobs with prepaid RQM credits"
+    },
+    {
+      "name": "robotics-lab",
+      "source": "connectors/plugins/robotics-lab",
+      "description": "Robotics jobs with prepaid RQM credits; requires branded route deployment"
     }
   ]
 }
