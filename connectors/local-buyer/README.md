@@ -70,7 +70,7 @@ Reuse that UUID on retries. Preparation validates the input and the unsigned
 challenge, pins the provider, contract, input hash, quote, route and expiry, and
 saves the intent privately. It does not authorize payment.
 
-The `1.000000` limit above is enforced by this local buyer implementation. Verified public-mode cap removal in Core/Relay and does not remove this local limit or expand the user's configured authorization. Tariffs, explicit payer maximums and retained daily/count/concurrency controls still apply.
+The `1.000000` limit above is enforced by this local buyer implementation. Verified public-mode cap removal in Core/Relay does not remove this local limit or expand the user's configured authorization. Tariffs, explicit payer maximums and retained daily/count/concurrency controls still apply.
 
 ## Authorize one purchase
 
