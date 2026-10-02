@@ -1,6 +1,6 @@
 {
   "name": "robotics-lab",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Discover robotics service contracts and run approved account-funded jobs within an owner-saved spending policy.",
   "author": {
     "name": "RQM Technologies LLC"
@@ -18,5 +18,6 @@
   "privacyPolicyUrl": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/plugins/robotics-lab/PRIVACY.md",
   "supportUrl": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
   "documentationUrl": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors/plugins/robotics-lab",
-  "displayName": "Robotics Lab"
+  "displayName": "Robotics Lab",
+  "icon": "./assets/robotics-54c5a66443a9c9ed.png"
 }

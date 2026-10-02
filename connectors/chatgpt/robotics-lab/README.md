@@ -1,4 +1,4 @@
-# Robotics Lab for ChatGPT — candidate 0.4.0
+# Robotics Lab for ChatGPT — candidate 0.4.1
 
 Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `robotics-lab` at `https://jobs.rqmtechnologies.com/mcp/plugins/robotics`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
 
@@ -7,3 +7,11 @@ This source candidate is not a registered ChatGPT app or a marketplace listing. 
 The six tools support free product discovery and policy-bounded prepaid jobs. Payment requires an owner-saved policy and explicit job approval; preserve the original key to recover uncertain responses. No spending permission follows from installing this package. The branded Robotics prerequisite is deployed at Core `a7afdd4` and Jobs `7555844`; unpaid scoped endpoint checks do not establish host acceptance.
 
 See the skill for product scope, input minimization, output limitations and recovery rules. See [official ChatGPT plugin connection guidance](https://developers.openai.com/plugins/deploy/connect-chatgpt).
+
+## Approved graphic
+
+![Robotics Lab](assets/robotics-54c5a66443a9c9ed.png)
+
+This package contains the owner-approved final gimbal PNG. The same graphic is published in the Robotics MCP server metadata at [https://jobs.rqmtechnologies.com/assets/branding/robotics-54c5a66443a9c9ed.png](https://jobs.rqmtechnologies.com/assets/branding/robotics-54c5a66443a9c9ed.png). Host rendering depends on the client; a connected custom connector does not prove its logo renders. No directory submission or new consent grant is included.
+
+The schema-valid `com.rqmtechnologies.branding` extension carries the local and public icon references as publisher metadata; the portable specification assigns no host display behavior to extension contents.
