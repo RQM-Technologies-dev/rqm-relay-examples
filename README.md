@@ -55,7 +55,7 @@ unset RQM_RELAY_BUYER_PRIVATE_KEY
 
 The quote discloses provider price, Relay fee and total. Relay's fee is 5%, with a 0.002-USDC minimum; wallet gas is separate. The buyer validates x402 v2, Base, the published USDC token and receiver, and your maximum. There is no default spending ceiling.
 
-Limits across Jobs and Relay: 1 USDC/call; 5 USDC or 100 operations per payer/day; 20 USDC or 500 operations globally/day; two concurrent operations. Capacity and budget holds can pause new purchases.
+Public-mode limits were revised in [Core PR81](https://github.com/RQM-Technologies-dev/rqm-account-core/pull/81) and [Relay PR54](https://github.com/RQM-Technologies-dev/rqm-relay/pull/54): the testing-only 1-USDC per-call ceiling was removed and the rollout verified at Core `63dc18f` and Relay `7e422b8`. Configured service tariffs and payer-authorized maximums remain. The 5-USDC/100-operation per-payer daily limits, 20-USDC/500-operation global daily limits and two-operation concurrency limit remain. This standalone wallet buyer still has its separate local 1-USDC maximum until a reviewed buyer-policy change lands. Capacity and budget holds can pause new purchases.
 
 The retrieved result and receipt are saved privately as `verified-result.json` next to the recovery file. Console output contains only status and nonsensitive identifiers. Verification checks the signature, input, quote, capability, job, outcome and result hash. The receipt public key comes through authenticated HTTPS; this example does not provide independent out-of-band key attestation.
 
