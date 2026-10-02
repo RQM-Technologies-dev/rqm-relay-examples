@@ -9,8 +9,8 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test tests/*.mjs",
-    "check": "npm test && npm run build && mcpb validate dist/manifest.json && npm audit --audit-level=high",
-    "pack": "npm run check && mcpb pack dist rqm-jobs-discovery.mcpb",
+    "check": "npm test && npm run build && node pack.mjs --validate && npm audit --audit-level=high",
+    "pack": "npm run check && node pack.mjs",
     "probe:live": "node probe-live.mjs"
   },
   "dependencies": {
@@ -18,10 +18,9 @@
     "@modelcontextprotocol/sdk": "1.30.0"
   },
   "devDependencies": {
-    "@anthropic-ai/mcpb": "2.1.2",
-    "esbuild": "0.28.2"
-  },
-  "overrides": {
-    "tmp": "0.2.7"
+    "esbuild": "0.28.2",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "fflate": "0.8.3"
   }
 }
