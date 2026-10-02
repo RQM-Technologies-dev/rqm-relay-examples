@@ -466,5 +466,16 @@
   ],
   "grants_created": 0,
   "payments": 0,
-  "publication_receipts": []
+  "publication_receipts": [],
+  "source_core_commit": "c3714c273294c1df8cbace7a6ff42b30e4c467f4",
+  "core_wiring_audit": {
+    "plugin_resources": [
+      "quantum",
+      "wave"
+    ],
+    "branded_robotics_audience": "absent",
+    "generic_robotics_credit_quote_path": "present",
+    "bounded_client_resolver": "Cursor static brand IDs and Claude exact metadata namespace",
+    "deployed_chatgpt_prepaid_registration": "not inspected; configured static clients separate; no ID invented"
+  }
 }
