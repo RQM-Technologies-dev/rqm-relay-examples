@@ -5,7 +5,16 @@ import {
   writeFile,
   readFile,
   readdir,
+  lstat,
+  rm,
 } from "node:fs/promises";
+try {
+  const previous = await lstat("dist");
+  if (!previous.isDirectory() || previous.isSymbolicLink()) throw new Error("dist must be a generated directory, not a link");
+  await rm("dist", { recursive: true });
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
 await mkdir("dist/server", { recursive: true });
 const built = await build({
   entryPoints: ["src/index.mjs"],

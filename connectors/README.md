@@ -6,6 +6,8 @@ contract and synthetic example, and decide whether its findings answer your
 question. A `nominal`, `degraded`, or `invalid` result is a bounded assessment of
 the supplied capture, not evidence of physical causes or hardware failure.
 
+For the six-tool quantum and WaveEngine hosted connectors, follow the [Claude setup guide](claude-setup.md). The generic Desktop discovery bundle below is a separate package and uses an explicitly unsigned archive.
+
 ## Install paths
 
 For purchases, use the separately configured [local MCP buyer](local-buyer/README.md).
@@ -15,7 +17,7 @@ existing scope. Native paid-host acceptance is still required.
 
 | Host           | Package or setup                                                                                                                            | Current limit                                                                                                                                                           |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Claude Desktop | Build the [RQM Jobs Discovery MCPB](claude-desktop/) below; open the `.mcpb` file and review the install prompt.                            | Three free discovery tools; no wallet or paid execution.                                                                                                                |
+| Claude Desktop | Build the unsigned [RQM Jobs Discovery MCPB](claude-desktop/) below; review the [packaging trust boundary](claude-desktop/PACKAGING.md) and the install prompt.                            | Three free discovery tools; no wallet or paid execution.                                                                                                                |
 | Cursor         | [Native MCP configuration](cursor/mcp.json), [plugin manifest](cursor/.cursor-plugin/plugin.json), and the install link below.              | Live direct connection rejected default 2025 protocol negotiation on September 11; requires the Jobs compatibility release. Installation alone does not enable signing. |
 | Claude.ai      | Settings → Connectors → Add custom connector; use `https://jobs.rqmtechnologies.com/mcp`.                                                   | Remote setup, not an installable Desktop bundle. Host connection and OAuth still need acceptance testing after the compatibility release.                               |
 | Grok           | [Connectors](https://grok.com/connectors) → New Connector → Custom; use `https://jobs.rqmtechnologies.com/mcp`.                             | No vendor-supported import manifest or one-click custom URL was established by the cited documentation. Host/payment acceptance remains unverified.                     |
@@ -39,6 +41,8 @@ compatibility release has not reached that endpoint. Retain the error for
 without including credentials or inputs.
 
 ## Build the Claude Desktop install pack
+
+The archive is unsigned, as in the original packaging flow. The [minimal packer](claude-desktop/PACKAGING.md) validates the official schema and runs the full high-severity audit before writing it. A checksum is not publisher authentication. Native UI acceptance remains a separate release check.
 
 From a clean checkout, with Node 22:
 
