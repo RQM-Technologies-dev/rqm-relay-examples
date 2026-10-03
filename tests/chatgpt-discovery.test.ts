@@ -64,7 +64,7 @@ describe("Claude and Cursor non-regression", () => {
       expect(manifest).toEqual(baseline.chatgpt_metadata[brand]);
     }
   });
-  it("preserves all 61 host package files from PR22 byte for byte", () => {
+  it("preserves all 63 host package files from PR22 byte for byte", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
     for (const [path, digest] of Object.entries(baseline.files)) {
       expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(digest);

@@ -6,7 +6,7 @@ portal_records = '--portal-records' in sys.argv[2:]
 if any(arg != '--portal-records' for arg in sys.argv[2:]):
     raise ValueError('Unknown packaging option')
 record_names = {'resonant-quantum-mechanics': 'app-6aa6f57730308191906618fb867f004e', 'waveengine': 'app-6aa6f7b0b20c819192af846d6e6ee4dd', 'robotics-lab': 'app-6aa6f7837d588191b63262aee7813039'}
-products = {'resonant-quantum-mechanics': 'quantum-59c0e77394f41197.png', 'waveengine': 'wave-dab197da82677d4.png', 'robotics-lab': 'robotics-54c5a66443a9c9ed.png'}
+products = {'resonant-quantum-mechanics': 'quantum-59c0e77394f41197.png', 'waveengine': 'wave-dab197da82677d4.png', 'robotics-lab': 'robotics-d94a234335751083.png'}
 output.mkdir(parents=True, exist_ok=True)
 for name, asset in products.items():
     base = root / 'connectors' / 'chatgpt' / name

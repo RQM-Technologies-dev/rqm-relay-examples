@@ -1,8 +1,8 @@
 # ChatGPT task discovery — draft 0.5.2
 
-This follow-on to PR22 changes only the three ChatGPT package descriptions, starter prompts and skills, plus package validation and test evidence. Source names, display names, artwork, scoped OAuth MCP endpoints, legal URLs and subscription terms are preserved. Claude/Cursor package files are pinned byte for byte to PR22 commit `c096420f007ba4d8004e1b918d3820c3e051c8b5` in `tests/fixtures/chatgpt-protected-hosts.json`.
+This follow-on to PR22 changes only the three ChatGPT package descriptions, starter prompts and skills, plus package validation and test evidence. Source names, display names, artwork, scoped OAuth MCP endpoints, legal URLs and subscription terms are preserved. Claude/Cursor package files are pinned byte for byte to PR22 commit `adc9e4ecb2eace79a4dde33f18e0c2c8706e03e9` in `tests/fixtures/chatgpt-protected-hosts.json`.
 
-The three new public drafts use the generic package names. Build with `npm run publication:pack -- /absolute/output`. Do not use the legacy `--portal-records` variants for those new drafts. No portal upload, merge, deployment, paid call, grant, budget or support contact is part of this change.
+The three new public drafts use the generic package names. Build with `npm run publication:pack -- /absolute/output`. Do not use the legacy `--portal-records` variants for those new drafts. No portal upload, deployment, paid call, grant, budget or support contact is part of this change.
 
 ## Discovery and execution
 

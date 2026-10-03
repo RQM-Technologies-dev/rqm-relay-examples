@@ -1,5 +1,5 @@
 {
-  "baseline_commit": "c096420f007ba4d8004e1b918d3820c3e051c8b5",
+  "baseline_commit": "adc9e4ecb2eace79a4dde33f18e0c2c8706e03e9",
   "files": {
     ".cursor-plugin/marketplace.json": "01fbcd97ebca9ed0b655e05c4ec4b015e7db255602cf88133833484fa360c0bd",
     "connectors/claude-desktop/PACKAGING.md": "1563e26158c616ca16c6b67452c05395b2b48eff18bdbf6bf8550387908756a7",
@@ -37,17 +37,19 @@
     "connectors/plugins/resonant-quantum-mechanics/listing.json": "7d2a3d05cc42bfed0a153095d5507a7ffe02e1d82597e8285bf206c77735dbd6",
     "connectors/plugins/resonant-quantum-mechanics/mcp.json": "46f4bb7eedae2b4e863fc34a01ddca9127df9f3873ce0f61b52d22edf4450fd5",
     "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "12cffa5ddd407fd6f1d61baf407f111497e2466f1c6df4ee95ac06d99be29677",
-    "connectors/plugins/robotics-lab/.claude-plugin/plugin.json": "b365db9042aac23b1976cdf268e49f5d8e3d8d7560c29d52c74fbba002d72aba",
-    "connectors/plugins/robotics-lab/.cursor-plugin/plugin.json": "487132a9a8118fcaa7a938a24a0ce75a9f1d42b848ef9141804a9ab7b24279e5",
+    "connectors/plugins/robotics-lab/.claude-plugin/plugin.json": "9afe03f53aec043c5700377659c4de72968625ac00082a04cf1d4b7d71cd65aa",
+    "connectors/plugins/robotics-lab/.cursor-plugin/plugin.json": "a71f4f046507cf55dda91282bfb29c8fbd2ba272583963c033ea2d6df0ea6084",
     "connectors/plugins/robotics-lab/.mcp.json": "6ceafab82b7c1014cc43e2678fcfa8b1730308ef365785e8bb56f65149be9cff",
     "connectors/plugins/robotics-lab/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "connectors/plugins/robotics-lab/NOTICE": "a8b3a23e6b7759e8499615a29fd050e6ad643a53e153f74fa34e751e9e104e74",
     "connectors/plugins/robotics-lab/PRIVACY.md": "098de4258aeadaf457db0ac006381275d34e3b768cfdfffbd7978a3bd37cafb5",
-    "connectors/plugins/robotics-lab/README.md": "d32452873958c9df7e4fe129050e2319e02cab85eddee5028a791751bf167757",
-    "connectors/plugins/robotics-lab/assets/PROVENANCE.md": "90ca3409306e63593ab9beb756c8d86ddf340a8dae5ba9c7b21021e195396401",
+    "connectors/plugins/robotics-lab/README.md": "432d8772dbcb92a4cdd8f80726151748038135b5c4663b9ca3c2bb7ece50587a",
+    "connectors/plugins/robotics-lab/assets/PROVENANCE.md": "06d365e9325657d4dfa3d44aa33a9a9ad48a827d0fe8793bc32012a829741871",
     "connectors/plugins/robotics-lab/assets/icon.svg": "3062c2649828a71d86b14c9a523a0996e09d7df4d7a4967f263af85d27052eb6",
     "connectors/plugins/robotics-lab/assets/robotics-54c5a66443a9c9ed.png": "54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd",
-    "connectors/plugins/robotics-lab/listing.json": "b5a498f5110927d40b37e0d414aa3504f6853bcf73515d505dfc874cf58ec1d7",
+    "connectors/plugins/robotics-lab/assets/robotics-61e2ec0235f0955d.png": "61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7",
+    "connectors/plugins/robotics-lab/assets/robotics-d94a234335751083.png": "d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88",
+    "connectors/plugins/robotics-lab/listing.json": "7b1853631572ba7dbf0762290f2e9ae7f5fc0be22aa4e7a1da5ae1ac828e8270",
     "connectors/plugins/robotics-lab/mcp.json": "09edd9555afb8a3bfb126a4eeabe6bb6e2ed2f88509c801a4324334ce9f2dd60",
     "connectors/plugins/robotics-lab/skills/robotics-lab/SKILL.md": "0239564443efb21ece8bab08fb9e371974bfca6f45b0ff35648f2e31bf79856e",
     "connectors/plugins/waveengine/.claude-plugin/plugin.json": "cc4e1e336e3343f4ef305b7e151e660c1bf21c2125efcdb84c564530b8f80dc5",
@@ -79,8 +81,10 @@
     "connectors/chatgpt/robotics-lab/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "connectors/chatgpt/robotics-lab/NOTICE": "a8b3a23e6b7759e8499615a29fd050e6ad643a53e153f74fa34e751e9e104e74",
     "connectors/chatgpt/robotics-lab/PRIVACY.md": "098de4258aeadaf457db0ac006381275d34e3b768cfdfffbd7978a3bd37cafb5",
-    "connectors/chatgpt/robotics-lab/assets/PROVENANCE.md": "90ca3409306e63593ab9beb756c8d86ddf340a8dae5ba9c7b21021e195396401",
+    "connectors/chatgpt/robotics-lab/assets/PROVENANCE.md": "06d365e9325657d4dfa3d44aa33a9a9ad48a827d0fe8793bc32012a829741871",
     "connectors/chatgpt/robotics-lab/assets/robotics-54c5a66443a9c9ed.png": "54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd",
+    "connectors/chatgpt/robotics-lab/assets/robotics-61e2ec0235f0955d.png": "61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7",
+    "connectors/chatgpt/robotics-lab/assets/robotics-d94a234335751083.png": "d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88",
     "connectors/chatgpt/robotics-lab/mcp.json": "9efddee0e64a3303ac5545df09126fdbd11677dc5462edf97cde1689f4b2fdb3"
   },
   "chatgpt_metadata": {
@@ -165,8 +169,8 @@
       ],
       "extensions": {
         "com.rqmtechnologies.branding": {
-          "icon": "assets/robotics-54c5a66443a9c9ed.png",
-          "iconUrl": "https://jobs.rqmtechnologies.com/assets/branding/robotics-54c5a66443a9c9ed.png"
+          "icon": "assets/robotics-d94a234335751083.png",
+          "iconUrl": "https://jobs.rqmtechnologies.com/assets/branding/robotics-d94a234335751083.png"
         },
         "com.openai": {
           "interface": {
@@ -180,8 +184,8 @@
             "websiteURL": "https://www.rqmtechnologies.com/",
             "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
             "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
-            "logo": "./assets/robotics-54c5a66443a9c9ed.png",
-            "composerIcon": "./assets/robotics-54c5a66443a9c9ed.png",
+            "logo": "./assets/robotics-d94a234335751083.png",
+            "composerIcon": "./assets/robotics-d94a234335751083.png",
             "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
           }
         }

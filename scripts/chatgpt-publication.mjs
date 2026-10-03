@@ -9,7 +9,7 @@ export const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 export const PRODUCTS=[
  {name:'resonant-quantum-mechanics',product:'quantum',asset:'quantum-59c0e77394f41197.png',hash:'59c0e77394f411979214606d8c19af7e90a2735d84154e9390aab8c3e9f9e354'},
  {name:'waveengine',product:'wave',asset:'wave-dab197da82677d4.png',hash:'dab197da82677d489445c1322c0583f837fed5e54ae288bb1c953d749e722633'},
- {name:'robotics-lab',product:'robotics',asset:'robotics-54c5a66443a9c9ed.png',hash:'54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd'}
+ {name:'robotics-lab',product:'robotics',asset:'robotics-d94a234335751083.png',hash:'d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88'}
 ];
 export const PORTAL_RECORD_NAMES={
  'resonant-quantum-mechanics':'app-6aa6f57730308191906618fb867f004e',
