@@ -1,4 +1,4 @@
-# WaveEngine for ChatGPT — candidate 0.4.0
+# WaveEngine for ChatGPT — publication draft 0.5.1
 
 Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `waveengine` at `https://jobs.rqmtechnologies.com/mcp/plugins/wave`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
 
@@ -7,3 +7,5 @@ This source candidate is not a registered ChatGPT app or a marketplace listing. 
 The six tools support free product discovery and policy-bounded prepaid jobs. Payment requires an owner-saved policy and explicit job approval; preserve the original key to recover uncertain responses. No spending permission follows from installing this package. The branded Robotics prerequisite is deployed at Core `a7afdd4` and Jobs `7555844`; unpaid scoped endpoint checks do not establish host acceptance.
 
 See the skill for product scope, input minimization, output limitations and recovery rules. See [official ChatGPT plugin connection guidance](https://developers.openai.com/plugins/deploy/connect-chatgpt).
+
+Publication metadata now uses the supported `extensions.com.openai.interface` fields with bundled original PNGs. See [publication readiness](../PUBLICATION.md) before any upload, attestation or submission. The proposed review cases have not been run with a dedicated reviewer account. This draft does not claim marketplace approval or a completed paid acceptance.

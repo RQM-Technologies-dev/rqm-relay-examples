@@ -1,0 +1,31 @@
+{
+  "checkedDate": "2026-10-02",
+  "method": "anonymous HTTPS GET; status does not assert legal fitness",
+  "results": [
+    {
+      "url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/chatgpt/resonant-quantum-mechanics/PRIVACY.md",
+      "httpStatus": "200",
+      "curlExit": 0
+    },
+    {
+      "url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/chatgpt/robotics-lab/PRIVACY.md",
+      "httpStatus": "200",
+      "curlExit": 0
+    },
+    {
+      "url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/chatgpt/waveengine/PRIVACY.md",
+      "httpStatus": "200",
+      "curlExit": 0
+    },
+    {
+      "url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
+      "httpStatus": "200",
+      "curlExit": 0
+    },
+    {
+      "url": "https://www.rqmtechnologies.com/",
+      "httpStatus": "200",
+      "curlExit": 0
+    }
+  ]
+}

@@ -19,7 +19,9 @@
     "test": "vitest run",
     "check": "npm run typecheck && npm test && npm run build && npm audit --omit=dev --audit-level=high",
     "discover": "tsx src/discover.ts",
-    "connectors:links": "node scripts/connector-links.mjs"
+    "connectors:links": "node scripts/connector-links.mjs",
+    "publication:check": "node scripts/chatgpt-publication.mjs",
+    "publication:pack": "node scripts/chatgpt-publication.mjs --pack"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",
