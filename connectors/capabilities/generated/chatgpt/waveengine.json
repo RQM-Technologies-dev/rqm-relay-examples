@@ -1,0 +1,113 @@
+{
+  "schema_version": "rqm.host-capability-coverage.v1",
+  "host": "chatgpt",
+  "product": "wave",
+  "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+  "discovery_tool": "list_buyer_jobs",
+  "search_tool": "search_buyer_jobs",
+  "execution_tool": "run_account_job",
+  "capability_id_source": "descriptor.service_id",
+  "catalog_sha256": "b4c4fae01ee7d94c2e3a1e239068c154600b627768f0c709fc5201b5feb0c60a",
+  "tool_metadata_sha256": "a49fc979dd92328d33f80cd5e80e898e227bf61e183338cd3b3733663cf581d9",
+  "services": [
+    {
+      "service_id": "diagnose-multichannel-capture-v1",
+      "descriptor_sha256": "69c78de182c4939b9494c9f634f5b0e4a8dde49d801818873207df9bd22c8240"
+    },
+    {
+      "service_id": "equalize-pilot-capture-v1",
+      "descriptor_sha256": "6e44594f61bc779d9edcd61810cef00cb657be4e19373ddd8f77436001b35561"
+    },
+    {
+      "service_id": "extract-wave-features-v1",
+      "descriptor_sha256": "3fd2c32f2ace4dbf794695e6240572c47dcf6842b11a2626f6ba75947934d368"
+    },
+    {
+      "service_id": "fit-coupled-channel-model-v1",
+      "descriptor_sha256": "f60a5277dee697c7ab8443d1742228ba19200a320bd88df53c9406b8e42e6b0a"
+    },
+    {
+      "service_id": "gate-signal-capture-v1",
+      "descriptor_sha256": "4bffd48aae52016aec4f0e1eab3b7093a7b3124d25d2d39b9de1e730e11d6204"
+    },
+    {
+      "service_id": "generate-validated-signal-fixture-v1",
+      "descriptor_sha256": "08174005ce7e01bbfa1642346e732342bd27d8d30a5b1f7c9afea743f6ad6e0a"
+    },
+    {
+      "service_id": "transport-polarization-frame-v1",
+      "descriptor_sha256": "0a9eb4f800ade505e164f9c179ac63bb09af16a557ecb3355e41fe754512a04b"
+    },
+    {
+      "service_id": "verify-wave-pipeline-v1",
+      "descriptor_sha256": "1b4edfc7c86870e4431fccbea746ce212b841614a7e6c2ef9b4eee6c4042e906"
+    },
+    {
+      "service_id": "wave.apply-verified-phase-correction.v1",
+      "descriptor_sha256": "d02f25311561b6bf786122a4f5513f7d278067e2f23cce9a6166b0393947d330"
+    },
+    {
+      "service_id": "wave.compare-pipeline-responses.v1",
+      "descriptor_sha256": "a8d41894330abf8e7853b0a5f7ba0c77982640c2efc457a18146172b02748c55"
+    },
+    {
+      "service_id": "wave.compare-waveform-captures.v1",
+      "descriptor_sha256": "f16dc7720a90acbda690293cf28fec44403d7661fa306448f91c9699fbc4a8cc"
+    },
+    {
+      "service_id": "wave.compile-curated-processing-recipe.v1",
+      "descriptor_sha256": "b235586592d037d10c962931a22967c7bc5944d47f8abd42f2d9c181713d69b6"
+    },
+    {
+      "service_id": "wave.convert-capture-to-spectrum.v1",
+      "descriptor_sha256": "e61c482d424c0c2ed0ae1ae20bb6b443aaeb9881f2d2aaaef6c7b5bb23b05ec3"
+    },
+    {
+      "service_id": "wave.measure-phase-drift.v1",
+      "descriptor_sha256": "bc9f71f1bc007900c7b019c5844177488e3ce586991068201e0110f1e9f23562"
+    },
+    {
+      "service_id": "wave.optimize-processing-pipeline.v1",
+      "descriptor_sha256": "12dce0c1a887c7f1252d85cbe3e93c71bff7b659c9bc2a838f1d3f7e9d6288da"
+    },
+    {
+      "service_id": "wave.reconstruct-bounded-capture.v1",
+      "descriptor_sha256": "c71a1741f20ad8a88c7ea6cc96cf8a81c5915c874b687fca675dd6f9cf8b7331"
+    },
+    {
+      "service_id": "wave.reconstruct-time-domain-signal.v1",
+      "descriptor_sha256": "aff715fc26fc6da7af63572754ce8d73271cba1b353833667d2803650b808dbc"
+    },
+    {
+      "service_id": "wave.rotate-and-validate-two-channel-frame.v1",
+      "descriptor_sha256": "98c9e67182bf76ba15c9b6a4fa5594084f25ff2cffee7724f8ec439e400ca22c"
+    },
+    {
+      "service_id": "wave.validate-reconstruction-quality.v1",
+      "descriptor_sha256": "94199915a4fe0ab0462d249a57b30c033a535c5fc9dd103552c6f78281a75bb8"
+    },
+    {
+      "service_id": "wave.validate-spectral-criteria.v1",
+      "descriptor_sha256": "790c1a4bb26578a81c31c8d7c2338d1cc3088392697a313ef823d85bb7881df1"
+    }
+  ],
+  "package": {
+    "source_path": "connectors/chatgpt/waveengine",
+    "version": "0.5.3",
+    "package_content_sha256": "43f2c465b5d778e2680b5aed91f3864bd25d73b0831ad8bdfa9fe0b764510f53",
+    "files": {
+      "plugin.json": "1ed6b9d5a0f3f9dac166f4b27a57791c6bc8058224d7e921e34f0a9bda714ead",
+      "mcp.json": "fe0359a54aea8e17f64881b5da7d7afe2c9c18605555a239c8df35e6a54127db",
+      "README.md": "cd969e103d1078000e3ab3e17ae173801cf0daa65fd6fde36b0125d77731705e",
+      "PRIVACY.md": "f33813551b1d043406e722d75bed6d025ce7ef228414a43cc5d5423c00e81ff5",
+      "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "NOTICE": "657d683a88258311c9b71cbaf2597eaa84dad68c436b7bf868c4abdaffe813d2",
+      "assets/PROVENANCE.md": "4d5671bc1dfcf2c6621fa896319046a9b47a25ebe909d6f0a2df6759ab6b9120",
+      "assets/wave-dab197da82677d4.png": "dab197da82677d489445c1322c0583f837fed5e54ae288bb1c953d749e722633",
+      "skills/waveengine/SKILL.md": "0029f3129ab24d1e2d13309d9c8e75972d19dcaeb2b6615174620049919ea242"
+    }
+  },
+  "deployed": "not_observed",
+  "host_discovered": "not_observed",
+  "published": "not_observed"
+}

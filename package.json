@@ -21,7 +21,10 @@
     "discover": "tsx src/discover.ts",
     "connectors:links": "node scripts/connector-links.mjs",
     "publication:check": "node scripts/chatgpt-publication.mjs",
-    "publication:pack": "node scripts/chatgpt-publication.mjs --pack"
+    "publication:pack": "node scripts/chatgpt-publication.mjs --pack",
+    "capabilities:check": "node scripts/capability-sync.mjs check",
+    "capabilities:generate": "node scripts/capability-sync.mjs write",
+    "capabilities:live": "node scripts/capability-sync.mjs live"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "1.30.0",

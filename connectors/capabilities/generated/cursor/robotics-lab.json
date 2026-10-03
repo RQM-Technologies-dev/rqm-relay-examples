@@ -1,0 +1,117 @@
+{
+  "schema_version": "rqm.host-capability-coverage.v1",
+  "host": "cursor",
+  "product": "robotics",
+  "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+  "discovery_tool": "list_buyer_jobs",
+  "search_tool": "search_buyer_jobs",
+  "execution_tool": "run_account_job",
+  "capability_id_source": "descriptor.service_id",
+  "catalog_sha256": "576de9f0dc9a419753cba91629efd7404a2bc988145a83d3242d209e8b033655",
+  "tool_metadata_sha256": "a21a1c1d93891eeb773ccde73962e13cf7a631024324c5dca4b10bde0bd06337",
+  "services": [
+    {
+      "service_id": "frame-convention-validation-v1",
+      "descriptor_sha256": "dce1552cd568fa24950fec961d7580162d972108b267b17eb4cdcac854218fb9"
+    },
+    {
+      "service_id": "robotics.analyze-force-disturbance-response.v1",
+      "descriptor_sha256": "2e507c3a8580e00f3bcb768c54d798e775c1ace1b334682715e8eaf0db0c8384"
+    },
+    {
+      "service_id": "robotics.assess-calibration-quality.v1",
+      "descriptor_sha256": "8ad7ae8b602ba6aa7b20c8d4596e470544d3b06b4261b67c8da5fdf13559159b"
+    },
+    {
+      "service_id": "robotics.check-collision-constraints.v1",
+      "descriptor_sha256": "d9ac97f58fc72e32ec64dd05ee8339208030b6507ab21bfce9878abe66428a34"
+    },
+    {
+      "service_id": "robotics.compare-controller-responses.v1",
+      "descriptor_sha256": "822ef51d064b89252ecc4c0f91f740b43c7aafc6dd001e1969a4b180dc8a746a"
+    },
+    {
+      "service_id": "robotics.compare-digital-twin-observations.v1",
+      "descriptor_sha256": "f9ab7554bd7bc7b37c6b48cfc43d97e70bf214055164def744049186d6304ce8"
+    },
+    {
+      "service_id": "robotics.compare-planned-observed-trajectories.v1",
+      "descriptor_sha256": "ed5892ed941147efae3192473b168517447cc3838e5bc8488e0c78571424d5a6"
+    },
+    {
+      "service_id": "robotics.compare-state-estimators.v1",
+      "descriptor_sha256": "b8c4a4aa44753d0862628c6ff32a75de30e64551954a27f93a929c0f6da36af6"
+    },
+    {
+      "service_id": "robotics.compute-actuator-alignment-correction.v1",
+      "descriptor_sha256": "363cf0082c6e93d0cc33e393c9fa6d979d080f02b1e58f0ebce97fcb53837138"
+    },
+    {
+      "service_id": "robotics.diagnose-trajectory-instability.v1",
+      "descriptor_sha256": "30111c9235c93913b1b0c27c79fc6436091ce86bfd274e73871a4b7887a719e9"
+    },
+    {
+      "service_id": "robotics.estimate-fused-state.v1",
+      "descriptor_sha256": "3a86a8871b93b442d0592306a56b800d4a0c1a35d7ef8bab89faf3c1f01918de"
+    },
+    {
+      "service_id": "robotics.normalize-sensor-frames.v1",
+      "descriptor_sha256": "ed65e2f0a1a67bf845cfd420057a96e92b1343eaae7d1629a0c46b8f17e713ea"
+    },
+    {
+      "service_id": "robotics.optimize-disturbance-rejection.v1",
+      "descriptor_sha256": "521b8e804747f6ca5041785a130121c63068cd9e5be175bb3e2f86d6c7bd52c7"
+    },
+    {
+      "service_id": "robotics.optimize-trajectory-to-constraints.v1",
+      "descriptor_sha256": "ee7e4885986120eb3dcc4a637ab65cfa7a8371916e5b31954c70e7792296ecfb"
+    },
+    {
+      "service_id": "robotics.reconstruct-smoothed-trajectory.v1",
+      "descriptor_sha256": "d8aad1ee48cc277dc24178ad93614403a31be1c49bc9398b2210cb832e517a0c"
+    },
+    {
+      "service_id": "robotics.replay-workcell-trace.v1",
+      "descriptor_sha256": "fe406143ae0df3895ca6fcb9acbbe4b98caee760e3c733b467cb9e4849a3ae1a"
+    },
+    {
+      "service_id": "robotics.tune-controller-to-objectives.v1",
+      "descriptor_sha256": "ea0d5c6f5a473a05914d16dba992da037d5c115acb843bbb03d19539406077b8"
+    },
+    {
+      "service_id": "robotics.validate-closed-loop-stability.v1",
+      "descriptor_sha256": "89c3298d570a524af854c273c91588139a54f690c84c5d24106a2f2f69c13f18"
+    },
+    {
+      "service_id": "robotics.validate-kinematic-dynamic-limits.v1",
+      "descriptor_sha256": "4cf05407ffb46533c43a349637172b9ffb07bed7340e5dd0ae3002efb8e71b1d"
+    },
+    {
+      "service_id": "robotics.validate-trajectory-timing.v1",
+      "descriptor_sha256": "d05a3a192834f5b1c9824a2d33f1cb92dd138d6f9c30f546706ae9c4d6547852"
+    }
+  ],
+  "package": {
+    "source_path": "connectors/plugins/robotics-lab",
+    "version": "0.4.1",
+    "package_content_sha256": "3210aa1a9cbf51d807a828b4ebbf25064f33d3cfa805204058eb32d47156668a",
+    "files": {
+      ".cursor-plugin/plugin.json": "a71f4f046507cf55dda91282bfb29c8fbd2ba272583963c033ea2d6df0ea6084",
+      "mcp.json": "09edd9555afb8a3bfb126a4eeabe6bb6e2ed2f88509c801a4324334ce9f2dd60",
+      "skills//robotics-lab/SKILL.md": "0239564443efb21ece8bab08fb9e371974bfca6f45b0ff35648f2e31bf79856e",
+      "README.md": "432d8772dbcb92a4cdd8f80726151748038135b5c4663b9ca3c2bb7ece50587a",
+      "PRIVACY.md": "098de4258aeadaf457db0ac006381275d34e3b768cfdfffbd7978a3bd37cafb5",
+      "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "NOTICE": "a8b3a23e6b7759e8499615a29fd050e6ad643a53e153f74fa34e751e9e104e74",
+      "listing.json": "7b1853631572ba7dbf0762290f2e9ae7f5fc0be22aa4e7a1da5ae1ac828e8270",
+      "assets//PROVENANCE.md": "06d365e9325657d4dfa3d44aa33a9a9ad48a827d0fe8793bc32012a829741871",
+      "assets//icon.svg": "3062c2649828a71d86b14c9a523a0996e09d7df4d7a4967f263af85d27052eb6",
+      "assets//robotics-54c5a66443a9c9ed.png": "54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd",
+      "assets//robotics-61e2ec0235f0955d.png": "61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7",
+      "assets//robotics-d94a234335751083.png": "d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88"
+    }
+  },
+  "deployed": "not_observed",
+  "host_discovered": "not_observed",
+  "published": "not_observed"
+}

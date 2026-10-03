@@ -1,0 +1,30 @@
+{
+  "schema_version": "rqm.protected-submissions.v1",
+  "provenance": "Package-owner release manifest; archive hashes verified locally 2026-10-03. Status is historical supplied evidence, not a fresh portal observation.",
+  "packages": [
+    {
+      "app": "Resonant Quantum Mechanics",
+      "version": "0.5.6",
+      "sha256": "991ba5408ec1cf1b7a5436806da7854503656cc6d8bbc92a289ee28443a40541",
+      "status": "In review",
+      "publication_status": "Not published",
+      "status_observed_by_utc": "2026-10-03T20:12:00Z"
+    },
+    {
+      "app": "WaveEngine",
+      "version": "0.5.5",
+      "sha256": "15d16088610e3a1f43f49c74a6216a1dbcb2df02340cb8b65ef33540606ed4c6",
+      "status": "In review",
+      "publication_status": "Not published",
+      "status_observed_by_utc": "2026-10-03T20:12:00Z"
+    },
+    {
+      "app": "Robotics Lab",
+      "version": "0.5.5",
+      "sha256": "590b70b0bac7fba687478c63b0cc7bc98ac7e8dfd3e0ce84016ecc5ea65addc2",
+      "status": "In review",
+      "publication_status": "Not published",
+      "status_observed_by_utc": "2026-10-03T20:12:00Z"
+    }
+  ]
+}
