@@ -10,9 +10,9 @@ Each ZIP contains root `plugin.json`, `mcp.json`, `skills/`, bundled original PN
 | --- | --- | --- | --- |
 | resonant-quantum-mechanics | Resonant Quantum Mechanics | /mcp/plugins/quantum | 59c0e77394f411979214606d8c19af7e90a2735d84154e9390aab8c3e9f9e354 |
 | waveengine | WaveEngine | /mcp/plugins/wave | dab197da82677d489445c1322c0583f837fed5e54ae288bb1c953d749e722633 |
-| robotics-lab | Robotics Lab | /mcp/plugins/robotics | 54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd |
+| robotics-lab | Robotics Lab | /mcp/plugins/robotics | d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88 |
 
-Names and subtitles meet the documented 30-character submission limits. The descriptions distinguish public discovery, existing job retrieval and policy-gated prepaid computation without claiming hardware execution, physical safety, marketplace acceptance or performance advantage. Original Quantum/Wave provenance is recorded beside their PNGs; Robotics uses the approved opaque black gimbal, not the old RL lettermark.
+Names and subtitles meet the documented 30-character submission limits. The descriptions distinguish public discovery, existing job retrieval and policy-gated prepaid computation without claiming hardware execution, physical safety, marketplace acceptance or performance advantage. Original Quantum/Wave provenance is recorded beside their PNGs; Robotics uses the current approved metal-only gimbal.
 
 Run `npm run publication:check` for offline schema/metadata/asset checks. Run `npm run publication:pack -- /absolute/output/directory` to create deterministic ZIPs and a readiness report. The fixed file allowlist excludes other hosts, runtime files, secrets and review-account credentials. `npm run publication:check -- --require-submission-ready` intentionally fails while the documented blockers remain. The custom OpenAI-field checks are a documented-field preflight, not an authoritative replacement for dashboard validation.
 

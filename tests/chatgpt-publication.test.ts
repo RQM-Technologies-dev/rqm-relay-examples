@@ -18,11 +18,11 @@ describe("public publication preparation",()=>{
   const path=fixture();try{const p=manifest(path),m=JSON.parse(readFileSync(p,"utf8"));m.extensions["com.openai"].interface.logo="./../../PUBLICATION.md";writeFileSync(p,JSON.stringify(m));expect(()=>validate(path)).toThrow();}finally{rmSync(path,{recursive:true,force:true});}
  });
  it("rejects altered original artwork",()=>{
-  const path=fixture();try{const p=resolve(path,"connectors/chatgpt/robotics-lab/assets/robotics-54c5a66443a9c9ed.png");const bytes=readFileSync(p);bytes[bytes.length-1]^=1;writeFileSync(p,bytes);expect(()=>validate(path)).toThrow();}finally{rmSync(path,{recursive:true,force:true});}
+  const path=fixture();try{const p=resolve(path,"connectors/chatgpt/robotics-lab/assets/robotics-d94a234335751083.png");const bytes=readFileSync(p);bytes[bytes.length-1]^=1;writeFileSync(p,bytes);expect(()=>validate(path)).toThrow();}finally{rmSync(path,{recursive:true,force:true});}
  });
  it("rejects symlinked artwork and credential-bearing MCP configuration",()=>{
   const path=fixture();try{
-   const p=resolve(path,"connectors/chatgpt/robotics-lab/assets/robotics-54c5a66443a9c9ed.png");rmSync(p);symlinkSync(resolve(root,"connectors/chatgpt/robotics-lab/assets/robotics-54c5a66443a9c9ed.png"),p);expect(()=>validate(path)).toThrow();
+   const p=resolve(path,"connectors/chatgpt/robotics-lab/assets/robotics-d94a234335751083.png");rmSync(p);symlinkSync(resolve(root,"connectors/chatgpt/robotics-lab/assets/robotics-d94a234335751083.png"),p);expect(()=>validate(path)).toThrow();
   }finally{rmSync(path,{recursive:true,force:true});}
   const next=fixture();try{const p=resolve(next,"connectors/chatgpt/robotics-lab/mcp.json"),m=JSON.parse(readFileSync(p,"utf8"));m.mcpServers["robotics-lab"].headers={Authorization:"Bearer fixture-not-a-credential"};writeFileSync(p,JSON.stringify(m));expect(()=>validate(next)).toThrow();}finally{rmSync(next,{recursive:true,force:true});}
  });
