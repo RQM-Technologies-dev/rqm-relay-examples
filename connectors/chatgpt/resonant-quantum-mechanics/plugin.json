@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.5.1",
-  "description": "Inspect bounded quantum circuit services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Simulation does not establish physical quantum-hardware performance.",
+  "version": "0.5.2",
+  "description": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Resonant Quantum Mechanics",
-        "shortDescription": "Quantum circuit analysis",
-        "longDescription": "Inspect bounded quantum circuit services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Simulation does not establish physical quantum-hardware performance.",
+        "shortDescription": "Validate quantum circuits",
+        "longDescription": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -31,7 +31,9 @@
         "logo": "./assets/quantum-59c0e77394f41197.png",
         "composerIcon": "./assets/quantum-59c0e77394f41197.png",
         "defaultPrompt": [
-          "List supported quantum services and their limitations without running a job."
+          "Check my OpenQASM 3 circuit for syntax errors and show any supported conservative repairs.",
+          "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics.",
+          "Simulate this supported circuit locally and explain the result and its limitations."
         ],
         "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
       },
@@ -45,16 +47,16 @@
               "expected_behavior": "Return only this product’s published contracts and limitations; no execution or debit."
             },
             {
-              "description": "Find an applicable contract",
-              "prompt": "Find circuit validation services and show required inputs.",
+              "description": "Find a service for a concrete engineering task",
+              "prompt": "Check my OpenQASM 3 circuit for syntax errors and show any supported conservative repairs. Show the contract only; do not run a job.",
               "tools_triggered": "search_buyer_jobs",
-              "expected_behavior": "Return relevant product contracts or an honest empty match; do not fabricate results."
+              "expected_behavior": "Search this product with the user intent; compare supported and excluded cases and collect missing inputs. No execution or debit."
             },
             {
-              "description": "Explain bounded schema and limitations",
-              "prompt": "Show a supported quantum contract’s input schema and explain its limitations. Do not compute.",
-              "tools_triggered": "list_buyer_jobs",
-              "expected_behavior": "Explain the actual returned schema and evidence limits; no safety or hardware-performance guarantees."
+              "description": "Inspect requirements for a second engineering task",
+              "prompt": "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics. Show required inputs only; do not compute.",
+              "tools_triggered": "search_buyer_jobs",
+              "expected_behavior": "Return the applicable contract or explain no match; show required data and limitations without inventing measurements or tolerances. No execution or debit."
             },
             {
               "description": "Read dedicated reviewer account balance",
@@ -89,8 +91,9 @@
         }
       },
       "publication": {
-        "release_notes": "0.5.1: factual product descriptions without pricing or subscription promotions; approved original artwork and scoped OAuth MCP endpoints retained. Existing portal v0.1.0 reviews must be corrected through the supported self-service flow. This package does not attest policy acceptance or replace a review record."
-      }
+        "release_notes": "0.5.2: task-driven discovery descriptions, product starter prompts and workflow skills; preserved package identities, artwork, OAuth endpoints and legal links. Host selection and reviewer execution remain unverified."
+      },
+      "onboardingSkill": "./skills/resonant-quantum-mechanics/SKILL.md"
     }
   }
 }

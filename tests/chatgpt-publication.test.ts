@@ -9,6 +9,16 @@ const fixture=()=>{const path=mkdtempSync(resolve(tmpdir(),"rqm-publication-test
 const validate=(path:string)=>execFileSync(process.execPath,["--input-type=module","-e",`import('./${script}').then(m=>m.validatePackages(process.argv[1]))`,path],{cwd:root,stdio:"pipe"});
 const manifest=(base:string)=>resolve(base,"connectors/chatgpt/robotics-lab/plugin.json");
 describe("public publication preparation",()=>{
+ it("rejects duplicate or overlong starter prompts, mentions and missing onboarding paths",()=>{
+  const invalid = [
+   (m:any)=>{m.extensions["com.openai"].interface.defaultPrompt=["Same prompt","Same prompt"];},
+   (m:any)=>{m.extensions["com.openai"].interface.defaultPrompt=["x".repeat(129)];},
+   (m:any)=>{m.extensions["com.openai"].interface.defaultPrompt=["Use @Robotics Lab"];},
+   (m:any)=>{m.extensions["com.openai"].onboardingSkill="./skills/missing/SKILL.md";},
+   (m:any)=>{m.extensions["com.openai"].onboardingSkill="./../../PUBLICATION.md";},
+  ];
+  for(const mutate of invalid){const path=fixture();try{const p=manifest(path),m=JSON.parse(readFileSync(p,"utf8"));mutate(m);writeFileSync(p,JSON.stringify(m));expect(()=>validate(path)).toThrow();}finally{rmSync(path,{recursive:true,force:true});}}
+ },30_000);
  it("validates three drafts without claiming submission readiness",()=>{
   const reports=JSON.parse(execFileSync(process.execPath,[script],{cwd:root,encoding:"utf8"}));
   expect(reports).toHaveLength(3);expect(reports.every((x:{packageValid:boolean;submissionReady:boolean})=>x.packageValid&&!x.submissionReady)).toBe(true);
