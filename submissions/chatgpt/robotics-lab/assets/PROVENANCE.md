@@ -11,3 +11,5 @@ MCP URL: https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f09
 Design: thin gimbal rings in distinct orientations, circular overall silhouette, lightly worn darker steel, red illuminated bearings and encoder indicators, and a mechanical motor/control-system center on black.
 
 The image was produced through owner-directed built-in imagegen raster edits of the original Library asset `libfile_f514d73ff2e881918b4a789948016d97`, version 0, `RQM-Robotics-Lab-Gimbal-Icon-Black.png`. Final edit changed cyan lighting to red. It is an illustration, not a CAD-validated mechanism. Copies must remain byte-identical to the canonical PNG.
+
+`icon.svg` is the legacy RL placeholder. Use `robotics-lab-logo.png` for official branding and connector submissions.

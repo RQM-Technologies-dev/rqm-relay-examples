@@ -1,4 +1,4 @@
-# Robotics Lab for ChatGPT — candidate 0.4.1
+# Robotics Lab for ChatGPT — publication draft 0.5.1
 
 Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `robotics-lab` at `https://jobs.rqmtechnologies.com/mcp/plugins/robotics`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
 
@@ -12,6 +12,8 @@ See the skill for product scope, input minimization, output limitations and reco
 
 ![Robotics Lab](assets/robotics-61e2ec0235f0955d.png)
 
-This package contains the official red-light mechanical gimbal PNG from the robotics-lab repository. The matching Robotics MCP icon URL is [https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f0955d.png](https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f0955d.png). Host rendering depends on the client; a connected custom connector does not prove its logo renders. No directory submission or new consent grant is included.
+This package contains the owner-approved final gimbal PNG. The same graphic is published in the Robotics MCP server metadata at [https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f0955d.png](https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f0955d.png). Host rendering depends on the client; a connected custom connector does not prove its logo renders. No directory submission or new consent grant is included.
 
 The schema-valid `com.rqmtechnologies.branding` extension carries the local and public icon references as publisher metadata; the portable specification assigns no host display behavior to extension contents.
+
+Publication metadata now uses the supported `extensions.com.openai.interface` fields with bundled original PNGs. See [publication readiness](../PUBLICATION.md) before any upload, attestation or submission. The proposed review cases have not been run with a dedicated reviewer account. This draft does not claim marketplace approval or a completed paid acceptance.
