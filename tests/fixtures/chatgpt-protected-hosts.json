@@ -69,7 +69,7 @@
     "connectors/chatgpt/resonant-quantum-mechanics/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
     "connectors/chatgpt/resonant-quantum-mechanics/NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",
     "connectors/chatgpt/resonant-quantum-mechanics/PRIVACY.md": "7f4404f5e3bead8d4046b47db41cae9d2afecbcdce60968ee6e1213260e71120",
-    "connectors/chatgpt/resonant-quantum-mechanics/assets/PROVENANCE.md": "9bb5f373fdbb8c0f723bf6162a9db8c8e7f760281ad56aec2ea1ef36d25dfab2",
+    "connectors/chatgpt/resonant-quantum-mechanics/assets/PROVENANCE.md": "c73a66d9c8aa5b38a51c1c19d4ea69f9095469129b65157d5fc11189bfcaa313",
     "connectors/chatgpt/resonant-quantum-mechanics/assets/quantum-59c0e77394f41197.png": "59c0e77394f411979214606d8c19af7e90a2735d84154e9390aab8c3e9f9e354",
     "connectors/chatgpt/resonant-quantum-mechanics/mcp.json": "27543c0d407a2d274527dd3fbbeac37671affcb4fbff5b3b4759ed14ff88a912",
     "connectors/chatgpt/waveengine/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -85,7 +85,8 @@
     "connectors/chatgpt/robotics-lab/assets/robotics-54c5a66443a9c9ed.png": "54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd",
     "connectors/chatgpt/robotics-lab/assets/robotics-61e2ec0235f0955d.png": "61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7",
     "connectors/chatgpt/robotics-lab/assets/robotics-d94a234335751083.png": "d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88",
-    "connectors/chatgpt/robotics-lab/mcp.json": "9efddee0e64a3303ac5545df09126fdbd11677dc5462edf97cde1689f4b2fdb3"
+    "connectors/chatgpt/robotics-lab/mcp.json": "9efddee0e64a3303ac5545df09126fdbd11677dc5462edf97cde1689f4b2fdb3",
+    "connectors/chatgpt/resonant-quantum-mechanics/assets/quantum-f31ff3a084358055.png": "f31ff3a08435805579b6385010b0cfbfd855361bd3fbe21312a12423ec533e8e"
   },
   "chatgpt_metadata": {
     "resonant-quantum-mechanics": {
@@ -114,8 +115,8 @@
             "websiteURL": "https://www.rqmtechnologies.com/",
             "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
             "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
-            "logo": "./assets/quantum-59c0e77394f41197.png",
-            "composerIcon": "./assets/quantum-59c0e77394f41197.png",
+            "logo": "./assets/quantum-f31ff3a084358055.png",
+            "composerIcon": "./assets/quantum-f31ff3a084358055.png",
             "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
           }
         }
