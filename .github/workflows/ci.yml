@@ -13,6 +13,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run check
+      - run: npm run capabilities:check
       - run: npm run publication:check
       - run: npm run publication:pack -- dist/chatgpt-publication
       - run: npm run publication:pack -- dist/chatgpt-publication --portal-records

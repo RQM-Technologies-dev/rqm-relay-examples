@@ -1,0 +1,113 @@
+{
+  "schema_version": "rqm.host-capability-coverage.v1",
+  "host": "cursor",
+  "product": "quantum",
+  "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+  "discovery_tool": "list_buyer_jobs",
+  "search_tool": "search_buyer_jobs",
+  "execution_tool": "run_account_job",
+  "capability_id_source": "descriptor.service_id",
+  "catalog_sha256": "34afb772896189fe45fd8f6ff10a9cbfb0aa56d770f578c6bcb76798dd3f122c",
+  "tool_metadata_sha256": "a4e418e810385e63b3f76c72cd11fbc45a750fed3e5664b27f335af718f9e070",
+  "services": [
+    {
+      "service_id": "circuit-assurance-report-v1",
+      "descriptor_sha256": "4d8ca57975b6f03b70309f0340f0167aa3a658199a0e0a57a7214a6c686a1600"
+    },
+    {
+      "service_id": "cross-provider-portability-v1",
+      "descriptor_sha256": "10a1ac81778f06ec1e7237561a2d942dd6bcad813460f1bbcd77403c81b9f4cc"
+    },
+    {
+      "service_id": "failed-workflow-diagnosis-v1",
+      "descriptor_sha256": "a7bf1fabe6be6de1f50d01512d5ab5eaae58d291d1402d7c3c58910f5d96f458"
+    },
+    {
+      "service_id": "managed-simulator-v1",
+      "descriptor_sha256": "d11a57025fe2f5a10effba2f871440dc567c5ee2007995efa57e7339c77a4484"
+    },
+    {
+      "service_id": "openqasm3-preflight-v1",
+      "descriptor_sha256": "09a38b5ffa3724a25d735d0db68aac9dd1fb0b90f1de71a4c896904277bdb1e3"
+    },
+    {
+      "service_id": "openqasm3-repair-v1",
+      "descriptor_sha256": "9834e16ab3ef22357781678055bbce1423cb587cd6fa1e25be1e01ffb01a3e59"
+    },
+    {
+      "service_id": "optimization-preservation-audit-v1",
+      "descriptor_sha256": "b63ee68f6558b7868dba833dadc0775a6240407ddc6d6b6c779b627e9e71c90a"
+    },
+    {
+      "service_id": "phase-sensitive-inspection-v1",
+      "descriptor_sha256": "d3a49511522700301f1d3c7d3bc5f3f31136fd061a685ca797685327de098ff8"
+    },
+    {
+      "service_id": "quantum.execution-plan-select.v1",
+      "descriptor_sha256": "02205e87027119a1b458418f5e636612d5efe29d29aa4c4662f04e81c343bf78"
+    },
+    {
+      "service_id": "quantum.gate-basis-decomposition.v1",
+      "descriptor_sha256": "d918bb5e66c6a90fa3f1fc42a65e873d4a79d248cde910af2139d430952fa21c"
+    },
+    {
+      "service_id": "quantum.phase-aware-rewrite.v1",
+      "descriptor_sha256": "834572f9400b3b0388e5e16aa924ff1b15c039ba1f139524beb4b1cf643cce27"
+    },
+    {
+      "service_id": "quantum.provider-readiness-check.v1",
+      "descriptor_sha256": "ed2deef4fca716b78a17670b82c53de5f33523fd679d4362e0a028ae8ac83f89"
+    },
+    {
+      "service_id": "quantum.provider-result-compare.v1",
+      "descriptor_sha256": "a1f8bbdeb6dc24434bd40399819d273c6ce2a7ee0fb6840a84c6f98f83d9f74b"
+    },
+    {
+      "service_id": "quantum.provider-target-compile.v1",
+      "descriptor_sha256": "78be9e1bff322944aeff23824044085006908ed7f25b50ec82179d56fdd797b3"
+    },
+    {
+      "service_id": "quantum.simulation-anomaly-diagnostic.v1",
+      "descriptor_sha256": "bfb9266bcff1d9617635f3702428efa71ddc49306f176f363f613fb490ab87df"
+    },
+    {
+      "service_id": "quantum.simulation-result-compare.v1",
+      "descriptor_sha256": "72e16dce966af5e0145c4c1a024dede5d08017182aac740e768167c955b98a0b"
+    },
+    {
+      "service_id": "supported-circuit-equivalence-v1",
+      "descriptor_sha256": "faef2a2bcf122e9cc35d294ee009d5ca53d5cba9c7abc2e7fd5414c95a580848"
+    },
+    {
+      "service_id": "two-qubit-local-equivalence-v1",
+      "descriptor_sha256": "94bd5d4e3bf06a18566215b734cfdccc141c162e7f8541bb4074b7897bd2d301"
+    },
+    {
+      "service_id": "two-qubit-target-synthesis-v1",
+      "descriptor_sha256": "43eb9039e9429d418b47f67522a74c504794eaa3e402f23672c55632dfe581a6"
+    },
+    {
+      "service_id": "verified-circuit-optimization-v1",
+      "descriptor_sha256": "3e0d22b4f9e1ad07568aedbcb31c30cb15abb30ef2cd73828008eae70512233f"
+    }
+  ],
+  "package": {
+    "source_path": "connectors/plugins/resonant-quantum-mechanics",
+    "version": "0.3.0",
+    "package_content_sha256": "de50a5b1f52a215c92418b44dce8913522738f9dcb040d76e64a88f02c310068",
+    "files": {
+      ".cursor-plugin/plugin.json": "aa439d196dcc708fcde05b496a9e9a5ec8176c544dd9abdbffa799b09f791771",
+      "mcp.json": "46f4bb7eedae2b4e863fc34a01ddca9127df9f3873ce0f61b52d22edf4450fd5",
+      "skills//resonant-quantum-mechanics/SKILL.md": "12cffa5ddd407fd6f1d61baf407f111497e2466f1c6df4ee95ac06d99be29677",
+      "README.md": "9dabcfe50e8adc1c842399717ca59b03b624ca94b8574e135dd9315dfd08e398",
+      "PRIVACY.md": "ead1a5ddd82cea28f379bde8a0e2a8d6a3259113b6a8f9f8447ab90ed69adfde",
+      "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",
+      "listing.json": "7d2a3d05cc42bfed0a153095d5507a7ffe02e1d82597e8285bf206c77735dbd6",
+      "assets//icon.svg": "e703a01ec1b108b1f4b25fb5dcb7419e42ec12c5b694673279dcd0fafb178ab5"
+    }
+  },
+  "deployed": "not_observed",
+  "host_discovered": "not_observed",
+  "published": "not_observed"
+}

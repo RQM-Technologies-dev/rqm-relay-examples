@@ -1,0 +1,17 @@
+{
+  "schema_version": "rqm.connector-generation.v1",
+  "source_contract_sha256": "4f0468a85175da827407bbb7e7a0f6948b32c084e0463ab09aed5230c5a0379a",
+  "generator_sha256": "245cbaadddd6a43f3d62756d851628c49aef9566d9db22f998afa7e1011e36a7",
+  "artifacts": {
+    "chatgpt/resonant-quantum-mechanics.json": "d2d37ac6b93b82b7e809985428f8876efaae3e3d7d633420b69fae4c4093f1ac",
+    "claude/resonant-quantum-mechanics.json": "34701f4ded42747a84a403e5e8e0ace8349af8c51d29a47ed920caea0422fa38",
+    "cursor/resonant-quantum-mechanics.json": "593187a084018f7ec55c460bc48138fab7f2bbd55d8f37e5942566ca9387873d",
+    "chatgpt/waveengine.json": "df34020882493eb4e2787da57d2f13b8acd7eda48c4cac4cc15f22696f05dd5d",
+    "claude/waveengine.json": "a9329fa3b3c4eb22119e08ed3e200c2298487ca63025517fd637ec9a17a3d129",
+    "cursor/waveengine.json": "6ea1862a15cb98d1739ec8aa7a8c60ec4564c9bdca6185265f4bf4891651f9d1",
+    "chatgpt/robotics-lab.json": "8619204d3afb77f46602339b63d67222bf77428433f7c7a345ae53b7388f4692",
+    "claude/robotics-lab.json": "4a4e41c82a8ebd5c2a01af33ac364aac41c481e1e0816e6f74dabd109a3ef5a4",
+    "cursor/robotics-lab.json": "8b18ce43e9cc5e0775e032bafce89fecafd4438b9fea0030c5506a16ae5d273f"
+  },
+  "automatic_publication": false
+}
