@@ -15,6 +15,7 @@ jobs:
       - run: npm run check
       - run: npm run publication:check
       - run: npm run publication:pack -- dist/chatgpt-publication
+      - run: npm run publication:pack -- dist/chatgpt-publication --portal-records
       - uses: actions/upload-artifact@v4
         with:
           name: rqm-chatgpt-publication-drafts

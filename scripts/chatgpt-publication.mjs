@@ -11,6 +11,11 @@ export const PRODUCTS=[
  {name:'waveengine',product:'wave',asset:'wave-dab197da82677d4.png',hash:'dab197da82677d489445c1322c0583f837fed5e54ae288bb1c953d749e722633'},
  {name:'robotics-lab',product:'robotics',asset:'robotics-54c5a66443a9c9ed.png',hash:'54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd'}
 ];
+export const PORTAL_RECORD_NAMES={
+ 'resonant-quantum-mechanics':'app-6aa6f57730308191906618fb867f004e',
+ 'waveengine':'app-6aa6f7b0b20c819192af846d6e6ee4dd',
+ 'robotics-lab':'app-6aa6f7837d588191b63262aee7813039'
+};
 const json=path=>JSON.parse(readFileSync(path,'utf8'));
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function packageFiles(item){return ['plugin.json','mcp.json','README.md','PRIVACY.md','LICENSE','NOTICE','assets/PROVENANCE.md',`assets/${item.asset}`,`skills/${item.name}/SKILL.md`];}
@@ -29,6 +34,7 @@ export function validatePackages(root=ROOT){
  return PRODUCTS.map(item=>{
   const base=resolve(root,'connectors/chatgpt',item.name);const manifest=json(resolve(base,'plugin.json'));const mcp=json(resolve(base,'mcp.json'));
   assert(pluginCheck(manifest),JSON.stringify(pluginCheck.errors));assert(mcpCheck(mcp),JSON.stringify(mcpCheck.errors));
+  assert(pluginCheck({...manifest,name:PORTAL_RECORD_NAMES[item.name]}),JSON.stringify(pluginCheck.errors));
   assert.equal(manifest.name,item.name);assert.match(manifest.version,/^\d+\.\d+\.\d+$/);assert.equal(manifest.author.name,'RQM Technologies LLC');
   assert.deepEqual(mcp.mcpServers,{[item.name]:{type:'streamable-http',url:`https://jobs.rqmtechnologies.com/mcp/plugins/${item.product}`}});
   const openai=manifest.extensions?.['com.openai'];assert(openai&&!openai.apps&&!openai.hooks,'Submission cannot contain app references or hooks');
@@ -55,7 +61,7 @@ export function validatePackages(root=ROOT){
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const report=validatePackages();const pack=process.argv.indexOf('--pack');
  if(pack>=0){const output=resolve(process.argv[pack+1]??'dist/chatgpt-publication');mkdirSync(output,{recursive:true});
-  execFileSync('python3',[resolve(ROOT,'scripts/pack-chatgpt-publication.py'),output],{cwd:ROOT,stdio:'inherit'});
+  execFileSync('python3',[resolve(ROOT,'scripts/pack-chatgpt-publication.py'),output,...(process.argv.includes('--portal-records')?['--portal-records']:[])],{cwd:ROOT,stdio:'inherit'});
   writeFileSync(resolve(output,'readiness.json'),JSON.stringify(report,null,2)+'\n');
  }
  console.log(JSON.stringify(report,null,2));if(process.argv.includes('--require-submission-ready')&&report.some(x=>!x.submissionReady))process.exitCode=1;

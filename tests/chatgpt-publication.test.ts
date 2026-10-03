@@ -34,4 +34,23 @@ describe("public publication preparation",()=>{
    execFileSync("python3",["-c",`import zipfile,pathlib,sys\nfor path in pathlib.Path(sys.argv[1]).glob('*.zip'):\n with zipfile.ZipFile(path) as z:\n  names=z.namelist(); assert len(names)==9; assert 'plugin.json' in names and 'mcp.json' in names; assert not any(n.startswith('/') or '..' in n.split('/') or n.endswith('.app.json') or '.env' in n for n in names); assert z.testzip() is None`,first],{stdio:"pipe"});
   }finally{rmSync(first,{recursive:true,force:true});rmSync(second,{recursive:true,force:true});}
  }, 60_000);
+ it("preserves existing portal record names and changes no other ZIP content",()=>{
+  const first=mkdtempSync(resolve(tmpdir(),"rqm-portal-zip-")),second=mkdtempSync(resolve(tmpdir(),"rqm-portal-zip-"));
+  try{
+   for(const output of [first,second])execFileSync(process.execPath,[script,"--pack",output,"--portal-records"],{cwd:root,stdio:"pipe"});
+   execFileSync("python3",["-c",`import zipfile,pathlib,sys,json
+records={'resonant-quantum-mechanics':'app-6aa6f57730308191906618fb867f004e','waveengine':'app-6aa6f7b0b20c819192af846d6e6ee4dd','robotics-lab':'app-6aa6f7837d588191b63262aee7813039'}
+root,first,second=map(pathlib.Path,sys.argv[1:])
+for name,record in records.items():
+ base=root/'connectors'/'chatgpt'/name; original=json.loads((base/'plugin.json').read_text()); filename=name+'-'+original['version']+'-portal-record.zip'; path=first/filename
+ assert path.read_bytes()==(second/filename).read_bytes()
+ with zipfile.ZipFile(path) as z:
+  assert len(z.namelist())==9 and z.testzip() is None
+  manifest=json.loads(z.read('plugin.json')); assert manifest['name']==record; manifest['name']=name; assert manifest==original
+  for entry in z.namelist():
+   if entry!='plugin.json': assert z.read(entry)==(base/entry).read_bytes()
+ assert json.loads((base/'plugin.json').read_text())==original`,root,first,second],{stdio:"pipe"});
+  }finally{rmSync(first,{recursive:true,force:true});rmSync(second,{recursive:true,force:true});}
+ },60_000);
+
 });
