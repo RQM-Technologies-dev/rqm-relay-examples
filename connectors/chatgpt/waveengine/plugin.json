@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "waveengine",
-  "version": "0.5.2",
-  "description": "Compare signal samples or IQ captures, measure phase drift, check spectra against supplied limits, and validate supported processing pipelines. Use bounded numeric samples, reference captures or pipeline descriptions when you need measurements and criterion verdicts. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Reports describe supplied data and declared rules; they do not identify physical causes, diagnose hardware or certify devices.",
+  "version": "0.5.3",
+  "description": "Compare signal samples or IQ captures, measure phase drift, check spectra against supplied limits, and validate supported processing pipelines. Use bounded numeric samples, reference captures or pipeline descriptions when you need measurements and criterion verdicts. Reports describe supplied data and declared rules; they do not identify physical causes, diagnose hardware or certify devices.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -18,7 +18,7 @@
       "interface": {
         "displayName": "WaveEngine",
         "shortDescription": "Analyze signals and spectra",
-        "longDescription": "Compare signal samples or IQ captures, measure phase drift, check spectra against supplied limits, and validate supported processing pipelines. Use bounded numeric samples, reference captures or pipeline descriptions when you need measurements and criterion verdicts. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Reports describe supplied data and declared rules; they do not identify physical causes, diagnose hardware or certify devices.",
+        "longDescription": "Compare signal samples or IQ captures, measure phase drift, check spectra against supplied limits, and validate supported processing pipelines. Use bounded numeric samples, reference captures or pipeline descriptions when you need measurements and criterion verdicts. Reports describe supplied data and declared rules; they do not identify physical causes, diagnose hardware or certify devices.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -91,7 +91,7 @@
         }
       },
       "publication": {
-        "release_notes": "0.5.2: task-driven discovery descriptions, product starter prompts and workflow skills; preserved package identities, artwork, OAuth endpoints and legal links. Host selection and reviewer execution remain unverified."
+        "release_notes": "0.5.3: keep public descriptions focused on engineering tasks, input artifacts and result limitations. Execution safeguards remain in the packaged skills and existing legal notices. Host selection and reviewer execution remain unverified."
       },
       "onboardingSkill": "./skills/waveengine/SKILL.md"
     }

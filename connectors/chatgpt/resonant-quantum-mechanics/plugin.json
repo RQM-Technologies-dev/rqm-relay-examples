@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.5.2",
-  "description": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
+  "version": "0.5.3",
+  "description": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -18,7 +18,7 @@
       "interface": {
         "displayName": "Resonant Quantum Mechanics",
         "shortDescription": "Validate quantum circuits",
-        "longDescription": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
+        "longDescription": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -91,7 +91,7 @@
         }
       },
       "publication": {
-        "release_notes": "0.5.2: task-driven discovery descriptions, product starter prompts and workflow skills; preserved package identities, artwork, OAuth endpoints and legal links. Host selection and reviewer execution remain unverified."
+        "release_notes": "0.5.3: keep public descriptions focused on engineering tasks, input artifacts and result limitations. Execution safeguards remain in the packaged skills and existing legal notices. Host selection and reviewer execution remain unverified."
       },
       "onboardingSkill": "./skills/resonant-quantum-mechanics/SKILL.md"
     }

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "robotics-lab",
-  "version": "0.5.2",
-  "description": "Find frame, unit and axis mismatches, check trajectory timing, compare planned and observed traces, and assess supplied calibration data or controller models. Use named frame conventions, timestamped trajectories, observations and declared models when you need consistency checks or comparisons against supplied tolerances. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results describe submitted data and models; they do not control robots or certify physical safety.",
+  "version": "0.5.3",
+  "description": "Find frame, unit and axis mismatches, check trajectory timing, compare planned and observed traces, and assess supplied calibration data or controller models. Use named frame conventions, timestamped trajectories, observations and declared models when you need consistency checks or comparisons against supplied tolerances. Results describe submitted data and models; they do not control robots or certify physical safety.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -22,7 +22,7 @@
       "interface": {
         "displayName": "Robotics Lab",
         "shortDescription": "Check robot models and traces",
-        "longDescription": "Find frame, unit and axis mismatches, check trajectory timing, compare planned and observed traces, and assess supplied calibration data or controller models. Use named frame conventions, timestamped trajectories, observations and declared models when you need consistency checks or comparisons against supplied tolerances. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results describe submitted data and models; they do not control robots or certify physical safety.",
+        "longDescription": "Find frame, unit and axis mismatches, check trajectory timing, compare planned and observed traces, and assess supplied calibration data or controller models. Use named frame conventions, timestamped trajectories, observations and declared models when you need consistency checks or comparisons against supplied tolerances. Results describe submitted data and models; they do not control robots or certify physical safety.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -95,7 +95,7 @@
         }
       },
       "publication": {
-        "release_notes": "0.5.2: task-driven discovery descriptions, product starter prompts and workflow skills; preserved package identities, artwork, OAuth endpoints and legal links. Host selection and reviewer execution remain unverified."
+        "release_notes": "0.5.3: keep public descriptions focused on engineering tasks, input artifacts and result limitations. Execution safeguards remain in the packaged skills and existing legal notices. Host selection and reviewer execution remain unverified."
       },
       "onboardingSkill": "./skills/robotics-lab/SKILL.md"
     }
