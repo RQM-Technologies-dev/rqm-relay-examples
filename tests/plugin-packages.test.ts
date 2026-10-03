@@ -55,7 +55,10 @@ describe("ChatGPT portable candidates", () => {
     const product = name === "waveengine" ? "wave" : name === "robotics-lab" ? "robotics" : "quantum";
     expect(json(`${base}/plugin.json`).name).toBe(name);
     expect(json(`${base}/mcp.json`).mcpServers).toEqual({[name]: {type:"streamable-http",url:`https://jobs.rqmtechnologies.com/mcp/plugins/${product}`}});
-    expect(read(`${base}/skills/${name}/SKILL.md`)).toBe(read(`connectors/plugins/${name}/skills/${name}/SKILL.md`));
+    const skill = read(`${base}/skills/${name}/SKILL.md`);
+    expect(skill).toContain(`product: ${product}`);
+    expect(skill).toContain(`name: ${name}`);
+    expect(skill).toContain("returned buyer `service_id`");
     expect(read(`${base}/README.md`)).toContain("not a registered ChatGPT app");
     expect(existsSync(resolve(root, base, ".app.json"))).toBe(false);
   });

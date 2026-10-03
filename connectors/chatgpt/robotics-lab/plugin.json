@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "robotics-lab",
-  "version": "0.5.1",
-  "description": "Inspect bounded robotics frame and orientation services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Results do not operate a robot or certify physical safety.",
+  "version": "0.5.2",
+  "description": "Find frame, unit and axis mismatches, check trajectory timing, compare planned and observed traces, and assess supplied calibration data or controller models. Use named frame conventions, timestamped trajectories, observations and declared models when you need consistency checks or comparisons against supplied tolerances. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results describe submitted data and models; they do not control robots or certify physical safety.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -21,8 +21,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Robotics Lab",
-        "shortDescription": "Robotics frame analysis",
-        "longDescription": "Inspect bounded robotics frame and orientation services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Results do not operate a robot or certify physical safety.",
+        "shortDescription": "Check robot models and traces",
+        "longDescription": "Find frame, unit and axis mismatches, check trajectory timing, compare planned and observed traces, and assess supplied calibration data or controller models. Use named frame conventions, timestamped trajectories, observations and declared models when you need consistency checks or comparisons against supplied tolerances. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Results describe submitted data and models; they do not control robots or certify physical safety.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -35,7 +35,9 @@
         "logo": "./assets/robotics-d94a234335751083.png",
         "composerIcon": "./assets/robotics-d94a234335751083.png",
         "defaultPrompt": [
-          "List supported robotics services and their limitations without running a job."
+          "Check these robot frame conventions for unit, axis and handedness mismatches.",
+          "Check this trajectory timing against my supplied interval and jitter limits.",
+          "Compare these planned and observed robot trajectories against my stated tolerances."
         ],
         "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
       },
@@ -49,16 +51,16 @@
               "expected_behavior": "Return only this product’s published contracts and limitations; no execution or debit."
             },
             {
-              "description": "Find an applicable contract",
-              "prompt": "Find frame convention services and show required inputs.",
+              "description": "Find a service for a concrete engineering task",
+              "prompt": "Check these robot frame conventions for unit, axis and handedness mismatches. Show the contract only; do not run a job.",
               "tools_triggered": "search_buyer_jobs",
-              "expected_behavior": "Return relevant product contracts or an honest empty match; do not fabricate results."
+              "expected_behavior": "Search this product with the user intent; compare supported and excluded cases and collect missing inputs. No execution or debit."
             },
             {
-              "description": "Explain bounded schema and limitations",
-              "prompt": "Show a supported robotics contract’s input schema and explain its limitations. Do not compute.",
-              "tools_triggered": "list_buyer_jobs",
-              "expected_behavior": "Explain the actual returned schema and evidence limits; no safety or hardware-performance guarantees."
+              "description": "Inspect requirements for a second engineering task",
+              "prompt": "Check this trajectory timing against my supplied interval and jitter limits. Show required inputs only; do not compute.",
+              "tools_triggered": "search_buyer_jobs",
+              "expected_behavior": "Return the applicable contract or explain no match; show required data and limitations without inventing measurements or tolerances. No execution or debit."
             },
             {
               "description": "Read dedicated reviewer account balance",
@@ -93,8 +95,9 @@
         }
       },
       "publication": {
-        "release_notes": "0.5.1: factual product descriptions without pricing or subscription promotions; approved original artwork and scoped OAuth MCP endpoints retained. Existing portal v0.1.0 reviews must be corrected through the supported self-service flow. This package does not attest policy acceptance or replace a review record."
-      }
+        "release_notes": "0.5.2: task-driven discovery descriptions, product starter prompts and workflow skills; preserved package identities, artwork, OAuth endpoints and legal links. Host selection and reviewer execution remain unverified."
+      },
+      "onboardingSkill": "./skills/robotics-lab/SKILL.md"
     }
   }
 }

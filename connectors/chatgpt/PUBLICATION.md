@@ -1,4 +1,6 @@
-# ChatGPT public publication preparation — draft 0.5.1
+# ChatGPT public publication preparation
+
+Current package draft: **0.5.2**, described in [DISCOVERY.md](DISCOVERY.md). The three new public drafts use generic package names; legacy record variants are not for those drafts. The material below records the earlier 0.5.1 publication investigation and does not establish current portal state.
 
 These three packages are reviewable preparation artifacts, not proof of OpenAI approval. The live portal worker reports three separate v0.1.0 records already In review and Not published in RQM Technologies / RQM Studio. Business identity and domains are verified. Submitted legacy MCP paths /mcp/studio, /mcp/waveengine and /mcp/robotics show No authentication, Needs attention / Complete MCP setup and Tools Not live; uploads are disabled during review. Preserve those IDs and use the supported self-service correction route. Reviewer fields were inaccessible and remain unverified, not absent. PR22 package contents were not established as the submitted version. User declined support outreach; no message was sent. Their existing six-tool MCP endpoints and skills remain unchanged. No public upload, policy attestation, legal acceptance, distribution activation, grant, credential or runtime change is authorized by this PR.
 

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "waveengine",
-  "version": "0.5.1",
-  "description": "Inspect bounded wave and signal analysis services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Reports describe supplied data and do not certify devices.",
+  "version": "0.5.2",
+  "description": "Compare signal samples or IQ captures, measure phase drift, check spectra against supplied limits, and validate supported processing pipelines. Use bounded numeric samples, reference captures or pipeline descriptions when you need measurements and criterion verdicts. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Reports describe supplied data and declared rules; they do not identify physical causes, diagnose hardware or certify devices.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "WaveEngine",
-        "shortDescription": "Signal and wave analysis",
-        "longDescription": "Inspect bounded wave and signal analysis services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Reports describe supplied data and do not certify devices.",
+        "shortDescription": "Analyze signals and spectra",
+        "longDescription": "Compare signal samples or IQ captures, measure phase drift, check spectra against supplied limits, and validate supported processing pipelines. Use bounded numeric samples, reference captures or pipeline descriptions when you need measurements and criterion verdicts. Execution requires an authorized RQM account, a valid owner-saved spending policy and an explicitly approved price ceiling. Reports describe supplied data and declared rules; they do not identify physical causes, diagnose hardware or certify devices.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -31,7 +31,9 @@
         "logo": "./assets/wave-dab197da82677d4.png",
         "composerIcon": "./assets/wave-dab197da82677d4.png",
         "defaultPrompt": [
-          "List supported wave services and their limitations without running a job."
+          "Compare these two IQ captures using my supplied sample rate and error tolerances.",
+          "Measure phase drift in this signal against my reference and stated limits.",
+          "Check this capture spectrum against my supplied limits and report any violations."
         ],
         "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
       },
@@ -45,16 +47,16 @@
               "expected_behavior": "Return only this product’s published contracts and limitations; no execution or debit."
             },
             {
-              "description": "Find an applicable contract",
-              "prompt": "Find wave validation services and show required inputs.",
+              "description": "Find a service for a concrete engineering task",
+              "prompt": "Compare these two IQ captures using my supplied sample rate and error tolerances. Show the contract only; do not run a job.",
               "tools_triggered": "search_buyer_jobs",
-              "expected_behavior": "Return relevant product contracts or an honest empty match; do not fabricate results."
+              "expected_behavior": "Search this product with the user intent; compare supported and excluded cases and collect missing inputs. No execution or debit."
             },
             {
-              "description": "Explain bounded schema and limitations",
-              "prompt": "Show a supported wave contract’s input schema and explain its limitations. Do not compute.",
-              "tools_triggered": "list_buyer_jobs",
-              "expected_behavior": "Explain the actual returned schema and evidence limits; no safety or hardware-performance guarantees."
+              "description": "Inspect requirements for a second engineering task",
+              "prompt": "Measure phase drift in this signal against my reference and stated limits. Show required inputs only; do not compute.",
+              "tools_triggered": "search_buyer_jobs",
+              "expected_behavior": "Return the applicable contract or explain no match; show required data and limitations without inventing measurements or tolerances. No execution or debit."
             },
             {
               "description": "Read dedicated reviewer account balance",
@@ -89,8 +91,9 @@
         }
       },
       "publication": {
-        "release_notes": "0.5.1: factual product descriptions without pricing or subscription promotions; approved original artwork and scoped OAuth MCP endpoints retained. Existing portal v0.1.0 reviews must be corrected through the supported self-service flow. This package does not attest policy acceptance or replace a review record."
-      }
+        "release_notes": "0.5.2: task-driven discovery descriptions, product starter prompts and workflow skills; preserved package identities, artwork, OAuth endpoints and legal links. Host selection and reviewer execution remain unverified."
+      },
+      "onboardingSkill": "./skills/waveengine/SKILL.md"
     }
   }
 }

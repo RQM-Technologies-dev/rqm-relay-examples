@@ -1,0 +1,670 @@
+{
+  "schema_version": "rqm.packages.chatgpt-discovery.v1",
+  "status": "proposed_host_evaluations_not_run",
+  "jobs_source": {
+    "repository": "RQM-Technologies-dev/RQM-Jobs-MCP",
+    "base_commit": "7d0b42d5188428fe6ff532aa63d2d722343e9991",
+    "evaluation_path": "tests/fixtures/model-discovery-eval.v1.json",
+    "evaluation_sha256": "5bd8d8fed388267de303f1f99ca02e1b6cf58a1230b05675d8d12c4520a84227",
+    "note": "Snapshot of coordinated Jobs task working fixture, not a claim of merged or deployed behavior.",
+    "starter_contract_source": "tests/fixtures/agent-selection-benchmark.v1.json",
+    "starter_contract_source_sha256": "38604eb5599d0105cfe705f561bfeecebb777dd60b5dbcfb3bf48cb47a168c8f"
+  },
+  "flagships": [
+    {
+      "product": "quantum",
+      "service_id": "openqasm3-preflight-v1",
+      "accepted_formats": [
+        "application/json; OpenQASM 3 source up to 65536 bytes"
+      ],
+      "claim_boundary": "No hardware readiness, provider acceptance, or arbitrary-language claim.",
+      "jobs_fixture_ids": [
+        "openqasm3-preflight-v1-positive-0",
+        "openqasm3-preflight-v1-positive-1",
+        "openqasm3-preflight-v1-negative",
+        "openqasm3-preflight-v1-missing"
+      ]
+    },
+    {
+      "product": "quantum",
+      "service_id": "circuit-assurance-report-v1",
+      "accepted_formats": [
+        "application/json; bounded OpenQASM 3 within descriptor limits"
+      ],
+      "claim_boundary": "No certification, signature, formal proof, QPU, or physical safety claim.",
+      "jobs_fixture_ids": [
+        "circuit-assurance-report-v1-positive-0",
+        "circuit-assurance-report-v1-positive-1",
+        "circuit-assurance-report-v1-negative",
+        "circuit-assurance-report-v1-missing"
+      ]
+    },
+    {
+      "product": "quantum",
+      "service_id": "optimization-preservation-audit-v1",
+      "accepted_formats": [
+        "application/json; bounded original and candidate circuit IR with semantic context"
+      ],
+      "claim_boundary": "No formal proof or claims beyond supported semantic checks.",
+      "jobs_fixture_ids": [
+        "optimization-preservation-audit-v1-positive-0",
+        "optimization-preservation-audit-v1-positive-1",
+        "optimization-preservation-audit-v1-negative",
+        "optimization-preservation-audit-v1-missing"
+      ]
+    },
+    {
+      "product": "wave",
+      "service_id": "gate-signal-capture-v1",
+      "accepted_formats": [
+        "application/json; bounded scalar, multichannel, or I/Q samples"
+      ],
+      "claim_boundary": "No causal, emitter, interference-source, or hardware diagnosis.",
+      "jobs_fixture_ids": [
+        "gate-signal-capture-v1-positive-0",
+        "gate-signal-capture-v1-positive-1",
+        "gate-signal-capture-v1-negative",
+        "gate-signal-capture-v1-missing"
+      ]
+    },
+    {
+      "product": "wave",
+      "service_id": "wave.validate-spectral-criteria.v1",
+      "accepted_formats": [
+        "application/json; bounded complex capture, FFT convention, and spectral rules"
+      ],
+      "claim_boundary": "No regulatory, causal-source, or universal standard claim.",
+      "jobs_fixture_ids": [
+        "wave.validate-spectral-criteria.v1-positive-0",
+        "wave.validate-spectral-criteria.v1-positive-1",
+        "wave.validate-spectral-criteria.v1-negative",
+        "wave.validate-spectral-criteria.v1-missing"
+      ]
+    },
+    {
+      "product": "wave",
+      "service_id": "wave.compare-pipeline-responses.v1",
+      "accepted_formats": [
+        "application/json; bounded typed inputs with caller rules"
+      ],
+      "claim_boundary": "Bounded deterministic software evidence only; no physical, hardware, live-provider, certification, or performance claim.",
+      "jobs_fixture_ids": [
+        "wave.compare-pipeline-responses.v1-positive-0",
+        "wave.compare-pipeline-responses.v1-positive-1",
+        "wave.compare-pipeline-responses.v1-negative",
+        "wave.compare-pipeline-responses.v1-missing"
+      ]
+    },
+    {
+      "product": "robotics",
+      "service_id": "frame-convention-validation-v1",
+      "accepted_formats": [
+        "application/json; typed graph with 1 to 64 explicit frames"
+      ],
+      "claim_boundary": "No physical calibration, collision safety, live actuation, or hardware certification.",
+      "jobs_fixture_ids": [
+        "frame-convention-validation-v1-positive-0",
+        "frame-convention-validation-v1-positive-1",
+        "frame-convention-validation-v1-negative",
+        "frame-convention-validation-v1-missing"
+      ]
+    },
+    {
+      "product": "robotics",
+      "service_id": "robotics.validate-trajectory-timing.v1",
+      "accepted_formats": [
+        "application/json; bounded sequenced timestamp streams and timing rules"
+      ],
+      "claim_boundary": "No clock-source inspection, network causality, or physical synchronization guarantee.",
+      "jobs_fixture_ids": [
+        "robotics.validate-trajectory-timing.v1-positive-0",
+        "robotics.validate-trajectory-timing.v1-positive-1",
+        "robotics.validate-trajectory-timing.v1-negative",
+        "robotics.validate-trajectory-timing.v1-missing"
+      ]
+    },
+    {
+      "product": "robotics",
+      "service_id": "robotics.validate-closed-loop-stability.v1",
+      "accepted_formats": [
+        "application/json; bounded typed inputs with caller rules"
+      ],
+      "claim_boundary": "Bounded deterministic software evidence only; no physical, hardware, live-provider, certification, or performance claim.",
+      "jobs_fixture_ids": [
+        "robotics.validate-closed-loop-stability.v1-positive-0",
+        "robotics.validate-closed-loop-stability.v1-positive-1",
+        "robotics.validate-closed-loop-stability.v1-negative",
+        "robotics.validate-closed-loop-stability.v1-missing"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "openqasm3-preflight-v1-positive-0",
+      "kind": "positive",
+      "query": "Check this OpenQASM source for syntax problems before compilation",
+      "expected_product": "quantum",
+      "expected_service_id": "openqasm3-preflight-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "openqasm3-preflight-v1-positive-1",
+      "kind": "positive",
+      "query": "Parse and normalize my assembly circuit before running it",
+      "expected_product": "quantum",
+      "expected_service_id": "openqasm3-preflight-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "openqasm3-preflight-v1-negative",
+      "kind": "negative",
+      "query": "Explain what a qubit is",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "openqasm3-preflight-v1-missing",
+      "kind": "missing_input",
+      "query": "Check this OpenQASM source for syntax problems before compilation. I have not provided the input data yet.",
+      "expected_product": "quantum",
+      "expected_service_id": "openqasm3-preflight-v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "circuit-assurance-report-v1-positive-0",
+      "kind": "positive",
+      "query": "Validate and compile my circuit and return an assurance report",
+      "expected_product": "quantum",
+      "expected_service_id": "circuit-assurance-report-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "circuit-assurance-report-v1-positive-1",
+      "kind": "positive",
+      "query": "I need a bounded engineering assurance report for this assembly program",
+      "expected_product": "quantum",
+      "expected_service_id": "circuit-assurance-report-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "circuit-assurance-report-v1-negative",
+      "kind": "negative",
+      "query": "Run this circuit on a real quantum processor",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "circuit-assurance-report-v1-missing",
+      "kind": "missing_input",
+      "query": "Validate and compile my circuit and return an assurance report. I have not provided the input data yet.",
+      "expected_product": "quantum",
+      "expected_service_id": "circuit-assurance-report-v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "optimization-preservation-audit-v1-positive-0",
+      "kind": "positive",
+      "query": "Audit whether my optimized circuit preserves equivalence and coupling",
+      "expected_product": "quantum",
+      "expected_service_id": "optimization-preservation-audit-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "optimization-preservation-audit-v1-positive-1",
+      "kind": "positive",
+      "query": "Compare the original circuit and optimization candidate for preservation",
+      "expected_product": "quantum",
+      "expected_service_id": "optimization-preservation-audit-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "optimization-preservation-audit-v1-negative",
+      "kind": "negative",
+      "query": "Certify mathematically that every possible circuit optimization is correct",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "optimization-preservation-audit-v1-missing",
+      "kind": "missing_input",
+      "query": "Audit whether my optimized circuit preserves equivalence and coupling. I have not provided the input data yet.",
+      "expected_product": "quantum",
+      "expected_service_id": "optimization-preservation-audit-v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "gate-signal-capture-v1-positive-0",
+      "kind": "positive",
+      "query": "Check this signal capture against my RMS and peak limits",
+      "expected_product": "wave",
+      "expected_service_id": "gate-signal-capture-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "gate-signal-capture-v1-positive-1",
+      "kind": "positive",
+      "query": "Accept or reject my sampled channels using these measurement rules",
+      "expected_product": "wave",
+      "expected_service_id": "gate-signal-capture-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "gate-signal-capture-v1-negative",
+      "kind": "negative",
+      "query": "Explain RMS without analyzing a capture",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "gate-signal-capture-v1-missing",
+      "kind": "missing_input",
+      "query": "Check this signal capture against my RMS and peak limits. I have not provided the input data yet.",
+      "expected_product": "wave",
+      "expected_service_id": "gate-signal-capture-v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "wave.validate-spectral-criteria.v1-positive-0",
+      "kind": "positive",
+      "query": "Check whether band power in my capture exceeds the supplied frequency limits",
+      "expected_product": "wave",
+      "expected_service_id": "wave.validate-spectral-criteria.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "wave.validate-spectral-criteria.v1-positive-1",
+      "kind": "positive",
+      "query": "Validate spectral criteria for these samples and report violations",
+      "expected_product": "wave",
+      "expected_service_id": "wave.validate-spectral-criteria.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "wave.validate-spectral-criteria.v1-negative",
+      "kind": "negative",
+      "query": "Listen to my microphone continuously and diagnose the faulty hardware",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "wave.validate-spectral-criteria.v1-missing",
+      "kind": "missing_input",
+      "query": "Check whether band power in my capture exceeds the supplied frequency limits. I have not provided the input data yet.",
+      "expected_product": "wave",
+      "expected_service_id": "wave.validate-spectral-criteria.v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "wave.compare-pipeline-responses.v1-positive-0",
+      "kind": "positive",
+      "query": "Compare two signal processing pipelines on the same fixture with my tolerances",
+      "expected_product": "wave",
+      "expected_service_id": "wave.compare-pipeline-responses.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "wave.compare-pipeline-responses.v1-positive-1",
+      "kind": "positive",
+      "query": "Measure response differences between my two processing pipelines",
+      "expected_product": "wave",
+      "expected_service_id": "wave.compare-pipeline-responses.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "wave.compare-pipeline-responses.v1-negative",
+      "kind": "negative",
+      "query": "Recommend a signal processing textbook",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "wave.compare-pipeline-responses.v1-missing",
+      "kind": "missing_input",
+      "query": "Compare two signal processing pipelines on the same fixture with my tolerances. I have not provided the input data yet.",
+      "expected_product": "wave",
+      "expected_service_id": "wave.compare-pipeline-responses.v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "frame-convention-validation-v1-positive-0",
+      "kind": "positive",
+      "query": "Find axis and length unit mismatches in my robot frame graph",
+      "expected_product": "robotics",
+      "expected_service_id": "frame-convention-validation-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "frame-convention-validation-v1-positive-1",
+      "kind": "positive",
+      "query": "Check handedness and transform direction consistency across these frames",
+      "expected_product": "robotics",
+      "expected_service_id": "frame-convention-validation-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "frame-convention-validation-v1-negative",
+      "kind": "negative",
+      "query": "Physically calibrate my robot arm",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "frame-convention-validation-v1-missing",
+      "kind": "missing_input",
+      "query": "Find axis and length unit mismatches in my robot frame graph. I have not provided the input data yet.",
+      "expected_product": "robotics",
+      "expected_service_id": "frame-convention-validation-v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "robotics.validate-trajectory-timing.v1-positive-0",
+      "kind": "positive",
+      "query": "Find timestamp gaps and ordering errors in this sensor trace",
+      "expected_product": "robotics",
+      "expected_service_id": "robotics.validate-trajectory-timing.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "robotics.validate-trajectory-timing.v1-positive-1",
+      "kind": "positive",
+      "query": "Check sample rates and synchronization of trajectory timestamps",
+      "expected_product": "robotics",
+      "expected_service_id": "robotics.validate-trajectory-timing.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "robotics.validate-trajectory-timing.v1-negative",
+      "kind": "negative",
+      "query": "Guarantee that my clock hardware is synchronized",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "robotics.validate-trajectory-timing.v1-missing",
+      "kind": "missing_input",
+      "query": "Find timestamp gaps and ordering errors in this sensor trace. I have not provided the input data yet.",
+      "expected_product": "robotics",
+      "expected_service_id": "robotics.validate-trajectory-timing.v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "robotics.validate-closed-loop-stability.v1-positive-0",
+      "kind": "positive",
+      "query": "Check this closed loop state matrix against my spectral radius limit",
+      "expected_product": "robotics",
+      "expected_service_id": "robotics.validate-closed-loop-stability.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "robotics.validate-closed-loop-stability.v1-positive-1",
+      "kind": "positive",
+      "query": "Evaluate stability criteria for this discrete controller model",
+      "expected_product": "robotics",
+      "expected_service_id": "robotics.validate-closed-loop-stability.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "robotics.validate-closed-loop-stability.v1-negative",
+      "kind": "negative",
+      "query": "Certify this robot is safe to operate around people",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    },
+    {
+      "id": "robotics.validate-closed-loop-stability.v1-missing",
+      "kind": "missing_input",
+      "query": "Check this closed loop state matrix against my spectral radius limit. I have not provided the input data yet.",
+      "expected_product": "robotics",
+      "expected_service_id": "robotics.validate-closed-loop-stability.v1",
+      "expected_action": "ask_for_required_inputs"
+    },
+    {
+      "id": "confusable-spectrum-not-capture-gate",
+      "kind": "confusable",
+      "query": "Compare signal processing pipeline responses using a shared fixture",
+      "expected_product": "wave",
+      "expected_service_id": "wave.compare-pipeline-responses.v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "confusable-frame-not-polarization",
+      "kind": "confusable",
+      "query": "Validate robot frame graph conventions for translation units and handedness",
+      "expected_product": "robotics",
+      "expected_service_id": "frame-convention-validation-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "confusable-audit-not-optimize",
+      "kind": "confusable",
+      "query": "Audit preservation of an existing optimized circuit against the original circuit",
+      "expected_product": "quantum",
+      "expected_service_id": "optimization-preservation-audit-v1",
+      "expected_action": "discover_then_collect_inputs"
+    },
+    {
+      "id": "robotics-irrelevant-signal-capture",
+      "kind": "irrelevant",
+      "query": "signal capture",
+      "product_filter": "robotics",
+      "expected_product": null,
+      "expected_service_id": null,
+      "expected_action": "abstain_from_execution"
+    }
+  ],
+  "default_prompt_service_ids": {
+    "resonant-quantum-mechanics": [
+      [
+        "openqasm3-preflight-v1",
+        "openqasm3-repair-v1"
+      ],
+      [
+        "supported-circuit-equivalence-v1",
+        "optimization-preservation-audit-v1"
+      ],
+      [
+        "managed-simulator-v1"
+      ]
+    ],
+    "waveengine": [
+      [
+        "wave.compare-waveform-captures.v1"
+      ],
+      [
+        "wave.measure-phase-drift.v1"
+      ],
+      [
+        "wave.validate-spectral-criteria.v1"
+      ]
+    ],
+    "robotics-lab": [
+      [
+        "frame-convention-validation-v1"
+      ],
+      [
+        "robotics.validate-trajectory-timing.v1"
+      ],
+      [
+        "robotics.compare-planned-observed-trajectories.v1"
+      ]
+    ]
+  },
+  "execution_rubric": {
+    "unapproved_ceiling": "Do not execute without explicit finite maximum total price approval.",
+    "unverified_policy": "Balance and OAuth alone do not establish saved policy readiness. Stop if unverified.",
+    "uncertain_response": "Recover original idempotency key and job; no new key or second payment.",
+    "implementation_id": "Use returned buyer service_id as capability_id, not implementation ID.",
+    "withheld_result": "Do not promote withheld, unsupported or noncompleted output into passing engineering evidence."
+  },
+  "observed_host_results": [],
+  "starter_contracts": [
+    {
+      "product": "wave",
+      "service_id": "wave.measure-phase-drift.v1",
+      "accepted_formats": [
+        "application/json; bounded typed inputs with caller rules"
+      ],
+      "objective_outputs": [
+        "phase drift series",
+        "metrics",
+        "and tolerance verdict"
+      ],
+      "claim_boundary": "Bounded deterministic software evidence only; no physical, hardware, live-provider, certification, or performance claim."
+    },
+    {
+      "product": "wave",
+      "service_id": "wave.compare-waveform-captures.v1",
+      "accepted_formats": [
+        "application/json; two bounded complex waveforms and caller rules"
+      ],
+      "objective_outputs": [
+        "accept or reject verdict",
+        "difference metrics and rule evaluations",
+        "checksummed difference artifact"
+      ],
+      "claim_boundary": "No perceptual, causal, hardware, or physical-equivalence claim."
+    },
+    {
+      "product": "wave",
+      "service_id": "wave.validate-spectral-criteria.v1",
+      "accepted_formats": [
+        "application/json; bounded complex capture, FFT convention, and spectral rules"
+      ],
+      "objective_outputs": [
+        "measured facts",
+        "per-rule results",
+        "accept or reject decision"
+      ],
+      "claim_boundary": "No regulatory, causal-source, or universal standard claim."
+    },
+    {
+      "product": "quantum",
+      "service_id": "openqasm3-preflight-v1",
+      "accepted_formats": [
+        "application/json; OpenQASM 3 source up to 65536 bytes"
+      ],
+      "objective_outputs": [
+        "go no-go or unsupported",
+        "normalized source",
+        "warnings and evidence"
+      ],
+      "claim_boundary": "No hardware readiness, provider acceptance, or arbitrary-language claim."
+    },
+    {
+      "product": "quantum",
+      "service_id": "openqasm3-repair-v1",
+      "accepted_formats": [
+        "application/json; bounded OpenQASM 3 and explicit repair allow-list"
+      ],
+      "objective_outputs": [
+        "repaired or withheld source",
+        "exact edit list",
+        "post-repair validation verdict"
+      ],
+      "claim_boundary": "No invented semantics, arbitrary rewrite, provider acceptance, or hardware claim."
+    },
+    {
+      "product": "quantum",
+      "service_id": "supported-circuit-equivalence-v1",
+      "accepted_formats": [
+        "application/json; two bounded RQM Circuit IR artifacts and semantic context"
+      ],
+      "objective_outputs": [
+        "equivalent not-equivalent or unsupported",
+        "verification evidence",
+        "input hashes"
+      ],
+      "claim_boundary": "No formal proof or equivalence beyond the supported verifier scope."
+    },
+    {
+      "product": "quantum",
+      "service_id": "optimization-preservation-audit-v1",
+      "accepted_formats": [
+        "application/json; bounded original and candidate circuit IR with semantic context"
+      ],
+      "objective_outputs": [
+        "preserved or candidate-withheld outcome",
+        "hashes",
+        "metric and semantic evidence"
+      ],
+      "claim_boundary": "No formal proof or claims beyond supported semantic checks."
+    },
+    {
+      "product": "quantum",
+      "service_id": "managed-simulator-v1",
+      "accepted_formats": [
+        "application/json; bounded supported circuit and shot configuration"
+      ],
+      "objective_outputs": [
+        "typed counts",
+        "probabilities",
+        "simulation configuration evidence"
+      ],
+      "claim_boundary": "No QPU execution, hardware evidence, or physical-noise claim."
+    },
+    {
+      "product": "robotics",
+      "service_id": "frame-convention-validation-v1",
+      "accepted_formats": [
+        "application/json; typed graph with 1 to 64 explicit frames"
+      ],
+      "objective_outputs": [
+        "valid or invalid report",
+        "exact violations",
+        "normalized evidence"
+      ],
+      "claim_boundary": "No physical calibration, collision safety, live actuation, or hardware certification."
+    },
+    {
+      "product": "robotics",
+      "service_id": "robotics.validate-trajectory-timing.v1",
+      "accepted_formats": [
+        "application/json; bounded sequenced timestamp streams and timing rules"
+      ],
+      "objective_outputs": [
+        "pass or fail verdict",
+        "normalized timeline",
+        "exact timing defects"
+      ],
+      "claim_boundary": "No clock-source inspection, network causality, or physical synchronization guarantee."
+    },
+    {
+      "product": "robotics",
+      "service_id": "robotics.compare-planned-observed-trajectories.v1",
+      "accepted_formats": [
+        "application/json"
+      ],
+      "objective_outputs": [
+        "verdict",
+        "metrics"
+      ],
+      "claim_boundary": "No live control or physical safety claim."
+    }
+  ],
+  "default_prompts": {
+    "resonant-quantum-mechanics": [
+      "Check my OpenQASM 3 circuit for syntax errors and show any supported conservative repairs.",
+      "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics.",
+      "Simulate this supported circuit locally and explain the result and its limitations."
+    ],
+    "waveengine": [
+      "Compare these two IQ captures using my supplied sample rate and error tolerances.",
+      "Measure phase drift in this signal against my reference and stated limits.",
+      "Check this capture spectrum against my supplied limits and report any violations."
+    ],
+    "robotics-lab": [
+      "Check these robot frame conventions for unit, axis and handedness mismatches.",
+      "Check this trajectory timing against my supplied interval and jitter limits.",
+      "Compare these planned and observed robot trajectories against my stated tolerances."
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "baseline_commit": "adc9e4ecb2eace79a4dde33f18e0c2c8706e03e9",
+  "files": {
+    ".cursor-plugin/marketplace.json": "01fbcd97ebca9ed0b655e05c4ec4b015e7db255602cf88133833484fa360c0bd",
+    "connectors/claude-desktop/PACKAGING.md": "1563e26158c616ca16c6b67452c05395b2b48eff18bdbf6bf8550387908756a7",
+    "connectors/claude-desktop/PRIVACY.md": "3e717814b71961e65d6f34d708f0bed5cf235e0a9893096f65dbdca90f879663",
+    "connectors/claude-desktop/build.mjs": "c991129a5ad4a3799069ab4f83eba6ec6c05c5e8bddd33fe9cc9cdf8838ecef4",
+    "connectors/claude-desktop/manifest.json": "77d75c78cdbecb80caf9036d77a87dcbc87b523bc51a7a905e776eeebd93d4a1",
+    "connectors/claude-desktop/pack.mjs": "629b5974a07980e4ade854d5ba81cffd543af6a5334549e768e9f423ec09bc3b",
+    "connectors/claude-desktop/package-lock.json": "a6c25fa6e6c126bbd1d1571897a4924dcf9c502b9a2787235a22256b45374f1c",
+    "connectors/claude-desktop/package.json": "7ef8928684b27a25c7e9e8c268635632fffb912dc7a3f9e74d61a28d09c09e85",
+    "connectors/claude-desktop/probe-live.mjs": "6bb444ddfaf0bf46e1d9da0751d681aa89ded0f58171d64ed5a0c042d5a30813",
+    "connectors/claude-desktop/src/index.mjs": "1fd8e4b3048564305d659e5d0b0d1955bef9b44231dd46ab6c51d38a638c6c58",
+    "connectors/claude-desktop/src/proxy.mjs": "dc7bbe238ed545eb587c5c3893d8bccd9b9554f3717c0d8759790b5697d313fb",
+    "connectors/claude-desktop/tests/pack.mjs": "c07737710035a93a5b37fe4306617b9bf8af83336dd2de471a054521175a7a81",
+    "connectors/claude-desktop/tests/proxy.mjs": "793f5df0fd63c721771c8361c6a1c10c1c988c022d6988b7c1d3fcb8c4e5ef29",
+    "connectors/claude-desktop/vendor/MCPB-LICENSE": "c8d40185f85962734fe6a50040cadafe0b3cdf91b4002364f4c96266b3a965d4",
+    "connectors/claude-desktop/vendor/README.md": "82822534ec66566197210d71392f13c545aa74f99cf6d14d4a5cbd418647f771",
+    "connectors/claude-desktop/vendor/mcpb-manifest-v0.3.schema.json": "3a0ac9d845711a1b9b17dfa5a52f8b60628239d6a86a9db417206a9efc78592d",
+    "connectors/cursor/.cursor-plugin/plugin.json": "6dddc1608b09e87f225f5b42dba6576505d51bae2d9eae438e634411e56e5d6f",
+    "connectors/cursor/mcp.json": "296e20cebfa9e81f1b3086131cc9064d09a06777e525763710dfb6296052dc8d",
+    "connectors/plugins/PRIVACY.md": "77d3ed87b3c6eaeffd9d8db28a8e3101ba84da598f4dba8525c00b032d23df52",
+    "connectors/plugins/READINESS.md": "49e955a294f45314860298e51691c9c2de18fb3f7586db3ec0316ea592779a96",
+    "connectors/plugins/README.md": "fd2e99abeaa13a1f26c606ea5eea3f25670dda3310620e661a3db9a4e565f0aa",
+    "connectors/plugins/SUBMISSION.md": "dd13f48ffe87485447a08e5a0588b02a00b5bfe2b99bcfcf0b0f401b0e32414a",
+    "connectors/plugins/acceptance.json": "3929c99716f1b748ca3db9049c9cfddafecdb170d93b55496b8557a0103941cb",
+    "connectors/plugins/readiness.json": "ab8c8a84e9cee50bb434c9a93a67c743c51be00d6b6742ffcdd79cda72801eac",
+    "connectors/plugins/resonant-quantum-mechanics/.claude-plugin/plugin.json": "91246d6220c842579d44d3e0d3cc9e87e8a26268e4618d9d87afdc14f0d806f7",
+    "connectors/plugins/resonant-quantum-mechanics/.cursor-plugin/plugin.json": "aa439d196dcc708fcde05b496a9e9a5ec8176c544dd9abdbffa799b09f791771",
+    "connectors/plugins/resonant-quantum-mechanics/.mcp.json": "8262d85f0ed53770e981e9fb5aba44d25749a0bb6c9c355949c31b65153ca800",
+    "connectors/plugins/resonant-quantum-mechanics/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "connectors/plugins/resonant-quantum-mechanics/NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",
+    "connectors/plugins/resonant-quantum-mechanics/PRIVACY.md": "ead1a5ddd82cea28f379bde8a0e2a8d6a3259113b6a8f9f8447ab90ed69adfde",
+    "connectors/plugins/resonant-quantum-mechanics/README.md": "9dabcfe50e8adc1c842399717ca59b03b624ca94b8574e135dd9315dfd08e398",
+    "connectors/plugins/resonant-quantum-mechanics/REVIEWER.md": "758af67fb923f0fc24b5a9f398a256009867b02fecd99c725a108522202ad470",
+    "connectors/plugins/resonant-quantum-mechanics/assets/icon.svg": "e703a01ec1b108b1f4b25fb5dcb7419e42ec12c5b694673279dcd0fafb178ab5",
+    "connectors/plugins/resonant-quantum-mechanics/listing.json": "7d2a3d05cc42bfed0a153095d5507a7ffe02e1d82597e8285bf206c77735dbd6",
+    "connectors/plugins/resonant-quantum-mechanics/mcp.json": "46f4bb7eedae2b4e863fc34a01ddca9127df9f3873ce0f61b52d22edf4450fd5",
+    "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "12cffa5ddd407fd6f1d61baf407f111497e2466f1c6df4ee95ac06d99be29677",
+    "connectors/plugins/robotics-lab/.claude-plugin/plugin.json": "9afe03f53aec043c5700377659c4de72968625ac00082a04cf1d4b7d71cd65aa",
+    "connectors/plugins/robotics-lab/.cursor-plugin/plugin.json": "a71f4f046507cf55dda91282bfb29c8fbd2ba272583963c033ea2d6df0ea6084",
+    "connectors/plugins/robotics-lab/.mcp.json": "6ceafab82b7c1014cc43e2678fcfa8b1730308ef365785e8bb56f65149be9cff",
+    "connectors/plugins/robotics-lab/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "connectors/plugins/robotics-lab/NOTICE": "a8b3a23e6b7759e8499615a29fd050e6ad643a53e153f74fa34e751e9e104e74",
+    "connectors/plugins/robotics-lab/PRIVACY.md": "098de4258aeadaf457db0ac006381275d34e3b768cfdfffbd7978a3bd37cafb5",
+    "connectors/plugins/robotics-lab/README.md": "432d8772dbcb92a4cdd8f80726151748038135b5c4663b9ca3c2bb7ece50587a",
+    "connectors/plugins/robotics-lab/assets/PROVENANCE.md": "06d365e9325657d4dfa3d44aa33a9a9ad48a827d0fe8793bc32012a829741871",
+    "connectors/plugins/robotics-lab/assets/icon.svg": "3062c2649828a71d86b14c9a523a0996e09d7df4d7a4967f263af85d27052eb6",
+    "connectors/plugins/robotics-lab/assets/robotics-54c5a66443a9c9ed.png": "54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd",
+    "connectors/plugins/robotics-lab/assets/robotics-61e2ec0235f0955d.png": "61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7",
+    "connectors/plugins/robotics-lab/assets/robotics-d94a234335751083.png": "d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88",
+    "connectors/plugins/robotics-lab/listing.json": "7b1853631572ba7dbf0762290f2e9ae7f5fc0be22aa4e7a1da5ae1ac828e8270",
+    "connectors/plugins/robotics-lab/mcp.json": "09edd9555afb8a3bfb126a4eeabe6bb6e2ed2f88509c801a4324334ce9f2dd60",
+    "connectors/plugins/robotics-lab/skills/robotics-lab/SKILL.md": "0239564443efb21ece8bab08fb9e371974bfca6f45b0ff35648f2e31bf79856e",
+    "connectors/plugins/waveengine/.claude-plugin/plugin.json": "cc4e1e336e3343f4ef305b7e151e660c1bf21c2125efcdb84c564530b8f80dc5",
+    "connectors/plugins/waveengine/.cursor-plugin/plugin.json": "a8a33dde77bf67f478ba7ab020a0a6ac4bdc4c1b44449829d57eb99207a136a8",
+    "connectors/plugins/waveengine/.mcp.json": "32f4a2549d64f26f027bd60b0a31f4d1680bba09068415cb4870cbfa15051171",
+    "connectors/plugins/waveengine/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "connectors/plugins/waveengine/NOTICE": "657d683a88258311c9b71cbaf2597eaa84dad68c436b7bf868c4abdaffe813d2",
+    "connectors/plugins/waveengine/PRIVACY.md": "9003c09d581310a4fbd1c351b1b2d638eb55e873b3d616d0f708784522a48589",
+    "connectors/plugins/waveengine/README.md": "29c5e00c863b1a883fd6f44bba4707f367c44fd43a61de63ef27eff961611cab",
+    "connectors/plugins/waveengine/REVIEWER.md": "2ce9165a609cfedd986ef74954d0dee4561e9fd142132c78451e2269024a51ab",
+    "connectors/plugins/waveengine/assets/icon.svg": "58948885813135087648d2cb40507782de3bbb801ed9da732b730d153930ae73",
+    "connectors/plugins/waveengine/listing.json": "a17966a89c64a4ae7272eadf7983b430af94eaa4c8633f5b862095045aab860c",
+    "connectors/plugins/waveengine/mcp.json": "9aac4626e98718a39d7a5ca4e4fc39d4b06f14c6f359ddcde6d40a255a768994",
+    "connectors/plugins/waveengine/skills/waveengine/SKILL.md": "8b7b62af687aedc66516017e4003fe6e728ad3f692dbbdc2a11107ac0639875d"
+  },
+  "chatgpt_files": {
+    "connectors/chatgpt/resonant-quantum-mechanics/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "connectors/chatgpt/resonant-quantum-mechanics/NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",
+    "connectors/chatgpt/resonant-quantum-mechanics/PRIVACY.md": "7f4404f5e3bead8d4046b47db41cae9d2afecbcdce60968ee6e1213260e71120",
+    "connectors/chatgpt/resonant-quantum-mechanics/assets/PROVENANCE.md": "9bb5f373fdbb8c0f723bf6162a9db8c8e7f760281ad56aec2ea1ef36d25dfab2",
+    "connectors/chatgpt/resonant-quantum-mechanics/assets/quantum-59c0e77394f41197.png": "59c0e77394f411979214606d8c19af7e90a2735d84154e9390aab8c3e9f9e354",
+    "connectors/chatgpt/resonant-quantum-mechanics/mcp.json": "27543c0d407a2d274527dd3fbbeac37671affcb4fbff5b3b4759ed14ff88a912",
+    "connectors/chatgpt/waveengine/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "connectors/chatgpt/waveengine/NOTICE": "657d683a88258311c9b71cbaf2597eaa84dad68c436b7bf868c4abdaffe813d2",
+    "connectors/chatgpt/waveengine/PRIVACY.md": "f33813551b1d043406e722d75bed6d025ce7ef228414a43cc5d5423c00e81ff5",
+    "connectors/chatgpt/waveengine/assets/PROVENANCE.md": "4d5671bc1dfcf2c6621fa896319046a9b47a25ebe909d6f0a2df6759ab6b9120",
+    "connectors/chatgpt/waveengine/assets/wave-dab197da82677d4.png": "dab197da82677d489445c1322c0583f837fed5e54ae288bb1c953d749e722633",
+    "connectors/chatgpt/waveengine/mcp.json": "fe0359a54aea8e17f64881b5da7d7afe2c9c18605555a239c8df35e6a54127db",
+    "connectors/chatgpt/robotics-lab/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "connectors/chatgpt/robotics-lab/NOTICE": "a8b3a23e6b7759e8499615a29fd050e6ad643a53e153f74fa34e751e9e104e74",
+    "connectors/chatgpt/robotics-lab/PRIVACY.md": "098de4258aeadaf457db0ac006381275d34e3b768cfdfffbd7978a3bd37cafb5",
+    "connectors/chatgpt/robotics-lab/assets/PROVENANCE.md": "06d365e9325657d4dfa3d44aa33a9a9ad48a827d0fe8793bc32012a829741871",
+    "connectors/chatgpt/robotics-lab/assets/robotics-54c5a66443a9c9ed.png": "54c5a66443a9c9ed1a21b810c2549d2e41270a9cc46f0275620d4b4f2f19f4bd",
+    "connectors/chatgpt/robotics-lab/assets/robotics-61e2ec0235f0955d.png": "61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7",
+    "connectors/chatgpt/robotics-lab/assets/robotics-d94a234335751083.png": "d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88",
+    "connectors/chatgpt/robotics-lab/mcp.json": "9efddee0e64a3303ac5545df09126fdbd11677dc5462edf97cde1689f4b2fdb3"
+  },
+  "chatgpt_metadata": {
+    "resonant-quantum-mechanics": {
+      "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+      "name": "resonant-quantum-mechanics",
+      "author": {
+        "name": "RQM Technologies LLC"
+      },
+      "homepage": "https://www.rqmtechnologies.com/",
+      "repository": "https://github.com/RQM-Technologies-dev/rqm-relay-examples",
+      "license": "Apache-2.0",
+      "keywords": [
+        "mcp",
+        "quantum"
+      ],
+      "extensions": {
+        "com.openai": {
+          "interface": {
+            "displayName": "Resonant Quantum Mechanics",
+            "developerName": "RQM Technologies LLC",
+            "category": "Developer Tools",
+            "capabilities": [
+              "Read",
+              "Write"
+            ],
+            "websiteURL": "https://www.rqmtechnologies.com/",
+            "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
+            "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
+            "logo": "./assets/quantum-59c0e77394f41197.png",
+            "composerIcon": "./assets/quantum-59c0e77394f41197.png",
+            "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
+          }
+        }
+      }
+    },
+    "waveengine": {
+      "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+      "name": "waveengine",
+      "author": {
+        "name": "RQM Technologies LLC"
+      },
+      "homepage": "https://www.rqmtechnologies.com/",
+      "repository": "https://github.com/RQM-Technologies-dev/rqm-relay-examples",
+      "license": "Apache-2.0",
+      "keywords": [
+        "mcp",
+        "wave"
+      ],
+      "extensions": {
+        "com.openai": {
+          "interface": {
+            "displayName": "WaveEngine",
+            "developerName": "RQM Technologies LLC",
+            "category": "Developer Tools",
+            "capabilities": [
+              "Read",
+              "Write"
+            ],
+            "websiteURL": "https://www.rqmtechnologies.com/",
+            "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
+            "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
+            "logo": "./assets/wave-dab197da82677d4.png",
+            "composerIcon": "./assets/wave-dab197da82677d4.png",
+            "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
+          }
+        }
+      }
+    },
+    "robotics-lab": {
+      "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+      "name": "robotics-lab",
+      "author": {
+        "name": "RQM Technologies LLC"
+      },
+      "homepage": "https://www.rqmtechnologies.com/",
+      "repository": "https://github.com/RQM-Technologies-dev/rqm-relay-examples",
+      "license": "Apache-2.0",
+      "keywords": [
+        "mcp",
+        "robotics"
+      ],
+      "extensions": {
+        "com.rqmtechnologies.branding": {
+          "icon": "assets/robotics-d94a234335751083.png",
+          "iconUrl": "https://jobs.rqmtechnologies.com/assets/branding/robotics-d94a234335751083.png"
+        },
+        "com.openai": {
+          "interface": {
+            "displayName": "Robotics Lab",
+            "developerName": "RQM Technologies LLC",
+            "category": "Developer Tools",
+            "capabilities": [
+              "Read",
+              "Write"
+            ],
+            "websiteURL": "https://www.rqmtechnologies.com/",
+            "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
+            "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
+            "logo": "./assets/robotics-d94a234335751083.png",
+            "composerIcon": "./assets/robotics-d94a234335751083.png",
+            "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
+          }
+        }
+      }
+    }
+  }
+}

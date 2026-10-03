@@ -1,4 +1,4 @@
-# WaveEngine for ChatGPT — publication draft 0.5.1
+# WaveEngine for ChatGPT — publication draft 0.5.2
 
 Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `waveengine` at `https://jobs.rqmtechnologies.com/mcp/plugins/wave`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
 

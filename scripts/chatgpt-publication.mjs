@@ -43,7 +43,17 @@ export function validatePackages(root=ROOT){
   for(const key of ['websiteURL','supportURL','privacyPolicyURL','termsOfServiceURL']){text(ui[key],1024,key);https(ui[key]);}
   if(ui.termsOfServiceURL)https(ui.termsOfServiceURL);
   assert(['Developer Tools','Productivity'].includes(ui.category),'Verify category in portal before submission');
-  assert(Array.isArray(ui.defaultPrompt)&&ui.defaultPrompt.length<=3);for(const prompt of ui.defaultPrompt)text(prompt,128,'defaultPrompt');
+  assert(Array.isArray(ui.defaultPrompt)&&ui.defaultPrompt.length>0&&ui.defaultPrompt.length<=3);
+  assert.equal(new Set(ui.defaultPrompt).size,ui.defaultPrompt.length,'Duplicate defaultPrompt');
+  for(const prompt of ui.defaultPrompt){text(prompt,128,'defaultPrompt');assert(!prompt.includes('@'),'No @mentions in defaultPrompt');}
+  // The portable schema leaves extension contents open; check the documented
+  // OpenAI onboarding field against the files actually included in our ZIP.
+  if(openai.onboardingSkill!==undefined){
+   text(openai.onboardingSkill,1024,'onboardingSkill');
+   assert.equal(openai.onboardingSkill,`./skills/${item.name}/SKILL.md`,'Onboarding must use the packaged product skill');
+   containedFile(base,openai.onboardingSkill);
+   assert(packageFiles(item).includes(openai.onboardingSkill.slice(2)),'Onboarding absent from ZIP');
+  }
   for(const key of ['logo','composerIcon']){
    const file=containedFile(base,ui[key]);assert.equal(ui[key],`./assets/${item.asset}`);
    const bytes=readFileSync(file);assert.equal(digest(bytes),item.hash,'Approved artwork changed');assert(bytes.length<=5*1024*1024);assert.equal(bytes.subarray(0,8).toString('hex'),'89504e470d0a1a0a');
@@ -55,7 +65,7 @@ export function validatePackages(root=ROOT){
   for(const entry of [...cases.positive,...cases.negative]){text(entry.description,4000,'case description');text(entry.prompt,4000,'case prompt');assert(entry.expected_behavior);}
   for(const entry of cases.positive){assert(entry.tools_triggered);assert(!entry.tools_triggered.includes('run_account_job'),'Draft validation must not request paid acceptance');}
   const files=packageFiles(item);for(const file of files)containedFile(base,'./'+file);
-  return {name:item.name,version:manifest.version,files,logo_sha256:item.hash,packageValid:true,submissionReady:false,blockers:['OpenAI policy acceptance is not established by this package','Existing v0.1.0 review records require supported OAuth endpoint migration and tool scans','Current reviewer material and tool execution evidence is unverified in this offline package check','Final category, distribution and truthful portal attestations require verification']};
+  return {name:item.name,version:manifest.version,files,logo_sha256:item.hash,packageValid:true,submissionReady:false,blockers:['OpenAI policy acceptance is not established by this package','Target draft OAuth configuration and current tool scans are not verified by offline package validation','Current reviewer material and tool execution evidence is unverified in this offline package check','Final category, distribution and truthful portal attestations require verification']};
  });
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
