@@ -64,7 +64,7 @@ describe("ChatGPT portable candidates", () => {
 
 describe("approved Robotics branding", () => {
   it("keeps the three host references on identical approved PNG bytes", () => {
-    const filename = "robotics-61e2ec0235f0955d.png";
+    const filename = "robotics-d94a234335751083.png";
     const local = `assets/${filename}`;
     const remote = `https://jobs.rqmtechnologies.com/assets/branding/${filename}`;
     const plugin = "connectors/plugins/robotics-lab";
@@ -75,7 +75,7 @@ describe("approved Robotics branding", () => {
     expect(json(`${plugin}/listing.json`).icon_url).toBe(remote);
     for (const base of [plugin,chatgpt]) {
       const bytes = readFileSync(resolve(root,base,local));
-      expect(createHash("sha256").update(bytes).digest("hex")).toBe("61e2ec0235f0955d33115178365b31a04f9503a7d08d260920ba752bf9be30a7");
+      expect(createHash("sha256").update(bytes).digest("hex")).toBe("d94a23433575108391242b81d9a494e9aa1c4dbfc13e10ac36f0e3df20f1fa88");
       expect(bytes.subarray(0,8).toString("hex")).toBe("89504e470d0a1a0a");
       expect(bytes.readUInt32BE(16)).toBe(1254);
       expect(bytes.readUInt32BE(20)).toBe(1254);

@@ -10,9 +10,9 @@ See the skill for product scope, input minimization, output limitations and reco
 
 ## Approved graphic
 
-![Robotics Lab](assets/robotics-61e2ec0235f0955d.png)
+![Robotics Lab](assets/robotics-d94a234335751083.png)
 
-This package contains the owner-approved final gimbal PNG. The same graphic is published in the Robotics MCP server metadata at [https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f0955d.png](https://jobs.rqmtechnologies.com/assets/branding/robotics-61e2ec0235f0955d.png). Host rendering depends on the client; a connected custom connector does not prove its logo renders. No directory submission or new consent grant is included.
+This package contains the owner-approved final gimbal PNG. The same graphic is published in the Robotics MCP server metadata at [https://jobs.rqmtechnologies.com/assets/branding/robotics-d94a234335751083.png](https://jobs.rqmtechnologies.com/assets/branding/robotics-d94a234335751083.png). Host rendering depends on the client; a connected custom connector does not prove its logo renders. No directory submission or new consent grant is included.
 
 The schema-valid `com.rqmtechnologies.branding` extension carries the local and public icon references as publisher metadata; the portable specification assigns no host display behavior to extension contents.
 
