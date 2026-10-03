@@ -1,6 +1,6 @@
-# ChatGPT public publication preparation — draft 0.5.0
+# ChatGPT public publication preparation — draft 0.5.1
 
-These three packages are reviewable preparation artifacts, not approved public apps. Their existing six-tool MCP endpoints and skills remain unchanged. No public upload, policy attestation, legal acceptance, distribution activation, grant, credential or runtime change is authorized by this PR.
+These three packages are reviewable preparation artifacts, not proof of OpenAI approval. The live portal worker reports three separate v0.1.0 records already In review and Not published in RQM Technologies / RQM Studio. Business identity and domains are verified. Submitted legacy MCP paths /mcp/studio, /mcp/waveengine and /mcp/robotics show No authentication, Needs attention / Complete MCP setup and Tools Not live; uploads are disabled during review. Preserve those IDs and use the supported self-service correction route. Reviewer fields were inaccessible and remain unverified, not absent. PR22 package contents were not established as the submitted version. User declined support outreach; no message was sent. Their existing six-tool MCP endpoints and skills remain unchanged. No public upload, policy attestation, legal acceptance, distribution activation, grant, credential or runtime change is authorized by this PR.
 
 ## Package and listing format
 
@@ -23,17 +23,17 @@ Run `npm run publication:check` for offline schema/metadata/asset checks. Run `n
 | Portable package and MCP schema | Vendored official 1.0.0 schemas; local validation | Run platform upload validation after owner review |
 | Listing images | Three byte-identical original PNGs, square, under 5 MiB | Inspect imported listing graphics; metadata does not prove host rendering |
 | Publisher website | Public HTTPS www.rqmtechnologies.com, RQM publisher identity | Confirm it adequately describes each submitted product |
-| Customer support | Existing public repository issues page | Owner confirm support coverage; avoid private information in public issues |
-| Privacy | Existing public per-product GitHub notices describe current prepaid flow | Owner/legal review; verify and publish actual retention timelines and user controls, which the current notice lacks |
-| Terms | Existing public RQM terms describe legacy monthly subscription, not current prepaid pricing | Publish/approve matching prepaid terms; then add verified termsOfServiceURL |
+| Customer support | Verified HTTPS prepaid support notice and existing private contact addresses | No response-time promise; do not post private data in public issues |
+| Privacy | Verified HTTPS prepaid privacy notice discloses durable Core content and no automatic expiration schedule | No invented automatic cleanup or universal deletion promise |
+| Terms | Verified HTTPS prepaid service notice preserves existing generic/purchase and subscription terms | No new price, refund, credit-expiration, cancellation or delivery promise |
 | Commerce classification | Current run_account_job debits prepaid credits per job | Resolve digital-services/credits policy question; no false commerce=false declaration |
-| Publisher/project | Not inspected in this task | Verified developer identity, correct owner organization/project, Apps Management Write and eligible residency |
+| Publisher/project | Browser worker reports business approved and RQM Technologies / RQM Studio selected; remaining permission/residency checks are separate | Verified developer identity, correct owner organization/project, Apps Management Write and eligible residency |
 | Category | Developer Tools is a documented example, not a verified portal selection | Confirm the exact available dashboard category |
-| Domain verification | Three product paths share jobs.rqmtechnologies.com | Plan separate eligible challenge origins/hostnames if needed; never replace another app's token |
+| Domain verification | Browser worker reports existing domains verified; new OAuth path migration must preserve records | Plan separate eligible challenge origins/hostnames if needed; never replace another app's token |
 | Distribution countries | Deliberately omitted | Owner determine lawful supported countries; do not infer from old subscription US terms |
-| Reviewer access | No account created or private credentials included | Dedicated synthetic test account with correct scopes/data, usable without MFA or private network |
+| Reviewer access | No account created or credentials included by this package task; portal fields inaccessible and unverified | Dedicated synthetic test account with correct scopes/data, usable without MFA or private network |
 | Five positive / three negative cases | Proposed in each manifest, not dedicated-account executed | Execute every case with reviewer account and retain redacted evidence |
-| Walkthrough | No public recording URL supplied | Record/review a reviewer-accessible walkthrough; no invented URL |
+| Walkthrough | No recording URL in this draft package; current submitted field remains unverified | Record/review a reviewer-accessible walkthrough; no invented URL |
 | Runtime paid acceptance | Coordinated separately in main conversation | Use that owner's dated evidence; this PR does not perform paid tests or claim repair success |
 | Final attestations | None accepted | Owner review, then explicit authorization before platform attestations/submission |
 
@@ -67,3 +67,7 @@ If paid compute is the required public product, obtain an explicit review interp
 - [Portable MCP schema](https://agent-plugins.org/schemas/1.0.0/mcp.schema.json)
 
 Checked 2026-10-02. Platform validation and policy review remain authoritative; recheck current requirements before upload.
+
+## Current correction decision
+
+Keep the current prepaid implementation truthful, without inventing an automatic deletion/refund promise. The separate Storefront patch adds three current-behavior notices, local CSP-safe CSS and exact routing exclusions; it preserves subscription pages and all security headers. Listing descriptions explain useful product functions without subscription/pricing promotion. Spending warnings remain in tool/skill consent flows. No new commerce declaration, fee waiver, entitlement design, grant or runtime change is introduced. Public policy acceptance remains unconfirmed. Storefront PR41 merged as 61706bf724919944a548ce24dad0bf78cd446599 after final content approval. Its normal production deployment succeeded. On October 3, all three notices and local CSS returned HTTPS200 and matched approved source bytes, with correct content types and unchanged security headers. Package supportURL, privacyPolicyURL and termsOfServiceURL now point to those verified public notices. The protected preview was not verified and no protection bypass was used.

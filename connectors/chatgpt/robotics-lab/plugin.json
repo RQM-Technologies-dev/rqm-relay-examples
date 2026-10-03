@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "robotics-lab",
-  "version": "0.5.0",
-  "description": "Explore bounded robotics contracts, inspect frame and orientation conventions, and retrieve existing account jobs. Account-authorized computation currently consumes prepaid RQM credits and requires explicit approval and a saved spending policy. Reports do not operate hardware or establish physical safety.",
+  "version": "0.5.1",
+  "description": "Inspect bounded robotics frame and orientation services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Results do not operate a robot or certify physical safety.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -11,8 +11,7 @@
   "license": "Apache-2.0",
   "keywords": [
     "mcp",
-    "robotics",
-    "prepaid-credits"
+    "robotics"
   ],
   "extensions": {
     "com.rqmtechnologies.branding": {
@@ -23,7 +22,7 @@
       "interface": {
         "displayName": "Robotics Lab",
         "shortDescription": "Robotics frame analysis",
-        "longDescription": "Explore bounded robotics contracts, inspect frame and orientation conventions, and retrieve existing account jobs. Account-authorized computation currently consumes prepaid RQM credits and requires explicit approval and a saved spending policy. Reports do not operate hardware or establish physical safety.",
+        "longDescription": "Inspect bounded robotics frame and orientation services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Results do not operate a robot or certify physical safety.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -31,13 +30,14 @@
           "Write"
         ],
         "websiteURL": "https://www.rqmtechnologies.com/",
-        "supportURL": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
-        "privacyPolicyURL": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/chatgpt/robotics-lab/PRIVACY.md",
+        "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
+        "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
         "logo": "./assets/robotics-54c5a66443a9c9ed.png",
         "composerIcon": "./assets/robotics-54c5a66443a9c9ed.png",
         "defaultPrompt": [
           "List supported robotics services and their limitations without running a job."
-        ]
+        ],
+        "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
       },
       "review": {
         "test_cases": {
@@ -93,7 +93,7 @@
         }
       },
       "publication": {
-        "release_notes": "Draft 0.5.0: supported OpenAI listing metadata, approved original PNGs, scoped MCP configuration and proposed review cases. Public submission remains blocked pending policy, terms, reviewer access and walkthrough verification."
+        "release_notes": "0.5.1: factual product descriptions without pricing or subscription promotions; approved original artwork and scoped OAuth MCP endpoints retained. Existing portal v0.1.0 reviews must be corrected through the supported self-service flow. This package does not attest policy acceptance or replace a review record."
       }
     }
   }

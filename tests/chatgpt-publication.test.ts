@@ -30,7 +30,7 @@ describe("public publication preparation",()=>{
   const first=mkdtempSync(resolve(tmpdir(),"rqm-publication-zip-")),second=mkdtempSync(resolve(tmpdir(),"rqm-publication-zip-"));
   try{
    for(const output of [first,second])execFileSync(process.execPath,[script,"--pack",output],{cwd:root,stdio:"pipe"});
-   for(const name of ["resonant-quantum-mechanics","waveengine","robotics-lab"]){const file=name+"-0.5.0-draft.zip";expect(readFileSync(resolve(first,file))).toEqual(readFileSync(resolve(second,file)));}
+   for(const name of ["resonant-quantum-mechanics","waveengine","robotics-lab"]){const version=JSON.parse(readFileSync(resolve(root,"connectors/chatgpt",name,"plugin.json"),"utf8")).version;const file=name+"-"+version+"-draft.zip";expect(readFileSync(resolve(first,file))).toEqual(readFileSync(resolve(second,file)));}
    execFileSync("python3",["-c",`import zipfile,pathlib,sys\nfor path in pathlib.Path(sys.argv[1]).glob('*.zip'):\n with zipfile.ZipFile(path) as z:\n  names=z.namelist(); assert len(names)==9; assert 'plugin.json' in names and 'mcp.json' in names; assert not any(n.startswith('/') or '..' in n.split('/') or n.endswith('.app.json') or '.env' in n for n in names); assert z.testzip() is None`,first],{stdio:"pipe"});
   }finally{rmSync(first,{recursive:true,force:true});rmSync(second,{recursive:true,force:true});}
  }, 60_000);

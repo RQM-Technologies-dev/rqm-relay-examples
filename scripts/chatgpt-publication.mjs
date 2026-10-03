@@ -34,7 +34,7 @@ export function validatePackages(root=ROOT){
   const openai=manifest.extensions?.['com.openai'];assert(openai&&!openai.apps&&!openai.hooks,'Submission cannot contain app references or hooks');
   const ui=openai.interface;
   for(const [key,max] of Object.entries({displayName:30,shortDescription:30,longDescription:4000,developerName:80,category:120}))text(ui[key],max,key);
-  for(const key of ['websiteURL','supportURL','privacyPolicyURL']){text(ui[key],1024,key);https(ui[key]);}
+  for(const key of ['websiteURL','supportURL','privacyPolicyURL','termsOfServiceURL']){text(ui[key],1024,key);https(ui[key]);}
   if(ui.termsOfServiceURL)https(ui.termsOfServiceURL);
   assert(['Developer Tools','Productivity'].includes(ui.category),'Verify category in portal before submission');
   assert(Array.isArray(ui.defaultPrompt)&&ui.defaultPrompt.length<=3);for(const prompt of ui.defaultPrompt)text(prompt,128,'defaultPrompt');
@@ -49,7 +49,7 @@ export function validatePackages(root=ROOT){
   for(const entry of [...cases.positive,...cases.negative]){text(entry.description,4000,'case description');text(entry.prompt,4000,'case prompt');assert(entry.expected_behavior);}
   for(const entry of cases.positive){assert(entry.tools_triggered);assert(!entry.tools_triggered.includes('run_account_job'),'Draft validation must not request paid acceptance');}
   const files=packageFiles(item);for(const file of files)containedFile(base,'./'+file);
-  return {name:item.name,version:manifest.version,files,logo_sha256:item.hash,packageValid:true,submissionReady:false,blockers:['Prepaid per-job consumption policy decision unresolved','Matching prepaid terms URL not verified','Verified prepaid retention timelines and user controls missing','Dedicated reviewer account cases not executed','Accessible walkthrough video absent','Verified publisher/project/category/domain challenges and distribution countries not confirmed']};
+  return {name:item.name,version:manifest.version,files,logo_sha256:item.hash,packageValid:true,submissionReady:false,blockers:['OpenAI policy acceptance is not established by this package','Existing v0.1.0 review records require supported OAuth endpoint migration and tool scans','Current reviewer material and tool execution evidence is unverified in this offline package check','Final category, distribution and truthful portal attestations require verification']};
  });
 }
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "waveengine",
-  "version": "0.5.0",
-  "description": "Explore bounded signal and wave contracts, inspect schemas and limitations, and retrieve existing account jobs. Account-authorized computation currently consumes prepaid RQM credits and requires explicit approval and a saved spending policy. Reports describe supplied data and do not certify devices.",
+  "version": "0.5.1",
+  "description": "Inspect bounded wave and signal analysis services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Reports describe supplied data and do not certify devices.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -11,15 +11,14 @@
   "license": "Apache-2.0",
   "keywords": [
     "mcp",
-    "wave",
-    "prepaid-credits"
+    "wave"
   ],
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "WaveEngine",
         "shortDescription": "Signal and wave analysis",
-        "longDescription": "Explore bounded signal and wave contracts, inspect schemas and limitations, and retrieve existing account jobs. Account-authorized computation currently consumes prepaid RQM credits and requires explicit approval and a saved spending policy. Reports describe supplied data and do not certify devices.",
+        "longDescription": "Inspect bounded wave and signal analysis services, their required inputs and limitations. Use an existing RQM account for authorized analysis and retrieval of saved jobs. Reports describe supplied data and do not certify devices.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -27,13 +26,14 @@
           "Write"
         ],
         "websiteURL": "https://www.rqmtechnologies.com/",
-        "supportURL": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
-        "privacyPolicyURL": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/chatgpt/waveengine/PRIVACY.md",
+        "supportURL": "https://www.rqmtechnologies.com/rqm/prepaid/support.html",
+        "privacyPolicyURL": "https://www.rqmtechnologies.com/rqm/prepaid/privacy.html",
         "logo": "./assets/wave-dab197da82677d4.png",
         "composerIcon": "./assets/wave-dab197da82677d4.png",
         "defaultPrompt": [
           "List supported wave services and their limitations without running a job."
-        ]
+        ],
+        "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
       },
       "review": {
         "test_cases": {
@@ -89,7 +89,7 @@
         }
       },
       "publication": {
-        "release_notes": "Draft 0.5.0: supported OpenAI listing metadata, approved original PNGs, scoped MCP configuration and proposed review cases. Public submission remains blocked pending policy, terms, reviewer access and walkthrough verification."
+        "release_notes": "0.5.1: factual product descriptions without pricing or subscription promotions; approved original artwork and scoped OAuth MCP endpoints retained. Existing portal v0.1.0 reviews must be corrected through the supported self-service flow. This package does not attest policy acceptance or replace a review record."
       }
     }
   }

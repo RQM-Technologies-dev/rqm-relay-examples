@@ -1,4 +1,4 @@
-# Resonant Quantum Mechanics for ChatGPT — publication draft 0.5.0
+# Resonant Quantum Mechanics for ChatGPT — publication draft 0.5.1
 
 Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `resonant-quantum-mechanics` at `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
 
