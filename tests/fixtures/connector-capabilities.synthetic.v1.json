@@ -1,0 +1,980 @@
+{
+  "schema_version": "rqm.connector-capabilities.v1",
+  "products": {
+    "quantum": {
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "tools": [
+        {
+          "name": "get_account_balance",
+          "sha256": "b1b63d69c564ae4a88db92b53b3e4595e1a7ee9884a238b7eecdf1a76813813f"
+        },
+        {
+          "name": "get_account_job",
+          "sha256": "0184e673306b6adb66d00aa0fc2b75b796f590958d65635383477bd862ead7d0"
+        },
+        {
+          "name": "list_account_jobs",
+          "sha256": "3507c2de500e1d49170e7692b374ed1994d0f14a905352bcf8a9763a49234e8b"
+        },
+        {
+          "name": "list_buyer_jobs",
+          "sha256": "e879430fb76bd5ecabd89b023b2d10c7ef542561013a7bd23cc2436d5cfca908"
+        },
+        {
+          "name": "run_account_job",
+          "sha256": "937bfd9e43e3b85dc0f17a794171c364c133b7554ceaa1d3b51262796dec7386"
+        },
+        {
+          "name": "search_buyer_jobs",
+          "sha256": "02027666045ef38a0139d580c61e77ac489fdeb5d5c0e032f7ddfa0a876df561"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "circuit-assurance-report-v1",
+          "service_version": "1.0.0",
+          "title": "Circuit assurance report",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "4d8ca57975b6f03b70309f0340f0167aa3a658199a0e0a57a7214a6c686a1600",
+          "request_schema_sha256": "120bd79f5d2165e49bd7428f867970cb87c216518bf706fd4b92bbe05648c1db",
+          "result_schema_sha256": "ec16dff95a7867dcdf675ee8567359effc29517a41b4ad423b3db21a83a618fa",
+          "execution_contract_sha256": "da62e38da040ac05eb4ddba48c525ceec4e662d4dd0cf07ddc0f913bae1b07d8"
+        },
+        {
+          "service_id": "cross-provider-portability-v1",
+          "service_version": "1.0.0",
+          "title": "Cross Provider Portability",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "10a1ac81778f06ec1e7237561a2d942dd6bcad813460f1bbcd77403c81b9f4cc",
+          "request_schema_sha256": "2bf3b5cdae0ea830541191ef39893e919ef048bce9b5ec3b6778c888ae83189f",
+          "result_schema_sha256": "0ae6ed8f7344d65a05bbbc7c0ad37d97df77f80da4ceb20410f13ae6010de688",
+          "execution_contract_sha256": "4a234574920aee6c9e46ea3a6c7d14751e1eb525bc3c7546256ed980ef28e2c2"
+        },
+        {
+          "service_id": "failed-workflow-diagnosis-v1",
+          "service_version": "1.0.0",
+          "title": "Failed Workflow Diagnosis",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "4f2e747d5e1ba7a194c407df79566b7bdbf9b7138c054de594fa9b33a10592af",
+          "request_schema_sha256": "55e6affcde2fb2c628a908352960cfed584422cbc38322ab9000b0be9ed20893",
+          "result_schema_sha256": "bd565f3d6fda9ad642a677a56a05a330ead9f1dd158ba64f31b493b5c56f4748",
+          "execution_contract_sha256": "18630aab8ac4b317907476ccabc5511a69d38bd7ebc0b942afb5578e5aa4e396"
+        },
+        {
+          "service_id": "managed-simulator-v1",
+          "service_version": "1.0.0",
+          "title": "Managed simulator",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "d11a57025fe2f5a10effba2f871440dc567c5ee2007995efa57e7339c77a4484",
+          "request_schema_sha256": "e8c66334338c73901886b496debcbbe70fcaf9bfe1ca97e01225a67f3fee9a06",
+          "result_schema_sha256": "44d806aaf1657ea39415d293d9e21b5386bc67da28266efda2d1a382d64c057f",
+          "execution_contract_sha256": "47367deef14969fbea0d08d0c46ed6fc290b394a2bb446cfa949a79b39e9bddc"
+        },
+        {
+          "service_id": "openqasm3-preflight-v1",
+          "service_version": "1.0.0",
+          "title": "OpenQASM 3 preflight",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "09a38b5ffa3724a25d735d0db68aac9dd1fb0b90f1de71a4c896904277bdb1e3",
+          "request_schema_sha256": "120bd79f5d2165e49bd7428f867970cb87c216518bf706fd4b92bbe05648c1db",
+          "result_schema_sha256": "4f58b5bbb3ed1aba28820a8684c8cbf017416131557e2635f9ccabcf8dc9f418",
+          "execution_contract_sha256": "d7bf42e61c8a7b6f006eff31e986d5ebeff8e2ea214490b1229f8b7ebbec42b8"
+        },
+        {
+          "service_id": "openqasm3-repair-v1",
+          "service_version": "1.0.0",
+          "title": "Openqasm3 Repair",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "9834e16ab3ef22357781678055bbce1423cb587cd6fa1e25be1e01ffb01a3e59",
+          "request_schema_sha256": "649d848697fba4ba93cf2a7216dfc4a7defb0bb4fc0704283be5c061e874781e",
+          "result_schema_sha256": "8687fc393f8a5fcdb93ad13287cde0693192600cafd20720b75bf4d42d977bb2",
+          "execution_contract_sha256": "053bfdc62a6d58e92247ef15d7b9ee41a958f3a5c5ecadd7e384018163d9819d"
+        },
+        {
+          "service_id": "optimization-preservation-audit-v1",
+          "service_version": "1.0.0",
+          "title": "Optimization preservation audit",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "b63ee68f6558b7868dba833dadc0775a6240407ddc6d6b6c779b627e9e71c90a",
+          "request_schema_sha256": "a43d9ee4d5f0827709ed77642eeeeaaf663db276e97e5b000a600aeb106739c6",
+          "result_schema_sha256": "e1abd6220a516ae9d679b2991758cf6f7e8de6e8c25e21cde24401e1bc5cd4e0",
+          "execution_contract_sha256": "d74810ff1492b4c65c16e628e8760fa07932a04c9d042b93867655d40b77b934"
+        },
+        {
+          "service_id": "phase-sensitive-inspection-v1",
+          "service_version": "1.0.0",
+          "title": "Phase Sensitive Inspection",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "d3a49511522700301f1d3c7d3bc5f3f31136fd061a685ca797685327de098ff8",
+          "request_schema_sha256": "491f3cfd13f755ac15eec547e3094f4f4ffdbfccd2ec8fd7822b4c3283e6ff7f",
+          "result_schema_sha256": "5649d1c237e4d49b7c0def41a6b41e082b02a547a7b9f14eb7394dd3bf648440",
+          "execution_contract_sha256": "a7a33875a9051303e0e6c5889c44d9fb1c8debda7e4f92d5490f9d35f544777d"
+        },
+        {
+          "service_id": "quantum.execution-plan-select.v1",
+          "service_version": "1.0.0",
+          "title": "Execution Plan Select",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "02205e87027119a1b458418f5e636612d5efe29d29aa4c4662f04e81c343bf78",
+          "request_schema_sha256": "3d251c2955a194abcab3443327940e048beff76d931254cfb942cd350cf98cc1",
+          "result_schema_sha256": "22c19595d74faff2ad4a1fe6d4a6af6a37869fc4e8620a8e3845683b425b889b",
+          "execution_contract_sha256": "52c48bb3e6b1a90eb3d1a6d2df829afccb8b1859ad426950a375f8e392cef257"
+        },
+        {
+          "service_id": "quantum.gate-basis-decomposition.v1",
+          "service_version": "1.0.0",
+          "title": "Gate Basis Decomposition",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "d918bb5e66c6a90fa3f1fc42a65e873d4a79d248cde910af2139d430952fa21c",
+          "request_schema_sha256": "65ce0492b4402cab7bf4eeeb1554db20f01e1f8a002e771eb1137396871b854e",
+          "result_schema_sha256": "112b4656d111c41607c2595a26a543bc04b5830b6f1c22a7c884737e6de400ca",
+          "execution_contract_sha256": "11c21a41dda5cb2d2bb3587de502c9b6d03787968ff91f4ee21f5e3a87b3da54"
+        },
+        {
+          "service_id": "quantum.phase-aware-rewrite.v1",
+          "service_version": "1.0.0",
+          "title": "Phase Aware Rewrite",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "834572f9400b3b0388e5e16aa924ff1b15c039ba1f139524beb4b1cf643cce27",
+          "request_schema_sha256": "5fcb784e5bb9b6af34a667ad96212573dd854cf67ad1472d9c9f23b1f82a0a0b",
+          "result_schema_sha256": "44db378a02b9be27048fb36361f254643e29f162979633dddc9e0c97db35b4a1",
+          "execution_contract_sha256": "63a89c8c95366126ff3042e6a55c3fac2935e4d9248f1b110a764cc3f90168e8"
+        },
+        {
+          "service_id": "quantum.provider-readiness-check.v1",
+          "service_version": "1.0.0",
+          "title": "Provider Readiness Check",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "ed2deef4fca716b78a17670b82c53de5f33523fd679d4362e0a028ae8ac83f89",
+          "request_schema_sha256": "97898762548b1a3f52081b87c15f7aeaca01083c89c7add8160ba6d05ce99e4a",
+          "result_schema_sha256": "6cbd81768f6930040d2b88d6126a61d8f168eb05e806f59885e45726fa5d3d7f",
+          "execution_contract_sha256": "9169f67e41f885ceacb081516077894224e0954a23f61485cd7301ee1422a1dd"
+        },
+        {
+          "service_id": "quantum.provider-result-compare.v1",
+          "service_version": "1.0.0",
+          "title": "Provider Result Compare",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "a1f8bbdeb6dc24434bd40399819d273c6ce2a7ee0fb6840a84c6f98f83d9f74b",
+          "request_schema_sha256": "e6d31db2672c1837c78826c77e87e9378edc2ff1b5310d7876024e7e933e94ac",
+          "result_schema_sha256": "a6235ab8a258f410aabafe25f248feccdc5460c0adea5aa906f88b18e02e644f",
+          "execution_contract_sha256": "5cc3e2e4177998d40cdb7a9aacdef41b69536f051520da39837ade001c053ff0"
+        },
+        {
+          "service_id": "quantum.provider-target-compile.v1",
+          "service_version": "1.0.0",
+          "title": "Provider Target Compile",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "78be9e1bff322944aeff23824044085006908ed7f25b50ec82179d56fdd797b3",
+          "request_schema_sha256": "13f6b3e7730f11153b5233d8740ca218ce52e57eda9d4440d26a93a3dfb95cdd",
+          "result_schema_sha256": "c8ccecb841d452ded455e920a3b69d54da690a80db32724f19b0c10552226d6f",
+          "execution_contract_sha256": "2b3e657c5eac667d31dca4c4eb10e17faf2c927c210eb7cadc0dfb54ff2c228d"
+        },
+        {
+          "service_id": "quantum.simulation-anomaly-diagnostic.v1",
+          "service_version": "1.0.0",
+          "title": "Simulation Anomaly Diagnostic",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "bfb9266bcff1d9617635f3702428efa71ddc49306f176f363f613fb490ab87df",
+          "request_schema_sha256": "df0ac33cf10be127fa90ab998311bde0e1f35cf6b94292eba1fac0eb231bf015",
+          "result_schema_sha256": "80290731e9a2492f41285b1b8570cf93f2b9e1a1aa3397a3184cf32b0f79aa08",
+          "execution_contract_sha256": "b9a8039e5249f31407a63d90bcfd11d22005c11ff9d7ab4eefd8cf71329b508a"
+        },
+        {
+          "service_id": "quantum.simulation-result-compare.v1",
+          "service_version": "1.0.0",
+          "title": "Simulation Result Compare",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "72e16dce966af5e0145c4c1a024dede5d08017182aac740e768167c955b98a0b",
+          "request_schema_sha256": "0634f5d2f1e2a79d86156a7f97782f16b163f22e7e523e103773a89b4d4892c5",
+          "result_schema_sha256": "a6235ab8a258f410aabafe25f248feccdc5460c0adea5aa906f88b18e02e644f",
+          "execution_contract_sha256": "ee67c26f6e5ed3c698a34ed615c6eb1e7c8e0d1fee23bf556f3742cb07642b64"
+        },
+        {
+          "service_id": "supported-circuit-equivalence-v1",
+          "service_version": "1.0.0",
+          "title": "Supported circuit equivalence",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "faef2a2bcf122e9cc35d294ee009d5ca53d5cba9c7abc2e7fd5414c95a580848",
+          "request_schema_sha256": "8151a989a71d4b1b6af07e544e7697e95a4583958b96103921c63d0a498c90c0",
+          "result_schema_sha256": "c5283109f6d91ef61cfa6d9c017e8354af34745ecb653369e2996182a265c45b",
+          "execution_contract_sha256": "6514b2894c13177d84723b5422a5f9e2de000d30f4e4cada5f24d0198269c13b"
+        },
+        {
+          "service_id": "synthetic-quantum-addition-v1",
+          "service_version": "1.0.0",
+          "title": "Synthetic propagation fixture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "97ddff210c89f830744df02d32b678e1759e8e8e3f3ab312f0d0102629ebcc08",
+          "request_schema_sha256": "55e6affcde2fb2c628a908352960cfed584422cbc38322ab9000b0be9ed20893",
+          "result_schema_sha256": "bd565f3d6fda9ad642a677a56a05a330ead9f1dd158ba64f31b493b5c56f4748",
+          "execution_contract_sha256": "b3946f33d68d82f7f61f8ebffa231ff819011e4a2651fe1ba0a654e1ea514887"
+        },
+        {
+          "service_id": "two-qubit-local-equivalence-v1",
+          "service_version": "1.0.0",
+          "title": "Two Qubit Local Equivalence",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "94bd5d4e3bf06a18566215b734cfdccc141c162e7f8541bb4074b7897bd2d301",
+          "request_schema_sha256": "397e2c172b98651cf56a68b5e8c2342b193e25f6352c86088a94d0fef57b13c5",
+          "result_schema_sha256": "42cf3fc0419e8055f279e30a68344ff953f0c8d0b1de2935ca94392193a0ca0c",
+          "execution_contract_sha256": "a96b58c871f880c3561c2a5ebcce19c0fc0cc133ecebf14e5eb45505b3846141"
+        },
+        {
+          "service_id": "two-qubit-target-synthesis-v1",
+          "service_version": "1.0.0",
+          "title": "Two Qubit Target Synthesis",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "43eb9039e9429d418b47f67522a74c504794eaa3e402f23672c55632dfe581a6",
+          "request_schema_sha256": "9f11a6b2648a40b5be39dcb9d526a8909c7b3664d4a048d6b02d9bcb269640cb",
+          "result_schema_sha256": "9a255a8f1be5ab46d446202a364133f0eae2da62abdf6da6b0089eb4c1baae7b",
+          "execution_contract_sha256": "815698a67bf4fcc47f66f601667b0d80c6efef379341baba7b5a71b013a08743"
+        },
+        {
+          "service_id": "verified-circuit-optimization-v1",
+          "service_version": "1.0.0",
+          "title": "Verified circuit optimization",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/rqm-api",
+            "revision": "23622c09024cbf267bcdc66f03606cf90bc0db89"
+          },
+          "descriptor_sha256": "3e0d22b4f9e1ad07568aedbcb31c30cb15abb30ef2cd73828008eae70512233f",
+          "request_schema_sha256": "62283498fb560cca31cae71b035d838dc596d2da2950528291096660aaa30cca",
+          "result_schema_sha256": "7761f971abcc1e274bde7e15752d54db69f0c441c44e954f8946c85fac5cd6a1",
+          "execution_contract_sha256": "f0a03bed82eb7dd4e88d569908c3cacef6e9ec2cd67981d29f28bc604aa7589b"
+        }
+      ]
+    },
+    "wave": {
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
+      "tools": [
+        {
+          "name": "get_account_balance",
+          "sha256": "b1b63d69c564ae4a88db92b53b3e4595e1a7ee9884a238b7eecdf1a76813813f"
+        },
+        {
+          "name": "get_account_job",
+          "sha256": "0184e673306b6adb66d00aa0fc2b75b796f590958d65635383477bd862ead7d0"
+        },
+        {
+          "name": "list_account_jobs",
+          "sha256": "3507c2de500e1d49170e7692b374ed1994d0f14a905352bcf8a9763a49234e8b"
+        },
+        {
+          "name": "list_buyer_jobs",
+          "sha256": "6b72dd2b1a3632d4eec430edbc039d9b0338f29026edb33f5804028b9c5e5395"
+        },
+        {
+          "name": "run_account_job",
+          "sha256": "937bfd9e43e3b85dc0f17a794171c364c133b7554ceaa1d3b51262796dec7386"
+        },
+        {
+          "name": "search_buyer_jobs",
+          "sha256": "346127a245c17bca49eb46c3ecf96f7c2f76643e1f225df67e21bb4d258b7ca7"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "diagnose-multichannel-capture-v1",
+          "service_version": "1.0.0",
+          "title": "Diagnose Multichannel Capture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "69c78de182c4939b9494c9f634f5b0e4a8dde49d801818873207df9bd22c8240",
+          "request_schema_sha256": "4b460e36410042934faabff6a8662c6731be391fc0001dd9ebb779c25f22f13b",
+          "result_schema_sha256": "d949f470587ef6912c2168c3fb5425d629dedd382f9657e650adde30521fb1a7",
+          "execution_contract_sha256": "e68ebceea1feed513820f827870379ec9731386b83dac6af95e7fb325e8cab7e"
+        },
+        {
+          "service_id": "equalize-pilot-capture-v1",
+          "service_version": "1.0.0",
+          "title": "Equalize Pilot Capture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "6e44594f61bc779d9edcd61810cef00cb657be4e19373ddd8f77436001b35561",
+          "request_schema_sha256": "d7780a7a3ad5150345927b059440d410a88e9ef8f02ca1602404eab24308ada2",
+          "result_schema_sha256": "e6a87bd0e44624f0890399240f196d87b928cf35ae6f061d4b92611e8eefc912",
+          "execution_contract_sha256": "ca9842b2011e705d3a2516bd0848bf4818405f529bbb9bfc3223672fecfc08b4"
+        },
+        {
+          "service_id": "extract-wave-features-v1",
+          "service_version": "1.0.0",
+          "title": "Extract Wave Features",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "3fd2c32f2ace4dbf794695e6240572c47dcf6842b11a2626f6ba75947934d368",
+          "request_schema_sha256": "94b89800518ce77f2e4974b7ae18926681f568086afd3a02af8b98a80aae2f4c",
+          "result_schema_sha256": "2d624b1aa3a472d25838f32faf827abfd86c0515e505ad04d5b742c84a367b56",
+          "execution_contract_sha256": "10010e1081c4a6403017381c1216f00da99467b46b6f12f304bbe99a7136d127"
+        },
+        {
+          "service_id": "fit-coupled-channel-model-v1",
+          "service_version": "1.0.0",
+          "title": "Fit Coupled Channel Model",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "f60a5277dee697c7ab8443d1742228ba19200a320bd88df53c9406b8e42e6b0a",
+          "request_schema_sha256": "18e0eb6e1e640828c1d72bedd5067cfbe35c11788dcae0c0e56655cc4793b376",
+          "result_schema_sha256": "b2b2ed7b1746d116877ed427ae077124b290eaa5145266d0b1f3b1767eab4d1f",
+          "execution_contract_sha256": "0e229bcee2067cfc8d771450469234925570d09313f717c3451fd7eb57e7c6f9"
+        },
+        {
+          "service_id": "gate-signal-capture-v1",
+          "service_version": "1.0.0",
+          "title": "Gate Signal Capture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "7e7e027b4cfd021b0b4cc3a9653620e3de91540173504bc0cb9cc2060a775f63",
+          "request_schema_sha256": "3ddd7ec325f3e0a41100d497571f85a9fc51ef741dfce55d8a492c764af80ab9",
+          "result_schema_sha256": "11ca1c9de9aafc6d32525b03f872210278afaf89d9b4fe825f617d2070bcdc58",
+          "execution_contract_sha256": "944397b7dc7dc8a0d5942a440d9983bd99194c602c2eed81e5cd647fed0daa84"
+        },
+        {
+          "service_id": "generate-validated-signal-fixture-v1",
+          "service_version": "1.0.0",
+          "title": "Generate Validated Signal Fixture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "08174005ce7e01bbfa1642346e732342bd27d8d30a5b1f7c9afea743f6ad6e0a",
+          "request_schema_sha256": "63a1eef00e2cefb278840c129ad035c93e45e5119acdd9448af31f343403e4f1",
+          "result_schema_sha256": "7dd6d5f5ae6a189c3228d1860d1c6ad86de62fd94d6e63341a525a128290df83",
+          "execution_contract_sha256": "c941e0ea6cd82d2adfd1f1f9dbedcf649749ab943804ecb24ede65ad6e2940dc"
+        },
+        {
+          "service_id": "synthetic-wave-addition-v1",
+          "service_version": "1.0.0",
+          "title": "Synthetic propagation fixture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "6361550dda67e000b144125f7ed75c59b4ebdfd9b7a2ccae67cd0e4b1f82481e",
+          "request_schema_sha256": "3ddd7ec325f3e0a41100d497571f85a9fc51ef741dfce55d8a492c764af80ab9",
+          "result_schema_sha256": "11ca1c9de9aafc6d32525b03f872210278afaf89d9b4fe825f617d2070bcdc58",
+          "execution_contract_sha256": "b2909f98aaa56b48cd8f698c5f8cad9b46bfb33f1dd4d8992e95d024ff09a226"
+        },
+        {
+          "service_id": "transport-polarization-frame-v1",
+          "service_version": "1.0.0",
+          "title": "Transport Polarization Frame",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "0a9eb4f800ade505e164f9c179ac63bb09af16a557ecb3355e41fe754512a04b",
+          "request_schema_sha256": "e3ec3cb350cb5ad7b92317583c3e5edb272d195b09ca3fae67d6be6a03e65771",
+          "result_schema_sha256": "5f413aecdcc88baa72e6b70a72de80e0a1123c40751c01d9fae85a3e2abd5ab5",
+          "execution_contract_sha256": "8d8a0fe9a64e419b350886623db501e5c4cae86c78fca13df7bc888248e7c8f6"
+        },
+        {
+          "service_id": "verify-wave-pipeline-v1",
+          "service_version": "1.0.0",
+          "title": "Verify Wave Pipeline",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "1b4edfc7c86870e4431fccbea746ce212b841614a7e6c2ef9b4eee6c4042e906",
+          "request_schema_sha256": "5278746596957fb31898fd2421543b836253cb95ca98612f6deb453f30f475fc",
+          "result_schema_sha256": "5390e1508250f9eca3da64cc711ea160f3fe98f0e50ad67e2be1c3df87c10f5a",
+          "execution_contract_sha256": "b82e2f1d4a4d04e4903ddeff18c3265214efa2832b5e27b2d5f4f11adfcb7555"
+        },
+        {
+          "service_id": "wave.apply-verified-phase-correction.v1",
+          "service_version": "1.0.0",
+          "title": "Apply Verified Phase Correction",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "d02f25311561b6bf786122a4f5513f7d278067e2f23cce9a6166b0393947d330",
+          "request_schema_sha256": "0a6432a2e51b10724520c176d2477f42dab10cb6f9c25803ffcae77982e1e929",
+          "result_schema_sha256": "8e8fd121c27a9229ec7c4e5dd73024c5b12e4abd0a8285bad2c9567dc619566c",
+          "execution_contract_sha256": "52984a70b41f981a29a6b8904f304ca782366390293217988dd589e9b5ab30bc"
+        },
+        {
+          "service_id": "wave.compare-pipeline-responses.v1",
+          "service_version": "1.0.0",
+          "title": "Compare Pipeline Responses",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "a8d41894330abf8e7853b0a5f7ba0c77982640c2efc457a18146172b02748c55",
+          "request_schema_sha256": "0e6b750a65fcda42b7c0909992961f9f74f402c7aa354b91f2cc75d0b5a4d1ae",
+          "result_schema_sha256": "f53b7cf2bcc909d4a8c352e6aefe36324e7944712464ae8a4a2a3e8ee295494c",
+          "execution_contract_sha256": "056183723b26518ddc2b2898a8d4a675a6e9d7fb06bf17740f2c06dcaf3a9d3a"
+        },
+        {
+          "service_id": "wave.compare-waveform-captures.v1",
+          "service_version": "1.0.0",
+          "title": "Compare Waveform Captures",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "f16dc7720a90acbda690293cf28fec44403d7661fa306448f91c9699fbc4a8cc",
+          "request_schema_sha256": "7eff111cae2f8926d1cda400a0f2555ee88a366da5af1cb358bce2acd5dceecd",
+          "result_schema_sha256": "faa49144b447de725df5ad4a36adeb0734b46794caa51b7a9b8d16ea3143d5b7",
+          "execution_contract_sha256": "300bd2b7cc7cf459ebbe1470cebfeff3e95645bdabf84af97027fcc1e38d35be"
+        },
+        {
+          "service_id": "wave.compile-curated-processing-recipe.v1",
+          "service_version": "1.0.0",
+          "title": "Compile Curated Processing Recipe",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "b235586592d037d10c962931a22967c7bc5944d47f8abd42f2d9c181713d69b6",
+          "request_schema_sha256": "b0013e14cd03e4fd37caab1a675da24396e0567875123842fedce826ec6a5951",
+          "result_schema_sha256": "9301556723bcbd035ffe480cb2460c1502fa214655162e53f756425c6fedfe72",
+          "execution_contract_sha256": "2461b4b2bcb9c8074e7dc44661dc9a91b966e6c13da794bb08c24e4238e7982d"
+        },
+        {
+          "service_id": "wave.convert-capture-to-spectrum.v1",
+          "service_version": "1.0.0",
+          "title": "Convert Capture To Spectrum",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "e61c482d424c0c2ed0ae1ae20bb6b443aaeb9881f2d2aaaef6c7b5bb23b05ec3",
+          "request_schema_sha256": "1f738c59af754e16df42512e471573afe7e8c6fe9085344555105e194843271c",
+          "result_schema_sha256": "37b6783200656d4bf106b1c2546f4841010e130b7b74ff48e8e16251c48e3d53",
+          "execution_contract_sha256": "f4c7ee93140bbb833385c5b78a45725ccdd763e746a0ee2c1d49b93948151d24"
+        },
+        {
+          "service_id": "wave.measure-phase-drift.v1",
+          "service_version": "1.0.0",
+          "title": "Measure Phase Drift",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "bc9f71f1bc007900c7b019c5844177488e3ce586991068201e0110f1e9f23562",
+          "request_schema_sha256": "ab5c2241e01611a9b9c98e4c292cbb6aa6fbd24d6225a286cb3c5318933d836d",
+          "result_schema_sha256": "23a99f79079be3a7d45f7b536e62f9dde26f508ae9922b9cd52af9f5cb747713",
+          "execution_contract_sha256": "56ccde917d3711c5fec6d80c85cf694d4dcb553a16db252dd7c84767a5155e3c"
+        },
+        {
+          "service_id": "wave.optimize-processing-pipeline.v1",
+          "service_version": "1.0.0",
+          "title": "Optimize Processing Pipeline",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "12dce0c1a887c7f1252d85cbe3e93c71bff7b659c9bc2a838f1d3f7e9d6288da",
+          "request_schema_sha256": "d3553a9dc7e3f2d328fbf0bf54e0f4c1d54cc7488c03149dcd89e1eaf0ed2db1",
+          "result_schema_sha256": "b0ff88fb487736c91024d61c155ff84bf39788ee04d82706bbecd970cf2093a0",
+          "execution_contract_sha256": "b07deb2b2fc447da191ee03474f17fcc8b885f0347e2a4a0c6de5c2f0a7dfbc4"
+        },
+        {
+          "service_id": "wave.reconstruct-bounded-capture.v1",
+          "service_version": "1.0.0",
+          "title": "Reconstruct Bounded Capture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "c71a1741f20ad8a88c7ea6cc96cf8a81c5915c874b687fca675dd6f9cf8b7331",
+          "request_schema_sha256": "bb863d1ee6a6175100158e6f48a5ca20bdcd96854b2b795af7f2b0b5ec4fdc07",
+          "result_schema_sha256": "f785cd58564461d97a0bf5fda7f105377e6310cfe1a3ee709f1197f5adc67c1a",
+          "execution_contract_sha256": "0bb679058c4b494c95ac34a5bbb5daaba41b1c12e2cdbdbd38f6da68cdb66221"
+        },
+        {
+          "service_id": "wave.reconstruct-time-domain-signal.v1",
+          "service_version": "1.0.0",
+          "title": "Reconstruct Time Domain Signal",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "aff715fc26fc6da7af63572754ce8d73271cba1b353833667d2803650b808dbc",
+          "request_schema_sha256": "5b088de15714e88289eccfc81ce563fa04e5f72d7dc5e4beafcf78f3f0c750e0",
+          "result_schema_sha256": "02060ee0c30b592f7d47c55edc900435fa9ef263fd28ca0044323a6cf6a89c5e",
+          "execution_contract_sha256": "2c90045b11a8d81594c157f0fc2dc9cef75242f21b2767f6eb3b6e254b988810"
+        },
+        {
+          "service_id": "wave.rotate-and-validate-two-channel-frame.v1",
+          "service_version": "1.0.0",
+          "title": "Rotate And Validate Two Channel Frame",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "98c9e67182bf76ba15c9b6a4fa5594084f25ff2cffee7724f8ec439e400ca22c",
+          "request_schema_sha256": "29c5a78d1a87cfa0d31d4477f5447005b13f6572036d728bb56fe6f755b85c2d",
+          "result_schema_sha256": "48dd9e32dd64fc571b839832b0f867ae8cc3142a8564648b92f53df0f2c46c9f",
+          "execution_contract_sha256": "5988b5e930a44208f92b61e4912c8ed72d64332feee7d3e2dc1fbd4357bb65d4"
+        },
+        {
+          "service_id": "wave.validate-reconstruction-quality.v1",
+          "service_version": "1.0.0",
+          "title": "Validate Reconstruction Quality",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "94199915a4fe0ab0462d249a57b30c033a535c5fc9dd103552c6f78281a75bb8",
+          "request_schema_sha256": "c59c0a42ab56cc2e7ed4c06ea76a28df93ec0e776bff0755ad8bd9097c064470",
+          "result_schema_sha256": "cb9880c2df4eee6c1ece48fa4e1e3de1e25c2949a8fa581c6fc4cfca8d0bc628",
+          "execution_contract_sha256": "f807ddee14ae0d9c759ecf20abe0d49b0934338277f3b907fcdc4a5d8e499206"
+        },
+        {
+          "service_id": "wave.validate-spectral-criteria.v1",
+          "service_version": "1.0.0",
+          "title": "Validate Spectral Criteria",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/wave-api",
+            "revision": "9149ee33b6abbe6b49b95707709cdb186d0f1fa3"
+          },
+          "descriptor_sha256": "790c1a4bb26578a81c31c8d7c2338d1cc3088392697a313ef823d85bb7881df1",
+          "request_schema_sha256": "c473b6e0d6be673c7eccbe7441727f31bcea063c2917ec4c43dc7821d63ea26d",
+          "result_schema_sha256": "e9f8c54a7a7ca12351c56fc594cfde306a3c2675d6c6019633631ffedaf87e34",
+          "execution_contract_sha256": "e20a93cb00050443c421fd791fc1a72553062288289056ed4a15d87196278501"
+        }
+      ]
+    },
+    "robotics": {
+      "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/robotics",
+      "tools": [
+        {
+          "name": "get_account_balance",
+          "sha256": "b1b63d69c564ae4a88db92b53b3e4595e1a7ee9884a238b7eecdf1a76813813f"
+        },
+        {
+          "name": "get_account_job",
+          "sha256": "0184e673306b6adb66d00aa0fc2b75b796f590958d65635383477bd862ead7d0"
+        },
+        {
+          "name": "list_account_jobs",
+          "sha256": "3507c2de500e1d49170e7692b374ed1994d0f14a905352bcf8a9763a49234e8b"
+        },
+        {
+          "name": "list_buyer_jobs",
+          "sha256": "e2fbb99579f14f3a088a218569ea713da849ff4fc61e550a15ead151e46684a4"
+        },
+        {
+          "name": "run_account_job",
+          "sha256": "937bfd9e43e3b85dc0f17a794171c364c133b7554ceaa1d3b51262796dec7386"
+        },
+        {
+          "name": "search_buyer_jobs",
+          "sha256": "ecaa60aa7d982707af18cf9fbf4b36f0627c53e4967107b155ec882ee3526b58"
+        }
+      ],
+      "services": [
+        {
+          "service_id": "frame-convention-validation-v1",
+          "service_version": "1.0.0",
+          "title": "Frame and convention validation",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "19cc1bcecf93de0240a02765c5cb1329a23958b342060e04089541f3eeafb514",
+          "request_schema_sha256": "10891f803acca8040f32c7e9322e6471476547c68cfecf94cebc3922c3ed9af4",
+          "result_schema_sha256": "d3874e1c18fbbd348322db47ed4e42692a6237901c5c225851342667359f842c",
+          "execution_contract_sha256": "4385de185c22ff765ffe1181b7acd847cb7d5ff683be6a34306e6e64f57ad62a"
+        },
+        {
+          "service_id": "robotics.analyze-force-disturbance-response.v1",
+          "service_version": "1.0.0",
+          "title": "Analyze Force Disturbance Response",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "2e507c3a8580e00f3bcb768c54d798e775c1ace1b334682715e8eaf0db0c8384",
+          "request_schema_sha256": "cec278a5f051ff228e55cfe5757be9d3dd80d65871974d448e416ec15182377f",
+          "result_schema_sha256": "397b09ff9b10046dd7b75ad6c27524db8c1957ea6c3b73b9efb5bdd2245e7d6d",
+          "execution_contract_sha256": "84954757eafee21c976d543952ab4460af51014120ebb76456901449288f3033"
+        },
+        {
+          "service_id": "robotics.assess-calibration-quality.v1",
+          "service_version": "1.0.0",
+          "title": "Calibration quality assessment",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "8ad7ae8b602ba6aa7b20c8d4596e470544d3b06b4261b67c8da5fdf13559159b",
+          "request_schema_sha256": "a7cc9b28cf905d8fc0fdf00dd8ffe33fd73dbb2d5d051d5acfb5f7704454dbe8",
+          "result_schema_sha256": "47d0153839b0440cb6e58615c44ddde77da332d8db9a966658f6aa8838d4518c",
+          "execution_contract_sha256": "74898e1521961850eef90c7f33fa0c3f6fb4ee64149146e1256f705e67dca46e"
+        },
+        {
+          "service_id": "robotics.check-collision-constraints.v1",
+          "service_version": "1.0.0",
+          "title": "Check Collision Constraints",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "d9ac97f58fc72e32ec64dd05ee8339208030b6507ab21bfce9878abe66428a34",
+          "request_schema_sha256": "9bb168d3e224d6f621577494328c36cf0545d40a4f773aa645449f8571105bb4",
+          "result_schema_sha256": "8c677454adf476d53d6fd7cce7eb806751a5ecda8616553d8c39f07ea0047ff5",
+          "execution_contract_sha256": "986eb6ca37b58a7d74327fc65a5db99154db81b2261638d7968a4a3d1fc3200f"
+        },
+        {
+          "service_id": "robotics.compare-controller-responses.v1",
+          "service_version": "1.0.0",
+          "title": "Compare Controller Responses",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "822ef51d064b89252ecc4c0f91f740b43c7aafc6dd001e1969a4b180dc8a746a",
+          "request_schema_sha256": "73c592600bb7d93ef38801f388bb4c1c34aac397d0a416adcc422208aaa5b325",
+          "result_schema_sha256": "84a76579d63767a8630b329af707a38d77d27ac75c376f621bb0677c422c196e",
+          "execution_contract_sha256": "d3374f6456f7ed4ee05fd10ea209ca2128b744ea3709fe33ad40871a8ce4c08e"
+        },
+        {
+          "service_id": "robotics.compare-digital-twin-observations.v1",
+          "service_version": "1.0.0",
+          "title": "Compare Digital Twin Observations",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "f9ab7554bd7bc7b37c6b48cfc43d97e70bf214055164def744049186d6304ce8",
+          "request_schema_sha256": "f09bceb8915ec35c46b2c03e0e9d4255bfa181a52f9bdaead910ff3ace9774e7",
+          "result_schema_sha256": "928e273bcbe69edd8ebcdc8748d2b645a28dcb9dcb2d96fd18ebfb503b2e68bc",
+          "execution_contract_sha256": "9e7ece3f530571e89a912da49f8edeed79c42b0915fef1e1bdb6f32c626ce9b2"
+        },
+        {
+          "service_id": "robotics.compare-planned-observed-trajectories.v1",
+          "service_version": "1.0.0",
+          "title": "Compare Planned Observed Trajectories",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "ed5892ed941147efae3192473b168517447cc3838e5bc8488e0c78571424d5a6",
+          "request_schema_sha256": "70cb9b7ca86e77c27ab6c9949b4f0cd0341b81165a61756cca327cfd83514df5",
+          "result_schema_sha256": "928e273bcbe69edd8ebcdc8748d2b645a28dcb9dcb2d96fd18ebfb503b2e68bc",
+          "execution_contract_sha256": "9f88462395b60045e52ec44b9f13b6aff6e381247fb68039a9960907b28f3f5e"
+        },
+        {
+          "service_id": "robotics.compare-state-estimators.v1",
+          "service_version": "1.0.0",
+          "title": "Compare State Estimators",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "b8c4a4aa44753d0862628c6ff32a75de30e64551954a27f93a929c0f6da36af6",
+          "request_schema_sha256": "d705a09d070a4baa860a526352bd0b89420cb0ce02ab952a61407c8e859a0b78",
+          "result_schema_sha256": "8c0545e40fc67307d9f6328a612c1231b0714d074073fc6ca29399e2cb2f7a29",
+          "execution_contract_sha256": "6ee2bf7b40fd020710ed1e73db60c3b6faa6d9b9c46e9b591578b90ed8c6cbcb"
+        },
+        {
+          "service_id": "robotics.compute-actuator-alignment-correction.v1",
+          "service_version": "1.0.0",
+          "title": "Compute Actuator Alignment Correction",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "363cf0082c6e93d0cc33e393c9fa6d979d080f02b1e58f0ebce97fcb53837138",
+          "request_schema_sha256": "de0e6af56aaf6c3fb0cf93df42bde5a74ec937c3493d8e3f9d30644159a012fe",
+          "result_schema_sha256": "d75b3436f71ed1564b97d35cad0defa877e2857882d25929be39ebc4fa9679cb",
+          "execution_contract_sha256": "66de8db9b3d55eab99d5550ff5b61d5ea3357ace229ff427fd86b6fb155efd54"
+        },
+        {
+          "service_id": "robotics.diagnose-trajectory-instability.v1",
+          "service_version": "1.0.0",
+          "title": "Trajectory instability diagnosis",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "30111c9235c93913b1b0c27c79fc6436091ce86bfd274e73871a4b7887a719e9",
+          "request_schema_sha256": "d6c4146138308d2499d9b7faa7fc1ac8856e8fa3dfb84d47a661f270f50ab965",
+          "result_schema_sha256": "bece4c8b76199d011f066b1f855bdc5ee171a8bdaf8cac87805ca9cf0c6960ea",
+          "execution_contract_sha256": "39b4ea7c82d890cd2b168d5ae76bd8e3b0647f8e8743a7acd0d47d7609971536"
+        },
+        {
+          "service_id": "robotics.estimate-fused-state.v1",
+          "service_version": "1.0.0",
+          "title": "Estimate Fused State",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "3a86a8871b93b442d0592306a56b800d4a0c1a35d7ef8bab89faf3c1f01918de",
+          "request_schema_sha256": "42990e4cedfa52278ccf047353a87c304c0fdbfcd9b881fd6b694bb11cd5c98e",
+          "result_schema_sha256": "84cb7747b54334c5a85ee1363e6e484eeef7a318b688052b1184393e56f72d7e",
+          "execution_contract_sha256": "702f3881458b730dcb59c5528f0f1bbbe04212a9ac25652c42aad0a14a988dc9"
+        },
+        {
+          "service_id": "robotics.normalize-sensor-frames.v1",
+          "service_version": "1.0.0",
+          "title": "Sensor frame normalization",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "ed65e2f0a1a67bf845cfd420057a96e92b1343eaae7d1629a0c46b8f17e713ea",
+          "request_schema_sha256": "de5fd2f5bb43b4414a6eb24eee0633065048cb59cf08620c373adaaa3420cf4b",
+          "result_schema_sha256": "dbfa519d81d3b97f3c5421a90fe98eac6b01114faf295b86bd6346de6514350b",
+          "execution_contract_sha256": "8ea0bd7c0486cac9992ddff70c5a62be67f0953024ca2e6187f2aa06b52013fc"
+        },
+        {
+          "service_id": "robotics.optimize-disturbance-rejection.v1",
+          "service_version": "1.0.0",
+          "title": "Optimize Disturbance Rejection",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "521b8e804747f6ca5041785a130121c63068cd9e5be175bb3e2f86d6c7bd52c7",
+          "request_schema_sha256": "8124d04ede836bcab92418f712b3de88bc703f589658547f87e7091884f48f97",
+          "result_schema_sha256": "b2548d6ea08ffac1052b2662504afa2bc290e5448eed7c7e996afce9367b1d59",
+          "execution_contract_sha256": "64f29ab1a17452507772265228ebdd09cff8128d62e70542f417971190dade49"
+        },
+        {
+          "service_id": "robotics.optimize-trajectory-to-constraints.v1",
+          "service_version": "1.0.0",
+          "title": "Optimize Trajectory To Constraints",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "ee7e4885986120eb3dcc4a637ab65cfa7a8371916e5b31954c70e7792296ecfb",
+          "request_schema_sha256": "ac16eef82928a7b23f85b60636b5783fcc1624ccca02beb17e1d369c4e07bb05",
+          "result_schema_sha256": "928e273bcbe69edd8ebcdc8748d2b645a28dcb9dcb2d96fd18ebfb503b2e68bc",
+          "execution_contract_sha256": "6f2c208a9439c72eb3e79ae23ef728b378188b5ae23df2343757d466fcda2092"
+        },
+        {
+          "service_id": "robotics.reconstruct-smoothed-trajectory.v1",
+          "service_version": "1.0.0",
+          "title": "Reconstruct Smoothed Trajectory",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "d8aad1ee48cc277dc24178ad93614403a31be1c49bc9398b2210cb832e517a0c",
+          "request_schema_sha256": "c9c5fff1a733249f09633724d6383b6e4711a64a919cab17be921c2793d9a151",
+          "result_schema_sha256": "78d60bb2d656637dae031e51b7162adbbba09f5e018317a882940d458d979d51",
+          "execution_contract_sha256": "a1ebcf36535ffff18805989b1e134264a1c95c66b86bc16405d37825704f0cc9"
+        },
+        {
+          "service_id": "robotics.replay-workcell-trace.v1",
+          "service_version": "1.0.0",
+          "title": "Replay Workcell Trace",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "fe406143ae0df3895ca6fcb9acbbe4b98caee760e3c733b467cb9e4849a3ae1a",
+          "request_schema_sha256": "f739be03be8c4d077dd727b87c8d2370cd62457f32e170650af6f817e4210721",
+          "result_schema_sha256": "0229f4611491b9bf5acd06e90a6050d24324ec6c4ef83e02a5ffce847b5789e2",
+          "execution_contract_sha256": "f27b6d7072d284cafbf5dad77039c0a3f571332ae92b22f96de9bb3c64e55237"
+        },
+        {
+          "service_id": "robotics.tune-controller-to-objectives.v1",
+          "service_version": "1.0.0",
+          "title": "Tune Controller To Objectives",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "ea0d5c6f5a473a05914d16dba992da037d5c115acb843bbb03d19539406077b8",
+          "request_schema_sha256": "8a7b5ca9c98c30ddc96c59bf4f9db4c3bdd5a8068d968140bffac8013392d810",
+          "result_schema_sha256": "928e273bcbe69edd8ebcdc8748d2b645a28dcb9dcb2d96fd18ebfb503b2e68bc",
+          "execution_contract_sha256": "42dfe53c86b68ad1a7563b734f1089670c7af04902b17b946624eb943f102392"
+        },
+        {
+          "service_id": "robotics.validate-closed-loop-stability.v1",
+          "service_version": "1.0.0",
+          "title": "Validate Closed Loop Stability",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "89c3298d570a524af854c273c91588139a54f690c84c5d24106a2f2f69c13f18",
+          "request_schema_sha256": "bce5d77122b71e1d365fb45b9370cbea478e2fcb21c32dc3bff37d9e384355e1",
+          "result_schema_sha256": "e70c3380a7fd63a0d478333a927c4269368a1e0b13e72dc32d449a61c236fd70",
+          "execution_contract_sha256": "bfb0fed39cfce376994b3edd8acd75ef62fb0176ae71d2c7966723e954bb37b6"
+        },
+        {
+          "service_id": "robotics.validate-kinematic-dynamic-limits.v1",
+          "service_version": "1.0.0",
+          "title": "Validate Kinematic Dynamic Limits",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "4cf05407ffb46533c43a349637172b9ffb07bed7340e5dd0ae3002efb8e71b1d",
+          "request_schema_sha256": "bc1844654f02623363bdefdced5be88616457aa5b9adcb0e08523b8ace9bc25b",
+          "result_schema_sha256": "928e273bcbe69edd8ebcdc8748d2b645a28dcb9dcb2d96fd18ebfb503b2e68bc",
+          "execution_contract_sha256": "92cd64043b67784b1a5b77a1b4ba618813e4f8e5096146eeffdd62575d191325"
+        },
+        {
+          "service_id": "robotics.validate-trajectory-timing.v1",
+          "service_version": "1.0.0",
+          "title": "Trajectory and sensor timing validation",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "d05a3a192834f5b1c9824a2d33f1cb92dd138d6f9c30f546706ae9c4d6547852",
+          "request_schema_sha256": "54b10197dd7507f28ff28085e59e77a14b9a7a35042ecaad4ae7ac24be0b94f4",
+          "result_schema_sha256": "5bcd911f6d78a1da492d12884e2dce9c92e1dd8952665fe7c6e6d74eb492d8f4",
+          "execution_contract_sha256": "0ebde3ed0ac3e36d2cde104bad966c647ba0192d91789ba50453563b2b2b66db"
+        },
+        {
+          "service_id": "synthetic-robotics-addition-v1",
+          "service_version": "1.0.0",
+          "title": "Synthetic propagation fixture",
+          "readiness": "production_live",
+          "provider": {
+            "repository": "RQM-Technologies-dev/robotics-api",
+            "revision": "836ef7d23e44f229e3229a2ecc2977bcd2de7fd0"
+          },
+          "descriptor_sha256": "dbc380904e5a0306876cd9fbd15ebdc4ea634ff64c640d23c7ef8702aa71849a",
+          "request_schema_sha256": "10891f803acca8040f32c7e9322e6471476547c68cfecf94cebc3922c3ed9af4",
+          "result_schema_sha256": "d3874e1c18fbbd348322db47ed4e42692a6237901c5c225851342667359f842c",
+          "execution_contract_sha256": "6f8fc6fb73dbb316421bd15bdff80b26d01db9891b08e116913fa338fb0490cb"
+        }
+      ]
+    }
+  }
+}

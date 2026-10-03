@@ -38,7 +38,7 @@ packer. Existing Cursor and Claude auth wiring is checked without normalization.
 
 | Change | Report / required action |
 | --- | --- |
-| Descriptor copy only, unchanged schemas/tools | `catalog_data_changed`; review claims; approved Jobs deployment makes it available on next discovery |
+| Any unexplained descriptor change, including copy, implementation IDs or operational instructions | `descriptor_semantics_review_required`; unchanged schema hashes do not establish unchanged behavior |
 | New service | `capability_added_readiness_review_required`; provider, allowlist, tariff, Core/Workflow mapping and pins must agree before deployment |
 | Removed/renamed service | Removal is breaking; preserve old IDs or coordinate a versioned migration |
 | Schema or service version | Compatibility review; no automatic claim that new schemas are backward compatible |

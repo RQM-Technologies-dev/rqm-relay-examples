@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { describe, it, expect } from 'vitest';
 import { readFileSync, mkdtempSync, cpSync, rmSync, writeFileSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -16,26 +17,32 @@ describe('capability propagation candidates', () => {
     for (const [name, body] of Object.entries(first)) expect(body).toBe(readFileSync(resolve(root, 'connectors/capabilities/generated', name), 'utf8'));
   });
   it('propagates synthetic added and changed jobs to each product host without package edits', () => {
-    const next = clone();
-    for (const [product, row] of Object.entries(next.products)) {
-      row.services.push({...row.services[0], service_id: `synthetic-${product}-addition-v1`});
-      row.services[0].descriptor_sha256 = 'a'.repeat(64);
-    }
+    // Produced by the real Jobs scoped MCP exporter. Its producer regression
+    // asserts byte equality with this fixture before it can be imported here.
+    const bytes = readFileSync(resolve(root, 'tests/fixtures/connector-capabilities.synthetic.v1.json'));
+    const provenance = JSON.parse(readFileSync(resolve(root, 'tests/fixtures/connector-capabilities.synthetic.provenance.json')));
+    expect(createHash('sha256').update(bytes).digest('hex')).toBe(provenance.sha256);
+    expect(provenance.producer_test).toBe('tests/unit/connector-capabilities.test.ts');
+    expect(provenance.revision).toMatch(/^[a-f0-9]{40}$/);
+    const next = JSON.parse(bytes);
     const output = generate(next);
     for (const [path, text] of Object.entries(output)) {
       if (path === 'manifest.json') continue;
       const cell = JSON.parse(text);
       expect(cell.services.some(s => s.service_id === `synthetic-${cell.product}-addition-v1`)).toBe(true);
-      expect(cell.services[0].descriptor_sha256).toBe('a'.repeat(64));
+      const oldServices = baseline.products[cell.product].services;
+      expect(cell.services.some(s => oldServices.some(old => old.service_id === s.service_id && old.descriptor_sha256 !== s.descriptor_sha256))).toBe(true);
       const original = JSON.parse(generate(baseline)[path]);
       expect(cell.package).toEqual(original.package);
       expect(cell.tool_metadata_sha256).toEqual(original.tool_metadata_sha256);
       expect(cell.published).toBe('not_observed');
     }
     expect(classify(baseline, next).changes.filter(c => c.kind === 'capability_added_readiness_review_required')).toHaveLength(3);
+    expect(classify(baseline, next).changes.filter(c => c.kind === 'descriptor_semantics_review_required')).toHaveLength(3);
   });
   it('flags removals, renames, schema, readiness, provider and metadata changes independently', () => {
     for (const [edit, kind] of [
+      [row => {row.services[0].descriptor_sha256 = 'b'.repeat(64)}, 'descriptor_semantics_review_required'],
       [row => row.services.pop(), 'capability_removed_breaking'],
       [row => {row.services[0].service_id = 'renamed-v2'}, 'capability_removed_breaking'],
       [row => {row.services[0].request_schema_sha256 = 'b'.repeat(64)}, 'schema_or_version_compatibility_review_required'],

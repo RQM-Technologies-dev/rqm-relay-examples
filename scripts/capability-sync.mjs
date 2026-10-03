@@ -102,7 +102,7 @@ export function classify(before, after) {
         if (prior.request_schema_sha256 !== service.request_schema_sha256 || prior.result_schema_sha256 !== service.result_schema_sha256 || prior.service_version !== service.service_version) kinds.push('schema_or_version_compatibility_review_required');
         if (prior.execution_contract_sha256 !== service.execution_contract_sha256 || prior.readiness !== service.readiness) kinds.push('execution_guidance_or_readiness_review_required');
         if (hash(prior.provider) !== hash(service.provider)) kinds.push('provider_revision_deployment_review_required');
-        if (!kinds.length && hash(prior) !== hash(service)) kinds.push('catalog_data_changed');
+        if (prior.descriptor_sha256 !== service.descriptor_sha256 || prior.title !== service.title) kinds.push('descriptor_semantics_review_required');
       }
       for (const kind of kinds) changes.push({product, service_id: id, kind});
     }

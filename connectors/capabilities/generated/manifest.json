@@ -1,7 +1,7 @@
 {
   "schema_version": "rqm.connector-generation.v1",
   "source_contract_sha256": "4f0468a85175da827407bbb7e7a0f6948b32c084e0463ab09aed5230c5a0379a",
-  "generator_sha256": "245cbaadddd6a43f3d62756d851628c49aef9566d9db22f998afa7e1011e36a7",
+  "generator_sha256": "fef71694587e8c25c15dfa77c035e04d44163ff6ee6121051050d1f6ef6e228b",
   "artifacts": {
     "chatgpt/resonant-quantum-mechanics.json": "d2d37ac6b93b82b7e809985428f8876efaae3e3d7d633420b69fae4c4093f1ac",
     "claude/resonant-quantum-mechanics.json": "34701f4ded42747a84a403e5e8e0ace8349af8c51d29a47ed920caea0422fa38",
