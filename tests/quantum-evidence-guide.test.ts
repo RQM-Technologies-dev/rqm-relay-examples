@@ -32,4 +32,23 @@ describe("quantum evidence guide", () => {
     expect(prompt).toContain("Do not create a replacement purchase");
     expect(prompt).toContain("terminal result and\nreceipt");
   });
+  it("keeps observed discovery distinct from exact-endpoint paid acceptance", () => {
+    const guide = read("connectors/quantum-circuit-assurance.md");
+    expect(guide).toContain("did not expose the backing MCP URL");
+    expect(guide).toContain("does not establish the exact Claude endpoint");
+    expect(guide).toContain("A new source-only assurance request selects a different catalog path, v2");
+    expect(guide).toContain("did not verify a live paid preflight result");
+  });
+
+  it("holds paid assurance and permits only balanced preflight in the prompt", () => {
+    const guide = read("connectors/quantum-circuit-assurance.md");
+    const prompt = guide.split("```text\n")[1]?.split("```")[0] ?? "";
+    expect(prompt).toContain("Do not run circuit-assurance-report-v1");
+    expect(prompt).toContain("do not test another envelope with a purchase");
+    expect(prompt).toContain("use its source-based request and only the balanced");
+    expect(prompt).toContain("stop before spending");
+    expect(prompt).toContain("submit one preflight job");
+    expect(prompt).not.toContain("submit one job");
+    expect(prompt).toContain("Never change its request envelope under the original idempotency key");
+  });
 });
