@@ -17,6 +17,10 @@ Protected balance and history need an authenticated RQM account. Reuse valid exi
 
 After an uncertain response, retrieve the original job using its ID or original idempotency key. Preserve the inputs, key and ceiling; do not make a replacement purchase. Claim completion only with the terminal result and receipt. See each brand's [quantum](plugins/resonant-quantum-mechanics/REVIEWER.md) or [WaveEngine](plugins/waveengine/REVIEWER.md) acceptance procedure; paid review steps require separate authorization.
 
+## Check a small quantum circuit
+
+Read the [OpenQASM 3 evidence guide](quantum-circuit-assurance.md) for a bounded example, a contract-first prompt, service-selection guidance, prepaid pricing and recovery. Start with discovery and choose the least expensive adequate check before approving a paid job.
+
 ## Desktop discovery bundle is a separate package
 
 `connectors/claude-desktop` builds the generic **RQM Jobs Discovery** local stdio extension. It exposes three free discovery/example tools, without brand account execution. It is not either six-tool hosted brand connector.
