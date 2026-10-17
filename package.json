@@ -27,7 +27,7 @@
     "capabilities:live": "node scripts/capability-sync.mjs live"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "1.30.0",
+    "@modelcontextprotocol/sdk": "1.31.0",
     "@x402/core": "2.7.0",
     "@x402/evm": "2.7.0",
     "@x402/fetch": "2.7.0",
