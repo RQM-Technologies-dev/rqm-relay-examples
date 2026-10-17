@@ -28,6 +28,21 @@ The infrastructure repository owns scheduled/manual coordination using an
 immutable adapter commit. Source contract drift is caught in Jobs CI before
 deployment; package/auth/artifact drift is caught here on push and PR.
 
+The observer accepts two explicit account-execution contracts: the six-tool
+`account_execution_contracts` / `run_account_job` surface, and the fixed named
+`operation_tools` surfaces for Wave and Quantum. Named mode requires every one
+of the 20 reviewed service/tool mappings, the exact supported tool inventory,
+unchanged nested request schemas/definitions, OAuth `jobs.run`, and the published
+idempotency/price guards. Missing, duplicate, mixed, cross-product or unknown
+mappings fail closed. The fixed mapping source is separately hashed in the
+generation manifest. Generated named-host coverage lists the actual tool for
+each service; it does not advertise the absent generic purchase tool.
+
+Supporting named contracts does not approve live descriptor drift, update a
+tracked source snapshot, bypass the provider gitlink check, or establish host
+acceptance. `live` still exits 2 on reviewed-source drift and records the observed
+contract for the independent infrastructure pin check.
+
 There are nine derived cells: three products times ChatGPT, Claude and Cursor.
 All three hosts for a product share the same endpoint, catalog hash, tool hash
 and buyer service IDs. Host metadata, referenced skills and MCP config have
