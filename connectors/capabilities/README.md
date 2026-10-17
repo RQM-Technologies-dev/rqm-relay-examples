@@ -5,6 +5,17 @@ release snapshot**, not an editable capability registry. `SOURCE.json` identifie
 the producing Jobs commit. Each descriptor's public provider revision is retained;
 provider HEAD is never assumed active. Host-specific packages remain owned here.
 
+The reviewed candidate is exported offline from Jobs PR191 producer
+`de0bab012a68e0453ad7a0ab958f4654d5c47e20`. `SOURCE.json` records its byte hash;
+the synthetic regression fixture is imported from that same producer and retains
+separate provenance. Named Wave/Quantum membership stays fixed: the synthetic
+addition exercises only the legacy Robotics surface. All three products retain
+the descriptor-change propagation checks. Producer `interest_guidance` is
+preserved by the live observer and guidance-only changes require semantic review.
+Runtime deployment, native host discovery and publication remain unobserved by
+this candidate import. ChatGPT is the first rollout target; generated Claude and
+Cursor cells are source coverage, not approvals or installations.
+
 ```sh
 # In RQM-Jobs-MCP, after reviewing an approved source change:
 npm run connectors:export

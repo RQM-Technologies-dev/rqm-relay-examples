@@ -84,6 +84,7 @@ export function summarizeProduct(product, tools, catalog) {
   if (fixed) assert.deepEqual([...executions.keys()].sort(), Object.keys(fixed).sort(), 'Named service membership changed');
   return {
     endpoint: endpoint(product),
+    ...(catalog.interest_guidance ? {interest_guidance: catalog.interest_guidance} : {}),
     tools: tools.map(tool => ({name: tool.name, sha256: hash(tool)})).sort((a, b) => a.name.localeCompare(b.name, 'en')),
     services: catalog.descriptors.map(d => {
       assert.equal(d.product, product, 'Cross-product catalog leak');
@@ -151,6 +152,7 @@ export function classify(before, after) {
   const changes = [];
   for (const {product} of PRODUCTS) {
     const old = before.products[product], next = after.products[product];
+    if (hash(old.interest_guidance ?? null) !== hash(next.interest_guidance ?? null)) changes.push({product, kind: 'descriptor_semantics_review_required'});
     if (hash(old.tools) !== hash(next.tools)) changes.push({product, kind: 'tool_metadata_review_required'});
     const previous = new Map(old.services.map(s => [s.service_id, s]));
     const current = new Map(next.services.map(s => [s.service_id, s]));

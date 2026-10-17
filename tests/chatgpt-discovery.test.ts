@@ -6,6 +6,15 @@ const root = resolve(import.meta.dirname, "..");
 const json = (path: string) => JSON.parse(readFileSync(resolve(root, path), "utf8"));
 const brands = { quantum: "resonant-quantum-mechanics", wave: "waveengine", robotics: "robotics-lab" } as const;
 const fixtures = json("tests/fixtures/chatgpt-discovery.json");
+// Reviewed Wave instruction-only correction for Jobs PR191's named surface.
+// Keep the historical baseline and all other products, auth and assets exact.
+const waveInstructionUpdates: Record<string, string> = {
+  "connectors/chatgpt/waveengine/PRIVACY.md": "81aa11cf46d64dabaf36692f1f3bbf70f52ae04d753336267605f2fe76019a34",
+  "connectors/plugins/waveengine/PRIVACY.md": "75471cceb3e9fc39c0513662121b2b44df8cf8ad244896872945e175839a882b",
+  "connectors/plugins/waveengine/README.md": "7296ae8e4b3e943a868f5c765bba5689fe9d999ce581bb018ac8a56954f70be4",
+  "connectors/plugins/waveengine/REVIEWER.md": "b868f3baa988523c03107c2321cfa24542c4eda8c5eff44c3a6718ba8ce49a29",
+  "connectors/plugins/waveengine/skills/waveengine/SKILL.md": "be1dbfaab9f5c6486abad86e170584a4ea7870d41ec2de3a40cd4ba7d23c4d68",
+};
 describe("ChatGPT discovery contract proposals", () => {
   it("maps nine coordinated flagship contracts without presenting host evaluation results", () => {
     expect(fixtures.status).toBe("proposed_host_evaluations_not_run");
@@ -53,7 +62,7 @@ describe("Claude and Cursor non-regression", () => {
   it("preserves ChatGPT identities, OAuth configuration, artwork and legal notices", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
     for (const [path, digest] of Object.entries(baseline.chatgpt_files)) {
-      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(digest);
+      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(waveInstructionUpdates[path] ?? digest);
     }
     for (const brand of Object.values(brands)) {
       const manifest = json(`connectors/chatgpt/${brand}/plugin.json`);
@@ -64,7 +73,7 @@ describe("Claude and Cursor non-regression", () => {
       expect(manifest).toEqual(baseline.chatgpt_metadata[brand]);
     }
   });
-  it("preserves protected host files with two pinned security-only dependency updates", () => {
+  it("preserves protected host files with pinned security and Wave instruction updates", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
     // c241060 fixes the same reported SDK/URI/IP/proxy advisories in the
     // independent desktop lock. Keep PR22's baseline intact and pin only the
@@ -78,7 +87,7 @@ describe("Claude and Cursor non-regression", () => {
       "connectors/claude-desktop/package.json",
     ]);
     for (const [path, digest] of Object.entries(baseline.files)) {
-      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(securityUpdates[path] ?? digest);
+      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(securityUpdates[path] ?? waveInstructionUpdates[path] ?? digest);
     }
     // Catch added host files as well as modified or deleted files.
     const directories = ["connectors/plugins", "connectors/claude-desktop", "connectors/cursor", ".cursor-plugin"];

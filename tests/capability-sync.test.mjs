@@ -29,7 +29,7 @@ describe('capability propagation candidates', () => {
     for (const [path, text] of Object.entries(output)) {
       if (path === 'manifest.json') continue;
       const cell = JSON.parse(text);
-      expect(cell.services.some(s => s.service_id === `synthetic-${cell.product}-addition-v1`)).toBe(true);
+      expect(cell.services.some(s => s.service_id === `synthetic-${cell.product}-addition-v1`)).toBe(cell.product === 'robotics');
       const oldServices = baseline.products[cell.product].services;
       expect(cell.services.some(s => oldServices.some(old => old.service_id === s.service_id && old.descriptor_sha256 !== s.descriptor_sha256))).toBe(true);
       const original = JSON.parse(generate(baseline)[path]);
@@ -37,7 +37,7 @@ describe('capability propagation candidates', () => {
       expect(cell.tool_metadata_sha256).toEqual(original.tool_metadata_sha256);
       expect(cell.published).toBe('not_observed');
     }
-    expect(classify(baseline, next).changes.filter(c => c.kind === 'capability_added_readiness_review_required')).toHaveLength(3);
+    expect(classify(baseline, next).changes.filter(c => c.kind === 'capability_added_readiness_review_required')).toHaveLength(1);
     expect(classify(baseline, next).changes.filter(c => c.kind === 'descriptor_semantics_review_required')).toHaveLength(3);
   });
   it('flags removals, renames, schema, readiness, provider and metadata changes independently', () => {
@@ -50,7 +50,9 @@ describe('capability propagation candidates', () => {
       [row => {row.services[0].provider.revision = 'b'.repeat(40)}, 'provider_revision_deployment_review_required'],
       [row => {row.tools[0].sha256 = 'b'.repeat(64)}, 'tool_metadata_review_required'],
     ]) {
-      const next = clone(); edit(next.products.wave);
+      // Robotics retains the legacy generic surface; named membership changes
+      // fail validation before classification, as covered by the named suite.
+      const next = clone(); edit(next.products.robotics);
       expect(classify(baseline, next).changes.some(c => c.kind === kind)).toBe(true);
       expect(classify(baseline, next).automatic_publication).toBe(false);
     }

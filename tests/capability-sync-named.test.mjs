@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { summarizeProduct, validateContract, generate, hash } from '../scripts/capability-sync.mjs';
+import { summarizeProduct, validateContract, generate, hash, classify } from '../scripts/capability-sync.mjs';
 import { NAMED_ACCOUNT_OPERATIONS } from '../scripts/named-account-operations.mjs';
 
 const baseline = JSON.parse(readFileSync(new URL('../connectors/capabilities/source-contract.json', import.meta.url)));
@@ -31,6 +31,14 @@ function fixture(product) {
 }
 
 describe('fixed named account-operation compatibility', () => {
+  it('retains producer interest guidance and detects guidance-only drift', () => {
+    const {tools, catalog} = fixture('quantum');
+    catalog.interest_guidance = {instruction: 'Inspect supplied inputs before selecting a service.'};
+    expect(summarizeProduct('quantum', tools, catalog).interest_guidance).toEqual(catalog.interest_guidance);
+    const changed = structuredClone(baseline);
+    changed.products.quantum.interest_guidance = {instruction: 'Changed guidance requires review.'};
+    expect(classify(baseline, changed).changes).toContainEqual({product: 'quantum', kind: 'descriptor_semantics_review_required'});
+  });
   it.each(['wave', 'quantum'])('validates every fixed %s mapping and preserves exact execution hashes', product => {
     const {tools, catalog} = fixture(product);
     const row = summarizeProduct(product, tools, catalog);

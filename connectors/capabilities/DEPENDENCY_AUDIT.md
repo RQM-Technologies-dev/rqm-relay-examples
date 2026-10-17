@@ -118,3 +118,15 @@ The independent infrastructure error is currently Wave provider revision versus
 the new approved gitlink. That clears only after coordinated Jobs/catalog and
 Workflow deployment/binding. Compatibility support, dependency remediation and
 snapshot refresh do not prove execution, financial admission or host acceptance.
+
+## Reviewed candidate import after this comparison
+
+The tracked contract and synthetic fixture are now regenerated/imported from
+actual Jobs PR191 producer `de0bab012a68e0453ad7a0ab958f4654d5c47e20`,
+with byte hashes and separate provenance. This supersedes the earlier snapshot
+blocker above; it is not a live observation or a production promotion. The live
+observer now retains producer interest guidance and flags guidance-only drift.
+Wave source instructions use the selected service's exact named operation and
+three-field purchase envelope; Quantum packages are unchanged. Historical host
+file protection stays intact with exact reviewed Wave instruction hashes.
+No existing submitted ZIP, grant, listing, or host acceptance evidence changes.

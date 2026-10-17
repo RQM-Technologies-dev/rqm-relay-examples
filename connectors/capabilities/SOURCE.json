@@ -1,10 +1,10 @@
 {
   "schema_version": "rqm.connector-source-provenance.v1",
   "repository": "RQM-Technologies-dev/RQM-Jobs-MCP",
-  "revision": "8b96c784b74bbdb5ae02efcab0128465af668a53",
+  "revision": "de0bab012a68e0453ad7a0ab958f4654d5c47e20",
   "producer": "scripts/export-connector-capabilities.ts",
-  "contract_sha256": "f54688e42a479d7579165a165251f281dccfed9740e9a58612c6d64c25974060",
-  "authority": "approved Jobs scoped discovery export",
+  "contract_sha256": "808188bcb5058cfcc67e5652ba387429912dc358dc386c293bcc6386c2c07d54",
+  "authority": "reviewed Jobs PR191 scoped discovery candidate export",
   "runtime_deployment": "not_observed",
   "host_acceptance": "not_observed"
 }

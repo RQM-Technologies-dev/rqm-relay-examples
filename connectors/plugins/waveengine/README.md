@@ -6,11 +6,11 @@ Discover and run bounded signal-processing jobs with prepaid RQM credits and an 
 
 This folder is self-contained. Cursor reads `.cursor-plugin/plugin.json` and `mcp.json`; Claude reads `.claude-plugin/plugin.json` and `.mcp.json`. Both use `https://jobs.rqmtechnologies.com/mcp/plugins/wave`. Cursor's client ID is public, not a secret. Claude uses its client metadata registration. The package has no executable, wallet or credential store.
 
-## Six tools
+## Twenty-five tools
 
 - `list_buyer_jobs` and `search_buyer_jobs`: public wave contracts, required inputs, examples, price information and limitations. Discovery is not a binding quote or completed computation.
 - `get_account_balance`: the connected account's prepaid balance.
-- `run_account_job`: reserve credits and submit one job within the saved spending policy and explicit `max_total_price` ceiling.
+- Twenty fixed named Wave operation tools: choose the exact tool from the selected service's `operation_tools` mapping. Supply only `request`, `idempotency_key` and `max_total_price`; the named tool fixes the service. It reserves credits and submits one approved job within the saved spending policy and price ceiling.
 - `get_account_job`: recover the original job, status, result and receipt by `job_id`.
 - `list_account_jobs`: find this client's wave jobs, optionally by the original idempotency key.
 

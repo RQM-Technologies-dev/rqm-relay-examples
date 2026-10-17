@@ -8,7 +8,7 @@
   "execution_tool": "run_account_job",
   "capability_id_source": "descriptor.service_id",
   "catalog_sha256": "576de9f0dc9a419753cba91629efd7404a2bc988145a83d3242d209e8b033655",
-  "tool_metadata_sha256": "a21a1c1d93891eeb773ccde73962e13cf7a631024324c5dca4b10bde0bd06337",
+  "tool_metadata_sha256": "a91ecd24b9de2ff05ffbbe609e4052ce18ed811ff27d532cb08d7a26b3a0531e",
   "services": [
     {
       "service_id": "frame-convention-validation-v1",
