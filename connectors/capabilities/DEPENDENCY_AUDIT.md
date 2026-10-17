@@ -16,6 +16,16 @@ transitive lock entries update within their existing ranges; npm resolved
 `ip-address` to the current compatible patch 10.7.4. No new override, direct
 transitive dependency, SDK major migration, or unrelated lockfile update is used.
 
+CI subsequently reached the separately locked `connectors/claude-desktop`
+package and exposed the same findings plus `@modelcontextprotocol/client` 2.0.0
+under the same OAuth advisory. That package now uses client 2.2.0 and its required
+core 2.2.0, SDK 1.31.0, and the same three transitive patches. Client 2.2.0 is the
+advisory's minimum fixed 2.x release. Its existing Zod versions and nested lock
+topology are preserved rather than accepting npm's unrelated deduplication and
+Zod version changes. No desktop source, manifest, auth configuration, artwork,
+remote endpoint, or publication state is changed. The desktop's outgoing client
+also has no OAuth authProvider; its local bridge is stdio.
+
 ## Reachability and evidence limits
 
 - **SDK OAuth credential issuer binding (high):** the vulnerable client path
@@ -57,13 +67,22 @@ credentials, protected account call, purchase or production operation is needed.
 
 ## Validation
 
-The lockfile diff changes exactly the four package versions listed above.
+The root lockfile diff changes exactly the four package versions listed above.
 `npm audit --omit=dev --json` reports zero vulnerabilities after the update.
 Run the existing `npm run check`, `npm run capabilities:check` and
 `npm run publication:check`; no new tests that duplicate package implementation
 are needed. The named/legacy regression suite continues to exercise the actual
 adapter with the updated SDK. Live drift must still be reported rather than
 converted to success.
+
+The desktop lockfile changes only six advisory-related package versions (client,
+core, SDK and the same three transitive patches). A clean locked install and
+`npm run pack --prefix connectors/claude-desktop` pass: nine tests, bundled-build,
+archive validation, full audit with zero vulnerabilities and unsigned local MCPB
+generation. This generates a local artifact; it does not install, sign or publish
+the desktop connector. Root `npm run check` passes all 77 tests, typecheck, build
+and audit; capability/package checks pass. The live contract hash is identical
+before and after the root SDK upgrade.
 
 ## Descriptor/tool drift versus deployment mismatch
 
