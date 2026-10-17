@@ -64,10 +64,21 @@ describe("Claude and Cursor non-regression", () => {
       expect(manifest).toEqual(baseline.chatgpt_metadata[brand]);
     }
   });
-  it("preserves all 63 host package files from PR22 byte for byte", () => {
+  it("preserves protected host files with two pinned security-only dependency updates", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
+    // c241060 fixes the same reported SDK/URI/IP/proxy advisories in the
+    // independent desktop lock. Keep PR22's baseline intact and pin only the
+    // two reviewed dependency-file hashes; all manifests/auth/source stay exact.
+    const securityUpdates: Record<string, string> = {
+      "connectors/claude-desktop/package.json": "d9fbe909b686abaf92621e29b11aa6048ed5fa1afa9ea7c4408ec62fcf8e0d22",
+      "connectors/claude-desktop/package-lock.json": "b07d82f24d8dd2389b7921f7fde5062826d67c31dddaa94c100d114c1cb2829d",
+    };
+    expect(Object.keys(securityUpdates).sort()).toEqual([
+      "connectors/claude-desktop/package-lock.json",
+      "connectors/claude-desktop/package.json",
+    ]);
     for (const [path, digest] of Object.entries(baseline.files)) {
-      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(digest);
+      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(securityUpdates[path] ?? digest);
     }
     // Catch added host files as well as modified or deleted files.
     const directories = ["connectors/plugins", "connectors/claude-desktop", "connectors/cursor", ".cursor-plugin"];

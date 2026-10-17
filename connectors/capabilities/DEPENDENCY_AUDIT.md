@@ -26,6 +26,11 @@ Zod version changes. No desktop source, manifest, auth configuration, artwork,
 remote endpoint, or publication state is changed. The desktop's outgoing client
 also has no OAuth authProvider; its local bridge is stdio.
 
+The protected-host regression retains the original PR22 baseline and exact
+hashes for every other file. Only these two reviewed dependency files receive
+explicit replacement hashes in the test; added/removed file detection remains
+unchanged. This is not an arbitrary baseline regeneration or a host-file waiver.
+
 ## Reachability and evidence limits
 
 - **SDK OAuth credential issuer binding (high):** the vulnerable client path
