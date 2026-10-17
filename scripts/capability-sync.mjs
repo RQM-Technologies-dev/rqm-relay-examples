@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { Client } from '@modelcontextprotocol/sdk/client/index.js';
 import { StreamableHTTPClientTransport } from '@modelcontextprotocol/sdk/client/streamableHttp.js';
 import { PRODUCTS, ROOT, packageFiles } from './chatgpt-publication.mjs';
+import { NAMED_ACCOUNT_OPERATIONS } from './named-account-operations.mjs';
 
 export const HOSTS = ['chatgpt', 'claude', 'cursor'];
 const TOOL_NAMES = ['get_account_balance', 'get_account_job', 'list_account_jobs', 'list_buyer_jobs', 'run_account_job', 'search_buyer_jobs'];
@@ -18,16 +19,41 @@ const json = path => JSON.parse(readFileSync(path, 'utf8'));
 const endpoint = product => `https://jobs.rqmtechnologies.com/mcp/plugins/${product}`;
 const digest = value => assert.match(value, /^[a-f0-9]{64}$/);
 
+function namedSurface(product, names) {
+  const fixed = NAMED_ACCOUNT_OPERATIONS[product];
+  assert(fixed, 'Named operations are unsupported for this product');
+  const expected = [...TOOL_NAMES.filter(name => name !== 'run_account_job'),
+    ...Object.values(fixed), ...(product === 'quantum'
+      ? ['describe_quantum_capabilities', 'optimize_quantum_circuit', 'recommend_quantum_device'] : [])];
+  assert.deepEqual([...names].sort(), expected.sort(), 'Named tool surface changed: manual host metadata review required');
+  return fixed;
+}
+
+function validateToolSurface(product, tools) {
+  const names = tools.map(tool => tool.name);
+  assert.equal(new Set(names).size, names.length, 'Duplicate tool name');
+  if (names.includes('run_account_job')) {
+    assert.deepEqual([...names].sort(), TOOL_NAMES, 'Tool surface changed: manual host metadata review required');
+    return null;
+  }
+  return namedSurface(product, names);
+}
+
 export function validateContract(contract) {
   assert.equal(contract.schema_version, 'rqm.connector-capabilities.v1');
   assert.deepEqual(Object.keys(contract.products).sort(), PRODUCTS.map(p => p.product).sort());
   for (const {product} of PRODUCTS) {
     const row = contract.products[product];
     assert.equal(row.endpoint, endpoint(product));
-    assert.deepEqual(row.tools.map(t => t.name).sort(), TOOL_NAMES, 'Tool surface changed: manual host metadata review required');
+    const fixed = validateToolSurface(product, row.tools);
     row.tools.forEach(t => digest(t.sha256));
     assert(row.services.length > 0 && row.services.length <= 256);
     assert.equal(new Set(row.services.map(s => s.service_id)).size, row.services.length, 'Duplicate service ID');
+    if (fixed) {
+      assert.deepEqual(row.services.map(s => s.service_id).sort(), Object.keys(fixed).sort(), 'Named service membership changed');
+      for (const service of row.services)
+        assert.equal(service.execution_contract_sha256, hash({service_id: service.service_id, tool_name: fixed[service.service_id]}), 'Named execution mapping digest mismatch');
+    }
     for (const service of row.services) {
       assert(typeof service.service_id === 'string' && service.service_id.length > 0);
       assert(typeof service.service_version === 'string' && service.service_version.length > 0);
@@ -42,18 +68,53 @@ export function validateContract(contract) {
 }
 
 export function summarizeProduct(product, tools, catalog) {
-  assert(Array.isArray(catalog.descriptors) && Array.isArray(catalog.account_execution_contracts));
-  const executions = new Map(catalog.account_execution_contracts.map(c => [c.capability_id, c]));
+  assert(Array.isArray(catalog.descriptors));
+  const fixed = validateToolSurface(product, tools);
+  const named = Array.isArray(catalog.operation_tools);
+  assert.equal(named, fixed !== null, 'Execution contract and tool surface disagree');
+  assert(named ? catalog.account_execution_contracts === undefined : catalog.operation_tools === undefined,
+    'Ambiguous execution contract');
+  const contracts = named ? catalog.operation_tools : catalog.account_execution_contracts;
+  assert(Array.isArray(contracts), 'Missing execution contracts');
+  const executions = new Map(contracts.map(c => [named ? c.service_id : c.capability_id, c]));
   assert.equal(executions.size, catalog.descriptors.length, 'Missing or duplicate execution contracts');
+  assert.equal(contracts.length, executions.size, 'Duplicate execution contracts');
+  assert.equal(new Set(catalog.descriptors.map(d => d.service_id)).size, catalog.descriptors.length, 'Duplicate descriptor');
+  assert.deepEqual([...executions.keys()].sort(), catalog.descriptors.map(d => d.service_id).sort(), 'Execution contract membership mismatch');
+  if (fixed) assert.deepEqual([...executions.keys()].sort(), Object.keys(fixed).sort(), 'Named service membership changed');
   return {
     endpoint: endpoint(product),
+    ...(catalog.interest_guidance ? {interest_guidance: catalog.interest_guidance} : {}),
     tools: tools.map(tool => ({name: tool.name, sha256: hash(tool)})).sort((a, b) => a.name.localeCompare(b.name, 'en')),
     services: catalog.descriptors.map(d => {
       assert.equal(d.product, product, 'Cross-product catalog leak');
       const execution = executions.get(d.service_id);
-      assert(execution && execution.tool === 'run_account_job', 'Execution must use buyer service_id');
-      assert.deepEqual(execution.caller_supplied_fields, ['idempotency_key', 'max_total_price']);
-      assert.equal(execution.principal_policy_readiness, 'unknown');
+      if (named) {
+        assert.deepEqual(execution, {service_id: d.service_id, tool_name: fixed[d.service_id]}, 'Invalid fixed named mapping');
+        const tool = tools.find(t => t.name === execution.tool_name);
+        const schema = tool.inputSchema;
+        assert.equal(schema.type, 'object');
+        assert.equal(schema.additionalProperties, false);
+        assert.deepEqual([...schema.required].sort(), ['idempotency_key', 'max_total_price', 'request']);
+        assert.deepEqual(Object.keys(schema.properties).sort(), ['idempotency_key', 'max_total_price', 'request']);
+        for (const [field, pattern] of [['idempotency_key', '^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$'], ['max_total_price', '^(?:0|[1-9]\\d{0,5})(?:\\.\\d{1,6})?$']]) {
+          assert.equal(schema.properties[field].type, 'string');
+          assert.equal(schema.properties[field].pattern, pattern, 'Purchase guard schema drift');
+        }
+        const requestSchema = structuredClone(d.agent_discovery.request_schema);
+        const defs = requestSchema.$defs;
+        for (const key of ['$defs', '$id', '$schema']) delete requestSchema[key];
+        assert.deepEqual(schema.properties.request, requestSchema, 'Named request schema drift');
+        assert.deepEqual(schema.$defs, defs, 'Named request definitions drift');
+        assert.equal(tool.annotations?.readOnlyHint, false);
+        assert.equal(tool.annotations?.destructiveHint, true);
+        assert.equal(tool.annotations?.idempotentHint, true);
+        assert.deepEqual(tool._meta?.securitySchemes, [{type: 'oauth2', scopes: ['jobs.run']}]);
+      } else {
+        assert(execution && execution.tool === 'run_account_job', 'Execution must use buyer service_id');
+        assert.deepEqual(execution.caller_supplied_fields, ['idempotency_key', 'max_total_price']);
+        assert.equal(execution.principal_policy_readiness, 'unknown');
+      }
       assert(d.agent_discovery.request_schema && d.agent_discovery.result_schema);
       return {
         service_id: d.service_id, service_version: d.service_version, title: d.title, readiness: d.readiness,
@@ -91,6 +152,7 @@ export function classify(before, after) {
   const changes = [];
   for (const {product} of PRODUCTS) {
     const old = before.products[product], next = after.products[product];
+    if (hash(old.interest_guidance ?? null) !== hash(next.interest_guidance ?? null)) changes.push({product, kind: 'descriptor_semantics_review_required'});
     if (hash(old.tools) !== hash(next.tools)) changes.push({product, kind: 'tool_metadata_review_required'});
     const previous = new Map(old.services.map(s => [s.service_id, s]));
     const current = new Map(next.services.map(s => [s.service_id, s]));
@@ -146,18 +208,22 @@ export function generate(contract, root = ROOT) {
   const artifacts = {};
   for (const item of PRODUCTS) for (const host of HOSTS) {
     const source = contract.products[item.product];
+    const fixed = validateToolSurface(item.product, source.tools);
     artifacts[`${host}/${item.name}.json`] = encode({
       schema_version: 'rqm.host-capability-coverage.v1', host, product: item.product,
       endpoint: source.endpoint, discovery_tool: 'list_buyer_jobs', search_tool: 'search_buyer_jobs',
-      execution_tool: 'run_account_job', capability_id_source: 'descriptor.service_id',
+      execution_tool: fixed ? 'fixed_named_operation' : 'run_account_job',
+      capability_id_source: fixed ? 'fixed_named_tool_mapping' : 'descriptor.service_id',
       catalog_sha256: hash(source.services), tool_metadata_sha256: hash(source.tools),
-      services: source.services.map(s => ({service_id: s.service_id, descriptor_sha256: s.descriptor_sha256})),
+      services: source.services.map(s => ({service_id: s.service_id, descriptor_sha256: s.descriptor_sha256,
+        ...(fixed ? {execution_tool: fixed[s.service_id]} : {})})),
       package: packageEvidence(root, item, host),
       deployed: 'not_observed', host_discovered: 'not_observed', published: 'not_observed',
     });
   }
   artifacts['manifest.json'] = encode({schema_version: 'rqm.connector-generation.v1', source_contract_sha256: hash(contract),
     generator_sha256: bytesHash(readFileSync(fileURLToPath(import.meta.url))),
+    named_operation_mappings_sha256: bytesHash(readFileSync(new URL('./named-account-operations.mjs', import.meta.url))),
     artifacts: Object.fromEntries(Object.entries(artifacts).map(([name, text]) => [name, bytesHash(text)])),
     automatic_publication: false});
   return artifacts;

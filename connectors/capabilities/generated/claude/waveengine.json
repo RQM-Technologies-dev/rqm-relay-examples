@@ -5,102 +5,122 @@
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/wave",
   "discovery_tool": "list_buyer_jobs",
   "search_tool": "search_buyer_jobs",
-  "execution_tool": "run_account_job",
-  "capability_id_source": "descriptor.service_id",
-  "catalog_sha256": "b4c4fae01ee7d94c2e3a1e239068c154600b627768f0c709fc5201b5feb0c60a",
-  "tool_metadata_sha256": "a49fc979dd92328d33f80cd5e80e898e227bf61e183338cd3b3733663cf581d9",
+  "execution_tool": "fixed_named_operation",
+  "capability_id_source": "fixed_named_tool_mapping",
+  "catalog_sha256": "22d80162d5e2780e8cadadb11de0092e575756b1a719cc91c5c3dc5f0e6f80ba",
+  "tool_metadata_sha256": "57a665bc28d1d8e023d3a2cefafd863c67875f7bd56f17bfcc761a5877ebb3cb",
   "services": [
     {
       "service_id": "diagnose-multichannel-capture-v1",
-      "descriptor_sha256": "69c78de182c4939b9494c9f634f5b0e4a8dde49d801818873207df9bd22c8240"
+      "descriptor_sha256": "a78ec983618255edb8269e00ce1d5d68ffa2f0d83c982790e80f79b7ab2700ed",
+      "execution_tool": "wave_diagnose_multichannel_capture_v1"
     },
     {
       "service_id": "equalize-pilot-capture-v1",
-      "descriptor_sha256": "6e44594f61bc779d9edcd61810cef00cb657be4e19373ddd8f77436001b35561"
+      "descriptor_sha256": "d34c89e7caa58e006690fd91780ccab7461925cdf0fe0a608e61378ae253a8c7",
+      "execution_tool": "wave_equalize_pilot_capture_v1"
     },
     {
       "service_id": "extract-wave-features-v1",
-      "descriptor_sha256": "3fd2c32f2ace4dbf794695e6240572c47dcf6842b11a2626f6ba75947934d368"
+      "descriptor_sha256": "a5bdf4d3e80061df4819fc39d5bc0d666b695e70d4b99baf0e1dff81613e883b",
+      "execution_tool": "wave_extract_wave_features_v1"
     },
     {
       "service_id": "fit-coupled-channel-model-v1",
-      "descriptor_sha256": "f60a5277dee697c7ab8443d1742228ba19200a320bd88df53c9406b8e42e6b0a"
+      "descriptor_sha256": "ab660424bb961db7792c19f5c4213689c17644eedaf7cab364a19b28752c8c43",
+      "execution_tool": "wave_fit_coupled_channel_model_v1"
     },
     {
       "service_id": "gate-signal-capture-v1",
-      "descriptor_sha256": "4bffd48aae52016aec4f0e1eab3b7093a7b3124d25d2d39b9de1e730e11d6204"
+      "descriptor_sha256": "fd43c46174041a0cc5d0d168e7602a1fbb14d09a804dfe670b8b91ea95a6889c",
+      "execution_tool": "wave_gate_signal_capture_v1"
     },
     {
       "service_id": "generate-validated-signal-fixture-v1",
-      "descriptor_sha256": "08174005ce7e01bbfa1642346e732342bd27d8d30a5b1f7c9afea743f6ad6e0a"
+      "descriptor_sha256": "aff99d98b92375c678902178faf1a90b8f3d09d0717faf44fac5ddec7b78c44d",
+      "execution_tool": "wave_generate_validated_signal_fixture_v1"
     },
     {
       "service_id": "transport-polarization-frame-v1",
-      "descriptor_sha256": "0a9eb4f800ade505e164f9c179ac63bb09af16a557ecb3355e41fe754512a04b"
+      "descriptor_sha256": "d660752530e6e5c3fa57c398fbb39e818cc13c9792899ba9e5f3237220d7adfc",
+      "execution_tool": "wave_transport_polarization_frame_v1"
     },
     {
       "service_id": "verify-wave-pipeline-v1",
-      "descriptor_sha256": "1b4edfc7c86870e4431fccbea746ce212b841614a7e6c2ef9b4eee6c4042e906"
+      "descriptor_sha256": "b393151dd569b9f069ba94509ec4dec857fb5d7932deed03fdc401bf92add517",
+      "execution_tool": "wave_verify_wave_pipeline_v1"
     },
     {
       "service_id": "wave.apply-verified-phase-correction.v1",
-      "descriptor_sha256": "d02f25311561b6bf786122a4f5513f7d278067e2f23cce9a6166b0393947d330"
+      "descriptor_sha256": "04cea3be2420ba46c0f99e0d77f750280170455f5a6bf964363ec3dde6bc4363",
+      "execution_tool": "wave_apply_verified_phase_correction_v1"
     },
     {
       "service_id": "wave.compare-pipeline-responses.v1",
-      "descriptor_sha256": "a8d41894330abf8e7853b0a5f7ba0c77982640c2efc457a18146172b02748c55"
+      "descriptor_sha256": "cd72c1333233427ee07dfd21679fba5f620a199966af0c8231c786f8897b04e2",
+      "execution_tool": "wave_compare_pipeline_responses_v1"
     },
     {
       "service_id": "wave.compare-waveform-captures.v1",
-      "descriptor_sha256": "f16dc7720a90acbda690293cf28fec44403d7661fa306448f91c9699fbc4a8cc"
+      "descriptor_sha256": "5fbed373e75d0873051d7d54c27db37cb3054ab6af83e69301aa4a9c0861b60c",
+      "execution_tool": "wave_compare_waveform_captures_v1"
     },
     {
       "service_id": "wave.compile-curated-processing-recipe.v1",
-      "descriptor_sha256": "b235586592d037d10c962931a22967c7bc5944d47f8abd42f2d9c181713d69b6"
+      "descriptor_sha256": "1178ca9f7c5bfb59a0aa9d226b46a84f2928e0468ec95e5d79776c5193abfbe9",
+      "execution_tool": "wave_compile_curated_processing_recipe_v1"
     },
     {
       "service_id": "wave.convert-capture-to-spectrum.v1",
-      "descriptor_sha256": "e61c482d424c0c2ed0ae1ae20bb6b443aaeb9881f2d2aaaef6c7b5bb23b05ec3"
+      "descriptor_sha256": "a48c118807558d71c5ae86dcc4379c030aea6b8b2b0ae495c4804e9064e1f2ab",
+      "execution_tool": "wave_convert_capture_to_spectrum_v1"
     },
     {
       "service_id": "wave.measure-phase-drift.v1",
-      "descriptor_sha256": "bc9f71f1bc007900c7b019c5844177488e3ce586991068201e0110f1e9f23562"
+      "descriptor_sha256": "876e6b6bd847461ceb3f52af6c9497655a9bba0ef2e1fba271e0138cf292818c",
+      "execution_tool": "wave_measure_phase_drift_v1"
     },
     {
       "service_id": "wave.optimize-processing-pipeline.v1",
-      "descriptor_sha256": "12dce0c1a887c7f1252d85cbe3e93c71bff7b659c9bc2a838f1d3f7e9d6288da"
+      "descriptor_sha256": "7c895bbedce485a2742393c51f2a2f6882f9d8dcdd468a14465ad42e0359df1d",
+      "execution_tool": "wave_optimize_processing_pipeline_v1"
     },
     {
       "service_id": "wave.reconstruct-bounded-capture.v1",
-      "descriptor_sha256": "c71a1741f20ad8a88c7ea6cc96cf8a81c5915c874b687fca675dd6f9cf8b7331"
+      "descriptor_sha256": "ee76815113a90905fd9913a65d310a3adb5def167c5cd7cb0e3a881631a92d6c",
+      "execution_tool": "wave_reconstruct_bounded_capture_v1"
     },
     {
       "service_id": "wave.reconstruct-time-domain-signal.v1",
-      "descriptor_sha256": "aff715fc26fc6da7af63572754ce8d73271cba1b353833667d2803650b808dbc"
+      "descriptor_sha256": "b1a53cad3e9c3f9c5c4ec37b7a3a94ec8bb2f9fa287766e145a776780e274235",
+      "execution_tool": "wave_reconstruct_time_domain_signal_v1"
     },
     {
       "service_id": "wave.rotate-and-validate-two-channel-frame.v1",
-      "descriptor_sha256": "98c9e67182bf76ba15c9b6a4fa5594084f25ff2cffee7724f8ec439e400ca22c"
+      "descriptor_sha256": "eed867b24cbd44e1ba6611ef2648f463783971f18c03b58147e5661881685568",
+      "execution_tool": "wave_rotate_and_validate_two_channel_frame_v1"
     },
     {
       "service_id": "wave.validate-reconstruction-quality.v1",
-      "descriptor_sha256": "94199915a4fe0ab0462d249a57b30c033a535c5fc9dd103552c6f78281a75bb8"
+      "descriptor_sha256": "ea502bcc7fb94e6aec27b0b9036570cb341d7387b90b76b9e07a700087309463",
+      "execution_tool": "wave_validate_reconstruction_quality_v1"
     },
     {
       "service_id": "wave.validate-spectral-criteria.v1",
-      "descriptor_sha256": "790c1a4bb26578a81c31c8d7c2338d1cc3088392697a313ef823d85bb7881df1"
+      "descriptor_sha256": "082e7829b11615a8efcbe06018f26ed55bb5e88fadcade9f8e5849c7773bb372",
+      "execution_tool": "wave_validate_spectral_criteria_v1"
     }
   ],
   "package": {
     "source_path": "connectors/plugins/waveengine",
     "version": "0.3.0",
-    "package_content_sha256": "b8884ffbc21986bce46fb18c764dbc6d29cb7685c9f2ed3e2f91fe5f0821ba50",
+    "package_content_sha256": "0e4bec1ff282d84fe485204d0d16f98768969496474ecded1f999808f4d665ab",
     "files": {
       ".claude-plugin/plugin.json": "cc4e1e336e3343f4ef305b7e151e660c1bf21c2125efcdb84c564530b8f80dc5",
       ".mcp.json": "32f4a2549d64f26f027bd60b0a31f4d1680bba09068415cb4870cbfa15051171",
-      "skills//waveengine/SKILL.md": "8b7b62af687aedc66516017e4003fe6e728ad3f692dbbdc2a11107ac0639875d",
-      "README.md": "29c5e00c863b1a883fd6f44bba4707f367c44fd43a61de63ef27eff961611cab",
-      "PRIVACY.md": "9003c09d581310a4fbd1c351b1b2d638eb55e873b3d616d0f708784522a48589",
+      "skills//waveengine/SKILL.md": "be1dbfaab9f5c6486abad86e170584a4ea7870d41ec2de3a40cd4ba7d23c4d68",
+      "README.md": "7296ae8e4b3e943a868f5c765bba5689fe9d999ce581bb018ac8a56954f70be4",
+      "PRIVACY.md": "75471cceb3e9fc39c0513662121b2b44df8cf8ad244896872945e175839a882b",
       "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "NOTICE": "657d683a88258311c9b71cbaf2597eaa84dad68c436b7bf868c4abdaffe813d2",
       "listing.json": "a17966a89c64a4ae7272eadf7983b430af94eaa4c8633f5b862095045aab860c",

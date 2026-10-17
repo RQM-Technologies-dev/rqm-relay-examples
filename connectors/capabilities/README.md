@@ -5,6 +5,17 @@ release snapshot**, not an editable capability registry. `SOURCE.json` identifie
 the producing Jobs commit. Each descriptor's public provider revision is retained;
 provider HEAD is never assumed active. Host-specific packages remain owned here.
 
+The reviewed candidate is exported offline from Jobs PR191 producer
+`de0bab012a68e0453ad7a0ab958f4654d5c47e20`. `SOURCE.json` records its byte hash;
+the synthetic regression fixture is imported from that same producer and retains
+separate provenance. Named Wave/Quantum membership stays fixed: the synthetic
+addition exercises only the legacy Robotics surface. All three products retain
+the descriptor-change propagation checks. Producer `interest_guidance` is
+preserved by the live observer and guidance-only changes require semantic review.
+Runtime deployment, native host discovery and publication remain unobserved by
+this candidate import. ChatGPT is the first rollout target; generated Claude and
+Cursor cells are source coverage, not approvals or installations.
+
 ```sh
 # In RQM-Jobs-MCP, after reviewing an approved source change:
 npm run connectors:export
@@ -27,6 +38,21 @@ schema, missing-product or unknown-tool failure must not be accepted as parity.
 The infrastructure repository owns scheduled/manual coordination using an
 immutable adapter commit. Source contract drift is caught in Jobs CI before
 deployment; package/auth/artifact drift is caught here on push and PR.
+
+The observer accepts two explicit account-execution contracts: the six-tool
+`account_execution_contracts` / `run_account_job` surface, and the fixed named
+`operation_tools` surfaces for Wave and Quantum. Named mode requires every one
+of the 20 reviewed service/tool mappings, the exact supported tool inventory,
+unchanged nested request schemas/definitions, OAuth `jobs.run`, and the published
+idempotency/price guards. Missing, duplicate, mixed, cross-product or unknown
+mappings fail closed. The fixed mapping source is separately hashed in the
+generation manifest. Generated named-host coverage lists the actual tool for
+each service; it does not advertise the absent generic purchase tool.
+
+Supporting named contracts does not approve live descriptor drift, update a
+tracked source snapshot, bypass the provider gitlink check, or establish host
+acceptance. `live` still exits 2 on reviewed-source drift and records the observed
+contract for the independent infrastructure pin check.
 
 There are nine derived cells: three products times ChatGPT, Claude and Cursor.
 All three hosts for a product share the same endpoint, catalog hash, tool hash

@@ -1,17 +1,18 @@
 {
   "schema_version": "rqm.connector-generation.v1",
-  "source_contract_sha256": "4f0468a85175da827407bbb7e7a0f6948b32c084e0463ab09aed5230c5a0379a",
-  "generator_sha256": "fef71694587e8c25c15dfa77c035e04d44163ff6ee6121051050d1f6ef6e228b",
+  "source_contract_sha256": "7556685625532d4059f72dfcc0f4aef305c760b45004100146f13b360619706a",
+  "generator_sha256": "8ff01f41f96e92cb942b21937277b19155a9f8fa1e254f653d218c53b3e28412",
+  "named_operation_mappings_sha256": "2ffbb9434e0d0ada053a25815d666378d9e19158841e521026502171c3ebd32f",
   "artifacts": {
-    "chatgpt/resonant-quantum-mechanics.json": "d2d37ac6b93b82b7e809985428f8876efaae3e3d7d633420b69fae4c4093f1ac",
-    "claude/resonant-quantum-mechanics.json": "34701f4ded42747a84a403e5e8e0ace8349af8c51d29a47ed920caea0422fa38",
-    "cursor/resonant-quantum-mechanics.json": "593187a084018f7ec55c460bc48138fab7f2bbd55d8f37e5942566ca9387873d",
-    "chatgpt/waveengine.json": "df34020882493eb4e2787da57d2f13b8acd7eda48c4cac4cc15f22696f05dd5d",
-    "claude/waveengine.json": "a9329fa3b3c4eb22119e08ed3e200c2298487ca63025517fd637ec9a17a3d129",
-    "cursor/waveengine.json": "6ea1862a15cb98d1739ec8aa7a8c60ec4564c9bdca6185265f4bf4891651f9d1",
-    "chatgpt/robotics-lab.json": "8619204d3afb77f46602339b63d67222bf77428433f7c7a345ae53b7388f4692",
-    "claude/robotics-lab.json": "4a4e41c82a8ebd5c2a01af33ac364aac41c481e1e0816e6f74dabd109a3ef5a4",
-    "cursor/robotics-lab.json": "8b18ce43e9cc5e0775e032bafce89fecafd4438b9fea0030c5506a16ae5d273f"
+    "chatgpt/resonant-quantum-mechanics.json": "5879ba52239016d641389a04fa17f88053f1207c4406993d2eecfe5d1d08eaa0",
+    "claude/resonant-quantum-mechanics.json": "35b92d49a88dc58d8f8dc3b32fe12010618c32291ee345c650bd3e36152cd7ed",
+    "cursor/resonant-quantum-mechanics.json": "7a069c25183d59b126c4de60a2849fed814ff46a520d523d41de70bd751c0514",
+    "chatgpt/waveengine.json": "549e37ea034b7be5c7156731d9f05a6b3296c5896ba2957b81fb4d90d40281ab",
+    "claude/waveengine.json": "963a69d320c2c8c8e7a6103e804f51006c1c4392a6803d552387bfbd444ba911",
+    "cursor/waveengine.json": "c70d8a56595ec191c5fd56e68282422440734a85bf0c46afdcb779c9db8e48e0",
+    "chatgpt/robotics-lab.json": "4b837854946b2e3da1dac4cafa1ec81e34f16188f841ba3c4b08cc7f424159f9",
+    "claude/robotics-lab.json": "3f0b174d48439ec2c6cafb1e3dca89c4049578ac1c7e0dd8573cdbbf69755ab3",
+    "cursor/robotics-lab.json": "b390045018ab4ee4e1322373442b94811cfce119a8d78838a8d42f304cfc9f4f"
   },
   "automatic_publication": false
 }

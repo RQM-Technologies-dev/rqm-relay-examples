@@ -1,10 +1,10 @@
 {
   "repository": "RQM-Technologies-dev/RQM-Jobs-MCP",
-  "revision": "8b96c784b74bbdb5ae02efcab0128465af668a53",
+  "revision": "de0bab012a68e0453ad7a0ab958f4654d5c47e20",
   "producer": "scripts/export-connector-capabilities.ts#exportScopedDiscovery",
   "producer_test": "tests/unit/connector-capabilities.test.ts",
   "producer_fixture": "tests/fixtures/connector-capabilities.synthetic.v1.json",
-  "sha256": "619aadaf318ad3bb1780c355878aed2d52cb6cbd976e2caac6ac2379937d167a",
+  "sha256": "0ed84e53ee0c7747d0787f6f2b5e5834d6a1e06a3d0edd5090cf0325891a10ae",
   "synthetic_only": true,
   "executed_jobs": 0
 }
