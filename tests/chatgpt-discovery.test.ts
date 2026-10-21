@@ -15,15 +15,16 @@ const waveInstructionUpdates: Record<string, string> = {
   "connectors/plugins/waveengine/REVIEWER.md": "b868f3baa988523c03107c2321cfa24542c4eda8c5eff44c3a6718ba8ce49a29",
   "connectors/plugins/waveengine/skills/waveengine/SKILL.md": "be1dbfaab9f5c6486abad86e170584a4ea7870d41ec2de3a40cd4ba7d23c4d68",
 };
-// Cursor 0.3.1 package and shared endpoint guidance; OAuth, Claude manifest and assets stay pinned.
+// Cursor 0.3.2 alias alignment; Claude configuration, manifests and assets stay pinned.
 const quantumInstructionUpdates: Record<string, string> = {
-  "connectors/plugins/resonant-quantum-mechanics/.cursor-plugin/plugin.json": "3d72b7015994a6c71536f97bcda4b781a0d7c0b782af1de1ef9dd927950f5816",
-  "connectors/plugins/resonant-quantum-mechanics/listing.json": "ba08bf42bd27815d798db57badfef2d76cacb95b662361ce5b1882afffd8fd49",
-  "connectors/plugins/resonant-quantum-mechanics/PRIVACY.md": "033e75649cc377be506e19375cb8a67d03b8cbbd601c91f4b15d56e862a20823",
-  "connectors/plugins/resonant-quantum-mechanics/README.md": "71a253fc6ceeb8627745b2c12b9a3a1c56e8c5832e4c61ba958b11323fa9fcbb",
-  "connectors/plugins/resonant-quantum-mechanics/REVIEWER.md": "b420fc632fb756595f3c86493edc8f14160291328c553e007c1e4b02ba8c09c7",
-  "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "447e1cf0832a9fc9d3790eb681d69747eb433878e3ee9552427fc6cbae25dffc",
-  "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md": "fbd96310f47455baabc6c39901f8292d6674202dda5e598967c37a3bf7d28bce"
+  "connectors/plugins/resonant-quantum-mechanics/.cursor-plugin/plugin.json": "10ffa7832452646e2d6452f41c1a2890a3538d2a112a4632cc852b0ec6565eda",
+  "connectors/plugins/resonant-quantum-mechanics/listing.json": "5b48934e4d07907398a0e8f06b65f38e9e188e955fb5720eef067e1a773342d5",
+  "connectors/plugins/resonant-quantum-mechanics/PRIVACY.md": "96f89d938cdc2f6ce7345972422d7ccf8ce4283a89304bb5f78c5ba46694225a",
+  "connectors/plugins/resonant-quantum-mechanics/README.md": "7dac1da177a0429f0a99f248eac64fc6c1e3c23673e759f6e40a99108dd9867b",
+  "connectors/plugins/resonant-quantum-mechanics/REVIEWER.md": "8993fca474bd336c84bf61d13c9a25732af60355fe788e3e1784273ba5901737",
+  "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "33c616b7c03865692f0f80c2a37e3c40d218460c36e32c7c0705461fd6d9e999",
+  "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md": "fbd96310f47455baabc6c39901f8292d6674202dda5e598967c37a3bf7d28bce",
+  "connectors/plugins/resonant-quantum-mechanics/mcp.json": "bdedfe1e851bf1d7c92644ea618562fcaf810500f9124cc97df362ba3bfe587a"
 };
 describe("ChatGPT discovery contract proposals", () => {
   it("maps nine coordinated flagship contracts without presenting host evaluation results", () => {

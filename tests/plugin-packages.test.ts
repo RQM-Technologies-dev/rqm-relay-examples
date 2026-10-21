@@ -35,7 +35,7 @@ describe("portable product package release", () => {
     const product = name === "waveengine" ? "wave" : name === "robotics-lab" ? "robotics" : "quantum";
     const endpoint = `https://jobs.rqmtechnologies.com/mcp/plugins/${product}`;
     expect(Object.keys(config.mcpServers)).toEqual([name]);
-    expect(config.mcpServers[name].url).toBe(endpoint);
+    expect(config.mcpServers[name].url).toBe(product === "quantum" ? `${endpoint}/cursor` : endpoint);
     expect(config.mcpServers[name].auth.CLIENT_ID).toBe(`rqm-cursor-${product}`);
     expect(config.mcpServers[name].auth.CLIENT_SECRET).toBeUndefined();
     expect(json(`${base}/.mcp.json`).mcpServers[name]).toEqual({type:"http",url:endpoint});
@@ -86,13 +86,13 @@ describe("approved Robotics branding", () => {
   });
 });
 
-describe('Quantum 0.3.1 review boundaries', () => {
+describe('Quantum 0.3.2 review boundaries', () => {
   it('aligns package versions, named execution and honest Cloud status', () => {
     const base = 'connectors/plugins/resonant-quantum-mechanics';
     for (const file of ['.cursor-plugin/plugin.json', 'listing.json'])
-      expect(json(`${base}/${file}`).version).toBe('0.3.1');
+      expect(json(`${base}/${file}`).version).toBe('0.3.2');
     const guide = read(`${base}/README.md`);
-    expect(guide).toContain('29 tools');
+    expect(guide).toContain('52 tools');
     expect(guide).toContain('20 named');
     expect(guide).toContain('Cursor Cloud OAuth remains unresolved');
     expect(guide).toContain('receipt remains unconfirmed');

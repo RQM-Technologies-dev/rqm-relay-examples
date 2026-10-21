@@ -1,12 +1,12 @@
 {
   "schema_version": "rqm.connector-generation.v1",
   "source_contract_sha256": "7556685625532d4059f72dfcc0f4aef305c760b45004100146f13b360619706a",
-  "generator_sha256": "178409e4de7150eb9661bb518cd61b3b0a96d764fa3711ba0202a798f7b95489",
+  "generator_sha256": "0e98251295faca64cbec12be986f378b0824edd9ad5011a7ea79f1adb38db9ad",
   "named_operation_mappings_sha256": "2ffbb9434e0d0ada053a25815d666378d9e19158841e521026502171c3ebd32f",
   "artifacts": {
     "chatgpt/resonant-quantum-mechanics.json": "5879ba52239016d641389a04fa17f88053f1207c4406993d2eecfe5d1d08eaa0",
-    "claude/resonant-quantum-mechanics.json": "ac44e093f131c84aa1b5dc5d3d16c6372b59a48651c45c34343a2353331910f2",
-    "cursor/resonant-quantum-mechanics.json": "a79073a4e681d6c2b9076a455e6e742d33018fa0f0530b3dcb12fc403610aeee",
+    "claude/resonant-quantum-mechanics.json": "21dca9e073cf9bc282c248ab60511e3e8fa77f28f6b2b381ffd32b6b739efc85",
+    "cursor/resonant-quantum-mechanics.json": "242d298433d7594bc2b6dda9d7e0d1e09b4885a1a5d8341a0575dde8740393f8",
     "chatgpt/waveengine.json": "549e37ea034b7be5c7156731d9f05a6b3296c5896ba2957b81fb4d90d40281ab",
     "claude/waveengine.json": "963a69d320c2c8c8e7a6103e804f51006c1c4392a6803d552387bfbd444ba911",
     "cursor/waveengine.json": "c70d8a56595ec191c5fd56e68282422440734a85bf0c46afdcb779c9db8e48e0",

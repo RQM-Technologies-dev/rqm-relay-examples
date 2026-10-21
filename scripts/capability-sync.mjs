@@ -196,7 +196,9 @@ function packageEvidence(root, item, host) {
   for (const path of new Set(packagePaths)) visit(path);
   const config = json(resolve(base, configPath)).mcpServers;
   assert.deepEqual(Object.keys(config), [item.name]);
-  assert.equal(config[item.name].url, endpoint(item.product), 'Host endpoint drift');
+  const connectionEndpoint = host === 'cursor' && item.product === 'quantum'
+    ? `${endpoint(item.product)}/cursor` : endpoint(item.product);
+  assert.equal(config[item.name].url, connectionEndpoint, 'Host endpoint drift');
   if (host === 'cursor') {
     assert.equal(config[item.name].auth.CLIENT_ID, `rqm-cursor-${item.product}`);
     assert.deepEqual(config[item.name].auth.scopes, ['jobs.read', 'jobs.run', 'balance.read']);
