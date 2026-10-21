@@ -1,7 +1,7 @@
 {
   "name": "resonant-quantum-mechanics",
-  "version": "0.3.2",
-  "description": "Free connector for bounded quantum circuit services. Sign in to RQM and purchase computation credits directly from RQM; approved jobs use an owner-saved spending policy.",
+  "version": "0.3.3",
+  "description": "Free connector for quantum circuit analysis, simulation and approved real Braket QPU jobs using prepaid RQM credits. Inspect current devices, prepare a circuit, review a binding quote, then retrieve results and receipts.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -11,10 +11,13 @@
   "keywords": [
     "mcp",
     "quantum",
-    "computation",
+    "quantum-hardware",
+    "braket",
+    "qpu",
+    "circuit-analysis",
     "prepaid-credits"
   ],
-  "skills": "./skills/",
+  "skills": "./cursor-skills/",
   "logo": "assets/icon.svg",
   "mcpServers": "./mcp.json"
 }

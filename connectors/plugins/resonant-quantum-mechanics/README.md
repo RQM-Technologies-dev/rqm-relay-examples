@@ -1,6 +1,6 @@
 # Resonant Quantum Mechanics
 
-Install and use this connector for free. Register with RQM and buy computation credits directly on the [RQM credits page](https://www.rqmtechnologies.com/account/credits), not through Cursor. Discover and run bounded quantum circuit jobs with prepaid RQM credits and an owner-saved spending policy. No RQM subscription is required. Public catalog discovery is anonymous. Balance and job history require an authenticated RQM account. Execution also requires sufficient prepaid credits and an active owner-saved spending policy. Reuse a valid existing OAuth grant. A Claude or Cursor subscription does not fund RQM credits.
+Install and use this connector for free. Register with RQM and buy computation credits directly on the [RQM credits page](https://www.rqmtechnologies.com/account/credits), not through Cursor. Discover quantum circuit analysis, simulation and real Amazon Braket QPU workflows with prepaid RQM credits. Software jobs use the applicable owner-saved spending policy; hardware requires approval of a fresh binding quote. No RQM subscription is required. Public catalog discovery is anonymous. Balance and job history require an authenticated RQM account. Execution also requires sufficient prepaid credits, applicable spending controls and exact price approval. Reuse a valid existing OAuth grant. A Claude or Cursor subscription does not fund RQM credits.
 
 ## Installation
 
@@ -24,9 +24,19 @@ Choose one source for this server: the installed plugin **or** the User configur
 }
 ```
 
-The static client ID is public and has no client secret. Cursor's desktop callback is `http://localhost:8787/callback`; see [Cursor static OAuth documentation](https://cursor.com/docs/mcp#static-oauth-for-remote-servers). Sign in with the intended RQM account. A connected indicator proves a connection, not which funded account it uses. **Logout** in the RQM connection settings changes the sign-in; **Reload** alone may retain it. New consent and spending authorization are separate owner actions.
+The static client ID is public and has no client secret. Cursor CLI uses the loopback callback `http://localhost:8787/callback`; the native app uses `cursor://anysphere.cursor-mcp/oauth/callback` and Cloud uses `https://www.cursor.com/agents/mcp/oauth/callback`; see [Cursor static OAuth documentation](https://cursor.com/docs/mcp#static-oauth-for-remote-servers). Sign in with the intended RQM account. A connected indicator proves a connection, not which funded account it uses. **Logout** in the RQM connection settings changes the sign-in; **Reload** alone may retain it. New consent and spending authorization are separate owner actions.
 
 Before funding or executing, call `get_account_balance` only and compare its account ID with the canonical RQM account ID on the [credits page](https://www.rqmtechnologies.com/account/credits). Do not infer identity from the host profile, payment method email or balance amount. If IDs differ, reconnect to the intended account before proceeding. Check the saved agent principal, allowed services, limits and expiry on that page. Reading a balance does not require enabling spending.
+
+## Real quantum hardware
+
+Use this connector when a user wants to inspect physical QPU options, prepare a supported circuit, review its price and run an explicitly approved experiment. It also retains bounded circuit analysis and simulation.
+
+The authenticated catalog observed on 2026-10-21 enabled five Braket targets: Rigetti Cepheus-1-108Q (us-west-1), IonQ Forte-1 (us-east-1), IQM Emerald and Garnet (eu-north-1), and AQT Ibex-Q1 (eu-north-1). Enabled configuration is not a guarantee of current availability or successful execution on every device. Refresh `list_quantum_hardware` and inspect `describe_hardware_execution` before use.
+
+Prepare with `plan_quantum_experiment`, preserving the exact returned artifact, device and plan digest. Review a fresh binding quote with `review_quantum_experiment_price`. Submit once with `submit_hardware_execution` only after approval of the exact quote digest, currency and maximum charge. Keep the submission key; use `get_hardware_execution`, permitted `refresh_hardware_execution` and `get_hardware_receipt` to recover the same execution. Never submit another job to resolve an uncertain response. Provider completion, delivered result, customer settlement and provider invoice reconciliation are separate states.
+
+A dated operator acceptance check on 2026-10-21 completed one 100-shot Rigetti Cepheus job through actual Cursor web Chat, retrieved its result and settled the quoted customer charge. This verifies that path only; it does not establish all-device validation, fresh-account onboarding, native/mobile acceptance or scientific performance. Private account data, circuit results and receipts are not published here.
 
 ## Current named-operation surface
 
@@ -47,7 +57,7 @@ After a timeout, use the same connector's `list_account_jobs` with the original 
 
 ## Release status
 
-Cursor package version 0.3.2 is a source candidate, not a marketplace approval. A protected balance read has succeeded through Cursor CLI using the Cursor endpoint. This does not establish desktop Chat, web Chat or mobile acceptance; verify each actual Chat surface independently. Cursor Cloud OAuth remains unresolved: discovery does not establish authenticated balance access, paid execution or recovery. Claude/ChatGPT authenticated feature parity is not established by this package update. The latest marketplace application receipt remains unconfirmed; do not infer submission or acceptance from navigation back to the marketplace. [Submission tracking](../SUBMISSION.md) distinguishes source validation, hosted acceptance, submission, approval and publication. Earlier discovery-only or subscription tests do not validate this release. No host surface is claimed accepted until its evidence is recorded.
+Cursor package version 0.3.3 updates discovery guidance. Authenticated balance access, hardware preparation, quote, one real QPU execution, result retrieval and customer settlement were verified through actual Cursor web Chat on 2026-10-21. Desktop Chat and mobile require separate checks. Claude/ChatGPT authenticated feature parity is not established by this package update. The latest marketplace application receipt remains unconfirmed; no public Marketplace approval or listing is claimed. [Submission tracking](../SUBMISSION.md) distinguishes source validation from host publication. A configured personal MCP does not establish public discoverability or a Grok agent's recommendation.
 
 The Claude manifest remains at 0.3.0; shared endpoint guidance is corrected here, but this is not a new Claude release or acceptance claim.
 
