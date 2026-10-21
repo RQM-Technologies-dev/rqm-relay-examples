@@ -113,17 +113,17 @@
   ],
   "package": {
     "source_path": "connectors/plugins/resonant-quantum-mechanics",
-    "version": "0.3.0",
-    "package_content_sha256": "de50a5b1f52a215c92418b44dce8913522738f9dcb040d76e64a88f02c310068",
+    "version": "0.3.1",
+    "package_content_sha256": "07c5ecb4ab3e016bc89402320bef906a4d72344dbcb44ed4d436bb7b57bd2aa5",
     "files": {
-      ".cursor-plugin/plugin.json": "aa439d196dcc708fcde05b496a9e9a5ec8176c544dd9abdbffa799b09f791771",
+      ".cursor-plugin/plugin.json": "3d72b7015994a6c71536f97bcda4b781a0d7c0b782af1de1ef9dd927950f5816",
       "mcp.json": "46f4bb7eedae2b4e863fc34a01ddca9127df9f3873ce0f61b52d22edf4450fd5",
-      "skills//resonant-quantum-mechanics/SKILL.md": "12cffa5ddd407fd6f1d61baf407f111497e2466f1c6df4ee95ac06d99be29677",
-      "README.md": "9dabcfe50e8adc1c842399717ca59b03b624ca94b8574e135dd9315dfd08e398",
-      "PRIVACY.md": "ead1a5ddd82cea28f379bde8a0e2a8d6a3259113b6a8f9f8447ab90ed69adfde",
+      "skills//resonant-quantum-mechanics/SKILL.md": "447e1cf0832a9fc9d3790eb681d69747eb433878e3ee9552427fc6cbae25dffc",
+      "README.md": "71a253fc6ceeb8627745b2c12b9a3a1c56e8c5832e4c61ba958b11323fa9fcbb",
+      "PRIVACY.md": "033e75649cc377be506e19375cb8a67d03b8cbbd601c91f4b15d56e862a20823",
       "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",
-      "listing.json": "7d2a3d05cc42bfed0a153095d5507a7ffe02e1d82597e8285bf206c77735dbd6",
+      "listing.json": "ba08bf42bd27815d798db57badfef2d76cacb95b662361ce5b1882afffd8fd49",
       "assets//icon.svg": "e703a01ec1b108b1f4b25fb5dcb7419e42ec12c5b694673279dcd0fafb178ab5"
     }
   },

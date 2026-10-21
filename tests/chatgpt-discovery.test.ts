@@ -15,6 +15,16 @@ const waveInstructionUpdates: Record<string, string> = {
   "connectors/plugins/waveengine/REVIEWER.md": "b868f3baa988523c03107c2321cfa24542c4eda8c5eff44c3a6718ba8ce49a29",
   "connectors/plugins/waveengine/skills/waveengine/SKILL.md": "be1dbfaab9f5c6486abad86e170584a4ea7870d41ec2de3a40cd4ba7d23c4d68",
 };
+// Cursor 0.3.1 package and shared endpoint guidance; OAuth, Claude manifest and assets stay pinned.
+const quantumInstructionUpdates: Record<string, string> = {
+  "connectors/plugins/resonant-quantum-mechanics/.cursor-plugin/plugin.json": "3d72b7015994a6c71536f97bcda4b781a0d7c0b782af1de1ef9dd927950f5816",
+  "connectors/plugins/resonant-quantum-mechanics/listing.json": "ba08bf42bd27815d798db57badfef2d76cacb95b662361ce5b1882afffd8fd49",
+  "connectors/plugins/resonant-quantum-mechanics/PRIVACY.md": "033e75649cc377be506e19375cb8a67d03b8cbbd601c91f4b15d56e862a20823",
+  "connectors/plugins/resonant-quantum-mechanics/README.md": "71a253fc6ceeb8627745b2c12b9a3a1c56e8c5832e4c61ba958b11323fa9fcbb",
+  "connectors/plugins/resonant-quantum-mechanics/REVIEWER.md": "b420fc632fb756595f3c86493edc8f14160291328c553e007c1e4b02ba8c09c7",
+  "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "447e1cf0832a9fc9d3790eb681d69747eb433878e3ee9552427fc6cbae25dffc",
+  "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md": "fbd96310f47455baabc6c39901f8292d6674202dda5e598967c37a3bf7d28bce"
+};
 describe("ChatGPT discovery contract proposals", () => {
   it("maps nine coordinated flagship contracts without presenting host evaluation results", () => {
     expect(fixtures.status).toBe("proposed_host_evaluations_not_run");
@@ -75,26 +85,26 @@ describe("Claude and Cursor non-regression", () => {
   });
   it("preserves protected host files with pinned security and Wave instruction updates", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
-    // c241060 fixes the same reported SDK/URI/IP/proxy advisories in the
+    // Cursor release security review fixes SDK/client transport advisories in the
     // independent desktop lock. Keep PR22's baseline intact and pin only the
     // two reviewed dependency-file hashes; all manifests/auth/source stay exact.
     const securityUpdates: Record<string, string> = {
-      "connectors/claude-desktop/package.json": "d9fbe909b686abaf92621e29b11aa6048ed5fa1afa9ea7c4408ec62fcf8e0d22",
-      "connectors/claude-desktop/package-lock.json": "b07d82f24d8dd2389b7921f7fde5062826d67c31dddaa94c100d114c1cb2829d",
+      "connectors/claude-desktop/package.json": "9920058c315e1eb8faf383ee64e633c3e70ac1a643dd32464be6413aa651867f",
+      "connectors/claude-desktop/package-lock.json": "1a7039303ee523ea7701b0d8b09dd5a30cf315feab0ac4c57974f3c2d5ae44eb",
     };
     expect(Object.keys(securityUpdates).sort()).toEqual([
       "connectors/claude-desktop/package-lock.json",
       "connectors/claude-desktop/package.json",
     ]);
     for (const [path, digest] of Object.entries(baseline.files)) {
-      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(securityUpdates[path] ?? waveInstructionUpdates[path] ?? digest);
+      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(securityUpdates[path] ?? quantumInstructionUpdates[path] ?? waveInstructionUpdates[path] ?? digest);
     }
     // Catch added host files as well as modified or deleted files.
     const directories = ["connectors/plugins", "connectors/claude-desktop", "connectors/cursor", ".cursor-plugin"];
     const walk = (directory: string): string[] => readdirSync(resolve(root,directory), {withFileTypes:true}).flatMap(entry => entry.isDirectory() ? walk(`${directory}/${entry.name}`) : [`${directory}/${entry.name}`]);
     for (const directory of directories) {
       const actual = walk(directory).filter(path => !path.includes("/dist/") && !path.includes("/node_modules/"));
-      expect(actual.sort()).toEqual(Object.keys(baseline.files).filter(path => path.startsWith(directory+"/")).sort());
+      expect(actual.sort()).toEqual([...Object.keys(baseline.files), "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md"].filter(path => path.startsWith(directory+"/")).sort());
     }
   });
 });
