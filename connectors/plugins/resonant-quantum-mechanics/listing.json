@@ -3,7 +3,7 @@
   "short_description": "Free connector; quantum computation billed through RQM credits",
   "product": "quantum",
   "publisher": "RQM Technologies LLC",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "source_path": "connectors/plugins/resonant-quantum-mechanics",
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
   "authentication": "oauth2_with_public_discovery",
@@ -12,5 +12,6 @@
   "support_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
   "starter_prompt": "Find the Resonant Quantum Mechanics service for repair OpenQASM. Show required inputs and limitations, then check my prepaid RQM balance. Do not spend credits until I approve the inputs and maximum price.",
   "expected_service_id": "openqasm3-repair-v1",
-  "submission_state": "prepared_pending_host_acceptance"
+  "submission_state": "prepared_pending_host_acceptance",
+  "cursor_endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum/cursor"
 }

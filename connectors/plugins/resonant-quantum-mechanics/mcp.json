@@ -2,7 +2,7 @@
   "mcpServers": {
     "resonant-quantum-mechanics": {
       "type": "http",
-      "url": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
+      "url": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum/cursor",
       "auth": {
         "CLIENT_ID": "rqm-cursor-quantum",
         "scopes": [

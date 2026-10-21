@@ -1,6 +1,6 @@
 {
   "name": "resonant-quantum-mechanics",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Free connector for bounded quantum circuit services. Sign in to RQM and purchase computation credits directly from RQM; approved jobs use an owner-saved spending policy.",
   "author": {
     "name": "RQM Technologies LLC"
