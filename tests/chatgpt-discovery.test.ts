@@ -15,13 +15,13 @@ const waveInstructionUpdates: Record<string, string> = {
   "connectors/plugins/waveengine/REVIEWER.md": "b868f3baa988523c03107c2321cfa24542c4eda8c5eff44c3a6718ba8ce49a29",
   "connectors/plugins/waveengine/skills/waveengine/SKILL.md": "be1dbfaab9f5c6486abad86e170584a4ea7870d41ec2de3a40cd4ba7d23c4d68",
 };
-// Cursor 0.3.2 alias alignment; Claude configuration, manifests and assets stay pinned.
+// Cursor 0.3.3 discovery guidance; Claude configuration, manifests and assets stay pinned.
 const quantumInstructionUpdates: Record<string, string> = {
-  "connectors/plugins/resonant-quantum-mechanics/.cursor-plugin/plugin.json": "10ffa7832452646e2d6452f41c1a2890a3538d2a112a4632cc852b0ec6565eda",
-  "connectors/plugins/resonant-quantum-mechanics/listing.json": "5b48934e4d07907398a0e8f06b65f38e9e188e955fb5720eef067e1a773342d5",
+  "connectors/plugins/resonant-quantum-mechanics/.cursor-plugin/plugin.json": "883ff7bd27a188912757530ac03d2ae01f734b4075ba77ec9ae1582951f83a50",
+  "connectors/plugins/resonant-quantum-mechanics/listing.json": "2179db71efa820c4bcb2bcf3ca30a942180bd1d6dd5ec8c9710587423e82bb20",
   "connectors/plugins/resonant-quantum-mechanics/PRIVACY.md": "96f89d938cdc2f6ce7345972422d7ccf8ce4283a89304bb5f78c5ba46694225a",
-  "connectors/plugins/resonant-quantum-mechanics/README.md": "7dac1da177a0429f0a99f248eac64fc6c1e3c23673e759f6e40a99108dd9867b",
-  "connectors/plugins/resonant-quantum-mechanics/REVIEWER.md": "8993fca474bd336c84bf61d13c9a25732af60355fe788e3e1784273ba5901737",
+  "connectors/plugins/resonant-quantum-mechanics/README.md": "b244d81f9da39d1fbd43f5685ee02a0af1d72e869ebba39fc422719827c323c3",
+  "connectors/plugins/resonant-quantum-mechanics/REVIEWER.md": "66467fd05744fa4e92435f293c35f4995f19b10b3ded98de89f3d5ec5df20fbc",
   "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "33c616b7c03865692f0f80c2a37e3c40d218460c36e32c7c0705461fd6d9e999",
   "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md": "fbd96310f47455baabc6c39901f8292d6674202dda5e598967c37a3bf7d28bce",
   "connectors/plugins/resonant-quantum-mechanics/mcp.json": "bdedfe1e851bf1d7c92644ea618562fcaf810500f9124cc97df362ba3bfe587a"
@@ -105,7 +105,7 @@ describe("Claude and Cursor non-regression", () => {
     const walk = (directory: string): string[] => readdirSync(resolve(root,directory), {withFileTypes:true}).flatMap(entry => entry.isDirectory() ? walk(`${directory}/${entry.name}`) : [`${directory}/${entry.name}`]);
     for (const directory of directories) {
       const actual = walk(directory).filter(path => !path.includes("/dist/") && !path.includes("/node_modules/"));
-      expect(actual.sort()).toEqual([...Object.keys(baseline.files), "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md"].filter(path => path.startsWith(directory+"/")).sort());
+      expect(actual.sort()).toEqual([...Object.keys(baseline.files), "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md", "connectors/plugins/resonant-quantum-mechanics/cursor-skills/resonant-quantum-mechanics/SKILL.md"].filter(path => path.startsWith(directory+"/")).sort());
     }
   });
 });

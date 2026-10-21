@@ -86,15 +86,16 @@ describe("approved Robotics branding", () => {
   });
 });
 
-describe('Quantum 0.3.2 review boundaries', () => {
+describe('Quantum 0.3.3 review boundaries', () => {
   it('aligns package versions, named execution and honest Cloud status', () => {
     const base = 'connectors/plugins/resonant-quantum-mechanics';
     for (const file of ['.cursor-plugin/plugin.json', 'listing.json'])
-      expect(json(`${base}/${file}`).version).toBe('0.3.2');
+      expect(json(`${base}/${file}`).version).toBe('0.3.3');
     const guide = read(`${base}/README.md`);
     expect(guide).toContain('52 tools');
     expect(guide).toContain('20 named');
-    expect(guide).toContain('Cursor Cloud OAuth remains unresolved');
+    expect(guide).toContain('actual Cursor web Chat');
+    expect(guide).toContain('fresh-account onboarding');
     expect(guide).toContain('receipt remains unconfirmed');
     expect(guide).toContain('connector for free');
     const reviewer = read(`${base}/REVIEWER.md`);

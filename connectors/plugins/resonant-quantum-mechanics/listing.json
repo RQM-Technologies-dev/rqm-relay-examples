@@ -1,17 +1,16 @@
 {
   "display_name": "Resonant Quantum Mechanics",
-  "short_description": "Free connector; quantum computation billed through RQM credits",
+  "short_description": "Quantum circuit tools and real Braket QPU jobs with prepaid RQM credits",
   "product": "quantum",
   "publisher": "RQM Technologies LLC",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "source_path": "connectors/plugins/resonant-quantum-mechanics",
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
   "authentication": "oauth2_with_public_discovery",
   "privacy_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/blob/main/connectors/plugins/resonant-quantum-mechanics/PRIVACY.md",
   "documentation_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/tree/main/connectors/plugins/resonant-quantum-mechanics",
   "support_url": "https://github.com/RQM-Technologies-dev/rqm-relay-examples/issues",
-  "starter_prompt": "Find the Resonant Quantum Mechanics service for repair OpenQASM. Show required inputs and limitations, then check my prepaid RQM balance. Do not spend credits until I approve the inputs and maximum price.",
-  "expected_service_id": "openqasm3-repair-v1",
+  "starter_prompt": "Inspect current RQM quantum hardware and software capabilities. Show available QPUs, circuit limits and my RQM account balance. For hardware, prepare my circuit and show a fresh binding quote; do not submit until I approve its exact price and digest. For circuit analysis or simulation, inspect the matching named operation and its limits.",
   "submission_state": "prepared_pending_host_acceptance",
   "cursor_endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum/cursor"
 }
