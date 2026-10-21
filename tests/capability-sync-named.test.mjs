@@ -96,3 +96,19 @@ describe('fixed named account-operation compatibility', () => {
     expect(() => summarizeProduct('wave', tools, catalog)).toThrow('Duplicate execution');
   });
 });
+
+describe('explicit Quantum route-advice variant', () => {
+  it('accepts the observed additional advisory tool without broadening named purchases', () => {
+    const f = fixture('quantum');
+    f.tools.push({name: 'recommend_quantum_routes'});
+    const row = summarizeProduct('quantum', f.tools, f.catalog);
+    expect(row.tools).toHaveLength(29);
+    expect(row.services).toHaveLength(20);
+    f.tools.push({name: 'unreviewed_quantum_advice'});
+    expect(() => summarizeProduct('quantum', f.tools, f.catalog)).toThrow('manual host metadata review');
+  });
+  it('rejects route advice on other products', () => {
+    const f = fixture('wave'); f.tools.push({name: 'recommend_quantum_routes'});
+    expect(() => summarizeProduct('wave', f.tools, f.catalog)).toThrow();
+  });
+});

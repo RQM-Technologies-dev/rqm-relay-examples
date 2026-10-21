@@ -1,7 +1,7 @@
 {
   "name": "resonant-quantum-mechanics",
-  "version": "0.3.0",
-  "description": "Discover and run bounded quantum circuit jobs with prepaid RQM credits and an owner-saved spending policy. No RQM subscription is required.",
+  "version": "0.3.1",
+  "description": "Free connector for bounded quantum circuit services. Sign in to RQM and purchase computation credits directly from RQM; approved jobs use an owner-saved spending policy.",
   "author": {
     "name": "RQM Technologies LLC"
   },

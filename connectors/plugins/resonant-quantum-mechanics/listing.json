@@ -1,9 +1,9 @@
 {
   "display_name": "Resonant Quantum Mechanics",
-  "short_description": "Quantum circuit jobs with prepaid RQM credits",
+  "short_description": "Free connector; quantum computation billed through RQM credits",
   "product": "quantum",
   "publisher": "RQM Technologies LLC",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "source_path": "connectors/plugins/resonant-quantum-mechanics",
   "endpoint": "https://jobs.rqmtechnologies.com/mcp/plugins/quantum",
   "authentication": "oauth2_with_public_discovery",

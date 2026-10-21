@@ -85,3 +85,21 @@ describe("approved Robotics branding", () => {
     }
   });
 });
+
+describe('Quantum 0.3.1 review boundaries', () => {
+  it('aligns package versions, named execution and honest Cloud status', () => {
+    const base = 'connectors/plugins/resonant-quantum-mechanics';
+    for (const file of ['.cursor-plugin/plugin.json', 'listing.json'])
+      expect(json(`${base}/${file}`).version).toBe('0.3.1');
+    const guide = read(`${base}/README.md`);
+    expect(guide).toContain('29 tools');
+    expect(guide).toContain('20 named');
+    expect(guide).toContain('Cursor Cloud OAuth remains unresolved');
+    expect(guide).toContain('receipt remains unconfirmed');
+    expect(guide).toContain('connector for free');
+    const reviewer = read(`${base}/REVIEWER.md`);
+    expect(reviewer).toContain('quantum_openqasm3_preflight_v1');
+    expect(reviewer).not.toContain('"capability_id"');
+    expect(reviewer).not.toContain('`run_account_job`');
+  });
+});

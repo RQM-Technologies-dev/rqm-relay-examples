@@ -25,6 +25,10 @@ function namedSurface(product, names) {
   const expected = [...TOOL_NAMES.filter(name => name !== 'run_account_job'),
     ...Object.values(fixed), ...(product === 'quantum'
       ? ['describe_quantum_capabilities', 'optimize_quantum_circuit', 'recommend_quantum_device'] : [])];
+  // Preserve the pinned 28-tool producer snapshot and explicitly recognize the
+  // observed 29-tool Quantum variant. Unknown additions still fail closed.
+  if (product === 'quantum' && names.includes('recommend_quantum_routes'))
+    expected.push('recommend_quantum_routes');
   assert.deepEqual([...names].sort(), expected.sort(), 'Named tool surface changed: manual host metadata review required');
   return fixed;
 }
