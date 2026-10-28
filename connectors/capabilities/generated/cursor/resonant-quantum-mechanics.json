@@ -114,12 +114,12 @@
   "package": {
     "source_path": "connectors/plugins/resonant-quantum-mechanics",
     "version": "0.3.3",
-    "package_content_sha256": "455ba85e96195c27da73758823212a4ae575fa2696b539a15711b8f26e72b698",
+    "package_content_sha256": "1fe8b0c913d112cf6efbdc967607498e719722b58112d7aa020283677b6290db",
     "files": {
       ".cursor-plugin/plugin.json": "883ff7bd27a188912757530ac03d2ae01f734b4075ba77ec9ae1582951f83a50",
       "mcp.json": "bdedfe1e851bf1d7c92644ea618562fcaf810500f9124cc97df362ba3bfe587a",
       "cursor-skills//resonant-quantum-mechanics/SKILL.md": "b97bcfe129e8979cde24948762a94db3af677c585aea1dbdf152a2377a01f979",
-      "README.md": "b244d81f9da39d1fbd43f5685ee02a0af1d72e869ebba39fc422719827c323c3",
+      "README.md": "5ea814b847add903e838c0858faf436e1b68831a2a696cf923c2b46690420ce1",
       "PRIVACY.md": "96f89d938cdc2f6ce7345972422d7ccf8ce4283a89304bb5f78c5ba46694225a",
       "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",

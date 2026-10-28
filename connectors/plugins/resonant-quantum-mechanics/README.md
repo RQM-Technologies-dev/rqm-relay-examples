@@ -2,6 +2,18 @@
 
 Install and use this connector for free. Register with RQM and buy computation credits directly on the [RQM credits page](https://www.rqmtechnologies.com/account/credits), not through Cursor. Discover quantum circuit analysis, simulation and real Amazon Braket QPU workflows with prepaid RQM credits. Software jobs use the applicable owner-saved spending policy; hardware requires approval of a fresh binding quote. No RQM subscription is required. Public catalog discovery is anonymous. Balance and job history require an authenticated RQM account. Execution also requires sufficient prepaid credits, applicable spending controls and exact price approval. Reuse a valid existing OAuth grant. A Claude or Cursor subscription does not fund RQM credits.
 
+## Claude 0.3.1: current capabilities and account eligibility
+
+Claude uses `.claude-plugin/plugin.json`, `.mcp.json` and `skills/`. The canonical endpoint is `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. This release updates Claude guidance; Cursor's manifest, connection and skills retain their separate version.
+
+On 2026-10-28, the shared endpoint exposed 34 base tools and an additional 23 hardware/workflow tools to an eligible connected account. These are observed counts, not a promise that every account sees 57 tools. Base tool visibility does not authorize protected calls or purchases. Inspect the current tool list and schemas. Software includes catalog discovery, circuit analysis, simulation, explanations and recommendations; use named computation tools rather than a legacy generic executor.
+
+Hardware discovery requires an active authenticated RQM account in good standing, live prepaid enrollment, no account review hold and a positive available USD balance. A zero balance can hide hardware tools while software discovery remains visible. After eligibility changes, request a fresh tool list through the host; automatic refresh behavior is not verified. A Claude plan does not supply RQM credits. Software spending uses the applicable saved policy; hardware spending requires sufficient available funds and explicit approval of a fresh quote's exact device, circuit, shots, digest and maximum charge. Visibility, planning and an enabled policy do not authorize spending.
+
+Read-only checks on 2026-10-28 found current renewing reviews for Rigetti Cepheus-1-108Q, IonQ Forte-1, AQT Ibex-Q1 and IQM Garnet. Emerald renewal was failing and its last observation was stale; do not promise Emerald execution. Always inspect fresh per-device eligibility, review expiry, compatibility, location evidence and availability. An expired review must block new spending. No device count guarantees public availability, queue time, completion or quantum advantage.
+
+An existing funded secondary account passed hardware discovery with execution/quote configuration enabled. This is not a new paid QPU test or proof of every customer's account eligibility. Public marketplace publication and backend eligibility are separate checks. Historical Cursor acceptance below does not establish Claude paid acceptance.
+
 ## Installation
 
 This folder is self-contained. Cursor reads `.cursor-plugin/plugin.json` and `mcp.json`; Claude reads `.claude-plugin/plugin.json` and `.mcp.json`. Cursor uses `https://jobs.rqmtechnologies.com/mcp/plugins/quantum/cursor`, which requests OAuth during connection initialization. Claude retains `https://jobs.rqmtechnologies.com/mcp/plugins/quantum` and anonymous catalog discovery. Both identify the canonical quantum resource; the Cursor suffix does not add an audience or scope. Cursor's client ID is public, not a secret. Claude uses its client metadata registration. The package has no executable, wallet or credential store.
@@ -40,7 +52,7 @@ A dated operator acceptance check on 2026-10-21 completed one 100-shot Rigetti C
 
 ## Current named-operation surface
 
-The current Cursor CLI discovery inventory contains **52 tools**, including the **20 named computation operations** documented below. The older reviewed producer snapshot contains 28 tools; it is not a complete current inventory. Additional hardware and workflow tools require separate schema and acceptance review. Counts describe discovery, not authenticated host parity or marketplace acceptance.
+The historical Cursor CLI discovery inventory recorded on 2026-10-21 contained **52 tools**, including the **20 named computation operations** documented below. The older reviewed producer snapshot contains 28 tools; it is not a complete current inventory. Additional hardware and workflow tools require separate schema and acceptance review. Counts describe discovery, not authenticated host parity or marketplace acceptance.
 
 - `list_buyer_jobs` and `search_buyer_jobs`: public contracts, schemas, prices and limitations.
 - `describe_quantum_capabilities`, `optimize_quantum_circuit`, `recommend_quantum_device` and `recommend_quantum_routes`: inspect their advertised schemas and limitations before use. Advice is not execution or proof of hardware availability.

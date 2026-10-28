@@ -26,6 +26,13 @@ const quantumInstructionUpdates: Record<string, string> = {
   "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md": "fbd96310f47455baabc6c39901f8292d6674202dda5e598967c37a3bf7d28bce",
   "connectors/plugins/resonant-quantum-mechanics/mcp.json": "bdedfe1e851bf1d7c92644ea618562fcaf810500f9124cc97df362ba3bfe587a"
 };
+// Claude 0.3.1 metadata/instructions only; preserve other host files.
+const claudeGuidanceUpdates: Record<string, string> = {
+  "connectors/plugins/resonant-quantum-mechanics/.claude-plugin/plugin.json": "75c53e860ae143e47c4f16165d44d30639cb69130a428a1f563f0a2890061e88",
+  "connectors/plugins/resonant-quantum-mechanics/README.md": "5ea814b847add903e838c0858faf436e1b68831a2a696cf923c2b46690420ce1",
+  "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "0a4993e28a6074c473518d3318b2a5948c64826e29197eb81e03c4ba198e2bb1",
+  "connectors/claude-setup.md": "095b0c9a6d8e30c0cb9cbe5cf03cdf5960d6dc5a80672b6acb50cf06a3bac3c2"
+};
 describe("ChatGPT discovery contract proposals", () => {
   it("maps nine coordinated flagship contracts without presenting host evaluation results", () => {
     expect(fixtures.status).toBe("proposed_host_evaluations_not_run");
@@ -86,19 +93,19 @@ describe("Claude and Cursor non-regression", () => {
   });
   it("preserves protected host files with pinned security and Wave instruction updates", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
-    // Cursor release security review fixes SDK/client transport advisories in the
+    // Release security fixes SDK/client transport and parser advisories in the
     // independent desktop lock. Keep PR22's baseline intact and pin only the
     // two reviewed dependency-file hashes; all manifests/auth/source stay exact.
     const securityUpdates: Record<string, string> = {
       "connectors/claude-desktop/package.json": "9920058c315e1eb8faf383ee64e633c3e70ac1a643dd32464be6413aa651867f",
-      "connectors/claude-desktop/package-lock.json": "1a7039303ee523ea7701b0d8b09dd5a30cf315feab0ac4c57974f3c2d5ae44eb",
+      "connectors/claude-desktop/package-lock.json": "7a8c944ec7e17b2037690157ec9053a3a8510269ef19d3ae5df1ec3541e3acfa",
     };
     expect(Object.keys(securityUpdates).sort()).toEqual([
       "connectors/claude-desktop/package-lock.json",
       "connectors/claude-desktop/package.json",
     ]);
     for (const [path, digest] of Object.entries(baseline.files)) {
-      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(securityUpdates[path] ?? quantumInstructionUpdates[path] ?? waveInstructionUpdates[path] ?? digest);
+      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(claudeGuidanceUpdates[path] ?? securityUpdates[path] ?? quantumInstructionUpdates[path] ?? waveInstructionUpdates[path] ?? digest);
     }
     // Catch added host files as well as modified or deleted files.
     const directories = ["connectors/plugins", "connectors/claude-desktop", "connectors/cursor", ".cursor-plugin"];

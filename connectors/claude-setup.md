@@ -11,11 +11,15 @@ Use **Customize → Connectors → Add custom connector** and the corresponding 
 
 Follow [Claude's custom remote connector instructions](https://claude.com/docs/connectors/custom/remote-mcp), including your organization's owner controls where applicable. These remote connectors do not require a `.mcpb` archive. A `.claude-plugin/plugin.json` manifest belongs to the Claude Code plugin path; it does not install a custom connector in Claude.ai.
 
-Start with public `list_buyer_jobs` and `search_buyer_jobs`. Each brand exposes six tools, scoped to its own catalog. Inspect the actual service's schema and limits. Discovery does not purchase a job or prove a useful computation completed.
+Start with public `list_buyer_jobs` and `search_buyer_jobs`. Tool inventory varies by brand and authenticated account. Quantum was observed on 2026-10-28 with 34 base tools plus 23 conditional hardware/workflow tools; inspect the live tool list rather than assuming universal access. Inspect the actual service's schema and limits. Discovery does not purchase a job or prove a useful computation completed.
 
 Protected balance and history need an authenticated RQM account. Reuse valid existing consent where supported; new consent is an owner action. Before execution, compare the canonical account ID returned by `get_account_balance` with the account shown on the [credits page](https://www.rqmtechnologies.com/account/credits). Execution additionally needs sufficient prepaid RQM credits, an active owner-saved policy for this agent and service, and explicit approval of the inputs and price ceiling. A Claude subscription does not fund RQM credits. Existing balances and another host's spending authorization do not authorize Claude purchases.
 
 After an uncertain response, retrieve the original job using its ID or original idempotency key. Preserve the inputs, key and ceiling; do not make a replacement purchase. Claim completion only with the terminal result and receipt. See each brand's [quantum](plugins/resonant-quantum-mechanics/REVIEWER.md) or [WaveEngine](plugins/waveengine/REVIEWER.md) acceptance procedure; paid review steps require separate authorization.
+
+## Quantum hardware visibility
+
+Hardware discovery requires an active account in good standing, live prepaid enrollment, no review hold and a positive available USD balance. Zero balance can hide hardware tools. Funding is a separate user action; do not change account controls or infer spending permission. Read the current [Claude package guidance](plugins/resonant-quantum-mechanics/README.md#claude-031-current-capabilities-and-account-eligibility) for reviewed-device limitations and exact quote approval. Historical six-tool probes below are dated evidence, not the current inventory.
 
 ## Check a small quantum circuit
 
@@ -23,7 +27,7 @@ Read the [OpenQASM 3 evidence guide](quantum-circuit-assurance.md) for a bounded
 
 ## Desktop discovery bundle is a separate package
 
-`connectors/claude-desktop` builds the generic **RQM Jobs Discovery** local stdio extension. It exposes three free discovery/example tools, without brand account execution. It is not either six-tool hosted brand connector.
+`connectors/claude-desktop` builds the generic **RQM Jobs Discovery** local stdio extension. It exposes three free discovery/example tools, without brand account execution. It is not the hosted quantum connector or its conditional hardware workflow.
 
 The previous official CLI dependency, `@anthropic-ai/mcpb@2.1.2`, imports node-forge affected by [GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv). Its official advisory lists affected versions through 1.4.0 and no patched release. This repository's packaging flow now uses a minimal unsigned ZIP writer with pinned `fflate` and Ajv dependencies, the unchanged official MCPB 0.3 schema and its MIT license. The full high-severity audit still runs before an archive is written.
 
