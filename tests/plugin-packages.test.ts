@@ -104,3 +104,21 @@ describe('Quantum 0.3.3 review boundaries', () => {
     expect(reviewer).not.toContain('`run_account_job`');
   });
 });
+
+ describe('Claude 0.3.1 conditional hardware guidance', () => {
+  it('keeps Claude and Cursor routing and versions separate', () => {
+    const base = 'connectors/plugins/resonant-quantum-mechanics';
+    const claude = json(`${base}/.claude-plugin/plugin.json`);
+    expect(claude.version).toBe('0.3.1');
+    expect(claude.mcpServers).toBe('./.mcp.json');
+    expect(claude.skills).toBe('./skills/');
+    expect(json(`${base}/.cursor-plugin/plugin.json`).version).toBe('0.3.3');
+    expect(json(`${base}/.cursor-plugin/plugin.json`).skills).toBe('./cursor-skills/');
+    const skill = read(`${base}/skills/resonant-quantum-mechanics/SKILL.md`);
+    for (const boundary of ['34 base tools', '23 conditional', 'positive available balance',
+      'explicit approval', 'Emerald renewal was failing', 'original idempotency',
+      'settle the original approved charge exactly once']) expect(skill).toContain(boundary);
+    expect(skill).not.toContain('/account/credits');
+    expect(skill).not.toContain('Current CLI discovery reports 52');
+  });
+});

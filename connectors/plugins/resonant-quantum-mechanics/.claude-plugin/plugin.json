@@ -1,7 +1,7 @@
 {
   "name": "resonant-quantum-mechanics",
-  "version": "0.3.0",
-  "description": "Discover and run bounded quantum circuit jobs with prepaid RQM credits and an owner-saved spending policy. No RQM subscription is required.",
+  "version": "0.3.1",
+  "description": "Quantum circuit analysis, simulation and optional reviewed Braket QPU workflows. Eligible authenticated prepaid customers can prepare circuits and approve exact hardware quotes before execution.",
   "author": {
     "name": "RQM Technologies LLC"
   },
