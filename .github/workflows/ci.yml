@@ -10,19 +10,30 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
       - run: npm ci
       - run: npm run check
       - run: npm run capabilities:check
       - run: npm run publication:check
       - run: npm run publication:pack -- dist/chatgpt-publication
       - run: npm run publication:pack -- dist/chatgpt-publication --portal-records
+      - run: npm ci --prefix connectors/claude-desktop
+      - run: npm run pack --prefix connectors/claude-desktop
+      - name: Bound release artifact storage
+        shell: python
+        run: |
+          from pathlib import Path
+          files = list(Path('dist/chatgpt-publication').rglob('*'))
+          files.append(Path('connectors/claude-desktop/rqm-jobs-discovery.mcpb'))
+          files = [p for p in files if p.is_file()]
+          total = sum(p.stat().st_size for p in files)
+          # Reserve 1 MiB for archive overhead within the 20 MiB/run budget.
+          assert len(files) <= 100, 'Unexpected artifact file count'
+          assert total <= 19 * 1024 * 1024, f'Artifact budget exceeded: {total} bytes'
+          print(f'Artifact input: {total} bytes across {len(files)} files')
       - uses: actions/upload-artifact@v4
         with:
           name: rqm-chatgpt-publication-drafts
           path: dist/chatgpt-publication/
-      - run: npm ci --prefix connectors/claude-desktop
-      - run: npm run pack --prefix connectors/claude-desktop
       - uses: actions/upload-artifact@v4
         with:
           name: rqm-jobs-discovery-mcpb
