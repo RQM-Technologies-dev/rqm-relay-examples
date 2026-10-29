@@ -29,8 +29,8 @@ const quantumInstructionUpdates: Record<string, string> = {
 // Claude 0.3.1 metadata/instructions only; preserve other host files.
 const claudeGuidanceUpdates: Record<string, string> = {
   "connectors/plugins/resonant-quantum-mechanics/.claude-plugin/plugin.json": "75c53e860ae143e47c4f16165d44d30639cb69130a428a1f563f0a2890061e88",
-  "connectors/plugins/resonant-quantum-mechanics/README.md": "5ea814b847add903e838c0858faf436e1b68831a2a696cf923c2b46690420ce1",
-  "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "0a4993e28a6074c473518d3318b2a5948c64826e29197eb81e03c4ba198e2bb1",
+  "connectors/plugins/resonant-quantum-mechanics/README.md": "be6b6ee81ee2af612e15779b7d82a917f4fdf682da6b37b6730a89fee8d8764b",
+  "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/SKILL.md": "f13f7602da8e6328d9413f190bf339ac9dcf468c9fcd8d8311afddba933c3f06",
   "connectors/claude-setup.md": "095b0c9a6d8e30c0cb9cbe5cf03cdf5960d6dc5a80672b6acb50cf06a3bac3c2"
 };
 describe("ChatGPT discovery contract proposals", () => {
@@ -112,7 +112,7 @@ describe("Claude and Cursor non-regression", () => {
     const walk = (directory: string): string[] => readdirSync(resolve(root,directory), {withFileTypes:true}).flatMap(entry => entry.isDirectory() ? walk(`${directory}/${entry.name}`) : [`${directory}/${entry.name}`]);
     for (const directory of directories) {
       const actual = walk(directory).filter(path => !path.includes("/dist/") && !path.includes("/node_modules/"));
-      expect(actual.sort()).toEqual([...Object.keys(baseline.files), "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md", "connectors/plugins/resonant-quantum-mechanics/cursor-skills/resonant-quantum-mechanics/SKILL.md"].filter(path => path.startsWith(directory+"/")).sort());
+      expect(actual.sort()).toEqual([...Object.keys(baseline.files), "connectors/plugins/resonant-quantum-mechanics/CLAUDE-FIRST-USE.md", "connectors/plugins/resonant-quantum-mechanics/claude-first-use-cases.json", "connectors/plugins/resonant-quantum-mechanics/skills/resonant-quantum-mechanics/references/first-use.md", "connectors/plugins/resonant-quantum-mechanics/OPERATIONS.md", "connectors/plugins/resonant-quantum-mechanics/cursor-skills/resonant-quantum-mechanics/SKILL.md"].filter(path => path.startsWith(directory+"/")).sort());
     }
   });
 });

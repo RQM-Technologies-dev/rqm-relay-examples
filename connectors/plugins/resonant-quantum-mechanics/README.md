@@ -2,7 +2,7 @@
 
 Install and use this connector for free. Register with RQM and buy computation credits directly on the [RQM credits page](https://www.rqmtechnologies.com/account/credits), not through Cursor. Discover quantum circuit analysis, simulation and real Amazon Braket QPU workflows with prepaid RQM credits. Software jobs use the applicable owner-saved spending policy; hardware requires approval of a fresh binding quote. No RQM subscription is required. Public catalog discovery is anonymous. Balance and job history require an authenticated RQM account. Execution also requires sufficient prepaid credits, applicable spending controls and exact price approval. Reuse a valid existing OAuth grant. A Claude or Cursor subscription does not fund RQM credits.
 
-## Claude 0.3.1: current capabilities and account eligibility
+## Claude source guidance and account eligibility
 
 Claude uses `.claude-plugin/plugin.json`, `.mcp.json` and `skills/`. The canonical endpoint is `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. This release updates Claude guidance; Cursor's manifest, connection and skills retain their separate version.
 
@@ -71,6 +71,6 @@ After a timeout, use the same connector's `list_account_jobs` with the original 
 
 Cursor package version 0.3.3 updates discovery guidance. Authenticated balance access, hardware preparation, quote, one real QPU execution, result retrieval and customer settlement were verified through actual Cursor web Chat on 2026-10-21. Desktop Chat and mobile require separate checks. Claude/ChatGPT authenticated feature parity is not established by this package update. The latest marketplace application receipt remains unconfirmed; no public Marketplace approval or listing is claimed. [Submission tracking](../SUBMISSION.md) distinguishes source validation from host publication. A configured personal MCP does not establish public discoverability or a Grok agent's recommendation.
 
-The Claude manifest remains at 0.3.0; shared endpoint guidance is corrected here, but this is not a new Claude release or acceptance claim.
+As observed on 2026-10-29, the public Claude plugin is 0.3.0. Version 0.3.1 at `5bdc4d1895c9656957eb878870cbfc09fa0fad6e` has a publication request pending review. The source manifest remains 0.3.1; the first-use changes on this branch are an unpublished draft, not that pending submission. Do not submit a duplicate marketplace request. See [Claude sprint evidence](CLAUDE-FIRST-USE.md) for scope and validation.
 
 Apache-2.0 covers this plugin folder only. Backend software and service terms retain their existing licenses.

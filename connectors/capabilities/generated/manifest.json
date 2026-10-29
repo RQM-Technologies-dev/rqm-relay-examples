@@ -5,8 +5,8 @@
   "named_operation_mappings_sha256": "2ffbb9434e0d0ada053a25815d666378d9e19158841e521026502171c3ebd32f",
   "artifacts": {
     "chatgpt/resonant-quantum-mechanics.json": "5879ba52239016d641389a04fa17f88053f1207c4406993d2eecfe5d1d08eaa0",
-    "claude/resonant-quantum-mechanics.json": "2f1043a711a08635def9c17cb1b97f6d34e2f8596185de6e54d79a3f0662ccb8",
-    "cursor/resonant-quantum-mechanics.json": "98824093a2f23d4fe4bb4f95f4ed682437452cc93122abb7cb57a3d86126ed54",
+    "claude/resonant-quantum-mechanics.json": "cc4e07f9ba8b9a42d145ff42cde33224da40d76b4344ca083aae6aaa36c95d52",
+    "cursor/resonant-quantum-mechanics.json": "b9ce4768a4d133f397725756c0d962f9c096239c634ccaa2078e40803eb75bf1",
     "chatgpt/waveengine.json": "549e37ea034b7be5c7156731d9f05a6b3296c5896ba2957b81fb4d90d40281ab",
     "claude/waveengine.json": "963a69d320c2c8c8e7a6103e804f51006c1c4392a6803d552387bfbd444ba911",
     "cursor/waveengine.json": "c70d8a56595ec191c5fd56e68282422440734a85bf0c46afdcb779c9db8e48e0",
