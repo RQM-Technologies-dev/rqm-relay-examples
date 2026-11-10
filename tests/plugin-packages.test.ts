@@ -58,8 +58,14 @@ describe("ChatGPT portable candidates", () => {
     const skill = read(`${base}/skills/${name}/SKILL.md`);
     expect(skill).toContain(`product: ${product}`);
     expect(skill).toContain(`name: ${name}`);
-    expect(skill).toContain("returned buyer `service_id`");
-    expect(read(`${base}/README.md`)).toContain("not a registered ChatGPT app");
+    if (product === "quantum") {
+      expect(skill).toContain("matching separately exposed named operation");
+      expect(skill).toContain("## Real Amazon Braket hardware");
+      expect(read(`${base}/README.md`)).toContain("not a replacement app");
+    } else {
+      expect(skill).toContain("returned buyer `service_id`");
+      expect(read(`${base}/README.md`)).toContain("not a registered ChatGPT app");
+    }
     expect(existsSync(resolve(root, base, ".app.json"))).toBe(false);
   });
 });

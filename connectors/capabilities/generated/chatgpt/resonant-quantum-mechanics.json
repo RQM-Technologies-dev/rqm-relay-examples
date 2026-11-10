@@ -113,18 +113,18 @@
   ],
   "package": {
     "source_path": "connectors/chatgpt/resonant-quantum-mechanics",
-    "version": "0.5.4",
-    "package_content_sha256": "df424ebdef6cb98e6e818605dbb6b651a9122a4982a27065a16d3303b7acf46c",
+    "version": "0.6.0",
+    "package_content_sha256": "28ea8c450972a360153afe39f37746f1b55608702c0329ad78555eb9d71e3f0c",
     "files": {
-      "plugin.json": "6c41a88b1aa28e6e9ad64c09df2003cc9b38b1100be77795f8cb377435167448",
+      "plugin.json": "dfc9a1dac554b43116401259fcfdcf05e9db8ec35f4377c4dc52f1910c624068",
       "mcp.json": "27543c0d407a2d274527dd3fbbeac37671affcb4fbff5b3b4759ed14ff88a912",
-      "README.md": "fbaa2331e1f4ae9e0767172a4d04f1f560b7037555292fd9b66d96719b00b336",
-      "PRIVACY.md": "7f4404f5e3bead8d4046b47db41cae9d2afecbcdce60968ee6e1213260e71120",
+      "README.md": "f773896a7295042634793fa26b60065b8ab8a73070d643edaa53bf07f3334848",
+      "PRIVACY.md": "0aa1c38ee6e70755e460552fe4499d2d6fa1b001b586b05637e7b6263ac94f61",
       "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",
       "assets/PROVENANCE.md": "c73a66d9c8aa5b38a51c1c19d4ea69f9095469129b65157d5fc11189bfcaa313",
       "assets/quantum-f31ff3a084358055.png": "f31ff3a08435805579b6385010b0cfbfd855361bd3fbe21312a12423ec533e8e",
-      "skills/resonant-quantum-mechanics/SKILL.md": "c5a4feb08a3748e29dccf4664232a5d23a7f20e0de41810b0b773236129ad24f"
+      "skills/resonant-quantum-mechanics/SKILL.md": "08ac0d90a4225815f5b6fb499ae2b05bca3330f1071b3f738b7534749d01020d"
     }
   },
   "deployed": "not_observed",

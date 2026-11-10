@@ -1,11 +1,22 @@
-# Resonant Quantum Mechanics for ChatGPT — publication draft 0.5.4
+# Resonant Quantum Mechanics — hardware candidate 0.6.0
 
-Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `resonant-quantum-mechanics` at `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
+This unsubmitted candidate preserves the existing plugin identity, artwork and
+`https://jobs.rqmtechnologies.com/mcp/plugins/quantum` endpoint. It is a proposed
+update to the publicly live software-only 0.5.9 package, not a replacement app.
+Do not withdraw, overwrite or repoint the published listing during validation.
 
-This source candidate is not a registered ChatGPT app or a marketplace listing. No app ID, OAuth client registration or consent grant is fabricated. ChatGPT web requires a registered, authorized remote connection and host acceptance; create or bind that connection only with the required specific approval. Installation support and account eligibility must be checked in the current host. Existing grants for another endpoint are not transferable.
+It adds conditional Braket hardware guidance alongside existing named software
+operations. Real execution requires a compatible deployed tool catalog, an
+eligible OAuth account, saved spending policy, available funds, an exact-device
+quote and explicit approval. Neither this package nor an anonymous tool list
+establishes those conditions. Recovery retains the original purchase identity.
 
-The six tools support free product discovery and policy-bounded prepaid jobs. Payment requires an owner-saved policy and explicit job approval; preserve the original key to recover uncertain responses. No spending permission follows from installing this package. The branded Robotics prerequisite is deployed at Core `a7afdd4` and Jobs `7555844`; unpaid scoped endpoint checks do not establish host acceptance.
+Source main previously contained package 0.5.4. This candidate reconciles the
+installed 0.5.9 reviewer cases and named-operation skill, omitting the local host's
+`.app.json` binding from the portable ZIP. Version 0.6.0 is a proposal; confirm
+portal version availability before upload. Historical reviewer video evidence
+covers software discovery only, not hardware acceptance.
 
-See the skill for product scope, input minimization, output limitations and recovery rules. See [official ChatGPT plugin connection guidance](https://developers.openai.com/plugins/deploy/connect-chatgpt).
-
-Publication metadata now uses the supported `extensions.com.openai.interface` fields with bundled original PNGs. See [publication readiness](../PUBLICATION.md) before any upload, attestation or submission. The proposed review cases have not been run with a dedicated reviewer account. This draft does not claim marketplace approval or a completed paid acceptance.
+See `../HARDWARE-ROLLOUT.md` for the separate runtime, package-review and native
+host acceptance gates. No paid hardware test, publication or production policy
+change is performed by packaging this candidate.

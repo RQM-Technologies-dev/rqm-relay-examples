@@ -9,6 +9,8 @@ const fixtures = json("tests/fixtures/chatgpt-discovery.json");
 // Reviewed Wave instruction-only correction for Jobs PR191's named surface.
 // Keep the historical baseline and all other products, auth and assets exact.
 const waveInstructionUpdates: Record<string, string> = {
+  // Hardware candidate: disclose Braket processing and delivery settlement.
+  "connectors/chatgpt/resonant-quantum-mechanics/PRIVACY.md": "0aa1c38ee6e70755e460552fe4499d2d6fa1b001b586b05637e7b6263ac94f61",
   "connectors/chatgpt/waveengine/PRIVACY.md": "81aa11cf46d64dabaf36692f1f3bbf70f52ae04d753336267605f2fe76019a34",
   "connectors/plugins/waveengine/PRIVACY.md": "75471cceb3e9fc39c0513662121b2b44df8cf8ad244896872945e175839a882b",
   "connectors/plugins/waveengine/README.md": "7296ae8e4b3e943a868f5c765bba5689fe9d999ce581bb018ac8a56954f70be4",

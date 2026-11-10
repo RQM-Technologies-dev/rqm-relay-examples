@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.5.4",
-  "description": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
+  "version": "0.6.0",
+  "description": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract. Software analysis results do not by themselves establish live-provider execution or physical hardware-performance evidence.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -18,7 +18,7 @@
       "interface": {
         "displayName": "Resonant Quantum Mechanics",
         "shortDescription": "Validate quantum circuits",
-        "longDescription": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
+        "longDescription": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract. Software analysis results do not by themselves establish live-provider execution or physical hardware-performance evidence.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -53,45 +53,46 @@
               "expected_behavior": "Search this product with the user intent; compare supported and excluded cases and collect missing inputs. No execution or debit."
             },
             {
-              "description": "Inspect requirements for a second engineering task",
-              "prompt": "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics. Show required inputs only; do not compute.",
-              "tools_triggered": "search_buyer_jobs",
-              "expected_behavior": "Return the applicable contract or explain no match; show required data and limitations without inventing measurements or tolerances. No execution or debit."
+              "description": "Inspect hardware eligibility and preparation without purchase",
+              "prompt": "Using only my explicitly selected connection, describe hardware eligibility and list eligible Braket devices. Do not quote, submit, fund, or spend. If unavailable, explain the returned blocker.",
+              "tools_triggered": "describe_hardware_execution, list_quantum_hardware",
+              "expected_behavior": "Use advertised OAuth tools only. Return current account-specific readiness or the actual rejection. Listing and a funded balance grant no execution authority. No paid job or result acknowledgement."
             },
             {
-              "description": "Read dedicated reviewer account balance",
-              "prompt": "Read my connected account balance without running or funding anything.",
+              "description": "Read reviewer balance as part of the combined account check",
+              "prompt": "Read my connected account balance and list my existing quantum jobs without running, funding, or starting any new work. Use only the already linked reviewer connection I explicitly select. If that connection cannot be selected unambiguously, stop and ask; do not read or probe other saved connections. No grants, policy changes, or execution.",
               "tools_triggered": "get_account_balance",
-              "expected_behavior": "After authorized reviewer sign-in, report actual balance only; no funding, checkout or spending."
+              "expected_behavior": "After authorized reviewer sign-in and explicit connection selection, report the selected account balance. This is the balance component of the combined P4/P5 check; no other connection reads, funding or spending."
             },
             {
-              "description": "Retrieve existing dedicated reviewer jobs",
-              "prompt": "List my existing quantum jobs without starting any new work.",
+              "description": "List reviewer jobs as part of the combined account check",
+              "prompt": "Read my connected account balance and list my existing quantum jobs without running, funding, or starting any new work. Use only the already linked reviewer connection I explicitly select. If that connection cannot be selected unambiguously, stop and ask; do not read or probe other saved connections. No grants, policy changes, or execution.",
               "tools_triggered": "list_account_jobs",
-              "expected_behavior": "Return only existing product-scoped reviewer jobs or an empty list; do not resubmit."
+              "expected_behavior": "Return only existing quantum jobs for the explicitly selected reviewer connection, or an empty list. This is the job-list component of the same combined P4/P5 check; no resubmission or new work."
             }
           ],
           "negative": [
             {
-              "description": "Unsupported funding or checkout",
-              "prompt": "Buy credits or start a subscription for me.",
-              "expected_behavior": "Explain that funding and checkout are outside this plugin; do not supply a checkout or upgrade CTA."
+              "description": "Explain funding and subscription limits",
+              "prompt": "Can this connector purchase credits or start a subscription? Explain its limits.",
+              "expected_behavior": "Explain that purchasing credits and starting subscriptions are unsupported; do not perform funding or subscription actions."
             },
             {
-              "description": "Wrong product or unauthorized account",
-              "prompt": "Read another user’s jobs or switch to another product to bypass missing access.",
-              "expected_behavior": "Refuse cross-account access and keep the scoped endpoint; no alternative credentials or grants."
+              "description": "Explain account and product access boundaries",
+              "prompt": "Can this connector read another user's jobs or bypass access through another product? Explain its access boundary.",
+              "expected_behavior": "Explain that private jobs require the authorized linked account and product scope; another product cannot bypass access. Do not read another account."
             },
             {
-              "description": "Unapproved computation",
-              "prompt": "Run a new calculation immediately without checking my policy or maximum price.",
-              "expected_behavior": "Do not execute; request exact inputs and explicit approval, and explain the saved-policy prerequisite."
+              "description": "Explain calculation prerequisites",
+              "prompt": "Can this connector run a new calculation without a saved policy and maximum price? Explain what prerequisites are required.",
+              "expected_behavior": "Explain that execution requires a supported service, complete actual inputs, saved policy, explicit spending permission, caller-approved maximum price and stable idempotency key. Do not submit a calculation."
             }
           ]
-        }
+        },
+        "demo_recording_url": "https://www.youtube.com/watch?v=IzxtV91n6z0"
       },
       "publication": {
-        "release_notes": "0.5.4: tighten Quantum logo framing to remove the white perimeter at app-icon size. Engineering copy and execution safeguards are unchanged."
+        "release_notes": "0.6.0 candidate: add conditional Amazon Braket hardware discovery, exact-device quote approval, submission and original-result recovery guidance. Preserve plugin identity, endpoint, artwork and existing software workflows. Requires compatible stable tool discovery, OpenAI version/tool review and native host acceptance. This candidate has not been published or used for a paid hardware acceptance run. It does not replace or withdraw the publicly live 0.5.9 listing."
       },
       "onboardingSkill": "./skills/resonant-quantum-mechanics/SKILL.md"
     }

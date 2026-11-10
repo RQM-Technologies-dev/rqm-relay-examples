@@ -4,7 +4,7 @@
   "generator_sha256": "0e98251295faca64cbec12be986f378b0824edd9ad5011a7ea79f1adb38db9ad",
   "named_operation_mappings_sha256": "2ffbb9434e0d0ada053a25815d666378d9e19158841e521026502171c3ebd32f",
   "artifacts": {
-    "chatgpt/resonant-quantum-mechanics.json": "5879ba52239016d641389a04fa17f88053f1207c4406993d2eecfe5d1d08eaa0",
+    "chatgpt/resonant-quantum-mechanics.json": "85de7704d7e363a6a11e2c476e1dbc8ce2f8e50c785dd072591cbefc2fad0f81",
     "claude/resonant-quantum-mechanics.json": "cc4e07f9ba8b9a42d145ff42cde33224da40d76b4344ca083aae6aaa36c95d52",
     "cursor/resonant-quantum-mechanics.json": "b9ce4768a4d133f397725756c0d962f9c096239c634ccaa2078e40803eb75bf1",
     "chatgpt/waveengine.json": "549e37ea034b7be5c7156731d9f05a6b3296c5896ba2957b81fb4d90d40281ab",
