@@ -1,5 +1,27 @@
 # Quantum plugin split — unpublished 0.6.4 candidate
 
+## Approved release scope, 14 Nov 2026
+
+John reported that the installed private copy has no independent skill toggles
+and authorized publishing the complete two-workflow update without that gate.
+No four-state native toggle pass is claimed. The setup chat completed the free
+lesson and explanation calls; all 12 installed candidate files matched source
+99073fb. Offline package fixtures and separate synthetic exact-consent backend
+regressions remain the supporting evidence, with the limits below retained.
+
+Only the package README is corrected for release to describe host-controlled
+selection without promising independent switches. Skill bodies, display
+metadata, MCP wiring, free/paid boundaries and spending safeguards are unchanged.
+The existing public publisher record was verified as
+`plugin_asdk_app_6ae21c9b333c8191b6e19e2f0e1cb6f8`, last published 0.6.1;
+use that record and the portable canonical-name ZIP, not the historical
+portal-record rename mapping or private QA slot. Merge, package submission,
+review approval and live publication must be recorded separately.
+
+The earlier draft scope and proposed native acceptance below are historical;
+their no-publication and toggle prerequisites are superseded by this release
+authorization, while all spending and access restrictions remain intact.
+
 ## Listing copy
 
 **Learn quantum mechanics and run real quantum computers, right from ChatGPT.**

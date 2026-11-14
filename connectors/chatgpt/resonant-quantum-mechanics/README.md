@@ -2,7 +2,7 @@
 
 Learn quantum mechanics and run real quantum computers, right from ChatGPT.
 
-One plugin, two skills:
+One plugin, two distinct workflows:
 
 - **Learn & Explore Quantum Circuits:** free reviewed lessons, supplied-circuit
   explanations, supported source inspection, visualization and ideal lesson
@@ -22,8 +22,6 @@ Skill selection organizes guidance; it does not grant access or spending rights.
 Hardware availability, account eligibility, supported circuits and charges vary.
 Hardware is not always free. Software explanations are not hardware evidence.
 
-Before releasing a package update, test both skills in a supported private host,
-including independent selection, free first results, text fallback and no-spend
-hardware activation. Verify exact-quote approval separately. Keep release status
-and native test evidence in the review record rather than treating package
-metadata as proof of acceptance.
+The host controls how skills are presented and selected. Independent enable
+switches are not promised. Neither workflow changes the account's permissions
+or replaces explicit approval of an exact hardware quote.

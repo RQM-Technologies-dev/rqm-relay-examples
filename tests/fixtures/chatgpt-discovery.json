@@ -462,19 +462,6 @@
     }
   ],
   "default_prompt_service_ids": {
-    "resonant-quantum-mechanics": [
-      [
-        "openqasm3-preflight-v1",
-        "openqasm3-repair-v1"
-      ],
-      [
-        "supported-circuit-equivalence-v1",
-        "optimization-preservation-audit-v1"
-      ],
-      [
-        "managed-simulator-v1"
-      ]
-    ],
     "waveengine": [
       [
         "wave.compare-waveform-captures.v1"
@@ -652,9 +639,8 @@
   ],
   "default_prompts": {
     "resonant-quantum-mechanics": [
-      "Check my OpenQASM 3 circuit for syntax errors and show any supported conservative repairs.",
-      "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics.",
-      "Simulate this supported circuit locally and explain the result and its limitations."
+      "Explain a Bell circuit and its ideal probabilities for free; show the OpenQASM and a text fallback.",
+      "Help me plan one real hardware run. Review an exact quote before I approve any spend."
     ],
     "waveengine": [
       "Compare these two IQ captures using my supplied sample rate and error tolerances.",
@@ -665,6 +651,17 @@
       "Check these robot frame conventions for unit, axis and handedness mismatches.",
       "Check this trajectory timing against my supplied interval and jitter limits.",
       "Compare these planned and observed robot trajectories against my stated tolerances."
+    ]
+  },
+  "default_prompt_tools": {
+    "resonant-quantum-mechanics": [
+      [
+        "explain_quantum_circuit"
+      ],
+      [
+        "describe_hardware_execution",
+        "list_quantum_hardware"
+      ]
     ]
   }
 }

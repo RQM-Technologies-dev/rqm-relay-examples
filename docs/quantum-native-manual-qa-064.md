@@ -1,5 +1,14 @@
 # Smallest manual native acceptance for Quantum 0.6.4
 
+Release decision update, 14 Nov 2026: John reported that the installed private
+copy does not expose independent skill toggles and explicitly authorized
+publication of both workflows without that prepublication gate. The checklist
+below is retained as an uncompleted host-acceptance record, not a current release
+blocker or a claim that switch tests passed. Exact-quote consent and server-side
+spending safeguards remain required and unchanged. Package README now describes
+two workflows without promising independent switches; both skill bodies and
+their UI metadata remain byte-identical to the tested candidate.
+
 Native automation is blocked: the computer-use tool refused com.openai.codex for
 safety reasons. No native action was performed or retried through an alternate
 app name, browser redirect or OS automation path. Native acceptance remains open.
