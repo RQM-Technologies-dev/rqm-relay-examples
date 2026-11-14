@@ -50,7 +50,7 @@ describe("portable product package release", () => {
 });
 
 describe("ChatGPT portable candidates", () => {
-  it.each(brands)("%s has a distinct credential-free prepaid audience and matching skill", (name) => {
+  it.each(brands)("%s has a distinct credential-free product connection and matching skill", (name) => {
     const base = `connectors/chatgpt/${name}`;
     const product = name === "waveengine" ? "wave" : name === "robotics-lab" ? "robotics" : "quantum";
     expect(json(`${base}/plugin.json`).name).toBe(name);
@@ -58,8 +58,15 @@ describe("ChatGPT portable candidates", () => {
     const skill = read(`${base}/skills/${name}/SKILL.md`);
     expect(skill).toContain(`product: ${product}`);
     expect(skill).toContain(`name: ${name}`);
-    expect(skill).toContain("returned buyer `service_id`");
-    expect(read(`${base}/README.md`)).toContain("not a registered ChatGPT app");
+    if (name === "resonant-quantum-mechanics") {
+      expect(skill).toContain("learn_quantum_circuit");
+      expect(skill).toContain("Never call a prepaid operation");
+      expect(read(`${base}/skills/run-quantum-hardware/SKILL.md`)).toContain("quote_hardware_execution");
+      expect(read(`${base}/README.md`)).toContain("two distinct workflows");
+    } else {
+      expect(skill).toContain("returned buyer `service_id`");
+      expect(read(`${base}/README.md`)).toContain("not a registered ChatGPT app");
+    }
     expect(existsSync(resolve(root, base, ".app.json"))).toBe(false);
   });
 });

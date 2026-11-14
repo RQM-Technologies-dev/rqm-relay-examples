@@ -6,6 +6,11 @@ const root = resolve(import.meta.dirname, "..");
 const json = (path: string) => JSON.parse(readFileSync(resolve(root, path), "utf8"));
 const brands = { quantum: "resonant-quantum-mechanics", wave: "waveengine", robotics: "robotics-lab" } as const;
 const fixtures = json("tests/fixtures/chatgpt-discovery.json");
+// Restore the verified published Quantum 0.6.1 privacy baseline, including
+// free teaching and hardware recovery; other legal/auth/artwork pins stay exact.
+const quantumChatGPTUpdates: Record<string, string> = {
+  "connectors/chatgpt/resonant-quantum-mechanics/PRIVACY.md": "f7b9967df96579e5d143c90a8d3d366eadcb99eed2af55962a673d880c4ed32a",
+};
 // Reviewed Wave instruction-only correction for Jobs PR191's named surface.
 // Keep the historical baseline and all other products, auth and assets exact.
 const waveInstructionUpdates: Record<string, string> = {
@@ -62,12 +67,22 @@ describe("ChatGPT discovery contract proposals", () => {
       }
     }
   });
-  it("maps every starter prompt to source-supported buyer service IDs", () => {
+  it("maps starter prompts to reviewed free/hardware tools or source-supported buyer service IDs", () => {
     for (const brand of Object.values(brands)) {
       const manifest = json(`connectors/chatgpt/${brand}/plugin.json`);
       const prompts = manifest.extensions["com.openai"].interface.defaultPrompt;
-      expect(prompts).toHaveLength(3);
       expect(prompts).toEqual(fixtures.default_prompts[brand]);
+      if (brand === "resonant-quantum-mechanics") {
+        expect(prompts).toHaveLength(2);
+        const toolRoutes = fixtures.default_prompt_tools[brand];
+        expect(toolRoutes).toHaveLength(prompts.length);
+        const reviewed = manifest.extensions["com.openai"].review.test_cases.positive;
+        for (const tools of toolRoutes) {
+          expect(reviewed.some((entry: {tools_triggered: string}) => entry.tools_triggered === tools.join(", "))).toBe(true);
+        }
+        continue;
+      }
+      expect(prompts).toHaveLength(3);
       expect(fixtures.default_prompt_service_ids[brand]).toHaveLength(prompts.length);
       for (const ids of fixtures.default_prompt_service_ids[brand]) {
         expect(ids.length).toBeGreaterThan(0);
@@ -80,7 +95,7 @@ describe("Claude and Cursor non-regression", () => {
   it("preserves ChatGPT identities, OAuth configuration, artwork and legal notices", () => {
     const baseline = json("tests/fixtures/chatgpt-protected-hosts.json");
     for (const [path, digest] of Object.entries(baseline.chatgpt_files)) {
-      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(waveInstructionUpdates[path] ?? digest);
+      expect(createHash("sha256").update(readFileSync(resolve(root,path))).digest("hex"),path).toBe(quantumChatGPTUpdates[path] ?? waveInstructionUpdates[path] ?? digest);
     }
     for (const brand of Object.values(brands)) {
       const manifest = json(`connectors/chatgpt/${brand}/plugin.json`);

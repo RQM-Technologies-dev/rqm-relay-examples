@@ -18,7 +18,10 @@ export const PORTAL_RECORD_NAMES={
 };
 const json=path=>JSON.parse(readFileSync(path,'utf8'));
 const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
-export function packageFiles(item){return ['plugin.json','mcp.json','README.md','PRIVACY.md','LICENSE','NOTICE','assets/PROVENANCE.md',`assets/${item.asset}`,`skills/${item.name}/SKILL.md`];}
+export function packageFiles(item){
+ const common=['plugin.json','mcp.json','README.md','PRIVACY.md','LICENSE','NOTICE','assets/PROVENANCE.md',`assets/${item.asset}`,`skills/${item.name}/SKILL.md`];
+ return item.name==='resonant-quantum-mechanics' ? [...common,`skills/${item.name}/agents/openai.yaml`,'skills/run-quantum-hardware/SKILL.md','skills/run-quantum-hardware/agents/openai.yaml'] : common;
+}
 export function containedFile(base,path){
  assert(path.startsWith('./'),'Asset paths require ./');
  const target=resolve(base,path);assert(!relative(base,target).startsWith('..'),'Path escapes package');

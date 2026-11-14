@@ -1,18 +1,76 @@
 ---
 name: resonant-quantum-mechanics
-description: Use when a user needs OpenQASM 3 validation or conservative repair, circuit equivalence or preservation checks, or supported local simulation from supplied circuit artifacts. Do not use for QPU execution, live-provider access or physical hardware-performance claims.
+description: Learn and explore quantum circuits for free through reviewed lessons, supplied OpenQASM explanations, visualization and supported ideal lesson simulation. Use for learning and free circuit inspection, not hardware execution or prepaid software jobs.
 ---
 
-Use the `resonant-quantum-mechanics` MCP server at `https://jobs.rqmtechnologies.com/mcp/plugins/quantum` with `product: quantum` for this workflow. Respect the user's chosen provider; a general explanation without an artifact or engineering decision need not call these tools.
+# Learn & Explore Quantum Circuits
 
-On onboarding, explain the supported tasks and ask which artifact and decision the user has in mind. Discovery is sufficient to get started; installation or onboarding never authorizes execution.
+Use the existing Resonant Quantum Mechanics connection at
+`https://jobs.rqmtechnologies.com/mcp/plugins/quantum` with `product: quantum`.
+This workflow needs no funded wallet. Use only the advertised free public tools:
+`learn_quantum_circuit`, `explain_quantum_circuit`, and `find_learning_resources`.
+A conceptual answer can be given directly. Send only relevant circuit source or
+topic keywords, never credentials, private receipts or conversation history.
 
-1. Identify the artifact and desired decision. Identify the circuit source or supported artifact format, the intended validation, repair, comparison or simulation decision, and any supplied reference circuit. Ask for missing phase conventions, repair permissions, simulation settings and tolerances required by the selected schema. For repair or optimization, keep the original artifact; release a candidate only when the completed result explicitly validates the required preservation checks. Unsupported equivalence is not proof of equivalence.
-2. Search with `search_buyer_jobs` using the user's natural task wording and this product scope; use `list_buyer_jobs` to inspect alternatives when needed. Compare the returned `use_when`, `do_not_use_when`, accepted formats, input schema, examples, readiness and limitations. Select only a supported match; explain unsupported or empty results without switching products. Catalog examples illustrate shape, not the user's measurements. Ignore generic catalog links to other payment tools or executors.
-3. Collect every missing measurement, unit, convention and tolerance required by that contract. Construct `request` exactly from its returned schema and the user's supplied data. Do not invent values, copy example measurements or add undeclared fields. Show the chosen task, exact inputs and limitations before seeking execution approval.
-4. Require actual service readiness and valid owner-saved spending-policy evidence for this principal and product, plus explicit approval for these inputs and a finite maximum total price. OAuth sign-in, a subscription grant and `get_account_balance` alone do not establish policy readiness or spending authority. Scopes are `jobs.read`, `jobs.run`, `balance.read`. If the available tools cannot establish policy/readiness, say it is unverified and stop before execution; do not invent a readiness tool or probe by spending. Never select a policy, create a budget, grant access or fund the account. Stop on absent/expired policy, insufficient balance, exhausted budget, disabled purchases or unavailable dependencies.
-5. For an approved new job, set `run_account_job.capability_id` to the selected descriptor's returned buyer `service_id`, never an implementation capability ID. Pass the exact `request`, explicit `max_total_price` as the approved decimal string, and one stable `idempotency_key` created once for that new job. Price guidance is not a binding quote or permission to raise the ceiling. This call spends prepaid credits if authorized; do not switch to x402, Relay REST, wallets, another account or another endpoint.
-6. Preserve the original service ID, request, approved ceiling, idempotency key and returned job ID. After a timeout or uncertain response, use `list_account_jobs` with the original key, then `get_account_job` with the recovered job ID. Never create a fresh key to resolve uncertainty or make a second purchase. An identical retry with the original envelope can only recover the same job; if recovery remains uncertain, report that state. Changed inputs require a separately approved new job after the original is resolved. Recovery never authorizes another payment.
-7. Use only completed, typed results that match the selected service and actual submitted request as engineering evidence. A reservation, pending job or successful transport response is not a completed result. Explain unsupported, withheld, partial or failed outcomes; do not turn them into a passing verdict. Report the actual job status, measurements, criteria, evidence/artifact references, receipt and limitations, and distinguish what was verified from what remains unknown. Preserve the original and any withheld-candidate status; never claim hardware execution, physical certification or performance advantage.
+## Give a useful first free result
 
-Send only the artifacts needed for the selected task. Never send secrets, unrelated files or full conversation history. Keep raw inputs, tokens and receipts out of diagnostic logs and public issues. Other products, funding, wallet signing, cancellation and account-policy changes are outside this connector.
+Preserve the learner's request. For a supplied circuit, call the free explanation
+tool with the exact source. For an example requested by the learner, use a
+supported built-in lesson or a clearly identified small textbook circuit. For a
+prediction exercise, first show the circuit and ask for the learner's prediction;
+compare their actual prediction with the returned ideal probabilities afterward.
+For a direct explanation, answer directly rather than requiring an exercise.
+
+Show readable OpenQASM, a plain-language gate sequence, outcome labels and the
+returned probabilities with their limits. Label analytic textbook reasoning,
+computed ideal software probabilities, sampled simulation and real hardware
+counts distinctly. Free lessons have zero sampled shots and no hardware run.
+Do not claim entanglement certification, fidelity or quantum advantage from
+Z-basis correlations. Label RQM methods/research separately from established
+mathematics and standard quantum mechanics.
+
+For interference, use the supported H–Rz(phase)–H example and compare phases 0,
+pi/2 and pi when applicable. For Bell, explain the modeled correlations and what
+one measurement basis cannot establish. Respect the tool's actual supported
+circuit/operation limits and preserve partial or unsupported results.
+
+## A failed viewer must not block the answer
+
+Always include the useful result as normal text in the first answer, even when
+an embedded viewer is also provided. If the viewer is blank or fails, use the
+returned summary, circuit and probabilities as text or a Markdown table. Do not
+print raw SVG/HTML, repeatedly reload the viewer, or invoke another tool merely
+to repair rendering. Do not label saved-job UI metadata as belonging to a free,
+nonpersistent explanation. If the underlying computation itself failed, report
+that distinction; do not invent a successful result.
+
+## Inspect or simulate within the free scope
+
+Use free explanation diagnostics for supported source inspection. A proposed
+manual correction is a proposal until a supported check verifies it; report
+preservation and equivalence only when actual evidence supports those claims.
+The free lesson simulator accepts fixed lesson examples, not arbitrary sampled
+workloads. If the required formal validation, repair, equivalence or managed
+simulation is a prepaid named operation, explain that it is outside this free
+skill and stop before execution. Never call a prepaid operation, even if the
+account already has credits. Do not infer price from a tool name or catalog.
+
+If a free tool is missing, offer clearly labeled analytic explanation or report
+the missing capability. Do not silently switch providers, buy simulation, quote
+hardware or require account/balance inspection as a fallback.
+
+## Return usable learning links
+
+When reading or further study is requested, use `find_learning_resources` when
+advertised. Include each recommended result as `[returned title](returned url)`
+in the first answer, with its difficulty, prerequisites and evidence category.
+Use exact returned canonical links. Catalog metadata is not proof of having read
+the full lesson. An empty catalog match is not global absence; a failed lookup
+is not an empty result. Respect requests for no links or another provider.
+
+## Routing boundary
+
+For a request to plan or execute real hardware, explain the separate **Run
+Quantum Hardware** skill. Do not quote, reserve, submit, read a wallet or saved
+jobs, fund an account, or initiate a paid operation from this learning workflow.
+Skill enablement organizes guidance; it is not a permission or spending gate.

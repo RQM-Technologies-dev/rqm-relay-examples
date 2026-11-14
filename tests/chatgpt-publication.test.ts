@@ -41,7 +41,7 @@ describe("public publication preparation",()=>{
   try{
    for(const output of [first,second])execFileSync(process.execPath,[script,"--pack",output],{cwd:root,stdio:"pipe"});
    for(const name of ["resonant-quantum-mechanics","waveengine","robotics-lab"]){const version=JSON.parse(readFileSync(resolve(root,"connectors/chatgpt",name,"plugin.json"),"utf8")).version;const file=name+"-"+version+"-draft.zip";expect(readFileSync(resolve(first,file))).toEqual(readFileSync(resolve(second,file)));}
-   execFileSync("python3",["-c",`import zipfile,pathlib,sys\nfor path in pathlib.Path(sys.argv[1]).glob('*.zip'):\n with zipfile.ZipFile(path) as z:\n  names=z.namelist(); assert len(names)==9; assert 'plugin.json' in names and 'mcp.json' in names; assert not any(n.startswith('/') or '..' in n.split('/') or n.endswith('.app.json') or '.env' in n for n in names); assert z.testzip() is None`,first],{stdio:"pipe"});
+   execFileSync("python3",["-c",`import zipfile,pathlib,sys\nfor path in pathlib.Path(sys.argv[1]).glob('*.zip'):\n with zipfile.ZipFile(path) as z:\n  names=z.namelist(); assert len(names)==(12 if path.name.startswith('resonant-quantum-mechanics-') else 9); assert 'plugin.json' in names and 'mcp.json' in names; assert not any(n.startswith('/') or '..' in n.split('/') or n.endswith('.app.json') or '.env' in n for n in names); assert z.testzip() is None`,first],{stdio:"pipe"});
   }finally{rmSync(first,{recursive:true,force:true});rmSync(second,{recursive:true,force:true});}
  }, 60_000);
  it("preserves existing portal record names and changes no other ZIP content",()=>{
@@ -55,7 +55,7 @@ for name,record in records.items():
  base=root/'connectors'/'chatgpt'/name; original=json.loads((base/'plugin.json').read_text()); filename=name+'-'+original['version']+'-portal-record.zip'; path=first/filename
  assert path.read_bytes()==(second/filename).read_bytes()
  with zipfile.ZipFile(path) as z:
-  assert len(z.namelist())==9 and z.testzip() is None
+  assert len(z.namelist())==(12 if name=='resonant-quantum-mechanics' else 9) and z.testzip() is None
   manifest=json.loads(z.read('plugin.json')); assert manifest['name']==record; manifest['name']=name; assert manifest==original
   for entry in z.namelist():
    if entry!='plugin.json': assert z.read(entry)==(base/entry).read_bytes()
