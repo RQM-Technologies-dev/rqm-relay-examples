@@ -47,8 +47,12 @@ describe('two-skill public Quantum package candidate',()=>{
  it('keeps free review cases free and uses only strict read-only return-visit recovery',()=>{
   const cases=manifest.extensions['com.openai'].review.test_cases.positive;
   for(const row of cases.slice(0,2))validateFixtureTrace('resonant-quantum-mechanics',row.tools_triggered.split(', '));
-  for(const row of cases.slice(2))validateFixtureTrace('run-quantum-hardware',row.tools_triggered.split(', '));
+  for(const row of cases.slice(2,4))validateFixtureTrace('run-quantum-hardware',row.tools_triggered.split(', '));
   expect(cases[3].tools_triggered).toBe('get_settled_hardware_result');
+  validateFixtureTrace('resonant-quantum-mechanics',cases[4].tools_triggered.split(', '));
+ });
+ it('rejects sampled managed simulation in the free acceptance trace',()=>{
+  expect(()=>validateFixtureTrace('resonant-quantum-mechanics',['quantum_managed_simulator_v1'])).toThrow();
  });
  it('dry-runs a paid acceptance fixture only against an in-memory mock with exact consent and retry binding',()=>{
   const quote={quote_id:'synthetic-quote',digest:'synthetic-bound-digest',amount:'0.400000',currency:'USD'};

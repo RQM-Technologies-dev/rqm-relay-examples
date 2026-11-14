@@ -1,4 +1,4 @@
-# Resonant Quantum Mechanics 0.6.2 — unpublished review candidate
+# Resonant Quantum Mechanics 0.6.4
 
 Learn quantum mechanics and run real quantum computers, right from ChatGPT.
 
@@ -22,7 +22,8 @@ Skill selection organizes guidance; it does not grant access or spending rights.
 Hardware availability, account eligibility, supported circuits and charges vary.
 Hardware is not always free. Software explanations are not hardware evidence.
 
-This local ZIP has not been published, submitted, installed as a test release or
-verified in ChatGPT. No connection, OAuth, permission, customer account or paid
-operation was changed. Native independent-toggle and first-answer acceptance
-remain required; see the repository review plan before any future submission.
+Before releasing a package update, test both skills in a supported private host,
+including independent selection, free first results, text fallback and no-spend
+hardware activation. Verify exact-quote approval separately. Keep release status
+and native test evidence in the review record rather than treating package
+metadata as proof of acceptance.

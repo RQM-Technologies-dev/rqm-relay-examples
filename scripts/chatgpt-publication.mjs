@@ -64,7 +64,7 @@ export function validatePackages(root=ROOT){
   }
   assert(!('commerce' in openai.review),'No unreviewed commerce declaration');assert(!('countries' in openai.publication),'No invented distribution countries');
   assert(!openai.review.test_credentials&&!openai.review.reviewer_instructions,'Reviewer credentials stay outside ZIP');
-  const cases=openai.review.test_cases;assert.equal(cases.positive.length,item.name==='resonant-quantum-mechanics'?4:5);assert.equal(cases.negative.length,3);
+  const cases=openai.review.test_cases;assert.equal(cases.positive.length,5);assert.equal(cases.negative.length,3);
   for(const entry of [...cases.positive,...cases.negative]){text(entry.description,4000,'case description');text(entry.prompt,4000,'case prompt');assert(entry.expected_behavior);}
   for(const entry of cases.positive){assert(entry.tools_triggered);assert(!entry.tools_triggered.includes('run_account_job'),'Draft validation must not request paid acceptance');}
   const files=packageFiles(item);for(const file of files)containedFile(base,'./'+file);

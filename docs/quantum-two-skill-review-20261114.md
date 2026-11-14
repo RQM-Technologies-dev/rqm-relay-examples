@@ -1,4 +1,4 @@
-# Quantum plugin split — unpublished 0.6.2 candidate
+# Quantum plugin split — unpublished 0.6.4 candidate
 
 ## Listing copy
 
@@ -101,3 +101,28 @@ Installed public 0.6.1 baseline fingerprints (14 Nov 2026):
 - plugin.json: `748a9606f6a954872f733456ab7ab3290e1f8306848cdde82c70425f8e1d392f`
 - skills/resonant-quantum-mechanics/SKILL.md: `f400f9ff70925d5605b32c61d4ee214079dd8352de48f622b2a8ef784d7e105e`
 - mcp.json: `27543c0d407a2d274527dd3fbbeac37671affcb4fbff5b3b4759ed14ff88a912`
+
+
+## Frozen manual-native candidate 0.6.4
+
+The native computer-use tool refused access to com.openai.codex for safety
+reasons on 14 Nov 2026. It was not retried through another app name or UI method.
+No automated native switch/routing result is claimed.
+
+The prior exact 0.6.2 private archive was imported and showed two skills, but the
+web host exposed it only through Open in desktop app. Restoring original private
+0.5.8 contents required private version marker 0.6.3 because downgrades are
+forbidden. Public remains 0.6.1. The current manual QA/publication candidate is
+therefore 0.6.4, which can update that private copy without renaming the package.
+Both skill bodies and UI metadata are unchanged from 5ecd0dd.
+
+This candidate also restores the official five-positive-review-case requirement
+by adding the known free ideal entanglement fixture. Package copy/release notes
+are stable product descriptions; temporary QA/publication status stays outside
+the ZIP. Use the exact 0.6.4 archive and SHA256 for manual native QA and, only
+after all gates pass and the reviewed source is merged, eventual publication.
+Do not repack different contents after QA without repeating affected checks.
+
+Restore the original private contents with the prepared private 0.6.5 archive
+after manual tests. That is a private restore marker, not the public release.
+No native setting or public listing was changed in this bounded native attempt.

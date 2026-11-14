@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.6.2",
+  "version": "0.6.4",
   "description": "Learn quantum mechanics and run real quantum computers, right from ChatGPT. Explore free reviewed lessons and supported circuit explanations, then plan an eligible hardware experiment with an exact quote and explicit approval.",
   "author": {
     "name": "RQM Technologies LLC"
@@ -62,6 +62,12 @@
               "prompt": "Reopen my already-settled hardware result and its saved receipt using only the original execution ID. Do not settle or refresh anything.",
               "tools_triggered": "get_settled_hardware_result",
               "expected_behavior": "Use the advertised strictly read-only reader for the original execution. If absent, pending or denied, stop. Never substitute delivery acknowledgement, refresh, new job or another account."
+            },
+            {
+              "description": "Free ideal entanglement lesson with the learner's prediction",
+              "prompt": "Use the free built-in entanglement lesson. My prediction is 50% 00, 0% 01, 0% 10 and 50% 11. Compare it with the ideal probabilities; do not run sampled simulation or hardware.",
+              "tools_triggered": "learn_quantum_circuit",
+              "expected_behavior": "Preserve the learner prediction, show the built-in circuit and compare with ideal Bell probabilities 0.5, 0, 0, 0.5. Report zero sampled shots, software evidence and no charge; no account, prepaid managed simulator or hardware calls."
             }
           ],
           "negative": [
@@ -84,7 +90,7 @@
         }
       },
       "publication": {
-        "release_notes": "Unpublished 0.6.2 review candidate: two separately discoverable skills under the existing public plugin identity. Free learning never invokes paid/account/hardware execution. Hardware retains exact quote consent and strictly read-only settled-result recovery when advertised. No publication, actual hardware acceptance or independent ChatGPT toggle test has been performed."
+        "release_notes": "0.6.4 separates free guided quantum lessons and supported ideal circuit exploration from eligible account-authorized real hardware workflows. Hardware retains exact-quote spending approval, stable-key recovery and strictly read-only settled-result retrieval when advertised. Skill selection does not grant permissions or authorize spending."
       },
       "onboardingSkill": "./skills/resonant-quantum-mechanics/SKILL.md"
     }
