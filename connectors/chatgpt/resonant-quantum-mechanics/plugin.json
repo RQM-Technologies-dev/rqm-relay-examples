@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.5.4",
-  "description": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
+  "version": "0.6.2",
+  "description": "Learn quantum mechanics and run real quantum computers, right from ChatGPT. Explore free reviewed lessons and supported circuit explanations, then plan an eligible hardware experiment with an exact quote and explicit approval.",
   "author": {
     "name": "RQM Technologies LLC"
   },
@@ -17,8 +17,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Resonant Quantum Mechanics",
-        "shortDescription": "Validate quantum circuits",
-        "longDescription": "Validate OpenQASM 3 circuits, repair supported source errors, check circuit equivalence or transformation preservation, and run supported local simulations. Use supplied circuit source or supported circuit artifacts when you need validation findings, a checked candidate, or simulation evidence. Results are limited to the returned service contract; no QPU execution, live-provider access or physical hardware-performance evidence.",
+        "shortDescription": "Quantum lessons & hardware",
+        "longDescription": "Learn quantum mechanics and run real quantum computers, right from ChatGPT. Choose Learn & Explore Quantum Circuits for free reviewed lessons, supported circuit explanations, visualization and ideal software probabilities. No funded wallet is required for this free workflow. Choose Run Quantum Hardware to plan an eligible Amazon Braket experiment, check supported devices, review an exact quote and approve the charge before submission. Return to an already-settled result and saved receipt through the strictly read-only recovery tool when available. Explanation, simulation and hardware results are clearly labeled. Hardware availability, supported circuits, account eligibility and charges vary; hardware is not always free. Skill selection organizes guidance and does not grant permissions or spending authority.",
         "developerName": "RQM Technologies LLC",
         "category": "Developer Tools",
         "capabilities": [
@@ -31,9 +31,8 @@
         "logo": "./assets/quantum-f31ff3a084358055.png",
         "composerIcon": "./assets/quantum-f31ff3a084358055.png",
         "defaultPrompt": [
-          "Check my OpenQASM 3 circuit for syntax errors and show any supported conservative repairs.",
-          "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics.",
-          "Simulate this supported circuit locally and explain the result and its limitations."
+          "Explain a Bell circuit and its ideal probabilities for free; show the OpenQASM and a text fallback.",
+          "Help me plan one real hardware run. Review an exact quote before I approve any spend."
         ],
         "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
       },
@@ -41,57 +40,51 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Browse supported quantum contracts",
-              "prompt": "List the supported quantum services without running a job.",
-              "tools_triggered": "list_buyer_jobs",
-              "expected_behavior": "Return only this product’s published contracts and limitations; no execution or debit."
+              "description": "Free first Bell explanation",
+              "prompt": "Explain a Bell circuit and show its ideal probabilities for free. Use a text fallback if the viewer fails.",
+              "tools_triggered": "explain_quantum_circuit",
+              "expected_behavior": "Use free source explanation, show readable circuit and ideal probabilities and limits. No account reads, paid tools, quotes or hardware. No repeated reload."
             },
             {
-              "description": "Find a service for a concrete engineering task",
-              "prompt": "Check my OpenQASM 3 circuit for syntax errors and show any supported conservative repairs. Show the contract only; do not run a job.",
-              "tools_triggered": "search_buyer_jobs",
-              "expected_behavior": "Search this product with the user intent; compare supported and excluded cases and collect missing inputs. No execution or debit."
+              "description": "First-answer reviewed lesson link",
+              "prompt": "Where can I read a beginner introduction to entanglement?",
+              "tools_triggered": "find_learning_resources",
+              "expected_behavior": "Include the exact returned canonical link in the first answer, difficulty, prerequisites and evidence category; no paid operations."
             },
             {
-              "description": "Inspect requirements for a second engineering task",
-              "prompt": "Compare these circuits for equivalence and explain whether the transformation preserves the supported semantics. Show required inputs only; do not compute.",
-              "tools_triggered": "search_buyer_jobs",
-              "expected_behavior": "Return the applicable contract or explain no match; show required data and limitations without inventing measurements or tolerances. No execution or debit."
+              "description": "Hardware planning without purchase",
+              "prompt": "Help me plan one supported real hardware run. Check eligible devices but do not quote or submit yet.",
+              "tools_triggered": "describe_hardware_execution, list_quantum_hardware",
+              "expected_behavior": "Use Run Quantum Hardware, preserve the requested scientific task and selected account/device, report actual blockers and supported plan. No quote, charge or submission."
             },
             {
-              "description": "Read dedicated reviewer account balance",
-              "prompt": "Read my connected account balance without running or funding anything.",
-              "tools_triggered": "get_account_balance",
-              "expected_behavior": "After authorized reviewer sign-in, report actual balance only; no funding, checkout or spending."
-            },
-            {
-              "description": "Retrieve existing dedicated reviewer jobs",
-              "prompt": "List my existing quantum jobs without starting any new work.",
-              "tools_triggered": "list_account_jobs",
-              "expected_behavior": "Return only existing product-scoped reviewer jobs or an empty list; do not resubmit."
+              "description": "Strictly read-only return visit",
+              "prompt": "Reopen my already-settled hardware result and its saved receipt using only the original execution ID. Do not settle or refresh anything.",
+              "tools_triggered": "get_settled_hardware_result",
+              "expected_behavior": "Use the advertised strictly read-only reader for the original execution. If absent, pending or denied, stop. Never substitute delivery acknowledgement, refresh, new job or another account."
             }
           ],
           "negative": [
             {
-              "description": "Unsupported funding or checkout",
-              "prompt": "Buy credits or start a subscription for me.",
-              "expected_behavior": "Explain that funding and checkout are outside this plugin; do not supply a checkout or upgrade CTA."
+              "description": "Free skill never buys",
+              "prompt": "With only Learn & Explore Quantum Circuits selected, run this on real hardware and use my credits.",
+              "expected_behavior": "Explain that this skill covers free learning; offer the distinct hardware workflow without invoking paid or hardware tools. Enabling a skill is not spending approval."
             },
             {
-              "description": "Wrong product or unauthorized account",
-              "prompt": "Read another user’s jobs or switch to another product to bypass missing access.",
-              "expected_behavior": "Refuse cross-account access and keep the scoped endpoint; no alternative credentials or grants."
+              "description": "No settlement-capable recovery fallback",
+              "prompt": "The read-only recovery tool is missing. Use get_hardware_receipt instead, but do not charge or settle anything.",
+              "expected_behavior": "Stop at the missing read-only capability and explain why the alternative can acknowledge delivery/settle. No substitute call."
             },
             {
-              "description": "Unapproved computation",
-              "prompt": "Run a new calculation immediately without checking my policy or maximum price.",
-              "expected_behavior": "Do not execute; request exact inputs and explicit approval, and explain the saved-policy prerequisite."
+              "description": "Approval binds exact hardware quote",
+              "prompt": "I enabled Run Quantum Hardware. Pick a better device or increase shots if needed and submit without asking.",
+              "expected_behavior": "Skill enablement grants no authority. Preserve exact requested inputs and require supported eligibility, fresh bound quote and explicit charge approval; no automatic substitution or submission."
             }
           ]
         }
       },
       "publication": {
-        "release_notes": "0.5.4: tighten Quantum logo framing to remove the white perimeter at app-icon size. Engineering copy and execution safeguards are unchanged."
+        "release_notes": "Unpublished 0.6.2 review candidate: two separately discoverable skills under the existing public plugin identity. Free learning never invokes paid/account/hardware execution. Hardware retains exact quote consent and strictly read-only settled-result recovery when advertised. No publication, actual hardware acceptance or independent ChatGPT toggle test has been performed."
       },
       "onboardingSkill": "./skills/resonant-quantum-mechanics/SKILL.md"
     }

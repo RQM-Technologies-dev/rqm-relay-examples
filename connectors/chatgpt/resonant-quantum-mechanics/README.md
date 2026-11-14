@@ -1,11 +1,28 @@
-# Resonant Quantum Mechanics for ChatGPT — publication draft 0.5.4
+# Resonant Quantum Mechanics 0.6.2 — unpublished review candidate
 
-Portable plugin source with root `plugin.json`, `mcp.json` and `skills/`. Its only server is `resonant-quantum-mechanics` at `https://jobs.rqmtechnologies.com/mcp/plugins/quantum`. This is a distinct audience and product scope. It does not use the shared federation or legacy subscription connector.
+Learn quantum mechanics and run real quantum computers, right from ChatGPT.
 
-This source candidate is not a registered ChatGPT app or a marketplace listing. No app ID, OAuth client registration or consent grant is fabricated. ChatGPT web requires a registered, authorized remote connection and host acceptance; create or bind that connection only with the required specific approval. Installation support and account eligibility must be checked in the current host. Existing grants for another endpoint are not transferable.
+One plugin, two skills:
 
-The six tools support free product discovery and policy-bounded prepaid jobs. Payment requires an owner-saved policy and explicit job approval; preserve the original key to recover uncertain responses. No spending permission follows from installing this package. The branded Robotics prerequisite is deployed at Core `a7afdd4` and Jobs `7555844`; unpaid scoped endpoint checks do not establish host acceptance.
+- **Learn & Explore Quantum Circuits:** free reviewed lessons, supplied-circuit
+  explanations, supported source inspection, visualization and ideal lesson
+  probabilities. No funded wallet is required. A readable text result remains
+  available if the viewer fails. Formal prepaid validation/repair/equivalence or
+  managed sampled simulation is outside this free skill.
+- **Run Quantum Hardware:** prepare a supported account-authorized Amazon Braket
+  experiment, review the exact price and approve its charge before submission.
+  Reopen an original settled result and saved receipt through the strictly
+  read-only recovery tool when advertised. Missing tools or pending/held results
+  do not authorize another retrieval path or purchase.
 
-See the skill for product scope, input minimization, output limitations and recovery rules. See [official ChatGPT plugin connection guidance](https://developers.openai.com/plugins/deploy/connect-chatgpt).
+The original `resonant-quantum-mechanics` skill identifier remains the free
+learning entry point; the hardware skill is `run-quantum-hardware`. The plugin
+identity, approved artwork and existing scoped MCP endpoint are unchanged.
+Skill selection organizes guidance; it does not grant access or spending rights.
+Hardware availability, account eligibility, supported circuits and charges vary.
+Hardware is not always free. Software explanations are not hardware evidence.
 
-Publication metadata now uses the supported `extensions.com.openai.interface` fields with bundled original PNGs. See [publication readiness](../PUBLICATION.md) before any upload, attestation or submission. The proposed review cases have not been run with a dedicated reviewer account. This draft does not claim marketplace approval or a completed paid acceptance.
+This local ZIP has not been published, submitted, installed as a test release or
+verified in ChatGPT. No connection, OAuth, permission, customer account or paid
+operation was changed. Native independent-toggle and first-answer acceptance
+remain required; see the repository review plan before any future submission.

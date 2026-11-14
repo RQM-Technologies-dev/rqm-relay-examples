@@ -11,6 +11,8 @@ output.mkdir(parents=True, exist_ok=True)
 for name, asset in products.items():
     base = root / 'connectors' / 'chatgpt' / name
     files = ['plugin.json', 'mcp.json', 'README.md', 'PRIVACY.md', 'LICENSE', 'NOTICE', 'assets/PROVENANCE.md', 'assets/' + asset, 'skills/' + name + '/SKILL.md']
+    if name == 'resonant-quantum-mechanics':
+        files.extend(['skills/' + name + '/agents/openai.yaml', 'skills/run-quantum-hardware/SKILL.md', 'skills/run-quantum-hardware/agents/openai.yaml'])
     version = json.loads((base / 'plugin.json').read_text())['version']
     target = output / (name + '-' + version + ('-portal-record' if portal_records else '-draft') + '.zip')
     with zipfile.ZipFile(target, 'w', compression=zipfile.ZIP_DEFLATED, compresslevel=9) as archive:

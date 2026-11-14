@@ -1,0 +1,4 @@
+interface:
+  display_name: "Run Quantum Hardware"
+  short_description: "Plan an eligible run and approve its exact price"
+  default_prompt: "Use $run-quantum-hardware to plan one supported real hardware experiment before any quote or purchase."

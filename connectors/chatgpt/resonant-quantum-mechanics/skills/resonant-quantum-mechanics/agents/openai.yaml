@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learn & Explore Quantum Circuits"
+  short_description: "Free lessons and supported circuit explanations"
+  default_prompt: "Use $resonant-quantum-mechanics to explain a Bell circuit with ideal probabilities and a text fallback."
