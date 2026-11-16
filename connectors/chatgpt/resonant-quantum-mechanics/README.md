@@ -1,4 +1,4 @@
-# Resonant Quantum Mechanics 0.6.4
+# Resonant Quantum Mechanics 0.6.5
 
 Learn quantum mechanics and run real quantum computers, right from ChatGPT.
 

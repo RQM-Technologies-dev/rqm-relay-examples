@@ -113,12 +113,12 @@
   ],
   "package": {
     "source_path": "connectors/chatgpt/resonant-quantum-mechanics",
-    "version": "0.6.4",
-    "package_content_sha256": "a4c47acedc68a224dd31aba2afb63fdc21b243eb111d2dcf90d1071b6cd9f6f3",
+    "version": "0.6.5",
+    "package_content_sha256": "04843fd995bcaf5f9d651fe1d40191217202f4aefabf93680f7bc7bf6df99243",
     "files": {
-      "plugin.json": "f4d3d130028ecd1aea1e7db546c26de7e6202bbf3b09049870a44d6c3e99e6e2",
+      "plugin.json": "373671ec8e2b64e65dc2014e5e0b9b8cf079f71dac98f6d8c89606ec00217642",
       "mcp.json": "27543c0d407a2d274527dd3fbbeac37671affcb4fbff5b3b4759ed14ff88a912",
-      "README.md": "e3c17a67e2e79c09861f9144f0218d887c776b8687c36f4de446b7c25b481b3f",
+      "README.md": "8daf81280cfd4f713634d1cbf030db44bebdc9ce5ccc380514246027b83df6c6",
       "PRIVACY.md": "f7b9967df96579e5d143c90a8d3d366eadcb99eed2af55962a673d880c4ed32a",
       "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
       "NOTICE": "e470d59ae422d9a1c8e45dfa515db006046b9230ae9cf2c587d922c067cd5e00",

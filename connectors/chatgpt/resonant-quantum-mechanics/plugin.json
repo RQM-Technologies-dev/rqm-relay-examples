@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "resonant-quantum-mechanics",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Learn quantum mechanics and run real quantum computers, right from ChatGPT. Explore free reviewed lessons and supported circuit explanations, then plan an eligible hardware experiment with an exact quote and explicit approval.",
   "author": {
     "name": "RQM Technologies LLC"
@@ -31,7 +31,7 @@
         "logo": "./assets/quantum-f31ff3a084358055.png",
         "composerIcon": "./assets/quantum-f31ff3a084358055.png",
         "defaultPrompt": [
-          "Explain a Bell circuit and its ideal probabilities for free; show the OpenQASM and a text fallback.",
+          "Teach me quantum mechanics with simple circuits. Walk me through the math and show how it relates to real quantum computers.",
           "Help me plan one real hardware run. Review an exact quote before I approve any spend."
         ],
         "termsOfServiceURL": "https://www.rqmtechnologies.com/rqm/prepaid/terms.html"
@@ -90,7 +90,7 @@
         }
       },
       "publication": {
-        "release_notes": "0.6.4 separates free guided quantum lessons and supported ideal circuit exploration from eligible account-authorized real hardware workflows. Hardware retains exact-quote spending approval, stable-key recovery and strictly read-only settled-result retrieval when advertised. Skill selection does not grant permissions or authorize spending."
+        "release_notes": "Simplifies the first starter prompt for beginners. Learning and hardware workflows are unchanged."
       },
       "onboardingSkill": "./skills/resonant-quantum-mechanics/SKILL.md"
     }
