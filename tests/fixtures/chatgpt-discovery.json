@@ -639,7 +639,7 @@
   ],
   "default_prompts": {
     "resonant-quantum-mechanics": [
-      "Explain a Bell circuit and its ideal probabilities for free; show the OpenQASM and a text fallback.",
+      "Teach me quantum mechanics with simple circuits. Walk me through the math and show how it relates to real quantum computers.",
       "Help me plan one real hardware run. Review an exact quote before I approve any spend."
     ],
     "waveengine": [
